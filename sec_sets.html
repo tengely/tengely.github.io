@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:55+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Sets</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="cha_intro.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="cha_intro.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_sumsproducts.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="cha_intro.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="cha_intro.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_sumsproducts.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link active"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets" class="active">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_sets"><h2 class="heading hide-type" alt="Section 1.1 Sets">
+<span class="type">Section</span><span class="codenumber">1.1</span><span class="title">Sets</span>
+</h2>
+<a href="sec_sets.html" class="permalink">¶</a><p id="p-6">In mathematics a set is a collection of objects that are called elements. Usually we denote sets by capital letters and elements by small letters. If \(A\) is a set and \(a\) is an element of \(A\text{,}\) then we write \(a\in A\text{.}\) If \(a\) is not an element of \(A\text{,}\) then we write \(a\notin A\text{.}\) Now we deal with the problem how to provide a set. </p>
+<ul id="ul-1" style="list-style-type: disc;">
+<li id="li-1">
+<p id="p-7"><em class="emphasis">Sets given by enumeration.</em> If we have a set containing certain elements, then we enclose these elements in braces. For example, if \(A\) is a set containing 1, 2 and 3 we write \(A=\halmaz{1,2,3}\text{.}\) This notation is difficult to use if the given set has large amount of elements. In this case we list only some (usually consecutive) elements such that it is easy to see which are the remaining elements of the set. As an example let us assume that \(B\) is a set containg the integers between 1 and 1000. Here we write \(B=\halmaz{1,2,3,\ldots,1000}\text{.}\) If \(C\) is the set containing the odd integers between 1 and 99, then we have \(C=\halmaz{1,3,5,\ldots,99}\text{.}\) It is also possible to provide some families of sets, for example</p>
+\begin{equation*}
+D_1=\{1\}, D_k=\halmaz{1,3,\ldots,2k-1}\text{.}
+\end{equation*}
+<p>In this case \(D_k\) denotes the set containing the first \(k\) positive odd integers. <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(k\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(D_k\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{1}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{1,3}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{1,3,5}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{1,3,5,7}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table></p>
+</li>
+<li id="li-2"><p id="p-8"><em class="emphasis">Standard sets.</em> There are certain frequently used sets which have their own symbols. These are the set of natural numbers, the set of integers, the set of rational numbers, the set of real numbers and the set of complex numbers. \(\mathbb{N}=\halmaz{1,2,3,\ldots}\text{,}\) the set of natural numbers. \(\mathbb{Z}=\halmaz{\ldots,-2,-1,0,1,2,\ldots}\text{,}\) the set of integers. \(\mathbb{Q}\text{,}\) the set of rational numbers. \(\mathbb{R}\text{,}\) the set of real numbers. \(\mathbb{C}\text{,}\) the set of complex numbers.</p></li>
+<li id="li-3">
+<p id="p-9"><em class="emphasis">Set-builder notation.</em> It is also possible to define sets using the so-called set-builder notation. As an example consider the set \(D_3=\halmaz{1,3,5}\text{,}\) we can define this set in many different ways, e.g.\</p>
+\begin{align*}
+\halmaz{1,3,5}\amp =\halmazvonal{a}{(a-1)(a-3)(a-5)=0},\\
+\halmaz{1,3,5}\amp =\halmazvonal{a}{a=2k-1, k\in\halmaz{1,2,3}},\\
+\halmaz{1,3,5}\amp =\halmazvonal{a}{1\leq a\leq 5, \mbox{ and \(a\) is odd} }\text{.}
+\end{align*}
+<p>We can use semicolon instead of the vertical line, as well:</p>
+\begin{align*}
+\halmaz{1,3,5}\amp =\halmazpont{a}{(a-1)(a-3)(a-5)=0},\\
+\halmaz{1,3,5}\amp =\halmazpont{a}{a=2k-1, k\in\halmaz{1,2,3}},\\
+\halmaz{1,3,5}\amp =\halmazpont{a}{1\leq a\leq 5, \mbox{ and \(a\) is odd} }\text{.}
+\end{align*}
+<p>Let us define the set of even natural numbers:</p>
+\begin{equation*}
+\halmazvonal{2n}{n\in\mathbb{N}}\text{.}
+\end{equation*}
+<p>The set of rational numbers can be given as follows</p>
+\begin{equation*}
+\halmazvonal{a/b}{a,b\in\mathbb{Z}, b\neq 0}\text{.}
+\end{equation*}
+</li>
+</ul>
+<p id="p-10">To study some basic properties of sets we give some definitions. First we introduce the concept of cardinality.</p>
+<article class="definition-like" id="definition-1"><h6 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.1.1</span>
+</h6>
+<p id="p-11">A set is called <b class="terminology">finite</b> if it has finite number of elements. If a set is not finite it is called <b class="terminology">infinite.</b></p></article><p id="p-12">Now we consider cardinality of finite sets. The cardinality of infinite sets is more complicated and we will not discuss it.</p>
+<article class="definition-like" id="definition-2"><h6 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.1.2</span>
+</h6>
+<p id="p-13">Let \(A\) be a finite set. The <b class="terminology">cardinality</b> of \(A\) is the number of different elements of \(A\text{.}\) Notation: \(|A|\text{.}\)</p></article><p id="p-14">For example, the cardinality of \(D_3\) is 3 and the cardinality of the set \(\halmaz{1,2,3,6,7,8}\) is 6.</p>
+<article class="definition-like" id="definition-3"><h6 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.1.3</span>
+</h6>
+<p id="p-15">Let \(A\) and \(B\) be sets. The set \(B\) is a <b class="terminology">subset</b> of \(A\) if and only if every element of \(B\) is an element of \(A\text{.}\) Notation: \(B\subseteq A\text{.}\)</p></article><p id="p-16">There is a special set which is a subset of all sets, the so-called <em class="emphasis">empty set.</em> As the name suggests it is the set which has no element, that is, its cardinality is 0. The empty set is denoted by \(\emptyset\text{.}\)</p>
+<article class="definition-like" id="definition-4"><h6 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.1.4</span>
+</h6>
+<p id="p-17">If \(B\subseteq A\) and \(B\neq\emptyset, B\neq A\text{,}\) then \(B\) is a <b class="terminology">proper subset</b> of \(A\text{.}\)</p></article><article class="definition-like" id="definition-5"><h6 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.1.5</span>
+</h6>
+<p id="p-18">Let \(A\) and \(B\) be sets. The two sets are <b class="terminology">equal</b> if \(A\subseteq B\) and \(B\subseteq A\text{.}\)</p></article><p id="p-19">Now we define some basic operations of sets.</p>
+<article class="definition-like" id="definition-6"><h6 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.1.6</span>
+</h6>
+<p id="p-20">Let \(A\) and \(B\) be sets. The <b class="terminology">intersection</b> of \(A\) and \(B\) is the set \(\halmazvonal{x}{ x\in A \mbox{ and } x\in B}\text{.}\) Notation: \(A\cap B\text{.}\)</p></article><p id="p-21">The so-called Venn diagrams are often useful in case of sets to understand the situation better. By shading the appropriate region we illustrate the intersection of \(A\) and \(B\text{.}\) 
+
+<figure class="figure-like" id="cap"><img src="images/CAP.svg" width="100%" style="display: block; margin: 0 auto;" alt="">
+<!-- <figcaption><span class="type">Figure</span>
+<span class="codenumber">1.0.7
+</span>\(A\cap B\)</figcaption> -->
+</figure>
+
+<!-- \begin{venndiagram2sets} \fillACapB \end{venndiagram2sets} -->
+
+Let \(A=\halmaz{1,2,3,4,5}\) and \(B=\halmaz{3,4,5,6,7}\text{.}\) The intersection of these two sets is the set \(A\cap B=\halmaz{3,4,5}\text{.}\)</p>
+<article class="definition-like" id="definition-7"><h6 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.1.7</span>
+</h6>
+<p id="p-22">Let \(A\) and \(B\) be sets. The <b class="terminology">union</b> of \(A\) and \(B\) is the set \(\halmazvonal{x}{x\in A \mbox{ or } x\in B}\text{.}\) Notation: \(A\cup B\text{.}\)</p></article><p id="p-23">The corresponding Venn diagram is as follows. 
+
+<figure class="figure-like" id="cup"><img src="images/CUP.svg" width="100%" style="display: block; margin: 0 auto;" alt="">
+
+<!-- <figcaption><span class="type">Figure</span><span class="codenumber">1.0.9</span>\(A\cup B\)</figcaption> -->
+</figure>
+
+<!-- \begin{venndiagram2sets} \fillA\fillB \end{venndiagram2sets}  -->
+
+Let \(A=\halmaz{1,2,3,4,5}\) and \(B=\halmaz{3,4,5,6,7}\text{.}\) The union of these two sets is the set \(A\cup B=\halmaz{1,2,3,4,5,6,7}\text{.}\) It is easy to see that the following properties hold \(A\cap B=B\cap A\) and \(A\cup B=B\cup A\text{.}\) It is not true for the difference of two sets.</p>
+<article class="definition-like" id="definition-8"><h6 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.1.8</span>
+</h6>
+<p id="p-24">Let \(A\) and \(B\) be sets. The <b class="terminology">difference</b> of \(A\) and \(B\) is the set \(\halmazvonal{x}{ | x\in A \mbox{ and } x\notin B}\text{.}\) Notation: \(A\setminus B\text{.}\)</p></article><p id="p-25">The Venn diagram of \(A\setminus B:\) 
+<figure class="figure-like" id="aminusb"><img src="images/AminusB.svg" width="100%" style="display: block; margin: 0 auto;" alt="">
+<!-- <figcaption><span class="type">Figure</span><span class="codenumber">1.0.11</span>\(A\setminus B\)</figcaption> -->
+</figure>
+<!-- \begin{venndiagram2sets} \fillOnlyA \end{venndiagram2sets} -->
+To see the difference between \(A\setminus B\) and \(B\setminus A\) we draw the Venn diagram of \(B\setminus A\) as well: 
+
+
+<figure class="figure-like" id="bminusa"><img src="images/BminusA.svg" width="100%" style="display: block; margin: 0 auto;" alt="">
+<!-- <figcaption><span class="type">Figure</span><span class="codenumber">1.0.12</span>\(B\setminus A\)</figcaption> -->
+</figure>
+
+<!-- \begin{venndiagram2sets} \fillOnlyB \end{venndiagram2sets} --> 
+
+Again, let \(A=\halmaz{1,2,3,4,5}\) and \(B=\halmaz{3,4,5,6,7}\text{.}\) Now we have that</p>
+\begin{align*}
+A\setminus B \amp =\halmaz{1,2},\\
+B\setminus A \amp =\halmaz{6,7}\text{.}
+\end{align*}
+<p id="p-26">Now we introduce the symmetric difference of sets.</p>
+<article class="definition-like" id="definition-9"><h6 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.1.9</span>
+</h6>
+<p id="p-27">Let \(A\) and \(B\) be sets. The <b class="terminology">symmetric difference</b> of \(A\) and \(B\) is the set \((A\cup B)\setminus(A\cap B)\text{.}\) Notation: \(A\triangle B\text{.}\)</p></article><p id="p-28">The Venn diagram of the symmetric difference of \(A\) and \(B:\) 
+
+<figure class="figure-like" id="symmdiff"><img src="images/SymDiff.svg" width="100%" style="display: block; margin: 0 auto;" alt="">
+<!-- <figcaption><span class="type">Figure</span><span class="codenumber">1.0.14</span>\(A\triangle B\)</figcaption> -->
+</figure>
+<!-- \begin{venndiagram2sets} \fillANotB\fillBNotA \end{venndiagram2sets} -->
+
+We give an example using sets \(A=\halmaz{1,2,3,4,5}\) and \(B=\halmaz{3,4,5,6,7}\text{.}\) We obtain that</p>
+\begin{equation*}
+A\triangle B=\halmaz{1,2,6,7}\text{.}
+\end{equation*}
+<p id="p-29">Finally, we define the complement of a set.</p>
+<article class="definition-like" id="definition-10"><h6 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.1.10</span>
+</h6>
+<p id="p-30">Let \(U\) be a set (called the universe) and \(A\) is a subset of \(U\text{.}\) The complement of \(A\) consists of elements of \(U\) which do not belong to \(A\text{.}\) Notation: \(\overline{A}\text{.}\)</p></article><p id="p-31">The corresponding Venn diagram is as follows.</p>
+
+<figure class="figure-like" id="complement"><img src="images/Complement.svg" width="100%" style="display: block; margin: 0 auto;" alt="">
+<!-- <figcaption><span class="type">Figure</span><span class="codenumber">1.0.15</span>\(\overline{A}\)</figcaption> -->
+</figure>
+
+<!-- <img src="images/image-1.svg" width="100%" style="display: block; margin: 0 auto;" alt="">-->
+<p id="p-32">As an example consider the sets \(U=\{1,2,3,4,5,6\}\) and \(A=\{1,3,5\}\text{.}\) The complement of \(A\) is the set \(\{2,4,6\}\text{.}\)</p>
+
+
+
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-intro-ex-1" id="intro-ex-1"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.1.11</span>
+</h6></a></article><div id="hk-intro-ex-1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-33">Let \(A=\halmaz{3,4,6,7,8},B=\halmaz{2,4,5,6,8}\) and \(C=\halmaz{1,2,4,5,8}\text{.}\) What are the elements of the set \((A\setminus B)\cup(C\cap B)\text{?}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-intro-ex-2" id="intro-ex-2"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.1.12</span>
+</h6></a></article><div id="hk-intro-ex-2" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-34">Let \(A=\halmaz{1,3,4,6,7},B=\halmaz{2,4,5,6,8}\) and \(C=\halmaz{1,3,4,5,8}\text{.}\) What are the elements of the set \((A\cap B)\setminus(C\cap B)\text{?}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-intro-ex-3" id="intro-ex-3"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.1.13</span>
+</h6></a></article><div id="hk-intro-ex-3" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-35">Let \(A=\halmaz{1,3,4,6,7},B=\halmaz{2,4,6,8}\) and \(C=\halmaz{1,3,4,8}\text{.}\) What are the elements of the set \((A\setminus B)\cup(C\setminus B)\text{?}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-intro-ex-4" id="intro-ex-4"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.1.14</span>
+</h6></a></article><div id="hk-intro-ex-4" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-36">List all elements of the following sets:</p>
+<p id="p-37">(a) \(\halmazvonal{3k+1}{k\in\halmaz{2,3,4}}\text{,}\)</p>
+<p id="p-38">(b) \(\halmazvonal{k^2}{ k\in\halmaz{-1,0,1,2}}\text{,}\)</p>
+<p id="p-39">(c) \(\halmazvonal{u-v}{u\in\halmaz{3,4,5}, v\in\halmaz{1,2}}\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-intro-ex-5" id="intro-ex-5"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.1.15</span>
+</h6></a></article><div id="hk-intro-ex-5" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-40">Describe the following sets using set-builder notation.</p>
+<p id="p-41">(a) \(\halmaz{2,4,6,8,10}\text{,}\)</p>
+<p id="p-42">(b) \(\halmaz{1,4,9,16,25}\text{,}\)</p>
+<p id="p-43">(c) \(\halmaz{1,\frac{1}{2},\frac{1}{4},\ldots, \frac{1}{2^k}, \ldots}\text{,}\)</p>
+<p id="p-44">(d) the set of rational numbers between 1 and 2.</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-intro-ex-6" id="intro-ex-6"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.1.16</span>
+</h6></a></article><div id="hk-intro-ex-6" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-45">Draw a Venn diagram for the following sets:</p>
+<p id="p-46">(a) \((A\cap B)\cup C\text{,}\)</p>
+<p id="p-47">(b) \((A\setminus B)\cup(A\setminus C)\text{,}\)</p>
+<p id="p-48">(c) \((A\cup B)\cap C\text{,}\)</p>
+<p id="p-49">(d) \((A\cap B)\cup(B\cap C)\cup(A\cap C)\text{,}\)</p>
+<p id="p-50">(e) \(\left((A\cap B)\setminus C\right)\cup \left((A\cap C)\setminus B\right)\cup \left((B\cap C)\setminus A\right)\text{,}\)</p>
+<p id="p-51">(f) \((A\setminus B)\cup(B\setminus C)\cup(C\setminus A)\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-intro-ex-7" id="intro-ex-7"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.1.17</span>
+</h6></a></article><div id="hk-intro-ex-7" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-52">Provide three sets \(A,B\) and \(C\) which satisfy the following cardinality conditions</p>
+\begin{equation*}
+|A\cap B\cap C|=2\text{,}
+\end{equation*}
+
+\begin{equation*}
+|A\cap B|=|A\cap C|=|B\cap C|=2\text{,}
+\end{equation*}
+
+\begin{equation*}
+|A|=|B|=|C|=4\text{.}
+\end{equation*}
+</article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-intro-ex-8" id="intro-ex-8"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.1.18</span>
+</h6></a></article><div id="hk-intro-ex-8" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-53">Provide three sets \(A,B\) and \(C\) which satisfy the following cardinality conditions</p>
+\begin{equation*}
+|A\cap B\cap C|=2\text{,}
+\end{equation*}
+
+\begin{equation*}
+|A\cap B|=2, |A\cap C|=2, |B\cap C|=3\text{,}
+\end{equation*}
+
+\begin{equation*}
+|A|=4, |B|=5, |C|=6\text{.}
+\end{equation*}
+</article></div>
+
+
+
+<!--
+<subsection class="exercises" id="exercises-1"><h2 class="heading hide-type" alt="Exercises 1.1.1 Exercises">
+<span class="type">Section</span><span class="codenumber">1.1.1</span><span class="title">Exercises</span>
+</h2>
+<article class="exercise-like" id="exercise-1"><h6 class="heading"><span class="codenumber">1</span></h6>
+<p id="p-42">Let \(A=\left\{\,3,4,6,7,8\,\right\},B=\left\{\,2,4,5,6,8\,\right\}\) and \(C=\left\{\,1,2,4,5,8\,\right\}\). What are the elements of the set \((A\setminus B)\cup(C\cap B)\)?</p>
+<div class="solutions">
+<span class="solution"><a knowl="" class="id-ref" refid="hk-solution-1" id="solution-1"><span class="type">Solution</span></a></span><div id="hk-solution-1" class="hidden-content tex2jax_ignore"><span class="solution"><p id="p-43">There are three given sets \(A=\left\{\,3,4,6,7,8\,\right\},B=\left\{\,2,4,5,6,8\,\right\}\) and \(C=\left\{\,1,2,4,5,8\,\right\}\). We have that \[\begin{aligned} A\setminus B&amp;=\left\{\,3,7\,\right\}\\ C\cap B&amp;=\left\{\,2,4,5,8\,\right\}.\end{aligned}\] Thus \[(A\setminus B)\cup(C\cap B)=\left\{\,2,3,4,5,7,8\,\right\}.\]</p></span></div>
+</div></article><article class="exercise-like" id="exercise-2"><h6 class="heading"><span class="codenumber">2</span></h6>
+<p id="p-44">Let \(A=\left\{\,1,3,4,6,7\,\right\},B=\left\{\,2,4,5,6,8\,\right\}\) and \(C=\left\{\,1,3,4,5,8\,\right\}\). What are the elements of the set \((A\cap B)\setminus(C\cap B)\)?</p>
+<div class="solutions">
+<span class="solution"><a knowl="" class="id-ref" refid="hk-solution-2" id="solution-2"><span class="type">Solution</span></a></span><div id="hk-solution-2" class="hidden-content tex2jax_ignore"><span class="solution"><p id="p-45">We have three sets \(A=\left\{\,1,3,4,6,7\,\right\},B=\left\{\,2,4,5,6,8\,\right\}\) and \(C=\left\{\,1,3,4,5,8\,\right\}\). \[\begin{aligned} (A\cap B)&amp;=\left\{\,4,6\,\right\}\\ (C\cap B)&amp;=\left\{\,4,5,8\,\right\}.\end{aligned}\] Therefore \[(A\cap B)\setminus(C\cap B)=\left\{\,6\,\right\}.\]</p></span></div>
+</div></article><article class="exercise-like" id="exercise-3"><h6 class="heading"><span class="codenumber">3</span></h6>
+<p id="p-46">Let \(A=\left\{\,1,3,4,6,7\,\right\},B=\left\{\,2,4,6,8\,\right\}\) and \(C=\left\{\,1,3,4,8\,\right\}\). What are the elements of the set \((A\setminus B)\cup(C\setminus B)\)?</p>
+<div class="solutions">
+<span class="solution"><a knowl="" class="id-ref" refid="hk-solution-3" id="solution-3"><span class="type">Solution</span></a></span><div id="hk-solution-3" class="hidden-content tex2jax_ignore"><span class="solution"><p id="p-47">Now the three given sets are \(A=\left\{\,1,3,4,6,7\,\right\},B=\left\{\,2,4,6,8\,\right\}\) and \(C=\left\{\,1,3,4,8\,\right\}\). \[\begin{aligned} (A\setminus B)&amp;=\left\{\,1,3,7\,\right\}\\ (C\setminus B)&amp;=\left\{\,1,3\,\right\}.\end{aligned}\] So we obtain \[(A\setminus B)\cup(C\setminus B)=\left\{\,1,3,7\,\right\}.\]</p></span></div>
+</div></article><article class="exercise-like" id="exercise-4"><h6 class="heading"><span class="codenumber">4</span></h6>
+<p id="p-48">List all elements of the following sets:</p>
+<p id="p-49">(a) \(\left\{\,3k+1\mid k\in\left\{\,2,3,4\,\right\}\,\right\}\),</p>
+<p id="p-50">(b) \(\left\{\,k^2\mid  k\in\left\{\,-1,0,1,2\,\right\}\,\right\}\),</p>
+<p id="p-51">(c) \(\left\{\,u-v\mid u\in\left\{\,3,4,5\,\right\}, v\in\left\{\,1,2\,\right\}\,\right\}\).</p>
+<div class="solutions">
+<span class="solution"><a knowl="" class="id-ref" refid="hk-solution-4" id="solution-4"><span class="type">Solution</span></a></span><div id="hk-solution-4" class="hidden-content tex2jax_ignore"><span class="solution"><p id="p-52">(a) The elements of the set are 7, 10 and 13.</p>
+<p id="p-53">(b) The elements of the set are 0, 1 and 4.</p>
+<p id="p-54">(c) The possible differences are \(3-1, 3-2, 4-1, 4-2, 5-1\) and \(5-2\), thus the elements of the set are 1, 2, 3 and 4.</p></span></div>
+</div></article><article class="exercise-like" id="exercise-5"><h6 class="heading"><span class="codenumber">5</span></h6>
+<p id="p-55">Describe the following sets using set-builder notation.</p>
+<p id="p-56">(a) \(\left\{\,2,4,6,8,10\,\right\}\),</p>
+<p id="p-57">(b) \(\left\{\,1,4,9,16,25\,\right\}\),</p>
+<p id="p-58">(c) \(\left\{\,1,\frac{1}{2},\frac{1}{4},\ldots, \frac{1}{2^k}, \ldots\,\right\}\),</p>
+<p id="p-59">(d) the set of rational numbers between 1 and 2.</p>
+<div class="solutions">
+<span class="solution"><a knowl="" class="id-ref" refid="hk-solution-5" id="solution-5"><span class="type">Solution</span></a></span><div id="hk-solution-5" class="hidden-content tex2jax_ignore"><span class="solution"><p id="p-60">(a) \(\left\{\,2k\mid  k\in\left\{\,1,2,3,4,5\,\right\}\,\right\}\),</p>
+<p id="p-61">(b) \(\left\{\,k^2\mid k\in\left\{\,1,2,3,4,5\,\right\}\,\right\}\),</p>
+<p id="p-62">(c) \(\left\{\,2^{-k}\mid  k\in\mathbb{N}\cup\left\{\,0\,\right\}\,\right\}\),</p>
+<p id="p-63">(d) \(\left\{\,a/b \mid a,b\in\mathbb{N}, b\leq a\leq 2b\,\right\}\).</p></span></div>
+</div></article><article class="exercise-like" id="exercise-6"><h6 class="heading"><span class="codenumber">6</span></h6>
+<p id="p-64">Draw a Venn diagram for the following sets:</p>
+<p id="p-65">(a) \((A\cap B)\cup C\),</p>
+<p id="p-66">(b) \((A\setminus B)\cup(A\setminus C)\),</p>
+<p id="p-67">(c) \((A\cup B)\cap C\),</p>
+<p id="p-68">(d) \((A\cap B)\cup(B\cap C)\cup(A\cap C)\),</p>
+<p id="p-69">(e) \(\left((A\cap B)\setminus C\right)\cup \left((A\cap C)\setminus B\right)\cup \left((B\cap C)\setminus A\right)\),</p>
+<p id="p-70">(f) \((A\setminus B)\cup(B\setminus C)\cup(C\setminus A)\).</p>
+<div class="solutions">
+<span class="solution"><a knowl="" class="id-ref" refid="hk-solution-6" id="solution-6"><span class="type">Solution</span></a></span><div id="hk-solution-6" class="hidden-content tex2jax_ignore"><span class="solution"><p id="p-71"><figure class="figure-like" id="partA"><img width="60%" src="images/6a.png" alt="(a)"><figcaption><span class="type">Figure</span><span class="codenumber">1.1.16</span>(a)</figcaption></figure> <figure class="figure-like" id="partB"><img width="60%" src="images/6b.png" alt="(b)"><figcaption><span class="type">Figure</span><span class="codenumber">1.1.17</span>(b)</figcaption></figure> <figure class="figure-like" id="partC"><img width="60%" src="images/6c.png" alt="(c)"><figcaption><span class="type">Figure</span><span class="codenumber">1.1.18</span>(c)</figcaption></figure> <figure class="figure-like" id="partD"><img width="60%" src="images/6d.png" alt="(d)"><figcaption><span class="type">Figure</span><span class="codenumber">1.1.19</span>(d)</figcaption></figure> <figure class="figure-like" id="partE"><img width="60%" src="images/6e.png" alt="(e)"><figcaption><span class="type">Figure</span><span class="codenumber">1.1.20</span>(e)</figcaption></figure> <figure class="figure-like" id="partF"><img width="60%" src="images/6f.png" alt="(f)"><figcaption><span class="type">Figure</span><span class="codenumber">1.1.21</span>(f)</figcaption></figure></p></span></div>
+</div></article><article class="exercise-like" id="exercise-7"><h6 class="heading"><span class="codenumber">7</span></h6>
+<p id="p-72">Provide three sets \(A,B\) and \(C\) which satisfy the following cardinality conditions \[|A\cap B\cap C|=2,\] \[|A\cap B|=|A\cap C|=|B\cap C|=2,\] \[|A|=|B|=|C|=4.\]</p>
+<div class="solutions">
+<span class="solution"><a knowl="" class="id-ref" refid="hk-solution-7" id="solution-7"><span class="type">Solution</span></a></span><div id="hk-solution-7" class="hidden-content tex2jax_ignore"><span class="solution"><p id="p-73">The set \(A\cap B\cap C\) is a subset of all other sets for which we have certain cardinality conditions, so we may set \[A\cap B\cap C=\left\{\,1,2\,\right\}.\] The conditions for \(|A\cap B|, |A\cap C|\) and \(|B\cap C|\) are satisfied. We have that \(|A|=4\), that means that two elements are missing from \(A\setminus(B\cup C)\). We let \(A\setminus(B\cup C)=\left\{\,3,4\,\right\}\). Similarly for \(B\setminus(A\cup C)\) and \(C\setminus(A\cup B)\). We obtain that <figure class="figure-like" id="part7"><img width="60%" src="images/7.png" alt="Solution"><figcaption><span class="type">Figure</span><span class="codenumber">1.1.22</span>(7)</figcaption></figure></p></span></div>
+</div></article><article class="exercise-like" id="exercise-8"><h6 class="heading"><span class="codenumber">8</span></h6>
+<p id="p-74">Provide three sets \(A,B\) and \(C\) which satisfy the following cardinality conditions \[|A\cap B\cap C|=2,\] \[|A\cap B|=2,\quad |A\cap C|=2,\quad |B\cap C|=3,\] \[|A|=4,\quad |B|=5,\quad |C|=6.\]</p>
+<div class="solutions">
+<span class="solution"><a knowl="" class="id-ref" refid="hk-solution-8" id="solution-8"><span class="type">Solution</span></a></span><div id="hk-solution-8" class="hidden-content tex2jax_ignore"><span class="solution"><p id="p-75">Following the solution of Exercise 7 we get: <figure class="figure-like" id="part8"><img width="60%" src="images/8.png" alt="Solution"><figcaption><span class="type">Figure</span><span class="codenumber">1.1.23</span>(8)</figcaption></figure></p></span></div>
+</div></article></subsection>
+-->
+
+
+
+
+
+</section></div></main>
+</div>
+</body>
+</html>

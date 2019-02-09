@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:56+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Euclidean algorithm</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_sumsproducts.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="cha_intro.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_numeralsystem.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_sumsproducts.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="cha_intro.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_numeralsystem.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link active"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc" class="active">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="Euc"><h2 class="heading hide-type" alt="Section 1.3 The Euclidean algorithm">
+<span class="type">Section</span><span class="codenumber">1.3</span><span class="title">The Euclidean algorithm</span>
+</h2>
+<a href="Euc.html" class="permalink">¶</a><p id="p-96">In this section we introduce the so-called Division algorithm, we define the greatest common divisor of given integers and we consider the Euclidean algorithm, which is one of the oldest mathematical algorithms.</p>
+<article class="theorem-like" id="algorithm-1"><h6 class="heading">
+<span class="type">Algorithm</span><span class="codenumber">1.3.1</span>
+</h6>
+<p id="p-97"><em class="emphasis">Division algorithm.</em> Given two integers \(a\) and \(b\) such that \(b&gt;0\text{.}\) There exist unique integers \(q\) and \(r\) for which</p>
+\begin{equation*}
+a=qb+r, 0\leq r\lt b\text{.}
+\end{equation*}
+<p id="p-98">Here \(q\) is called <em class="emphasis">quotient</em> and \(r\) is called <em class="emphasis">remainder.</em> There is a special case, when the Division algorithm yields \(r=0\text{.}\) In such a situation \(a=qb\) for some \(q\text{.}\)</p></article><article class="definition-like" id="definition-11"><h6 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.3.2</span>
+</h6>
+<p id="p-99">We say that \(b\) <b class="terminology">divides</b> \(a\) (\(b\) is a <b class="terminology">divisor</b> of \(a\) or \(a\) is a <b class="terminology">multiple</b> of \(b\)) if there exists \(q\) such that \(a=qb\text{.}\) Notation: \(b\mid a\text{.}\)</p></article><p id="p-100">How to find an appropriate \(q\) and \(r\text{?}\) Let us assume that we have two positive integers \(a\) and \(b\text{.}\) We start with \(q=0\) and \(r=a\text{.}\) Clearly \(a=0\cdot b+a\text{.}\) If \(a\lt b\text{,}\) then we are done, otherwise \(a-b\geq 0\text{.}\) So we write \(a=1\cdot b+(a-b)\text{.}\) We check if \(a-b\lt b\text{.}\) If this is the case then we have found \(q\) and \(r\text{,}\) otherwise we have \(a-2b\geq 0\) and \(a=2\cdot b+(a-2b)\text{.}\) We stop when we have \(a-kb\lt b\) for some \(k\text{.}\) For example, let \(a=76\) and \(b=7:\)</p>
+<table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(k\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(a-kb\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">76</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">69</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">62</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">55</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">48</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">41</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">34</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">27</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">13</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<p id="p-101">that is, we obtain that \(76=10\cdot 7+6\) and \(0\leq 6\lt 7\text{.}\)</p>
+<article class="definition-like" id="definition-12"><h6 class="heading">
+<span class="type">Definition</span><span class="codenumber">1.3.3</span>
+</h6>
+<p id="p-102">Let \(a,b\in\mathbb{Z}\text{.}\) A positive integer \(d\) is called a <b class="terminology">common divisor</b> of \(a\) and \(b\text{,}\) if \(d\) divides \(a\) and \(d\) divides \(b\text{.}\) The largest possible such integer is called the <b class="terminology">greatest common divisor</b> of \(a\) and \(b\text{.}\) Notation: \(\gcd(a,b)\text{.}\)</p></article><article class="theorem-like" id="algorithm-2"><h6 class="heading">
+<span class="type">Algorithm</span><span class="codenumber">1.3.4</span>
+</h6>
+<p id="p-103"><em class="emphasis">The Euclidean algorithm.</em> Now we study a method to determine \(\gcd(a,b)\) of given positive integers \(a\) and \(b\text{.}\) The method also provides solution of the linear Diophantine equation</p>
+\begin{equation*}
+ax+by=\gcd(a,b)\text{.}
+\end{equation*}
+<p id="p-104">If we apply the Division algorithm to \(a,b,a&gt;b\text{,}\) then we have</p>
+\begin{equation*}
+a=qb+r, 0\leq r\lt b\text{.}
+\end{equation*}
+<p id="p-105">If \(d\) is a common divisor of \(a\) and \(b\text{,}\) then \(d\) divides \(r=a-qb\) as well. That is the basic idea of the algorithm. The Euclidean algorithm works as follows. First we apply the Division algorithm for \(a\) and \(b\) to obtain a quotient \(q_1\) and a remainder \(r_1\text{.}\) Then we apply the Division algorithm for \(b\) and \(r_1\) to get a new quotient \(q_2\) and a new remainder \(r_2\text{.}\) We continue, we divide \(r_1\) by \(r_2\) to obtain \(q_3\) and \(r_3\text{.}\) We stop if we obtain a zero remainder. Since the procedure produces a decreasing sequence of non-negative integers so must eventually terminate by descent. The last non-zero remainder is the greatest common divisor of \(a\) and \(b\text{.}\)</p></article><p id="p-106">As an example we compute \(\gcd(553,161)\text{.}\) We write the computations in the following way:</p>
+\begin{align*}
+553\amp =3\cdot 161+70 q_1=3, r_1=70\\
+161\amp =2\cdot 70+21 q_2=2, r_2=21\\
+70\amp =3\cdot 21+7 q_3=3, r_3=7\\
+21\amp =3\cdot 7+0 q_4=3, r_4=0\text{.}
+\end{align*}
+<p id="p-107">That is, the last non-zero remainder is 7, so \(\gcd(553,161)=7\text{.}\) If we would like to express 7 as \(553x+161y\) for some \(x,y\in\mathbb{Z}\text{,}\) we can do it by working backwards</p>
+\begin{align*}
+7\amp =70-3\cdot 21\\
+\amp =70-3\cdot (161-2\cdot 70)=-3\cdot 161+7\cdot 70\\
+\amp =-3\cdot 161+7 \cdot (553-3\cdot 161)=7\cdot 553-24\cdot 161\text{.}
+\end{align*}
+<p id="p-108">It follows that \(x=7\) and \(y=-24\text{.}\)</p>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-intro-ex-13" id="intro-ex-13"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.3.5</span>
+</h6></a></article><div id="hk-intro-ex-13" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-109">Use the Euclidean algorithm to find \(\gcd(a,b)\) and compute integers \(x\) and \(y\) for which</p>
+\begin{equation*}
+ax+by=\gcd(a,b):
+\end{equation*}
+<p id="p-110">(a) \(a=678, b=567\text{,}\)</p>
+<p id="p-111">(b) \(a=803, b=319\text{,}\)</p>
+<p id="p-112">(c) \(a=2701, b=2257\text{,}\)</p>
+<p id="p-113">(d) \(a=3397, b=1849\text{.}\)</p></article></div></section></div></main>
+</div>
+</body>
+</html>

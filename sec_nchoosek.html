@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:56+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The number of subsets of a given size</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_orderedsubsets.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="cha_counting.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_money.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_orderedsubsets.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="cha_counting.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_money.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link active"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek" class="active">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_nchoosek"><h2 class="heading hide-type" alt="Section 2.6 The number of subsets of a given size">
+<span class="type">Section</span><span class="codenumber">2.6</span><span class="title">The number of subsets of a given size</span>
+</h2>
+<a href="sec_nchoosek.html" class="permalink">¶</a><p id="p-272">In the Hungarian lottery there are 90 balls in a urn (numbered from 1 to 90). Five numbers of them are chosen in an arbitrary way (usually a celebrity blindly pulls out five balls without putting them back). The order in which the numbers are chosen does not matter, only the chosen numbers themselves (in fact, at the end of the show, the numbers are repeated in their increasing order). People can guess in advance what the five chosen numbers will be, and they can win money depending on how many numbers they managed to guess correctly. The jackpot goes to those, who manage to guess all five numbers properly.</p>
+<p id="p-273">Let us imagine the situation that we want to win the jackpot. How many lottery tickets should we buy for that? Or, in other words, how many ways can the celebrity choose five numbers out of 90? Let us consider first the case, if the order of the five chosen numbers mattered. We have already solved this problem in <a knowl="./knowl/thm_orderedsubsets.html" knowl-id="xref-thm_orderedsubsets" alt="Theorem 2.5.2 " title="Theorem 2.5.2 ">Theorem 2.5.2</a> of <a href="sec_orderedsubsets.html" class="xref" alt="Section 2.5 The number of ordered subsets of a given size" title="Section 2.5 The number of ordered subsets of a given size">Section 2.5</a>. There are 90 possibilities to choose the first number, then there are 89 possibilities to choose the second number, 88 possibilities to choose the third number, 87 possibilities to choose the fourth number, and finally, there are 86 possibilities to choose the fifth number. Thus the number of possibilities to choose five numbers such that <em class="emphasis">their order counts</em> is</p>
+\begin{equation*}
+90 \cdot 89 \cdot 88 \cdot 87 \cdot 86 = 5~273~912~160\text{.}
+\end{equation*}
+<p id="p-274">Now, to count the number of unordered possibilities we can try the same trick we successfully implemented in <a href="sec_anagrams.html" class="xref" alt="Section 2.4 Anagrams" title="Section 2.4 Anagrams">Section 2.4</a> and <a href="sec_orderedsubsets.html" class="xref" alt="Section 2.5 The number of ordered subsets of a given size" title="Section 2.5 The number of ordered subsets of a given size">Section 2.5</a>. That is, let us group together those chosen five numbers, where the five numbers are the same, they only differ in the order they were chosen. Let us name these groups with the chosen five numbers. For example, there will be a group called ‘1, 2, 3, 4, 5’, which contains all possible choosing of 1, 2, 3, 4, 5, in any order. Similarly, there will be a group called ‘13, 42, 51, 66, 90’ containing all possible choosing of these five numbers. For example, if the numbers chosen were (in order) ‘42, 13, 90, 66, 51’, then they are put into the group ‘13, 42, 51, 66, 90’. Similarly, the numbers ‘51, 66, 90, 13, 42’ are put into the group ‘13, 42, 51, 66, 90’, as well. We are interested in the number of groups. To count the number of groups, we first count the number of ordered five numbers in one group. How many elements does the group ‘13, 42, 51, 66, 90’ have? This group contains all possible orders in which one can choose these five numbers. This is the number of permutations of these five numbers. That is, there are \(5! = 120\)-many orders in the group ‘13, 42, 51, 66, 90’. Similarly, there are \(5! = 120\)-many orders in every other group. Therefore the number of groups (and the number of possible ways to choose five numbers out of 90) is</p>
+\begin{equation*}
+\frac{90 \cdot 89 \cdot 88 \cdot 87 \cdot 86}{5!} = \frac{5~273~912~160}{120} = 43~949~268\text{.}
+\end{equation*}
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_90choose5" id="ex_90choose5"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.6.1</span>
+</h6></a></article><div id="hk-ex_90choose5" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-275">Which number is bigger?</p>
+\begin{align*}
+\amp \frac{90 \cdot 89 \cdot 88 \cdot 87 \cdot 86}{5!} \amp \text{ or } \amp  \amp \frac{90!}{5! \cdot 85!}
+\end{align*}
+</article></div>
+<p id="p-276">The number occurring in <a knowl="./knowl/ex_90choose5.html" knowl-id="xref-ex_90choose5" alt="Exercise 2.6.1 " title="Exercise 2.6.1 ">Exercise 2.6.1</a> is so important, that it has its own name. We denote it by \(\binom{90}{5}\) (read as ‘90 choose 5’), and it equals</p>
+\begin{equation*}
+\binom{90}{5} = \frac{90!}{5! \cdot 85!}\text{.}
+\end{equation*}
+<p id="p-277">In general, we can define \(\binom{n}{k}\) similarly.</p>
+<article class="definition-like" id="definition-13"><h6 class="heading">
+<span class="type">Definition</span><span class="codenumber">2.6.2</span>
+</h6>
+<p id="p-278">Let \(\binom{n}{k}\) (read ‘\(n\) choose \(k\)’) be</p>
+\begin{equation*}
+\binom{n}{k} = \frac{n!}{k! \cdot (n-k)!}\text{.}
+\end{equation*}
+<p id="p-279">These numbers are called <b class="terminology">binomial coefficients</b>.</p></article><article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_smallnchoosek" id="ex_smallnchoosek"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.6.3</span>
+</h6></a></article><div id="hk-ex_smallnchoosek" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-280">Calculate the numbers \(\binom{n}{k}\) for \(n = 0, 1, 2, 3, 4, 5, 6\) and \(k = 0, 1, \dots, n\text{.}\)</p></article></div>
+<p id="p-281">Usually, it is easier to calculate \(\binom{n}{k}\) as in the left hand side of <a knowl="./knowl/ex_90choose5.html" knowl-id="xref-ex_90choose5" alt="Exercise 2.6.1 " title="Exercise 2.6.1 ">Exercise 2.6.1</a>.</p>
+<article class="theorem-like" id="prop_nchoosek"><h6 class="heading">
+<span class="type">Proposition</span><span class="codenumber">2.6.4</span>
+</h6>
+<p id="p-282">For \(n\geq k\geq 1\) we have</p>
+\begin{equation*}
+\binom{n}{k} = \frac{n \cdot (n-1) \cdot \dots \cdot (n-k+1)}{k!}\text{.}
+\end{equation*}
+</article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-11" id="proof-11"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-11" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-283">The following calculation shows that the two sides are equal:</p>
+\begin{align*}
+\binom{n}{k} \amp = \frac{n!}{k! \cdot (n-k)!} = \frac{n \cdot (n-1) \cdot \dots \cdot (n-k+1) \cdot (n-k)!}{k! \cdot (n-k)!}\\
+\amp = \frac{n \cdot (n-1) \cdot \dots \cdot (n-k+1)}{k!}\text{.}
+\end{align*}
+</article></div>
+<p id="p-284">Now, we are ready to generalize our results on the lottery. With that argument we proved that the number of possibilities to choose 5 numbers out of 90 is \(\binom{90}{5}\text{.}\) This is the same as to say that the number of 5-element subsets of a 90-element set is \(\binom{90}{5}\text{.}\)</p>
+<article class="theorem-like" id="thm_nchoosek"><h6 class="heading">
+<span class="type">Theorem</span><span class="codenumber">2.6.5</span>
+</h6>
+<p id="p-285">The number of \(k\)-element subsets of an \(n\)-element set is</p>
+\begin{equation}
+\binom{n}{k} = \frac{n!}{k! \cdot (n-k)!} = \frac{n \cdot (n-1) \cdot \dots \cdot (n-k+1)}{k!}\text{.}\label{eq_binom}\tag{2.6.1}
+\end{equation}
+</article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-12" id="proof-12"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-12" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-286">The number of \(k\)-element <em class="emphasis">ordered</em> subsets is \(\frac{n!}{(n-k)!}\) by <a knowl="./knowl/thm_orderedsubsets.html" knowl-id="xref-thm_orderedsubsets" alt="Theorem 2.5.2 " title="Theorem 2.5.2 ">Theorem 2.5.2</a>. To count the number of unordered \(k\)-element subsets we group together those \(k\)-element subsets, which differ only in their order. That is, every group contains different orderings of the same \(k\) elements. Every group contains \(k!\)-many orderings, since \(k!\) is the number of possible permutations of those \(k\) elements. Therefore the number of groups (and the number of \(k\)-element subsets) is</p>
+\begin{equation*}
+\frac{\frac{n!}{(n-k)!}}{k!} = \frac{n!}{k! \cdot (n-k)!} = \binom{n}{k}\text{.}
+\end{equation*}
+<p id="p-287">By <a knowl="./knowl/prop_nchoosek.html" knowl-id="xref-prop_nchoosek" alt="Proposition 2.6.4 " title="Proposition 2.6.4 ">Proposition 2.6.4</a> this is the same number as</p>
+\begin{equation*}
+\frac{n \cdot (n-1) \cdot \dots \cdot (n-k+1)}{k!}\text{.}
+\end{equation*}
+</article></div>
+<p id="p-288">In light of <a knowl="./knowl/thm_nchoosek.html" knowl-id="xref-thm_nchoosek" alt="Theorem 2.6.5 " title="Theorem 2.6.5 ">Theorem 2.6.5</a>, the binomial coefficients are important numbers. Therefore, we spend some time to know them a little bit better. It is easy to calculate (and remember) some particular binomial coefficients.</p>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_nicenchoosek" id="ex_nicenchoosek"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.6.6</span>
+</h6></a></article><div id="hk-ex_nicenchoosek" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-289">What is \(\binom{n}{0}\text{,}\) \(\binom{n}{1}\text{,}\) \(\binom{n}{2}\text{,}\) \(\binom{n}{n-2}\text{,}\) \(\binom{n}{n-1}\) and \(\binom{n}{n}\) in general?</p></article></div>
+<p id="p-290">Moreover, it is pretty straightforward from formula <a knowl="./knowl/eq_binom.html" knowl-id="xref-eq_binom" alt="Equation 2.6.1 " title="Equation 2.6.1 ">(2.6.1)</a> that</p>
+<article class="theorem-like" id="prop_symmetryofbinomial"><h6 class="heading">
+<span class="type">Proposition</span><span class="codenumber">2.6.7</span>
+</h6>
+<p id="p-291">For non-negative integers \(n\geq k\) we have</p>
+\begin{equation*}
+\binom{n}{k} = \binom{n}{n-k}\text{.}
+\end{equation*}
+</article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-13" id="proof-13"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-13" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-292">Rather than simply substituting into <a knowl="./knowl/eq_binom.html" knowl-id="xref-eq_binom" alt="Equation 2.6.1 " title="Equation 2.6.1 ">(2.6.1)</a>, we give a combinatorial argument. That is, we give a combinatorial meaning to both sides of the equation, that is, they both will count the same thing. Naturally, if they count the same thing, they must be equal.</p>
+<p id="p-293">The left hand side counts the number of \(k\)-element subsets of an \(n\)-element set. The right hand side counts the number of \((n-k)\)-element subsets of an \(n\)-element set. We prove that there are the same number of \(k\)-element subsets as \((n-k)\)-element subsets. Let \(S\) be an \(n\)-element set, and let us map every \(k\)-element subset into its complementer. This way, we map every \(k\)-element subset to an \((n-k)\)-element subset. Moreover, different \(k\)-element subsets are mapped to different \((n-k)\)-element subsets. Finally, every \((n-k)\)-element subsets is mapped from a \(k\)-element subset (in fact, it is mapped from its complementer). Therefore this map is a one-to-one correspondence between the \(k\)-element subsets and the \((n-k)\)-element subsets.</p>
+<p id="p-294">We can think about this proof in the following way. Choosing \(k\) elements out of \(n\) elements is the same as <em class="emphasis">not choosing</em> \((n-k)\)-elements. That is, deciding which \((n-k)\) elements will not be chosen is the same as deciding which \(k\) elements will be chosen. We can ‘not choose’ \((n-k)\) elements in \(\binom{n}{n-k}\)-many ways, which therefore must be the same as the number of choices to choose \(k\) elements, which is \(\binom{n}{k}\text{.}\)</p></article></div>
+<p id="p-295">Finally, let us conclude this Section by calculating the sum of the binomial coefficients.</p>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_sumsmallnchoosek" id="ex_sumsmallnchoosek"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.6.8</span>
+</h6></a></article><div id="hk-ex_sumsmallnchoosek" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-296">Calculate the sum</p>
+\begin{equation*}
+\sum_{k=0}^n \binom{n}{k} = \binom{n}{0} + \binom{n}{1} + \binom{n}{2} + \dots + \binom{n}{n-1} + \binom{n}{n}
+\end{equation*}
+<p>for \(n=0, 1, 2, 3, 4, 5, 6\text{.}\)</p></article></div>
+<p id="p-297">After solving <a knowl="./knowl/ex_sumsmallnchoosek.html" knowl-id="xref-ex_sumsmallnchoosek" alt="Exercise 2.6.8 " title="Exercise 2.6.8 ">Exercise 2.6.8</a>, one can conjecture on the general case:</p>
+<article class="theorem-like" id="prop_sumofbinomial"><h6 class="heading">
+<span class="type">Proposition</span><span class="codenumber">2.6.9</span>
+</h6>
+<p id="p-298">For every positive integer \(n\) we have</p>
+\begin{equation*}
+\sum_{k=0}^n \binom{n}{k} = \binom{n}{0} + \binom{n}{1} + \binom{n}{2} + \dots + \binom{n}{n-1} + \binom{n}{n} = 2^n\text{.}
+\end{equation*}
+</article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-14" id="proof-14"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-14" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-299">Again, we give a combinatorial argument. The right hand side counts the number of subsets of an \(n\)-element set. We prove that the left hand side counts the same, only in a different manner. It counts the number of subsets in a way that first we choose how many elements the subset will have, and then we count the number of subsets with that many elements.</p>
+<p id="p-300">That is, a subset of an \(n\)-element set can have \(0\text{,}\) \(1\text{,}\) \(2\text{,}\) \(\dots\text{,}\) \((n-1)\) or \(n\) elements. An \(n\)-element set has \(\binom{n}{0}\)-many \(0\)-element subsets, \(\binom{n}{1}\)-many \(1\)-element subsets, \(\binom{n}{2}\)-many \(2\)-element subsets, etc., \(\binom{n}{n-1}\)-many \((n-1)\)-element subsets, and \(\binom{n}{n}\)-many \(n\)-element subsets. That is, the number of subsets the \(n\)-element set has is</p>
+\begin{equation*}
+\binom{n}{0} + \binom{n}{1} + \binom{n}{2} + \dots + \binom{n}{n-1} + \binom{n}{n}\text{.}
+\end{equation*}
+<p id="p-301">Alternatively, we can say that an \(n\)-element set can have \(k\)-element subsets for \(0 \leq k\leq n\text{.}\) An \(n\)-element set has exactly \(\binom{n}{k}\)-many \(k\)-element subsets, hence it has \(\sum_{k=0}^n \binom{n}{k}\)-many subsets altogether.</p>
+<p id="p-302">As the left hand side and the right hand side count the same thing (the number of subsets of an \(n\)-element set), they must be equal.</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_nmidnchoose2" id="ex_nmidnchoose2"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.6.10</span>
+</h6></a></article><div id="hk-ex_nmidnchoose2" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-303">For what \(n\) does \(n\) divide \(\binom{n}{2}\text{?}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_n_2binom" id="ex_n_2binom"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.6.11</span>
+</h6></a></article><div id="hk-ex_n_2binom" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-304">Prove that \(n^2 = \binom{n+1}{2} + \binom{n}{2}\) for \(n\geq 2\text{.}\)</p></article></div></section></div></main>
+</div>
+</body>
+</html>

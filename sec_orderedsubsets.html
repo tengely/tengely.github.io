@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:56+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The number of ordered subsets of a given size</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_anagrams.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="cha_counting.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_nchoosek.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_anagrams.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="cha_counting.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_nchoosek.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link active"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets" class="active">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_orderedsubsets"><h2 class="heading hide-type" alt="Section 2.5 The number of ordered subsets of a given size">
+<span class="type">Section</span><span class="codenumber">2.5</span><span class="title">The number of ordered subsets of a given size</span>
+</h2>
+<a href="sec_orderedsubsets.html" class="permalink">¶</a><p id="p-254">Now, we move to the world of Formula 1. During Formula 1 racing some cars obtain points (usually the cars finishing the race first), and these points are accumulated during the whole season. This is how the order in the Driver's Championship is based on.</p>
+<p id="p-255">Between 1960 and 2002 only the first six cars (out of 22) finishing the race obtained points. The scoring system had changed a lot during these years, but we concentrate on the fact that some of the drivers obtain points. Moreover, depending on their place they obtain different points. That is, the order of the first six cars matter, but the order of all the other cars do not matter (for the Driver's Championship).</p>
+<p id="p-256">We are interested in how many possible outcomes exist for the Driver's Championship. That is, how many ways can we choose the first 6 cars out of 22 if their order counts? We can try to count the number of possibilities similarly as in <a href="sec_permutations.html" class="xref" alt="Section 2.3 Permutations" title="Section 2.3 Permutations">Section 2.3</a>, when we counted the number of permutations of some elements. For the first place 22 cars can arrive. No matter which car finishes the race first, there will be 21 possible cars to finish the race second. Then, there will be 20 possible cars to finish the race as the third. Then, there are 19 possibilities for the fourth place, 18 possibilities for the fifth place, and finally, there will remain 17 cars who can finish the race as sixth. Since the order of all the remaining cars does not matter (for the Driver's Championship), the number of possibilities for the first six cars is</p>
+\begin{equation*}
+22\cdot 21 \cdot 20 \cdot 19 \cdot 18 \cdot 17 = 53~721~360\text{.}
+\end{equation*}
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_22-6" id="ex_22-6"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.5.1</span>
+</h6></a></article><div id="hk-ex_22-6" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-257">Which number is bigger?</p>
+\begin{align*}
+\amp 22\cdot 21 \cdot 20 \cdot 19 \cdot 18 \cdot 17 \amp \text{ or } \amp  \amp \frac{22!}{16!}
+\end{align*}
+</article></div>
+<p id="p-258"><a knowl="./knowl/ex_22-6.html" knowl-id="xref-ex_22-6" alt="Exercise 2.5.1 " title="Exercise 2.5.1 ">Exercise 2.5.1</a> can help us to obtain the answer for our question in a different way. Altogether there are \(22!\) possible orders for the 22 cars (this is the number of permutations of 22 cars). But not all of these are considered to be different for the Driver's Championship. In fact, those cases will be considered the same where the first six are the same (and in the same order). Just as we did in <a href="sec_anagrams.html" class="xref" alt="Section 2.4 Anagrams" title="Section 2.4 Anagrams">Section 2.4</a> for counting the anagrams, we can group together those permutations of the 22 cars, which are the same for the Driver's Championship, that is, where the order of the first six cars is the same. We can name every group with the order of the first six cars. Thus, we are interested in the number of groups we have. In one group there are those permutations, where the order of the first six cars is the same, thus they only differ in the last \(22-6 = 16\) cars. There are \(16!\) possible permutations of the last 16 cars, therefore every group contains \(16!\) orderings of the 22 cars. Hence, the number of possibilities (for the Driver's Championship) is</p>
+\begin{equation*}
+\frac{22!}{(22-6)!} = \frac{22!}{16!} = 22 \cdot 21 \cdot 20 \cdot 19 \cdot 18 \cdot 17 = 53~721~360\text{.}
+\end{equation*}
+<p id="p-259">Let us try to generalize the result. We considered a set of 22 cars (the racing cars). We were interested in the first six arriving. That is, we were interested in the number of 6-element sets, but the order of those 6 elements counted, as well. Thus, we may generalize our results in the following way.</p>
+<article class="theorem-like" id="thm_orderedsubsets"><h6 class="heading">
+<span class="type">Theorem</span><span class="codenumber">2.5.2</span>
+</h6>
+<p id="p-260">Let \(S\) be a set of \(n\) elements, and let \(0\leq k\leq n\) be an integer. The number of ordered \(k\)-element sets is</p>
+\begin{equation*}
+n \cdot (n-1) \cdot \dots \cdot (n-k+1) = \frac{n!}{(n-k)!}\text{.}
+\end{equation*}
+</article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-10" id="proof-10"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-10" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-261">For the first element we have \(n\) possibilities to choose from. No matter which element we chose first, there will be \((n-1)\) possibilities to choose a second element. Then, there will be \((n-2)\) possibilities to choose a third element, etc. Finally, there will remain \((n-k+1)\) possibilities to choose the \(k\)th element, as we have already chosen \((k-1)\) elements. Thus the number of the ordered \(k\)-element subsets is</p>
+\begin{align*}
+n \cdot (n-1) \cdot \dots \cdot (n-k+1) \amp = \frac{n \cdot (n-1) \cdot \dots \cdot (n-k+1) \cdot (n-k)!}{(n-k)!}\\
+\amp = \frac{n!}{(n-k)!}\text{.}
+\end{align*}
+</article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_orderedsubsets" id="ex_orderedsubsets"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.5.3</span>
+</h6></a></article><div id="hk-ex_orderedsubsets" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-262">Prove <a knowl="./knowl/thm_orderedsubsets.html" knowl-id="xref-thm_orderedsubsets" alt="Theorem 2.5.2 " title="Theorem 2.5.2 ">Theorem 2.5.2</a> using the other method.</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_forma1" id="ex_forma1"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.5.4</span>
+</h6></a></article><div id="hk-ex_forma1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><ol id="ol-5" style="list-style-type: decimal;">
+<li id="li-19"><p id="p-263">Between 2003 and 2009, the first eight cars finishing the race counts for the Driver's Championship. How many possibilities are there for the first eight cars (out of 22)?</p></li>
+<li id="li-20"><p id="p-264">Nowadays, the first ten cars finishing the race counts for the Driver's Championship. How many possibilities are there for the first ten cars (out of 22)?</p></li>
+</ol></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_competition" id="ex_competition"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.5.5</span>
+</h6></a></article><div id="hk-ex_competition" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-265">There are \(n\) people at a running competition. In the end, only the first \(k\) arrivals are recorded into a final list. How many possible lists exist if </p>
+<ol id="ol-6" style="list-style-type: decimal;">
+<li id="li-21"><p id="p-266">\(n = 10\) and \(k=3\text{,}\)</p></li>
+<li id="li-22"><p id="p-267">\(n = 12\) and \(k=3\text{,}\)</p></li>
+<li id="li-23"><p id="p-268">\(n = 10\) and \(k=4\text{,}\)</p></li>
+<li id="li-24"><p id="p-269">\(n = 12\) and \(k=4\text{,}\)</p></li>
+<li id="li-25"><p id="p-270">\(n = 8\) and \(k=5\text{,}\)</p></li>
+<li id="li-26"><p id="p-271">\(n = 10\) and \(k=5\text{?}\)</p></li>
+</ol></article></div></section></div></main>
+</div>
+</body>
+</html>

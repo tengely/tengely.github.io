@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:59+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Recurrence sequences</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-25.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="cha_solutions.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="backmatter-1.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-25.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="cha_solutions.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="backmatter-1.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link active"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26" class="active">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-26"><h2 class="heading hide-type" alt="Section 6.5 Recurrence sequences">
+<span class="type">Section</span><span class="codenumber">6.5</span><span class="title">Recurrence sequences</span>
+</h2>
+<ol id="ol-27" style="list-style-type: decimal;">
+<li id="li-232"><p id="p-911"><a knowl="./knowl/seq-ex-1.html" knowl-id="xref-seq-ex-1" alt="Exercise 5.2.4 " title="Exercise 5.2.4 ">Exercise 5.2.4</a> We use the notation as follows 1: the largest disk, 2: the second largest disk, 3: the second smallest disk, 4: the smallest disk. At the beginning there are 4 disks on peg \(A\text{,}\) it is denoted as \(\halmaz{1,2,3,4}\text{,}\) while peg \(B\) and peg \(C\) has no disks at all, so we write \(\halmaz{}\text{.}\) <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"># move</td>
+<td class="l m b0 r0 l0 t0 lines">peg \(A\)</td>
+<td class="l m b0 r0 l0 t0 lines">peg \(B\)</td>
+<td class="l m b0 r0 l0 t0 lines">peg \(C\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 1, 2, 3, 4 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 1, 2, 3 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 4 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 1, 2 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 4 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 3 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 1, 2 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 3, 4 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 1 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 2 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 3, 4 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 1, 4 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 2 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 3 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 1, 4 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 2, 3 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 1 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 2, 3, 4 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 2, 3, 4 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 1 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 2, 3 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 1, 4 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 3 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 2 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 1, 4 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 3, 4 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 2 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 1 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 3, 4 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 1, 2 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">13</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 3 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 4 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 1, 2 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">14</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 4 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 1, 2, 3 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">15</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 1, 2, 3, 4 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table></p></li>
+<li id="li-233">
+<p id="p-912"><a knowl="./knowl/seq-ex-2.html" knowl-id="xref-seq-ex-2" alt="Exercise 5.2.5 " title="Exercise 5.2.5 ">Exercise 5.2.5</a> The idea is to determine geometric progressions satisfying the same recurrence relation as \(a_n\text{.}\) Let \(g_n\) be a geometric progression with the above mentioned property such that \(g_n=g_0r^n\) for some \(g_0\) and \(r\text{.}\) It follows that</p>
+\begin{equation*}
+r^2=7r-10\Rightarrow r^2-7r+10=0\text{.}
+\end{equation*}
+<p>Solving the quadratic equation yields that \(r=2\) or 5. We obtained two appropriate progressions and we know that linear combinations of these progressions satisfy exactly the same recurrence. Define \(W_n\) as follows</p>
+\begin{equation*}
+W_n=s\cdot 2^n+t\cdot 5^n\text{.}
+\end{equation*}
+<p>We try to fix \(s\) and \(t\) such that \(W_0=a_0\) and \(W_1=a_1\text{.}\) We get that</p>
+\begin{align*}
+\amp W_0=a_0=0,\\
+\amp W_1=a_1=2\text{.}
+\end{align*}
+<p>Therefore</p>
+\begin{align*}
+s+t\amp =0,\\
+2s+5t\amp =2\text{.}
+\end{align*}
+<p>The solution of the above system of equations is \(s=-2/3, t=2/3\text{.}\) Hence</p>
+\begin{equation*}
+a_n=W_n=-\frac{2}{3}\cdot 2^n+\frac{2}{3}\cdot 5^n\text{.}
+\end{equation*}
+</li>
+<li id="li-234">
+<p id="p-913"><a knowl="./knowl/seq-ex-3.html" knowl-id="xref-seq-ex-3" alt="Exercise 5.2.6 " title="Exercise 5.2.6 ">Exercise 5.2.6</a> Let \(g_n\) be a geometric progression satisfying the same recurrence relation as \(a_n\) such that \(g_n=g_0r^n\) for some \(g_0\) and \(r\text{.}\) We have that</p>
+\begin{equation*}
+r^2=4r-3\Rightarrow r^2-4r+3=0\text{.}
+\end{equation*}
+<p>That is, \(r\in\halmaz{1,3}\text{.}\) The linear combination we consider now is</p>
+\begin{equation*}
+W_n=s\cdot 1^n+t\cdot 3^n=s+t\cdot 3^n\text{.}
+\end{equation*}
+<p>The additional conditions imply that</p>
+\begin{align*}
+\amp W_0=a_0=1,\\
+\amp W_1=a_1=13\text{.}
+\end{align*}
+<p>Therefore</p>
+\begin{align*}
+s+t\amp =1,\\
+s+3t\amp =13\text{.}
+\end{align*}
+<p>We get the solution \(s=-5,t=6\text{.}\) The explicit formula for \(a_n\) is</p>
+\begin{equation*}
+-5+6\cdot 3^n\text{.}
+\end{equation*}
+</li>
+<li id="li-235">
+<p id="p-914"><a knowl="./knowl/seq-ex-4.html" knowl-id="xref-seq-ex-4" alt="Exercise 5.2.7 " title="Exercise 5.2.7 ">Exercise 5.2.7</a> This is an example of an order 3 linear recurrence. We define \(g_n=g_0r^n\) for some \(g_0\) and \(r\text{,}\) which is a geometric progression. We assume that it satisfies the same recurrence relation as \(a_n\text{,}\) that is, we obtain</p>
+\begin{equation*}
+r^3=-2r^2+r+2\text{.}
+\end{equation*}
+<p>It is a cubic polynomial. We look for integer solutions. If there is an integral root, then it divides 2. Hence the possible integral roots are \(\pm 2,\pm 1\text{.}\) <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(r\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(r^3+2r^2-r-2\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">-2</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">-1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table> The cubic polynomial \(r^3+2r^2-r-2\) can be written as \(\left(x-1\right) \cdot \left(x+1\right) \cdot \left(x+2\right)\text{,}\) that is, there are three integral roots. In this case we have three geometric progressions satisfying the recurrence, therefore the appropriate linear combination is</p>
+\begin{equation*}
+W_n=s\cdot (-2)^n+t\cdot (-1)^n+u\cdot 1^n\text{.}
+\end{equation*}
+<p>The corresponding system of linear equations is</p>
+\begin{align*}
+s+t+u\amp =0,\\
+-2s-t+u\amp =1,\\
+4s+t+u\amp =2\text{.}
+\end{align*}
+<p>We subtract the first equation from the third one to get \(3s=2\text{.}\) So we have that \(s=2/3\text{.}\) We eliminate \(s\) from the first two equations</p>
+\begin{align*}
+t+u\amp =-\frac{2}{3},\\
+-t+u\amp =\frac{7}{3}\text{.}
+\end{align*}
+<p>It is easy to see that \(u=5/6\) and \(t=-3/2\text{.}\) The explicit formula for \(a_n\) is</p>
+\begin{equation*}
+\frac23 \cdot (-2)^n-\frac32\cdot (-1)^n+\frac56\text{.}
+\end{equation*}
+</li>
+<li id="li-236">
+<p id="p-915"><a knowl="./knowl/seq-ex-5.html" knowl-id="xref-seq-ex-5" alt="Exercise 5.2.8 " title="Exercise 5.2.8 ">Exercise 5.2.8</a> The solution is similar to the previous one, so we only provide some details of the computation. The cubic polynomial in this case is</p>
+\begin{equation*}
+r^3-6r^2+11r-6\text{.}
+\end{equation*}
+<p><table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(r\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(r^3-6r^2+11r-6\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(-6\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(-504\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(-3\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(-120\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(-2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(-60\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(-1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(-24\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(3\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(6\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(60\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table> The three roots of the equation are 1, 2 and 3. Let \(W_n=s\cdot 1^n+t\cdot 2^n+u\cdot 3^n\text{.}\) The initial values should be equal as well, hence</p>
+\begin{align*}
+s+t+u\amp =0,\\
+s+2t+3u\amp =0,\\
+s+4t+9u\amp =1\text{.}
+\end{align*}
+<p>It is easy to eliminate \(s\) from the second and the third equation</p>
+\begin{align*}
+t+2u\amp =0,\\
+3t+8u\amp =1\text{.}
+\end{align*}
+<p>Therefore \(u=1/2, t=-1\) and \(s=1/2\text{.}\) We obtain the following explicit formula</p>
+\begin{equation*}
+a_n=\frac{1}{2}-2^n+\frac{1}{2}\cdot 3^n\text{.}
+\end{equation*}
+</li>
+<li id="li-237">
+<p id="p-916"><a knowl="./knowl/seq-ex-6.html" knowl-id="xref-seq-ex-6" alt="Exercise 5.2.9 " title="Exercise 5.2.9 ">Exercise 5.2.9</a> In this exercise we have an order 2 recurrence sequence. Following the method we described we get a quadratic polynomial</p>
+\begin{equation*}
+r^2-4r+4=(r-2)^2\text{.}
+\end{equation*}
+<p>It has only a multiple root, so we have to consider the linear combinations of \(2^n\) and \(n\cdot 2^n\text{.}\) That is,</p>
+\begin{equation*}
+W_n=s\cdot 2^n+tn\cdot 2^n\text{.}
+\end{equation*}
+<p>The initial values of \(a_n\) are \(a_0=-1\) and \(a_1=0\text{,}\) hence the system of linear equations is</p>
+\begin{align*}
+s\amp =-1,\\
+2s+2t\amp =0\text{.}
+\end{align*}
+<p>It is clear that \(s=-1\) and \(t=1\text{.}\) Thus the closed-form formula for \(a_n\) is</p>
+\begin{equation*}
+-2^n+n\cdot 2^n\text{.}
+\end{equation*}
+</li>
+<li id="li-238">
+<p id="p-917"><a knowl="./knowl/seq-ex-7.html" knowl-id="xref-seq-ex-7" alt="Exercise 5.2.10 " title="Exercise 5.2.10 ">Exercise 5.2.10</a> As before we reduce the problem to a polynomial equation, which is</p>
+\begin{equation*}
+r^3-5r^2+3r+9\text{.}
+\end{equation*}
+<p>There are 6 possible integral roots, the divisors of 9, that is, \(\halmaz{\pm 9,\pm 3,\pm 1}\text{.}\) <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(r\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(r^3-5r^2+3r+9\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(-9\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(-1152\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(-3\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(-72\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(-1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(8\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(3\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(9\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(360\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table> We obtained only 2 roots of the cubic polynomial. Dividing the polynomial \(r^3-5r^2+3r+9\) by \((r+1)\cdot (r-3)\) we get \(r-3\) and the remainder is 0. That means that</p>
+\begin{equation*}
+r^3-5r^2+3r+9=(r+1)\cdot (r-3)^2\text{.}
+\end{equation*}
+<p>There is a double root, so \(W_n\) is defined as</p>
+\begin{equation*}
+s\cdot (-1)^n+t\cdot 3^n+un\cdot 3^n\text{.}
+\end{equation*}
+<p>Substituting \(n=0,1,2\) yields</p>
+\begin{align*}
+s+t\amp =3,\\
+-s+3t+3u\amp =4,\\
+s+9t+18u\amp =29\text{.}
+\end{align*}
+<p>Using that \(s=3-t\) we obtain</p>
+\begin{align*}
+4t+3u\amp =7,\\
+8t+18u\amp =26\text{.}
+\end{align*}
+<p>So we have the solution \(s=2,t=1\) and \(u=1\text{.}\) The explicit formula for \(a_n\) is given by</p>
+\begin{equation*}
+2\cdot (-1)^n+3^n+n\cdot 3^n\text{.}
+\end{equation*}
+</li>
+<li id="li-239">
+<p id="p-918"><a knowl="./knowl/seq-ex-8.html" knowl-id="xref-seq-ex-8" alt="Exercise 5.2.11 " title="Exercise 5.2.11 ">Exercise 5.2.11</a> Consider the sequence</p>
+\begin{equation*}
+u_n=\left(\frac{5-3\sqrt{5}}{2}\right)^n+\left(\frac{5+3\sqrt{5}}{2}\right)^n, n\geq 0\text{.}
+\end{equation*}
+<p>We have \(u_0=2\) and \(u_1=5\text{.}\) We try to find a second order linear recurrence satisfied by \(u_n\text{.}\) If there is such a recurrence, then the corresponding quadratic polynomial is</p>
+\begin{equation*}
+\left(r-\frac{5-3\sqrt{5}}{2}\right)\cdot \left(r-\frac{5+3\sqrt{5}}{2}\right)=r^2-5r-5\text{.}
+\end{equation*}
+<p>Therefore the possible recurrence relation is</p>
+\begin{equation*}
+u_n=5u_{n-1}+5u_{n-2}=5\cdot (u_{n-1}+u_{n-2})\text{.}
+\end{equation*}
+<p>Now we have that \(u_n\) is an integer for all \(n\) and \(u_n\) is a multiple of 5 if \(n\geq 1\text{.}\)</p>
+</li>
+<li id="li-240">
+<p id="p-919"><a knowl="./knowl/seq-ex-9.html" knowl-id="xref-seq-ex-9" alt="Exercise 5.2.12 " title="Exercise 5.2.12 ">Exercise 5.2.12</a> We have a sequence</p>
+\begin{equation*}
+u_n=(4-\sqrt{3})^n+(4+\sqrt{3})^n, n\geq 0\text{.}
+\end{equation*}
+<p>One computes that \(u_0=2\) and \(u_1=8\text{,}\) that is, the first two elements of the sequence is divisible by 2. The quadratic polynomial</p>
+\begin{equation*}
+\left(r-4+\sqrt{2}\right)\cdot \left(r-4-\sqrt{2}\right)=r^2-8r+14
+\end{equation*}
+<p>is the polynomial corresponding to the appropriate recurrence relation. Hence the recurrence sequence is given by</p>
+\begin{align*}
+u_0\amp =2,\\
+u_1\amp =8,\\
+u_n\amp =8u_{n-1}-14u_{n-2} n\geq 2\text{.}
+\end{align*}
+<p>The statement follows easily since \(u_0=2\cdot 1, u_1=2\cdot 4\) and \(u_n=2\cdot(4u_{n-1}-7u_{n-2})\text{.}\)</p>
+</li>
+</ol></section></div></main>
+</div>
+</body>
+</html>

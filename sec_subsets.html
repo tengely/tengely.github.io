@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:56+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Number of subsets</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_sequences.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="cha_counting.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_permutations.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_sequences.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="cha_counting.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_permutations.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link active"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets" class="active">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_subsets"><h2 class="heading hide-type" alt="Section 2.2 Number of subsets">
+<span class="type">Section</span><span class="codenumber">2.2</span><span class="title">Number of subsets</span>
+</h2>
+<a href="sec_subsets.html" class="permalink">¶</a><p id="p-189">In <a href="sec_sets.html" class="xref" alt="Section 1.1 Sets" title="Section 1.1 Sets">Section 1.1</a> we have learned what a set is, and what its subsets are. Now, we want to count these subsets. Let us begin with some exercises.</p>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_subsetsof3elemetset" id="ex_subsetsof3elemetset"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.2.1</span>
+</h6></a></article><div id="hk-ex_subsetsof3elemetset" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-190">List all subsets of \(\halmaz{1, 2, 3}\text{,}\) \(\halmaz{a, b, c}\text{,}\) \(\halmaz{\text{ Alice, Beth, Carrie } }\text{,}\) \(\halmaz{\text{ apple, banana, cherry } }\text{.}\) How many subsets do these sets have?</p></article></div>
+<p id="p-191">After solving <a knowl="./knowl/ex_subsetsof3elemetset.html" knowl-id="xref-ex_subsetsof3elemetset" alt="Exercise 2.2.1 " title="Exercise 2.2.1 ">Exercise 2.2.1</a>, one suspects that the number of subsets depend only on the cardinality of the set, and not on the actual elements of the set. This is true in general: for example if a set has three elements, then we might as well name the elements \(a\text{,}\) \(b\) and \(c\text{,}\) and then its subsets will be exactly the same as we determined in <a knowl="./knowl/ex_subsetsof3elemetset.html" knowl-id="xref-ex_subsetsof3elemetset" alt="Exercise 2.2.1 " title="Exercise 2.2.1 ">Exercise 2.2.1</a>.</p>
+<p id="p-192">Let us try to determine the number of subsets of a set with given cardinality. Let \(S\) be a set of cardinality 0, i.e. \(S = \emptyset\text{.}\) Then \(S\) has only one subset: \(\emptyset\text{.}\) If \(S\) is a set of cardinality 1, e.g. \(S = \halmaz{a}\text{,}\) then it has two subsets: \(\halmaz{} = \emptyset\text{,}\) \(\halmaz{a} = S\text{.}\) If \(S\) is a set of cardinality 2, e.g. \(S = \halmaz{a, b}\text{,}\) then it has four subsets: \(\halmaz{} = \emptyset\text{,}\) \(\halmaz{a}\text{,}\) \(\halmaz{b}\text{,}\) \(\halmaz{a, b} = S\text{.}\) If \(S\) is a set of cardinality 3, e.g. \(S = \halmaz{a, b, c}\text{,}\) then it has eight subsets: \(\halmaz{} = \emptyset\text{,}\) \(\halmaz{a}\text{,}\) \(\halmaz{b}\text{,}\) \(\halmaz{c}\text{,}\) \(\halmaz{a, b}\text{,}\) \(\halmaz{a, c}\text{,}\) \(\halmaz{b, c}\text{,}\) \(\halmaz{a, b, c} = S\text{.}\) <a knowl="./knowl/fig_subsetsabc.html" knowl-id="xref-fig_subsetsabc" alt="Figure 2.2.2 " title="Figure 2.2.2 ">Figure 2.2.2</a> shows all subsets of \(\halmaz{a, b, c}\text{.}\) In this figure, two sets are connected if the lower one is a subset of the upper one. <a knowl="./knowl/tab_noofsubsets.html" knowl-id="xref-tab_noofsubsets" alt="Table 2.2.3 " title="Table 2.2.3 ">Table 2.2.3</a> summarizes our findings on the number of subsets so far.</p>
+<figure class="figure-like" id="fig_subsetsabc"><img src="images/fig21.png" width="60%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">2.2.2</span>Subsets of \(\halmaz{a, b, c}\text{.}\)</figcaption></figure><figure class="figure-like" id="tab_noofsubsets"><table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Cardinality of \(S\)</td>
+<td class="l m b0 r0 l0 t0 lines">Number of subsets of \(S\)</td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(0\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(4\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(3\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(8\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="codenumber">2.2.3</span>Number of subsets</figcaption></figure><article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_abcde" id="ex_abcde"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.2.4</span>
+</h6></a></article><div id="hk-ex_abcde" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-193">Guess what the rule is by looking at <a knowl="./knowl/tab_noofsubsets.html" knowl-id="xref-tab_noofsubsets" alt="Table 2.2.3 " title="Table 2.2.3 ">Table 2.2.3</a> and listing all subsets of \(\halmaz{a, b, c, d}\) and \(\halmaz{a, b, c, d, e}\text{,}\) if necessary.</p></article></div>
+<p id="p-194">It seems that if \(S\) has \(n\) elements, then it has \(2^n\) subsets. This is reinforced by <a knowl="./knowl/fig_subsetsabc.html" knowl-id="xref-fig_subsetsabc" alt="Figure 2.2.2 " title="Figure 2.2.2 ">Figure 2.2.2</a>, where we represented the subsets of a three-element set by the eight vertices of a cube. This conjecture is true in general:</p>
+<article class="theorem-like" id="thm_noofsubsets"><h6 class="heading">
+<span class="type">Theorem</span><span class="codenumber">2.2.5</span>
+</h6>
+<p id="p-195">Let \(S\) be a set of cardinality \(n\) for some \(n\geq 0\) integer. Then \(S\) has \(2^n\)-many subsets.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-5" id="proof-5"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-5" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-196">Let us denote the elements of \(S\) by \(a_1, a_2, \dots , a_n\text{,}\) that is,</p>
+\begin{equation*}
+S = \halmaz{a_1, a_2, \dots , a_n}\text{.}
+\end{equation*}
+<p id="p-197">Let us try to build a subset \(T\) of \(S\text{,}\) and we count the number of possibilities to create different subsets \(T\text{.}\) First we decide whether or not \(a_1 \in T\text{,}\) that is, whether or not we put \(a_1\) into \(T\text{.}\) This gives us two choices. Now, independent of how we decided on \(a_1\text{,}\) we decide whether or not we want to put \(a_2\) into \(T\text{,}\) that is, whether or not \(a_2 \in T\text{.}\) This, again, gives us two choices. Third (independently on how we decided on the earlier elements) we decide whether or not we put \(a_3\) into \(T\text{,}\) that is, whether or not \(a_3 \in T\text{.}\) This, again, gives us two choices, etc.</p>
+<p id="p-198">This way we decide after each other for every element whether or not we want to put the element into \(T\text{.}\) On the one hand, if at some point we choose differently, then we obtain different subsets in the end. For example, if for \(a_k\) we decide differently, then in one case \(a_k\) will be an element of the subset, in the other case it will not be an element. Thus the two subsets will differ in \(a_k\text{.}\) On the other hand, all subsets can be obtained this way: for a subset \(A\) we decide to put the elements of \(A\) into \(T\text{,}\) and not put other elements in. This way, \(T=A\) will be built.</p>
+<p id="p-199">That is, by deciding for every element whether or not it should be in \(T\) we obtain all subsets exactly once. For each element we have two choices: either we put them into the subset or we do not put them into the subset. These choices on the elements are independent from each other, thus for all \(n\) elements we have</p>
+\begin{equation*}
+\underbrace{2 \cdot 2 \cdot \dots \cdot 2}_{n} = 2^n
+\end{equation*}
+<p>choices. This is the same as the number of subsets of \(S\text{.}\) Thus an \(n\) element set has \(2^n\)-many subsets.</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_subsettrytheproof" id="ex_subsettrytheproof"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.2.6</span>
+</h6></a></article><div id="hk-ex_subsettrytheproof" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-200">For \(S= \halmaz{a, b, c}\) obtain all subsets using this decision algorithm.</p></article></div>
+<p id="p-201">There are different ways to obtain the same result. Another argument can be the following:</p>
+<article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-6" id="proof-6"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-6" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-202">We give a draft of the proof, which can be made precise after reading about mathematical induction. Again, let us denote the elements of \(S\) by \(a_1, a_2, \dots , a_n\text{,}\) that is,</p>
+\begin{equation*}
+S = \halmaz{a_1, a_2, \dots , a_n}\text{.}
+\end{equation*}
+<p id="p-203">Here, every subset either contains \(a_n\) or does not contain \(a_n\text{.}\)</p>
+<p id="p-204">First, consider those subsets, which do not contain \(a_n\text{,}\) and let \(S' = \halmaz{a_1, a_2, \dots, a_{n-1}}\text{.}\) Observe that a subset of \(S\) not containing \(a_n\) is in fact a subset of \(S'\text{.}\) Moreover, every subset of \(S'\) is a subset of \(S\) not containing \(a_n\text{.}\) That is, there is a one-to-one correspondence between the subsets of \(S\) not containing \(a_n\) and the subsets of \(S'\text{.}\)</p>
+<p id="p-205">Now, consider the subsets of \(S\) containing \(a_n\text{.}\) Observe that a subset of \(S\) containing \(a_n\) is in fact a union of a subset of \(S'\) and \(\halmaz{a_n}\text{.}\) That is, it is \(a_n\) added to a subset of \(S'\text{.}\) Moreover, if we add \(a_n\) to every subset of \(S'\) we obtain a subset of \(S\) containing \(a_n\text{.}\) That is, there is a one-to-one correspondence between the subsets of \(S\) containing \(a_n\) and the subsets of \(S'\text{.}\)</p>
+<p id="p-206">Thus, the number of subsets of \(S\) is twice as the number of subsets of \(S'\text{.}\) Continuing this argument, we obtain that the number of subsets of \(S\) is 4 times the number of subsets of \(\halmaz{a_1, \dots , a_{n-2}}\text{,}\) etc. That is, the number of subsets of \(S\) is \(2^n\) times the number of subsets of \(\halmaz{} = \emptyset\text{.}\) As the latter has only 1 subset, \(S\) has exactly \(2^n\)-many subsets.</p></article></div>
+<p id="p-207">Note, that this argument would not have been necessary, as we have already proved the statement of <a knowl="./knowl/thm_noofsubsets.html" knowl-id="xref-thm_noofsubsets" alt="Theorem 2.2.5 " title="Theorem 2.2.5 ">Theorem 2.2.5</a>. Therefore this new proof does not make the statement any more true (in any case, a mathematical statement is either true or not true, there are no degrees to how true it is). What it provides is a different insight into how we can build subsets of a set. For example, this argument can be useful if we need certain types of subsets:</p>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_subsetabcd" id="ex_subsetabcd"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.2.7</span>
+</h6></a></article><div id="hk-ex_subsetabcd" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-208">List all subsets of \(S = \halmaz{a, b, c, d}\) not containing \(d\text{,}\) and note that they are exactly the subsets of \(\halmaz{a, b, c}\text{.}\) Then list all subsets of \(S = \halmaz{a, b, c, d}\) containing \(d\text{,}\) and note that they are exactly the subsets of \(\halmaz{a, b, c}\) with \(d\) added to them.</p></article></div>
+<p id="p-209">It is an interesting coincidence that there are \(2^n\) subsets of an \(n\)-element set, and that exactly \(2^n\)-many at most \(n\)-digit binary numbers exist. Such a coincidence always makes a mathematician suspicious that there might be more to it than just accidental equality.</p>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_subsetabcd01" id="ex_subsetabcd01"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.2.8</span>
+</h6></a></article><div id="hk-ex_subsetabcd01" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-210">Encode all subsets of \(S = \halmaz{a, b, c, d}\) in the following way: for every subset \(T\) we assign an at most four digit binary number. The first digit is 0 if \(d \notin T\text{,}\) and 1 if \(d \in T\text{.}\) Similarly, the second digit is 0 if \(c \notin T\text{,}\) and 1 if \(c \in T\text{.}\) The third digit is 0 if \(b \notin T\text{,}\) and 1 if \(b \in T\text{.}\) Finally, the fourth digit is 0 if \(a \notin T\text{,}\) and 1 if \(a \in T\text{.}\) Note that this is a one-to-one correspondence between the subsets and the at most four digit binary numbers.</p></article></div>
+<p id="p-211">The idea of <a knowl="./knowl/ex_subsetabcd01.html" knowl-id="xref-ex_subsetabcd01" alt="Exercise 2.2.8 " title="Exercise 2.2.8 ">Exercise 2.2.8</a> works in general, as well:</p>
+<article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-7" id="proof-7"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-7" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-212">This time it is probably more helpful to denote the elements of \(S\) by \(a_0, a_1, \dots , a_{n-1}\text{,}\) that is,</p>
+\begin{equation*}
+S = \halmaz{a_0, a_1, \dots , a_{n-1}}\text{.}
+\end{equation*}
+<p id="p-213">Now, we assign an at most \(n\)-digit binary number to every subset of \(S\text{.}\) Let \(T\) be an arbitrary subset of \(S\text{,}\) and we assign a binary number to it in the following way. Its last digit (corresponding to \(2^0\)) is 0 if \(a_0 \notin T\) and 1 if \(a_0 \in T\text{.}\) Similarly, the one but last digit (corresponding to \(2^1\)) is 0 if \(a_1 \notin T\) and 1 if \(a_1 \in T\text{.}\) In general, the \((k+1)\)st digit from the back (corresponding to \(2^k\text{,}\) \(0\leq k\leq n-2\)) is 0 if \(a_k \notin T\) and 1 if \(a_k \in T\text{.}\) Finally, the first digit (corresponding to \(2^{n-1}\)) is 0 if \(a_{n-1} \notin T\) and 1 if \(a_{n-1} \in T\text{.}\) This way we assigned an at most \(n\)-digit binary number to every subset. For different subsets we assigned different binary numbers, and for every number we can easily generate the subset corresponding to it (we just need to add those elements into the subset where the digit is 1). That is, this encoding is a one-to-one correspondence between subsets of \(S\) and the at most \(n\)-digit binary numbers. By <a knowl="./knowl/prop_numberofnatmostdigitbasek.html" knowl-id="xref-prop_numberofnatmostdigitbasek" alt="Proposition 2.1.3 " title="Proposition 2.1.3 ">Proposition 2.1.3</a> we know that there are \(2^n\)-many at most \(n\)-digit binary numbers. Thus, \(S\) has \(2^n\)-many subsets, as well.</p></article></div>
+<p id="p-214">This third proof, again, gives something extra to our knowledge. Now, we have enumerated all the subsets of \(S\text{,}\) and if we are interested in the \(k\)th subset, we can easily compute it.</p>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_encode1" id="ex_encode1"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.2.9</span>
+</h6></a></article><div id="hk-ex_encode1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-215">Let \(S = \halmaz{a_0, a_1, a_2, a_3}\text{.}\) Let us encode the subsets of \(S\) as in the third proof of <a knowl="./knowl/thm_noofsubsets.html" knowl-id="xref-thm_noofsubsets" alt="Theorem 2.2.5 " title="Theorem 2.2.5 ">Theorem 2.2.5</a>. Compute the subsets corresponding to the binary representation of \(11\text{,}\) \(7\text{,}\) \(15\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_encode2" id="ex_encode2"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.2.10</span>
+</h6></a></article><div id="hk-ex_encode2" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-216">Let \(S = \halmaz{a_0, a_1, a_2, a_3, a_4}\text{.}\) Let us encode the subsets of \(S\) as in the third proof of <a knowl="./knowl/thm_noofsubsets.html" knowl-id="xref-thm_noofsubsets" alt="Theorem 2.2.5 " title="Theorem 2.2.5 ">Theorem 2.2.5</a>. Compute the subsets corresponding to the binary representation of \(11\text{,}\) \(7\text{,}\) \(15\text{,}\) \(16\text{,}\) \(31\text{.}\) Compare the results to those of <a knowl="./knowl/ex_encode1.html" knowl-id="xref-ex_encode1" alt="Exercise 2.2.9 " title="Exercise 2.2.9 ">Exercise 2.2.9</a>.</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_encode3" id="ex_encode3"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.2.11</span>
+</h6></a></article><div id="hk-ex_encode3" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-217">Let \(S = \halmaz{a_0, a_1, a_2, a_3, a_4, a_5}\text{.}\) Let us encode the subsets of \(S\) as in the third proof of <a knowl="./knowl/thm_noofsubsets.html" knowl-id="xref-thm_noofsubsets" alt="Theorem 2.2.5 " title="Theorem 2.2.5 ">Theorem 2.2.5</a>. Compute the subset corresponding to the binary representation of \(49\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_encode4" id="ex_encode4"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.2.12</span>
+</h6></a></article><div id="hk-ex_encode4" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-218">Let \(S = \halmaz{a_0, a_1, a_2, a_3, a_4, a_5, a_6}\text{.}\) Let us encode the subsets of \(S\) as in the third proof of <a knowl="./knowl/thm_noofsubsets.html" knowl-id="xref-thm_noofsubsets" alt="Theorem 2.2.5 " title="Theorem 2.2.5 ">Theorem 2.2.5</a>. Compute the subset corresponding to the binary representation of \(101\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_encode5" id="ex_encode5"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.2.13</span>
+</h6></a></article><div id="hk-ex_encode5" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-219">Let \(S = \halmaz{a_0, a_1, a_2, a_3, a_4, a_5, a_6, a_7}\text{.}\) Let us encode the subsets of \(S\) as in the third proof of <a knowl="./knowl/thm_noofsubsets.html" knowl-id="xref-thm_noofsubsets" alt="Theorem 2.2.5 " title="Theorem 2.2.5 ">Theorem 2.2.5</a>. Compute the subset corresponding to the binary representation of \(199\text{.}\)</p></article></div></section></div></main>
+</div>
+</body>
+</html>

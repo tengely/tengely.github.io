@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:56+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Permutations</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_subsets.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="cha_counting.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_anagrams.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_subsets.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="cha_counting.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_anagrams.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link active"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations" class="active">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_permutations"><h2 class="heading hide-type" alt="Section 2.3 Permutations">
+<span class="type">Section</span><span class="codenumber">2.3</span><span class="title">Permutations</span>
+</h2>
+<a href="sec_permutations.html" class="permalink">¶</a><p id="p-220">Three students are taking an oral exam in Mathematics. After the usual half hour preparation time, one by one they tell the examiner about the theorem the examiner gave them. In how many different order can they do the exam? Let the three students be Alice, Beth and Claire.</p>
+<p id="p-221">It is not hard to list all possibilities. For example, Alice can start the exam, and then Beth follows and Claire finishes, or Claire follows and Beth finishes. Similarly, Beth can start with the exam, then Alice can follow and then Claire, or Claire and then Alice. Finally, Claire may start, and Alice continues and then Beth, or Beth continues and Alice finishes. <a knowl="./knowl/tab_perm1.html" knowl-id="xref-tab_perm1" alt="Table 2.3.1 " title="Table 2.3.1 ">Table 2.3.1</a> lists all six possibilities.</p>
+<figure class="figure-like" id="tab_perm1"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">first</td>
+<td class="l m b0 r0 l0 t0 lines">second</td>
+<td class="l m b0 r0 l0 t0 lines">third</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Alice</td>
+<td class="l m b0 r0 l0 t0 lines">Beth</td>
+<td class="l m b0 r0 l0 t0 lines">Claire</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Alice</td>
+<td class="l m b0 r0 l0 t0 lines">Claire</td>
+<td class="l m b0 r0 l0 t0 lines">Beth</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Beth</td>
+<td class="l m b0 r0 l0 t0 lines">Alice</td>
+<td class="l m b0 r0 l0 t0 lines">Claire</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Beth</td>
+<td class="l m b0 r0 l0 t0 lines">Claire</td>
+<td class="l m b0 r0 l0 t0 lines">Alice</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Claire</td>
+<td class="l m b0 r0 l0 t0 lines">Alice</td>
+<td class="l m b0 r0 l0 t0 lines">Beth</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Claire</td>
+<td class="l m b0 r0 l0 t0 lines">Beth</td>
+<td class="l m b0 r0 l0 t0 lines">Alice</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="codenumber">2.3.1</span>The orders in which Alice, Beth and Claire can take the exam</figcaption></figure><p id="p-222">Looking at <a knowl="./knowl/tab_perm1.html" knowl-id="xref-tab_perm1" alt="Table 2.3.1 " title="Table 2.3.1 ">Table 2.3.1</a>, one can think of a general argument, as well. There are three ways to choose who the first person will be (Alice, Beth or Carrie). Then no matter what that choice was, there will be two possibilities left for choosing who the second person will be (the second person cannot be whoever was the first one). Then the person left will take the exam as the third. Altogether, this is \(3 \cdot 2 \cdot 1 = 6\) possibilities.</p>
+<p id="p-223">At the next exam, there are four students: Ed, Frank, George, Hugo. This time they decide in advance in what order they want to do the exam. In how many different orders can they do the exam?</p>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_ExamEFGH" id="ex_ExamEFGH"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.3.2</span>
+</h6></a></article><div id="hk-ex_ExamEFGH" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-224">List all possibilities for Ed, Frank, George and Hugo to find an order for themselves.</p></article></div>
+<p id="p-225">Let us try to use our new argument. There are four possibilities for choosing the person who starts the exam. Then, no matter who starts, there are three possibilities for choosing the second person (as the first person has already been chosen). Then there are only two possibilities for the third person, and whoever remains will be the fourth. That is, altogether they have \(4 \cdot 3 \cdot 2 \cdot 1 = 24\) possibilities to choose the order to do the exam.</p>
+<p id="p-226">What was the common in these two exercises (apart from the exam)? The fact that in both cases we needed to count the number of different orders of the people. In general, if there are \(n\) elements, then we call an ordering of these elements a <em class="emphasis">permutation</em>. Now, what happens if we need to count the number of permutations of \(n\) elements? It can be calculated similarly, e.g. the result would be \(n \cdot (n-1) \cdot \dots \cdot 2 \cdot 1\text{.}\) This is the number we denoted by \(n!\) in <a href="sec_sumsproducts.html" class="xref" alt="Section 1.2 Sums and products" title="Section 1.2 Sums and products">Section 1.2</a>.</p>
+<article class="theorem-like" id="thm_perm"><h6 class="heading">
+<span class="type">Theorem</span><span class="codenumber">2.3.3</span>
+</h6>
+<p id="p-227">The number of permutations of \(n\) elements is \(n!\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-8" id="proof-8"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-8" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-228">A permutation is an ordering of the \(n\) elements. We have \(n\)-many ways to choose the first element, then \((n-1)\)-many ways to choose the second element (we cannot choose the first anymore), then \((n-2)\)-many ways to choose the third element, etc. Thus the number of different ways we can put these \(n\) elements into an order is</p>
+\begin{equation*}
+n \cdot (n-1) \cdot (n-2) \cdot \dots \cdot 2 \cdot 1 = n!\text{.}
+\end{equation*}
+</article></div>
+<p id="p-229">Note, that permutations may arise in many situation. Recall that at the beginning of <a href="cha_counting.html" class="xref" alt="Chapter 2 Counting" title="Chapter 2 Counting">Chapter 2</a>, Alice, Beth, Claire, Diane, Ed, Frank, George and Hugo wanted to form four dancing couples. Then Alice chose a partner first, then Beth, then Claire, and finally Diane. That is, their choosing put an order on the four boys, and therefore determined a permutation of them. And indeed, there are \(4!=24\) permutations of the four boys, and they can form four dancing couples in \(4!=24\)-many ways, as well.</p>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_perm1" id="ex_perm1"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.3.4</span>
+</h6></a></article><div id="hk-ex_perm1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-230">How many four digit numbers exist, where all of the digits \(1\text{,}\) \(2\text{,}\) \(3\text{,}\) \(4\) appear exactly once?</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_perm2" id="ex_perm2"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.3.5</span>
+</h6></a></article><div id="hk-ex_perm2" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-231">How many four letter long (not necessarily meaningful words) can be built from the letters \(a\text{,}\) \(b\text{,}\) \(c\text{,}\) \(d\text{,}\) if all letters must be used exactly once?</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_perm3" id="ex_perm3"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.3.6</span>
+</h6></a></article><div id="hk-ex_perm3" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-232">Five boys and three girls buy cinema tickets. They receive the tickets in the same row, their seats are numbered from 1 to 8. How many different ways can they sit on the seats? How many different ways can they sit on the seats if boys sit on seats from 1 to 5, and girls sit on seats from 6 to 8?</p></article></div></section></div></main>
+</div>
+</body>
+</html>

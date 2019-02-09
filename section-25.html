@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:59+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Pascal's triangle</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-24.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="cha_solutions.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-26.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-24.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="cha_solutions.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-26.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link active"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25" class="active">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-25"><h2 class="heading hide-type" alt="Section 6.4 Pascal's triangle">
+<span class="type">Section</span><span class="codenumber">6.4</span><span class="title">Pascal's triangle</span>
+</h2>
+<ol id="ol-26" style="list-style-type: decimal;">
+<li id="li-218"><p id="p-897"><a knowl="./knowl/ex_pascalbinomialsame.html" knowl-id="xref-ex_pascalbinomialsame" alt="Exercise 4.0.4 " title="Exercise 4.0.4 ">Exercise 4.0.4</a> We prove that the two triangles are the same by induction. That is, we prove that the \(k\)th element of the \(n\)th row is the same in both triangles, and we prove this by induction on \(n\text{.}\) For \(n=0\) the two triangles have the same zero row: \(\binom{0}{0} = 1\text{.}\) Assume that the two triangles are equal in the \((n-1)\)st row. We prove that the two triangles contain the same numbers in the \(n\)th row, as well. The first and the last numbers are the same: \(\binom{n}{0} = 1\text{,}\) \(\binom{n}{n} = 1\text{.}\) Now, consider the \(k\)th element of the \(n\)th row for an arbitrary \(1\leq k\leq n-1\text{.}\) In Pascal's triangle it is the sum of the two numbers above it, that is, it is the sum of the \((k-1)\)st and the \(k\)th number of row \((n-1)\text{.}\) By the induction hypotheses, row \(n-1\) is the same in Pascal's triangle and in the triangle of the Binomial coefficients. That is, the \((k-1)\)st element of row \((n-1)\) is \(\binom{n-1}{k-1}\text{,}\) the \(k\)th element of row \((n-1)\) is \(\binom{n-1}{k}\text{.}\) By <a knowl="./knowl/prop_binomsum.html" knowl-id="xref-prop_binomsum" alt="Proposition 4.0.3 " title="Proposition 4.0.3 ">Proposition 4.0.3</a> we have \(\binom{n-1}{k-1}+ \binom{n-1}{k} = \binom{n}{k}\text{.}\) That is, the \(k\)th number of the \(n\)th row in Pascal's triangle is the same as the \(k\)th number of the \(n\)th row in the triangle of the Binomial coefficients. This is true for arbitrary \(1\leq k\leq n-1\text{,}\) thus the \(n\)th row of Pascal's triangle is the same as the \(n\)th row of the triangle of the binomial coefficients. This finishes the induction proof, the two triangles are the same.</p></li>
+<li id="li-219"><p id="p-898"><a knowl="./knowl/ex_pascal12.html" knowl-id="xref-ex_pascal12" alt="Exercise 4.0.5 " title="Exercise 4.0.5 ">Exercise 4.0.5</a> The first twelve rows of Pascal's triangle can be seen in <a knowl="./knowl/tab_pascal12.html" knowl-id="xref-tab_pascal12" alt="Table 6.4.1 " title="Table 6.4.1 ">Table 6.4.1</a> on <a knowl="./knowl/tab_pascal12.html" knowl-id="xref-tab_pascal12" alt="Table 6.4.1 " title="Table 6.4.1 ">page 6.4.1</a>. <figure class="figure-like" id="tab_pascal12"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">15</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">15</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">21</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">35</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">35</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">21</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">28</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">56</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">70</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">56</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">28</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">36</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">84</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">126</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">126</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">84</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">36</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">45</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">120</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">210</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">252</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">210</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">120</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">45</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">55</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">165</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">330</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">462</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">462</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">330</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">165</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">55</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"> 1</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">66</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">220</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">495</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">792</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">924</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">792</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">495</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">220</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">66</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines"></td></tr>
+</table>
+<figcaption><span class="type">Table</span><span class="codenumber">6.4.1</span>First twelve rows of Pascal's triangle.</figcaption></figure></p></li>
+<li id="li-220">
+<p id="p-899"><a knowl="./knowl/ex_binomialwriteout.html" knowl-id="xref-ex_binomialwriteout" alt="Exercise 4.1.2 " title="Exercise 4.1.2 ">Exercise 4.1.2</a> The Binomial theorem holds for \(n=0\) and \(n=1\text{,}\) as well: \((x+y)^0 = 1 = \binom{0}{0} x^0 y^0\text{,}\) \((x+y)^1 = x + y = \binom{1}{0} x^1 y^0 + \binom{1}{1} x^0 y^1\text{.}\) Now, we can prove the theorem by induction on \(n\text{.}\) Assume that the statement holds for \(n-1\text{,}\) that is,</p>
+\begin{equation*}
+(x+y)^{n-1} = x^{n-1} + \binom{n-1}{1} x^{n-2}y + \dots + \binom{n-1}{1} xy^{n-2} + y^{n-1}\text{.}
+\end{equation*}
+<p>This is the induction hypothesis. Now, compute \((x+y)^n\) using the same method as before, and use the induction hypothesis for expanding \((x+y)^{n-1}\text{:}\)</p>
+\begin{align*}
+(x+y)^n \amp = (x+y)^{n-1} \cdot (x+y)\\
+\amp = \left( x^{n-1} + \binom{n-1}{1} x^{n-2}y + \dots + \binom{n-1}{n-2} xy^{n-2} + y^{n-1} \right) \cdot \left( x + y \right)\\
+\amp = \left( x^{n-1} + \binom{n-1}{1} x^{n-2}y + \dots + \binom{n-1}{n-2} xy^{n-2} + y^{n-1} \right) \cdot x\\
+\amp + \left( x^{n-1} + \binom{n-1}{1} x^{n-2}y + \dots + \binom{n-1}{n-2} xy^{n-2} + y^{n-1} \right) \cdot y\\
+\amp = x^{n} + \binom{n-1}{1} x^{n-1}y + \dots + \binom{n-1}{n-2} x^2y^{n-2} + xy^{n-1}\\
+\amp + x^{n-1}y + \binom{n-1}{1} x^{n-2}y^2 + \dots + \binom{n-1}{n-2} xy^{n-1} + y^{n}\\
+\amp = x^{n} + \binom{n-1}{1} x^{n-1}y + \dots + \binom{n-1}{n-2} x^2y^{n-2} + \binom{n-1}{n-1} xy^{n-1}\\
+\amp + \binom{n-1}{0} x^{n-1}y + \binom{n-1}{1} x^{n-2}y^2 + \dots + \binom{n-1}{n-2} xy^{n-1} + y^{n}\\
+\amp = x^n + \left( \binom{n-1}{1} + \binom{n-1}{0} \right) x^{n-1}y + \dots\\
+\amp \dots + \left( \binom{n-1}{k} + \binom{n-1}{k-1} \right) x^{n-k}y^k + \dots\\
+\amp \dots + \left( \binom{n-1}{n-1} + \binom{n-1}{n-2} \right) xy^{n-1} + y^n\\
+\amp = x^n + \binom{n}{1} x^{n-1}y + \dots 
++ \binom{n}{k} x^{n-k}y^k + \dots 
++ \binom{n}{n-1}xy^{n-1} + y^n\text{.}
+\end{align*}
+<p>Here, we have expanded \((x+y)^{n-1}\) using the induction hypothesis, and multiplied it by \((x+y)\) by expanding the brackets. Then we collected together the same terms \(x^{n-k}y^k\) for every \(k=0, 1, \dots , n-1, n\text{.}\) Finally, in <span>&lt;&lt;Unresolved xref, reference "eq_binomsum2"; check spelling or use "provisional" attribute&gt;&gt;</span><a href="" class="xref" alt="" title=""> </a> we used the generating rule of Pascal's triangle (<a knowl="./knowl/prop_binomsum.html" knowl-id="xref-prop_binomsum" alt="Proposition 4.0.3 " title="Proposition 4.0.3 ">Proposition 4.0.3</a>).</p>
+</li>
+<li id="li-221">
+<p id="p-900"><a knowl="./knowl/ex_binomialnchoosek.html" knowl-id="xref-ex_binomialnchoosek" alt="Exercise 4.1.3 " title="Exercise 4.1.3 ">Exercise 4.1.3</a> Consider \((x+y)^n\text{:}\)</p>
+\begin{equation*}
+(x+y)^n = a_n x^n + a_{n-1}x^{n-1}y + a_{n-2}x^{n-2}y^2 + \dots + a_2x^2y^{n-2} + a_1xy^{n-1} + a_0y^n\text{,}
+\end{equation*}
+<p>for some numbers \(a_n, a_{n-1}, \dots, a_1, a_0\text{.}\) How do we obtain the coefficient \(a_k\) for \(x^{n-k}y^k\text{?}\) Now, \((x+y)^n\) is the \(n\)-fold product of \((x+y)\) by itself:</p>
+\begin{equation*}
+(x+y)^n = \underbrace{(x+y) (x+y)  \dots (x+y) (x+y)}_{n\text{ times } }\text{.}
+\end{equation*}
+<p>The multiplication of these \(n\) factors is carried out by choosing a term from each factor (\(x\) or \(y\)) in every possible way, multiplying these \(n\) terms, and then adding the resulting products together. Thus the coefficient of \(x^{n-k}y^k\) is the number of possibilities to choose \((n-k)\)-times the \(x\) and \(k\)-times the \(y\) out of the \(n\) factors. Altogether there are \(n\) many \(y\)'s to choose from, and we need to choose \(k\) of them (and the remaining \((n-k)\) factors will be chosen as \(x\)). This can be done in \(\binom{n}{k}\)-many ways. Therefore the coefficient of \(x^{n-k}y^k\) is \(a_k=\binom{n}{k}\text{.}\)</p>
+</li>
+<li id="li-222">
+<p id="p-901"><a knowl="./knowl/ex_binomial1_1.html" knowl-id="xref-ex_binomial1_1" alt="Exercise 4.1.4 " title="Exercise 4.1.4 ">Exercise 4.1.4</a></p>
+\begin{align*}
+2^n \amp = (1+1)^n = 1^n + n \cdot 1^{n-1}\cdot 1 + \binom{n}{2} \cdot 1^{n-2}\cdot 1^2 + \dots + n \cdot 1 \cdot 1^{n-1} + 1^n\\
+\amp = 1 + n + \binom{n}{2} + \dots + \binom{n}{k} + \dots + \binom{n}{n-2} + n + 1 = \sum_{k=0}^n \binom{n}{k}\text{.}
+\end{align*}
+</li>
+<li id="li-223">
+<p id="p-902"><a knowl="./knowl/ex_binomial1-1.html" knowl-id="xref-ex_binomial1-1" alt="Exercise 4.1.5 " title="Exercise 4.1.5 ">Exercise 4.1.5</a></p>
+\begin{align*}
+0 \amp = 0^n = (1-1)^n\\
+\amp = 1^n + n \cdot 1^{n-1}\cdot (-1) + \binom{n}{2} \cdot 1^{n-2}\cdot (-1)^2 + \dots + n \cdot 1 \cdot (-1)^{n-1} + (-1)^n\\
+\amp = 1 - n  + \binom{n}{2}  - \dots + (-1)^{k} \binom{n}{k} + \dots + (-1)^{n-1} n + (-1)^n\\
+\amp = \sum_{k=0}^n (-1)^k \binom{n}{k}\text{.}
+\end{align*}
+</li>
+<li id="li-224">
+<p id="p-903"><a knowl="./knowl/ex_expandusingbinomialthm.html" knowl-id="xref-ex_expandusingbinomialthm" alt="Exercise 4.1.6 " title="Exercise 4.1.6 ">Exercise 4.1.6</a> Using the Binomial theorem we obtain</p>
+\begin{align*}
+(x+y)^8\amp = \sum_{k=0}^8 \binom{8}{k} x^{8-k} y^k = x^8 + 8 x^7y + 28x^6y^2 + 56 x^5y^3\\
+\amp + 70 x^4 y^4 + 56 x^3 y^5 + 28 x^2 y^6 + 8 x y^7 + y^8,\\
+(x-y)^8\amp = \sum_{k=0}^8 \binom{8}{k} x^{8-k} \left( -y \right)^k = x^8 - 8 x^7y + 28x^6y^2 - 56 x^5y^3\\
+\amp + 70 x^4 y^4 - 56 x^3 y^5 + 28 x^2 y^6 - 8 x y^7 + y^8,\\
+(a+1)^{10} \amp = \sum_{k=0}^{10} \binom{10}{k} \cdot a^{10-k}\cdot 1^k = a^{10} + 10a^9 + 45a^8 + 120a^7\\
+\amp + 210a^6 + 252a^5 + 210a^4 + 120 a^3 + 45 a^2 + 10a + 1,\\
+(b-3)^5 \amp = \sum_{k=0}^5 \binom{5}{k} b^{5-k} \left( -3 \right)^k = b^5 -15 b^4 + 90 b^3\\
+\amp -270 b^2 + 405 b - 243,\\
+(1 + 2/x)^5 \amp = \sum_{k=0}^5 \binom{5}{k} \cdot 1^{5-k} \cdot \left( \frac{2}{x} \right)^k = 1 + \frac{10}{x} + \frac{40}{x^2} + \frac{80}{x^3} + \frac{80}{x^4} + \frac{32}{x^5},\\
+\left( a + b \right)^6 \amp = \sum_{k=0}^6 \binom{6}{k} a^{6-k} b^k = a^6 + 6a^5b + 15 a^4 b^2 + 20 a^3 b^3\\
+\amp + 15 a^2 b^4 + 6ab^5 + b^6,\\
+\left( 1 + x \right)^5 \amp = \sum_{k=0}^5 \binom{5}{k} \cdot 1^{5-k} \cdot x^k = 1 + 5x + 10x^2\\
+\amp + 10x^3 + 5x^4 + x^5,\\
+\left(3a + 4b \right)^4 \amp = \sum_{k=0}^4 \binom{4}{k} \cdot \left(3a\right)^{4-k} \cdot \left(4b\right)^k = \left( 3a \right)^4 + 4 \cdot \left( 3a \right)^3 \cdot \left( 4b \right)\\
+\amp + 6 \cdot \left( 3a \right)^2 \cdot \left( 4b \right)^2 + 4 \cdot \left( 3a \right) \cdot \left( 4b \right)^3 + \left( 4b \right)^4  = 81 a^4\\
+\amp + 432 a^3b + 864 a^2b^2 + 768 ab^3 + 256 b^4,\\
+\left( 3 - 2x \right)^4 \amp = \sum_{k=0}^4 \binom{4}{k} \cdot 3^{4-k} \cdot \left(-2x\right)^k = 3^4 - 4 \cdot 3^3 \cdot \left( 2x \right) + 6 \cdot 3^2 \cdot \left( 2x \right)^2\\
+\amp - 4 \cdot 3 \cdot \left( 2x \right)^3 + \left( 2x \right)^4  = 81 - 216 x + 216 x^2 - 96 x^3 + 16 x^4\text{.}
+\end{align*}
+</li>
+<li id="li-225">
+<p id="p-904"><a knowl="./knowl/ex_coefficientinbinomialthm.html" knowl-id="xref-ex_coefficientinbinomialthm" alt="Exercise 4.1.7 " title="Exercise 4.1.7 ">Exercise 4.1.7</a> By the Binomial theorem</p>
+\begin{equation*}
+\left( 1-\frac{x}{2} \right)^9 = \sum_{k=0}^9 \binom{9}{k} \cdot 1^{9-k} \cdot \left( - \frac{x}{2} \right)^k = \sum_{k=0}^9 \left( -1 \right)^k \cdot \frac{\binom{9}{k}}{2^k} \cdot x^k\text{.}
+\end{equation*}
+<p>Here, the fourth term corresponds to \(x^3\text{,}\) that is, \(\left( -1 \right)^3 \cdot \binom{9}{3}/2^3 x^3 = - 84/8 x^3 = -21/2 x^3 = -10.5 x^3\text{.}\) The coefficient of \(x^5\) is \(\left( -1 \right)^5 \cdot \binom{9}{5}/2^5 = - 126/32  = -63/16 = -3.9375\text{.}\)</p>
+</li>
+<li id="li-226"><p id="p-905"><a knowl="./knowl/ex_alternatingsum.html" knowl-id="xref-ex_alternatingsum" alt="Exercise 4.2.1 " title="Exercise 4.2.1 ">Exercise 4.2.1</a> If \(n\) is odd, then every binomial coefficient occurs twice in the sum: once with positive sign, and once with negative sign. Indeed, the sign of \(\binom{n}{k}\) is \((-1)^k\) and the sign of \(\binom{n}{n-k}\) is \((-1)^{n-k}\text{.}\) They cannot have the same sign, because their product is \((-1)^k \cdot (-1)^{n-k} = (-1)^n = -1\text{,}\) as \(n\) is odd. Thus every binomial coefficient occurs twice with different signs, their sum is 0, and the whole sum is 0, as well.</p></li>
+<li id="li-227">
+<p id="p-906"><a knowl="./knowl/ex_alternatingsum2.html" knowl-id="xref-ex_alternatingsum2" alt="Exercise 4.2.2 " title="Exercise 4.2.2 ">Exercise 4.2.2</a> Consider the alternating sum of the \(n\)th row (for \(n\geq 1\)), and use the generating rule of Pascal's triangle: {</p>
+\begin{align*}
+\amp  \binom{n}{0} - \binom{n}{1} + \binom{n}{2} - \dots + (-1)^{n-1} \cdot \binom{n}{n-1} + (-1)^{n} \cdot \binom{n}{n}\\
+\amp = \binom{n-1}{0} - \left( \binom{n-1}{0} + \binom{n-1}{1} \right) + \left( \binom{n-1}{1} + \binom{n-1}{2} \right)  - \dots\\
+\amp + 
+(-1)^{n-1} \cdot \left( \binom{n-1}{n-2} + \binom{n-1}{n-1} \right) + (-1)^{n} \cdot \binom{n-1}{n-1}\\
+\amp = \left( \binom{n-1}{0} - \binom{n-1}{0} \right) + \left( - \binom{n-1}{1} + \binom{n-1}{1} \right) +\\
+\amp +\left( \binom{n-1}{2} - \binom{n-1}{2} \right) + \dots 
++ \left( \left( -1 \right)^{n-2} \cdot \binom{n-1}{n-2} + \left( -1 \right)^{n-1} \cdot \binom{n-1}{n-2} \right)\\
+\amp + \left( \left( -1 \right)^{n-1} \cdot \binom{n-1}{n-1} + \left( -1 \right)^{n} \cdot \binom{n-1}{n-1} \right)\\
+\amp = 0 + 0 + 0 + \dots + 0 + 0 = 0\text{.}
+\end{align*}
+<p>} First, we replaced \(\binom{n}{0}=1\) by \(\binom{n-1}{0}=1\text{,}\) and \(\binom{n}{n} = 1\) by \(\binom{n-1}{n-1} = 1\text{,}\) then we used the generating rule of Pascal's triangle. Then we observed that every \(\binom{n-1}{k}\) occurs twice in the sum: first with a positive sign, then right after it with a negative sign (for \(0\leq k\leq n-1\)).</p>
+</li>
+<li id="li-228">
+<p id="p-907"><a knowl="./knowl/ex_n_mchoosek.html" knowl-id="xref-ex_n_mchoosek" alt="Exercise 4.2.5 " title="Exercise 4.2.5 ">Exercise 4.2.5</a> Again, we give a combinatorial meaning to both sides of <span>&lt;&lt;Unresolved xref, reference "eq_n_mchoosek"; check spelling or use "provisional" attribute&gt;&gt;</span><a href="" class="xref" alt="" title=""> </a>. The right hand side gives a clue: \(\binom{n+m}{l}\) is the number of ways to choose \(l\) elements out of an \((n+m)\)-element set, say</p>
+\begin{equation*}
+S = \halmaz{1, 2, \dots , n, n+1, n+2, \dots , n+m}\text{.}
+\end{equation*}
+<p>Our plan is to prove that the left hand side of <span>&lt;&lt;Unresolved xref, reference "eq_n_mchoosek"; check spelling or use "provisional" attribute&gt;&gt;</span><a href="" class="xref" alt="" title=""> </a> is the number of \(l\)-element subsets of \(S\text{,}\) as well. Let \(S_1 = \halmaz{1, 2, \dots , n}\) and \(S_2 = \halmaz{n+1, n+2, \dots , n+m}\text{.}\) Now, try to count the number of ways to choose \(l\) elements of \(S\) by counting how many elements we choose from \(S_1\) and from \(S_2\text{.}\) If we choose 0 element from \(S_1\text{,}\) then we must choose \(l\) elements from \(S_2\text{.}\) We can do this in \(\binom{n}{0} \cdot \binom{m}{l}\)-many ways. If we choose 1 element from \(S_1\text{,}\) then we must choose \(l-1\) elements from \(S_2\text{.}\) We can do this in \(\binom{n}{1} \cdot \binom{m}{l-1}\)-many ways. If we choose 2 elements from \(S_1\text{,}\) then we must choose \(l-2\) elements from \(S_2\text{.}\) We can do this in \(\binom{n}{2} \cdot \binom{m}{l-2}\)-many ways. In general, if we choose k elements from \(S_1\text{,}\) then we must choose \(l-k\) elements from \(S_2\text{.}\) We can do this in \(\binom{n}{k} \cdot \binom{m}{l-k}\)-many ways. In the end, if we choose \(l\) elements from \(S_1\text{,}\) then we must choose \(0\) element from \(S_2\text{.}\) We can do this in \(\binom{n}{l} \cdot \binom{m}{0}\)-many ways. Thus, choosing \(l\) elements out of \(n+m\) can be done in the following number of ways:</p>
+\begin{equation*}
+\binom{n}{0} \cdot \binom{m}{l} + \binom{n}{1} \cdot \binom{m}{l-1} + \dots 
++ \binom{n}{l}\cdot \binom{m}{0} = \sum_{k=0}^l \binom{n}{k} \cdot \binom{m}{l-k}\text{.}
+\end{equation*}
+<p>That is, both sides of <span>&lt;&lt;Unresolved xref, reference "eq_n_mchoosek"; check spelling or use "provisional" attribute&gt;&gt;</span><a href="" class="xref" alt="" title=""> </a> counts the number of ways of choosing \(l\) elements out of an \((n+m)\)-element set, and therefore must be equal. If we choose \(n=m=l\text{,}\) and use the symmetry of Pascal's triangle \(\binom{n}{k} = \binom{n}{n-k}\text{,}\) then we obtain exactly equation <a knowl="./knowl/eq_sumsquaresofrow.html" knowl-id="xref-eq_sumsquaresofrow" alt="Equation 4.2.2 " title="Equation 4.2.2 ">(4.2.2)</a>.</p>
+</li>
+<li id="li-229">
+<p id="p-908"><a knowl="./knowl/ex_n_mchoosek2.html" knowl-id="xref-ex_n_mchoosek2" alt="Exercise 4.2.6 " title="Exercise 4.2.6 ">Exercise 4.2.6</a> Consider \((x+y)^{n+m}\text{,}\) and expand it using the Binomial theorem:</p>
+\begin{equation*}
+(x+y)^{n+m} = \sum_{k=0}^{n+m} \binom{n+m}{k} x^{n+m-k} \cdot y^{k}\text{.}
+\end{equation*}
+<p>Then the right hand side of <span>&lt;&lt;Unresolved xref, reference "eq_n_mchoosek"; check spelling or use "provisional" attribute&gt;&gt;</span><a href="" class="xref" alt="" title=""> </a> is the coefficient of the term \(x^{n+m-l}y^l\text{.}\) We prove that the left hand side is the coefficient of \(x^{n+m-l}y^l\text{,}\) as well. For this, we compute \((x+y)^{n+m}\) by multiplying \((x+y)^n \cdot (x+y)^m\) after expanding both factors using the Binomial theorem:</p>
+\begin{equation*}
+(x+y)^{n+m} = (x+y)^n \cdot (x+y)^m = \left( \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k \right) \cdot \left( \sum_{k=0}^m \binom{m}{k} x^{m-k}y^k \right)\text{.}
+\end{equation*}
+<p>Now, let us compute the coefficient of \(x^{n+m-l} y^l\text{.}\) When do we obtain \(x^{n+m-l} y^l\) when we multiply \(\left( \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k \right)\) by \(\left( \sum_{k=0}^m \binom{m}{k} x^{m-k}y^k \right)\text{?}\) For some \(0\leq k\leq l\) the term \(x^{n-k}y^k\) in the first factor must be multiplied by \(x^{m-l+k} y^{l-k}\) from the second factor. The coefficient of \(x^{n-k}y^k\) in the first factor is \(\binom{n}{k}\text{,}\) the coefficient of \(x^{m-l+k}y^{l-k}\) in the second factor is \(\binom{m}{l-k}\text{,}\) thus this multiplication contributes by \(\binom{n}{k} \cdot \binom{m}{l-k}\) to the coefficient of \(x^{n+m-l} y^l\) in \((x+y)^{n+m}\text{.}\) That is, the coefficient of \(x^{n+m-l} y^l\) in \((x+y)^{n+m}\) is</p>
+\begin{equation*}
+\sum_{k=0}^l \binom{n}{k} \cdot \binom{m}{l-k}\text{.}
+\end{equation*}
+<p>Moreover, the coefficient of \(x^{n+m-l}y^l\) in \((x+y)^{n+m}\) is \(\binom{n+m}{l}\text{,}\) thus the two numbers must be equal, which proves <span>&lt;&lt;Unresolved xref, reference "eq_n_mchoosek"; check spelling or use "provisional" attribute&gt;&gt;</span><a href="" class="xref" alt="" title=""> </a>:</p>
+\begin{equation*}
+\sum_{k=0}^n \binom{n}{k} \cdot \binom{m}{l-k} = \binom{n+m}{l}\text{.}
+\end{equation*}
+</li>
+<li id="li-230">
+<p id="p-909"><a knowl="./knowl/ex_diagonal.html" knowl-id="xref-ex_diagonal" alt="Exercise 4.2.8 " title="Exercise 4.2.8 ">Exercise 4.2.8</a> We can try to prove the identity by induction on \(m\text{.}\) For \(m=0\) the identity holds, as the left hand side is \(\binom{n}{0} = 1\text{,}\) the right hand side is \(\binom{n+1}{0} = 1\text{,}\) as well. Assume that the identity holds for \(m-1\text{,}\) that is,</p>
+\begin{equation*}
+\sum_{k=0}^{m-1} \binom{n+k}{k} = \binom{n}{0} + \binom{n+1}{1} + \dots + \binom{n+m-1}{m-1} = \binom{n+m}{m-1}\text{.}
+\end{equation*}
+<p>This is the induction hypothesis. Now we prove the identity for \(m\text{.}\)</p>
+\begin{align*}
+\amp  \sum_{k=0}^{m} \binom{n+k}{k} = \underbrace{\binom{n}{0} + \binom{n+1}{1} + \dots + \binom{n+m-1}{m-1}}_{= \binom{n+m}{m-1}, \text{ by the induction hypothesis } } + \binom{n+m}{m}\\
+\amp = \binom{n+m}{m-1} + \binom{n+m}{m} = \binom{n+m+1}{m}\text{.}
+\end{align*}
+<p>Here, we first used the induction hypothesis, then the generating rule of Pascal's triangle (<a knowl="./knowl/prop_binomsum.html" knowl-id="xref-prop_binomsum" alt="Proposition 4.0.3 " title="Proposition 4.0.3 ">Proposition 4.0.3</a>). We can spare ourselves an induction proof if we use \(\binom{n+k}{k} = \binom{n+k}{n}\text{.}\) That is,</p>
+\begin{align*}
+\amp \sum_{k=0}^{m} \binom{n+k}{k} = \binom{n}{0} + \binom{n+1}{1} + \dots + \binom{n+m}{m}\\
+\amp = \binom{n}{n} + \binom{n+1}{n} + \dots + \binom{n+m-1}{n} = \sum_{k=n}^{n+m} \binom{k}{n}\\
+\amp = \binom{n+m+1}{n+1} = \binom{n+m+1}{m}
+\end{align*}
+<p>by <a knowl="./knowl/prop_sumkchoosem.html" knowl-id="xref-prop_sumkchoosem" alt="Proposition 4.2.7 " title="Proposition 4.2.7 ">Proposition 4.2.7</a>.</p>
+</li>
+<li id="li-231">
+<p id="p-910"><a knowl="./knowl/ex_rowp.html" knowl-id="xref-ex_rowp" alt="Exercise 4.2.9 " title="Exercise 4.2.9 ">Exercise 4.2.9</a> The \(k\)th element of row \(p\) is</p>
+\begin{equation*}
+\binom{p}{k} = \frac{p!}{k!\cdot (p-k)!}\text{.}
+\end{equation*}
+<p>This number is an integer number, the nominator is divisible by the prime \(p\text{.}\) However, for \(1\leq k\leq p-1\text{,}\) the denominator only contains positive integers strictly less than \(p\text{.}\) Thus, when we simplify this fraction for obtaining the resulting integer, the factor \(p\) in the nominator will not cancel out with anything in the denominator, and thus \(p\) will divide the integer \(\binom{p}{k}\text{.}\) If \(p\) is not a prime, then this property does not necessarily hold. For example if \(n\) is even then by <a knowl="./knowl/ex_nmidnchoose2.html" knowl-id="xref-ex_nmidnchoose2" alt="Exercise 2.6.10 " title="Exercise 2.6.10 ">Exercise 2.6.10</a> we have \(n \nmid \binom{n}{2}\text{.}\) Furthermore, in the first 12 rows we have</p>
+\begin{align*}
+6 \amp \nmid \binom{6}{3} = 20,\\
+\amp \amp  8 \amp \nmid \binom{8}{4} = 70,\\
+9 \amp \nmid \binom{9}{3} = 84,\\
+\amp \amp  \amp \amp  10 \amp \nmid \binom{10}{5} = 252,\\
+12 \amp \nmid \binom{12}{3} = 220, \amp  12 \amp \nmid \binom{12}{4} = 495\text{.}
+\end{align*}
+</li>
+</ol></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:58+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear recurrence relations of order \(k\)</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-20.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="Recurrence_sequences.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="cha_solutions.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-20.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="Recurrence_sequences.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="cha_solutions.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link active"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21" class="active">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-21"><h2 class="heading hide-type" alt="Section 5.2 Linear recurrence relations of order \(k\)">
+<span class="type">Section</span><span class="codenumber">5.2</span><span class="title">Linear recurrence relations of order \(k\)</span>
+</h2>
+<p id="p-683">In this section by a sequence we mean an ordered list</p>
+\begin{equation*}
+\halmaz{a_n}_{n=0}^{\infty}, a_n\in S
+\end{equation*}
+<p>for some set \(S\text{.}\) For example</p>
+\begin{equation*}
+1,2,4,8,16,32,64,\ldots
+\end{equation*}
+<p>is a sequence containing non-negative powers of 2.</p>
+<article class="definition-like" id="definition-14"><h6 class="heading">
+<span class="type">Definition</span><span class="codenumber">5.2.1</span>
+</h6>
+<p id="p-684">A sequence \(\halmaz{a_n}_{n=0}^{\infty}\) is said to satisfy a <b class="terminology">linear recurrence</b> relation of order \(k\) if</p>
+\begin{equation*}
+a_n=c_{n-1}a_{n-1}+c_{n-2}a_{n-2}+\ldots+c_{n-k}a_{n-k}+b_n, c_{n-k}\neq 0, n\geq k\text{,}
+\end{equation*}
+<p>where \(c_{n-1},\ldots,c_{n-k},b_n\) are some constants. If \(b_n=0\text{,}\) then we say that the sequence satisfies a <b class="terminology">homogeneous linear recurrence</b> relation of order \(k\text{.}\) In case of a linear recurrence relation of order \(k\) the values of \(a_0,a_1,\ldots,a_{k-1}\) are called the <b class="terminology">initial values</b> of the sequence.</p></article><p id="p-685">For example the sequence appeared in case of Tower of Hanoi is a sequence of order 1:</p>
+\begin{align*}
+T_0\amp =0,\\
+T_n\amp =2T_{n-1}+1 \mbox{ for } n\geq 1\text{.}
+\end{align*}
+<article class="theorem-like" id="theorem-18"><h6 class="heading">
+<span class="type">Theorem</span><span class="codenumber">5.2.2</span>
+</h6>
+<p id="p-686">Let \(\halmaz{a_n}_{n=0}^{\infty}\) be a linear recurrence relation of order 1, that is,</p>
+\begin{equation*}
+a_n=ua_{n-1}+v
+\end{equation*}
+<p>for some constants \(u,v\text{.}\) If \(u=1\text{,}\) then</p>
+\begin{equation*}
+a_n=a_0+nv\text{,}
+\end{equation*}
+<p>otherwise</p>
+\begin{equation*}
+a_n=u^na_0+\frac{u^n-1}{u-1}v\text{.}
+\end{equation*}
+</article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-33" id="proof-33"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-33" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-687">If \(u=1\text{,}\) then the defining equation simplifies as follows</p>
+\begin{equation*}
+a_n=a_{n-1}+v\text{.}
+\end{equation*}
+<p id="p-688">We prove the statement by induction. The initial value of the sequence is \(a_0\text{.}\) Using the above formula for \(a_n\) we obtain</p>
+\begin{align*}
+a_1\amp =a_0+v,\\
+a_2\amp =a_1+v=a_0+2v,\\
+a_3\amp =a_2+v=a_0+3v\text{.}
+\end{align*}
+<p id="p-689">Hence the statement is clearly true for \(n=1,2\) and 3. Assume that the statement is true for \(n=k\text{,}\) that is,</p>
+\begin{equation*}
+a_k=a_0+kv\text{.}
+\end{equation*}
+<p id="p-690">The statement for \(n=k+1\) is that \(a_{k+1}=a_0+(k+1)v\text{.}\) By the recurrence definition we have \(a_{k+1}=a_{k}+v\text{.}\) By induction we obtain that</p>
+\begin{equation*}
+a_{k+1}=a_0+kv+v=a_0+(k+1)v\text{,}
+\end{equation*}
+<p>which is the desired result for \(n=k+1\text{.}\)</p>
+<p id="p-691">Now assume that \(u\neq 1\text{.}\) We apply induction again. As in the previous case we compute the first few values of the sequence</p>
+\begin{align*}
+a_1\amp =ua_0+v,\\
+a_2\amp =ua_1+v=u^2a_0+uv+v,\\
+a_3\amp =ua_2+v=u^3a_0+u^2v+uv+v\text{.}
+\end{align*}
+<p id="p-692">It follows that the statement is true if \(n=1,2,3\text{.}\) Assume that the statement is true for \(n=k\text{,}\) that is,</p>
+\begin{equation*}
+a_k=u^ka_0+\frac{u^k-1}{u-1}v\text{.}
+\end{equation*}
+<p id="p-693">We need to show that the statement is true for \(n=k+1\text{,}\) so \(a_{k+1}=u^{k+1}a_0+\frac{u^{k+1}-1}{u-1}v\text{.}\) The recurrence definition yields that \(a_{k+1}=ua_{k}+v\text{.}\) Using the assumption one has that</p>
+\begin{equation*}
+a_{k+1}=ua_{k}+v=u\cdot \left(u^ka_0+\frac{u^k-1}{u-1}v\right)+v=u^{k+1}a_0+u\frac{u^k-1}{u-1}v+v\text{.}
+\end{equation*}
+<p id="p-694">From the well-known identity \(u^m-1=(u-1)\cdot (u^{m-1}+u^{m-2}+\ldots+u+1)\) one gets that</p>
+\begin{equation*}
+\frac{u^m-1}{u-1}=u^{m-1}+u^{m-2}+\ldots+u+1
+\end{equation*}
+<p>for \(u\neq 1\text{.}\) So we have \(u\frac{u^k-1}{u-1}\cdot v+v=(u^k+u^{k-1}+\ldots+u)v+v=(u^k+u^{k-1}+\ldots+u+1)\cdot v\text{.}\) Finally we obtain that</p>
+\begin{equation*}
+a_{k+1}=u^{k+1}a_0+(u^k+u^{k-1}+\ldots+u+1)v=u^{k+1}a_0+\frac{u^{k+1}-1}{u-1}v\text{,}
+\end{equation*}
+<p>and the statement follows.</p></article></div>
+<p id="p-695">It is easy to compute an explicit formula for the sequence \(T_n\) related to the problem of Tower of Hanoi. Here \(T_n\) is defined as</p>
+\begin{align*}
+T_0\amp =0,\\
+T_n\amp =2T_{n-1}+1 \mbox{ for } n\geq 1\text{,}
+\end{align*}
+<p>that is, \(u=2\) and \(v=1\text{.}\) The theorem implies that</p>
+\begin{equation*}
+T_n=u^nT_0+\frac{u^n-1}{u-1}v=2^n\cdot 0+\frac{2^n-1}{2-1}\cdot 1=2^n-1\text{.}
+\end{equation*}
+<p id="p-696">Consider another example, let \(a_n\) be a sequence defined by</p>
+\begin{align*}
+a_0\amp =3,\\
+a_n\amp =2a_{n-1}+2 \mbox{ for } n\geq 1\text{.}
+\end{align*}
+<p id="p-697">We apply the theorem and we have</p>
+\begin{equation*}
+a_n=2^n\cdot 3+\frac{2^n-1}{2-1}\cdot 2=2^n\cdot 3+2^{n+1}-2=5\cdot 2^n-2\text{.}
+\end{equation*}
+<p id="p-698">We have proved a theorem about linear recurrence relations of order 1, given such a recurrence we are able to provide an explicit formula. What about higher order linear recurrence relations? To make the presentation simpler we will consider homogeneous linear recurrence relations of order \(k\text{,}\) where \(k\geq 2\text{.}\) So we study the structure of the recurrence given by</p>
+\begin{equation}
+a_n=c_{n-1}a_{n-1}+c_{n-2}a_{n-2}+\ldots+c_{n-k}a_{n-k}, c_{n-k}\neq 0, n\geq k\text{,}\label{hlr}\tag{5.2.1}
+\end{equation}
+<p>where \(c_{n-1},\ldots,c_{n-k}\) are some constants.</p>
+<article class="theorem-like" id="UV"><h6 class="heading">
+<span class="type">Theorem</span><span class="codenumber">5.2.3</span>
+</h6>
+<p id="p-699">Assume that \(U_n\) and \(V_n\) are sequences satisfying <a knowl="./knowl/hlr.html" knowl-id="xref-hlr" alt="Equation 5.2.1 " title="Equation 5.2.1 ">(5.2.1)</a> and \(s,t\) are constants. The linear combination</p>
+\begin{equation*}
+W_n=sU_n+tV_n
+\end{equation*}
+<p>gives another solution of <a knowl="./knowl/hlr.html" knowl-id="xref-hlr" alt="Equation 5.2.1 " title="Equation 5.2.1 ">(5.2.1)</a>.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-34" id="proof-34"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-34" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-700">Since \(U_n\) and \(V_n\) satisfy <a knowl="./knowl/hlr.html" knowl-id="xref-hlr" alt="Equation 5.2.1 " title="Equation 5.2.1 ">(5.2.1)</a> we have</p>
+\begin{align*}
+U_n\amp =c_{n-1}U_{n-1}+c_{n-2}U_{n-2}+\ldots+c_{n-k}U_{n-k},\\
+V_n\amp =c_{n-1}V_{n-1}+c_{n-2}V_{n-2}+\ldots+c_{n-k}V_{n-k}\text{.}
+\end{align*}
+<p id="p-701">Substituting these formulas into the definition of \(W_n\) we get</p>
+\begin{align*}
+W_n=\amp s(c_{n-1}U_{n-1}+c_{n-2}U_{n-2}+\ldots+c_{n-k}U_{n-k})+\\
+\amp t(c_{n-1}V_{n-1}+c_{n-2}V_{n-2}+\ldots+c_{n-k}V_{n-k})=\\
+\amp c_{n-1}(sU_{n-1}+tV_{n-1})+c_{n-2}(sU_{n-2}+tV_{n-2})+\ldots+\\
+\amp +c_{n-k}(sU_{n-k}+tV_{n-k})=\\
+\amp c_{n-1}W_{n-1}+c_{n-2}W_{n-2}+\ldots+c_{n-k}W_{n-k}\text{.}
+\end{align*}
+<p id="p-702">It turned out that \(W_n\) is also a solution of <a knowl="./knowl/hlr.html" knowl-id="xref-hlr" alt="Equation 5.2.1 " title="Equation 5.2.1 ">(5.2.1)</a>.</p></article></div>
+<p id="p-703">The previous theorem suggests a strategy to determine explicit formula for higher order linear homogeneous recurrence relations. First we look for solutions of the concrete recurrence relation, then we consider linear combinations of them and we try to fix the constants in such a way that the initial values of the given sequence are the same as in case of the sequence obtained by linear combination. What kind of solutions should we look for? Here we need some numerical experiences. Consider the example</p>
+\begin{align*}
+a_0\amp =2,\\
+a_1\amp =2,\\
+a_n\amp =2a_{n-1}+3a_{n-2}, n\geq 2\text{.}
+\end{align*}
+<p id="p-704">The above sequence is a homogeneous linear recurrence sequence of order \(2\text{.}\) We can easily compute the first few elements of the sequence, \(a_2=10, a_3=26, a_4=82\text{.}\) Let us consider the ratio of consecutive elements of the sequence.</p>
+<table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\frac{a_n}{a_{n-1}}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\frac{a_n}{a_{n-1}}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\)</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">\(\approx 2.951\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">\(5\)</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">\(\approx 3.017\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">\(2.6\)</td>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">\(\approx 2.995\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">\(\approx 3.154\)</td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">\(\approx 3.002\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<p id="p-705">The ratios are very close to a constant, in this case very close to 3 for \(n\in\halmaz{4,5,6,7,8}\text{.}\) At the beginning of this chapter we studied sequences for which the ratio of consecutive elements is a constant, these are geometric progressions. Let us look for geometric progressions satisfying the same recurrence relation as \(a_n\text{.}\) If \(g_n\) is a sequence given by the formula</p>
+\begin{equation*}
+g_n=rg_{n-1}\text{,}
+\end{equation*}
+<p>where \(r\) is the common ratio of the sequence with initial value \(g_0\text{,}\) then we have that \(g_n=g_0r^n\text{.}\) That is, \(g_n\) is a geometric progression. Let us assume that for some initial value \(g_0\) and for some \(r\) the progression satisfies the same recurrence relation as \(a_n\text{.}\) Now we obtain</p>
+\begin{equation*}
+g_n=2g_{n-1}+3g_{n-2}\text{.}
+\end{equation*}
+<p id="p-706">It follows that</p>
+\begin{equation*}
+g_0r^n=2g_0r^{n-1}+3g_0r^{n-2}\text{.}
+\end{equation*}
+<p id="p-707">The constant zero progression is not useful for our purposes we assume that \(g_0\neq 0\) and \(r\neq 0\text{.}\) After dividing by \(g_0r^{n-2}\) we get</p>
+\begin{equation*}
+r^2=2r+3\text{.}
+\end{equation*}
+<p id="p-708">If there is such a progression, then \(r\) is a root of the quadratic polynomial \(r^2-2r-3\text{.}\) One can determine the roots by the well-known formula, which is in our case</p>
+\begin{equation*}
+\frac{2\pm\sqrt{4-4(-3)}}{2}\text{.}
+\end{equation*}
+<p id="p-709">That is, the roots are \(3\) and \(-1\text{.}\) We have two different solutions of the recurrence relation and <a knowl="./knowl/UV.html" knowl-id="xref-UV" alt="Theorem 5.2.3 " title="Theorem 5.2.3 ">Theorem 5.2.3</a> implies that linear combinations of these two solutions yield another solutions. Let us consider the sequence \(W_n=s3^n+t(-1)^n\text{.}\) We should fix \(s,t\) in such a way that</p>
+\begin{align*}
+\amp W_0=a_0=2,\\
+\amp W_1=a_1=2\text{.}
+\end{align*}
+<p id="p-710">We get a system of equations in two unknowns</p>
+\begin{align*}
+W_0=2\amp \Rightarrow s\cdot 3^0+t\cdot (-1)^0=2,\\
+W_1=2\amp \Rightarrow s\cdot 3^1+t\cdot (-1)^1=2\text{.}
+\end{align*}
+<p id="p-711">The first equation implies that \(t=2-s\text{.}\) The second equation can be written as \(3s+(2-s)(-1)=2\text{,}\) that is, \(4s=4\) and we get that \(s=1,t=1\text{.}\) Now we have a sequence \(W_n=3^n+(-1)^n\) which satisfies the appropriate recurrence relation and has the same initial values as \(a_n\text{.}\) Thus \(W_n=a_n\text{.}\) In this way we obtained an explicit formula for the recurrence sequence \(a_n\) given by</p>
+\begin{equation*}
+3^n+(-1)^n\text{.}
+\end{equation*}
+<p id="p-712">We may try to apply the above method to determine an explicit formula for the famous Fibonacci sequence:</p>
+\begin{align*}
+F_0\amp =0,\\
+F_1\amp =1,\\
+F_n\amp =F_{n-1}+F_{n-2}, n\geq 2\text{.}
+\end{align*}
+<p id="p-713">Let \(g_n\) be a geometric progression such that \(g_n=g_0r^n\) for some \(g_0\) and \(r\text{.}\) Assume that \(g_n\) satisfies the recurrence relation. It follows that</p>
+\begin{equation*}
+r^2=r+1\text{.}
+\end{equation*}
+<p id="p-714">The two roots of this quadratic polynomial are</p>
+\begin{equation*}
+\frac{1-\sqrt{5}}{2}\mbox{ and } \frac{1+\sqrt{5}}{2}\text{.}
+\end{equation*}
+<p id="p-715">Let \(W_n\) be a linear combination of the appropriate geometric progressions, that is,</p>
+\begin{equation*}
+W_n=s\cdot \left(\frac{1-\sqrt{5}}{2}\right)^n+t\cdot \left(\frac{1+\sqrt{5}}{2}\right)^n\text{.}
+\end{equation*}
+<p id="p-716">It remains to find \(s\) and \(t\) for which</p>
+\begin{align*}
+\amp W_0=F_0=0,\\
+\amp W_1=F_1=1\text{.}
+\end{align*}
+<p id="p-717">The above equations imply that</p>
+\begin{align*}
+s+t\amp =0\\
+s\cdot \left(\frac{1-\sqrt{5}}{2}\right)+t\cdot \left(\frac{1+\sqrt{5}}{2}\right)\amp =1\text{.}
+\end{align*}
+<p id="p-718">We immediately get that \(t=-s\text{.}\) Therefore</p>
+\begin{equation*}
+s\cdot \left(\frac{1-\sqrt{5}}{2}\right)-s\cdot \left(\frac{1+\sqrt{5}}{2}\right)=1\text{.}
+\end{equation*}
+<p id="p-719">The latter equation yields that \(s=\frac{-\sqrt{5}}{5}\text{,}\) so \(t=\frac{\sqrt{5}}{5}\text{.}\) The explicit formula in case of the Fibonacci sequence is</p>
+\begin{equation*}
+F_n=\frac{-\sqrt{5}}{5}\cdot \left(\frac{1-\sqrt{5}}{2}\right)^n+\frac{\sqrt{5}}{5}\cdot \left(\frac{1+\sqrt{5}}{2}\right)^n\text{.}
+\end{equation*}
+<p id="p-720">Let us see if the previous argument works for homogeneous linear recurrence sequence of order greater than 2. We define \(a_n\) as</p>
+\begin{align*}
+a_0\amp =5,\\
+a_1\amp =-3,\\
+a_2\amp =11,\\
+a_n\amp =-a_{n-1}+4a_{n-2}+4a_{n-3}, n\geq 3\text{.}
+\end{align*}
+<p id="p-721">The sequence \(a_n\) is a homogeneous linear recurrence sequence of order 3, since \(a_n\) depends on the previous 3 elements of the sequence. We try to find a geometric progression \(g_n=g_0r^n\) satisfying the above recurrence</p>
+\begin{equation*}
+g_0r^n=-g_0r^{n-1}+4g_0r^{n-2}+4g_0r^{n-3}\text{.}
+\end{equation*}
+<p id="p-722">Again we exclude the case \(g_0r=0\text{,}\) so we may simplify the equation by \(g_0r^{n-3}\text{.}\) So we obtain</p>
+\begin{equation*}
+r^3+r^2-4r-4=0\text{.}
+\end{equation*}
+<p id="p-723">This time we have a cubic polynomial and finding the roots of a cubic is more difficult than determining the roots of a quadratic polynomial. We may try to find some special roots e.g. integral roots. To find integral roots we can rewrite the equation in the form</p>
+\begin{equation*}
+r\cdot (r^2+r-4)=4\text{.}
+\end{equation*}
+<p id="p-724">If \(r\) is an integer, then the expression on the left-hand side is a multiple of two integers. The multiple of two integers is equal to 4, that is, we have only a few possibilities since \(r\) has to divide 4. That is \(r\in\halmaz{-4,-2,-1,1,2,4}\text{.}\) Evaluate the cubic polynomial at these values:</p>
+<table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(r\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(r^3+r^2-4r-4\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">-4</td>
+<td class="l m b0 r0 l0 t0 lines">-36</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">-2</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">-1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">-6</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">60</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<p id="p-725">We are lucky, there are 3 integral roots: \(-2,-1\) and 2. It means by <a knowl="./knowl/UV.html" knowl-id="xref-UV" alt="Theorem 5.2.3 " title="Theorem 5.2.3 ">Theorem 5.2.3</a> that any linear combinations of the geometric progressions \((-2)^n, (-1)^n\) and \(2^n\) will satisfy the same recurrence relation as \(a_n\text{.}\) Now define \(W_n=s(-2)^n+t(-1)^n+u2^n\text{.}\) Our task is to fix \(s,t\) and \(u\) such that</p>
+\begin{align*}
+\amp W_0=a_0=5,\\
+\amp W_1=a_1=-3,\\
+\amp W_2=a_2=11\text{.}
+\end{align*}
+<p id="p-726">These equations yield a system of equations in three unknowns.</p>
+\begin{align*}
+s+t+u\amp =5\\
+-2s-t+2u\amp =-3\\
+4s+t+4u\amp =11\text{.}
+\end{align*}
+<p id="p-727">We can eliminate \(s\) and \(u\) using the first and the third equations. To do so we multiply the first equation by 4:</p>
+\begin{align*}
+4s+4t+4u\amp =20\\
+-2s-t+2u\amp =-3\\
+4s+t+4u\amp =11\text{.}
+\end{align*}
+<p id="p-728">We subtract the third equation from the first one and we get</p>
+\begin{equation*}
+3t=9\text{,}
+\end{equation*}
+<p>that is, \(t=3\text{.}\) The system of equations can be simplified now:</p>
+\begin{align*}
+s+u\amp =2\\
+-2s+2u\amp =0\text{.}
+\end{align*}
+<p id="p-729">The second equation implies that \(s=u\text{,}\) so from the first equation we have that \(s=u=1\text{.}\) The explicit formula for the sequence \(a_n\) is</p>
+\begin{equation*}
+(-2)^n+3\cdot (-1)^n+2^n\text{.}
+\end{equation*}
+<p id="p-730">We remark that the previous argument does not work if we have a root with multiplicity greater than 1. Without providing the details of the theory we note that it is also possible to handle such cases. For example assume that a linear recurrence of order 2 is given and the corresponding quadratic polynomial has a double root \(r\text{.}\) We have that \(r^n\) and \(nr^n\) are solutions of the same recurrence. In general, if we have a linear recurrence of order \(k\) and the corresponding polynomial has a root \(r\) with multiplicity \(m\text{,}\) then</p>
+\begin{equation*}
+r^n, nr^n,\ldots n^{m-1}r^n
+\end{equation*}
+<p>are solutions of the same recurrence. Let us consider an example.</p>
+\begin{align*}
+u_0\amp =4,\\
+u_1\amp =-1,\\
+u_2\amp =-1,\\
+u_3\amp =-43,\\
+u_n\amp =5u_{n-1}-6u_{n-2}-4u_{n-3}+8u_{n-4}, n\geq 4\text{.}
+\end{align*}
+<p id="p-731">The corresponding quartic polynomial \(r^4-5r^3+6r^2+4r-8\) can be written as \((r+1)(r-2)^3\text{,}\) that is, \(-1\) is a simple root and 2 is a root with multiplicity 3. Therefore we define \(W_n\) as</p>
+\begin{equation*}
+s\cdot (-1)^n+t\cdot 2^n+xn\cdot 2^n+yn^2\cdot 2^n\text{.}
+\end{equation*}
+<p id="p-732">Then we obtain four equations in four unknowns</p>
+\begin{align*}
+s+t\amp =4\\
+-s+2t+2x+2y\amp =-1\\
+s+4t+8x+16y\amp =-1\\
+-s+8t+24x+72y\amp =-43\text{.}
+\end{align*}
+<p id="p-733">We get that \(s=4-t\text{,}\) hence</p>
+\begin{align*}
+3t+2x+2y\amp =3\\
+3t+8x+16y\amp =-5\\
+9t+24x+72y\amp =-39\text{.}
+\end{align*}
+<p id="p-734">Using the first equation we can eliminate \(t\) from the second and the third equations.</p>
+\begin{align*}
+6x+14y\amp =-8\\
+18x+66y\amp =-48\text{.}
+\end{align*}
+<p id="p-735">The above system has the solution \(x=1, y=-1\text{.}\) We get that \(t=1\) and \(s=3\text{.}\) Thus</p>
+\begin{equation*}
+u_n=3\cdot (-1)^n+2^n+n\cdot 2^n-n^2\cdot 2^n\text{.}
+\end{equation*}
+<p id="p-736">As an application we deal with an inverse problem, let us be given the sequence</p>
+\begin{equation*}
+u_n=\left(\frac{3-\sqrt{33}}{2}\right)^n+\left(\frac{3+\sqrt{33}}{2}\right)^n, n\geq 0\text{.}
+\end{equation*}
+<p id="p-737">Our statement is that \(u_n\) is an integer sequence and 3 divides \(u_n\) for \(n\geq 1\text{.}\) This statement can be proved by induction (<a knowl="./knowl/induction-6.html" knowl-id="xref-induction-6" alt="Exercise 3.1.12 " title="Exercise 3.1.12 ">Exercise 3.1.12</a>), but now we apply the theory of linear recurrence sequences. We are given an explicit formula and we would like to determine a linear recurrence sequence which has the same closed-form solution. It is easy to see that \(u_0=2\) and \(u_1=3\text{.}\) If we have an appropriate recurrence, then \(\frac{3-\sqrt{33}}{2}\) and \(\frac{3+\sqrt{33}}{2}\) are roots of some quadratic polynomial:</p>
+\begin{equation*}
+\left(r-\frac{3-\sqrt{33}}{2}\right)\cdot \left(r-\frac{3+\sqrt{33}}{2}\right)=r^2-3r-6\text{.}
+\end{equation*}
+<p id="p-738">From this polynomial we have the following recurrence relation \(u_n=3u_{n-1}+6u_{n-2}\text{.}\) That is, we have a recurrence sequence</p>
+\begin{align*}
+u_0\amp =2,\\
+u_1\amp =3,\\
+u_n\amp =3u_{n-1}+6u_{n-2}=3(u_{n-1}+2u_{n-2})\text{.}
+\end{align*}
+<p id="p-739">Since \(u_0\) and \(u_1\) are integers and \(u_{n-1},u_{n-2}\) have integral coefficients in the recurrence relation, the sequence \(u_n\) is an integral sequence. It is clear that \(u_1=3\) is divisible by 3 and similarly \(u_n=3(u_{n-1}+2u_{n-2})\) is a multiple of 3.</p>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-seq-ex-1" id="seq-ex-1"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">5.2.4</span>
+</h6></a></article><div id="hk-seq-ex-1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-740">Find the shortest sequence of moves that transfers a tower of 4 disks from peg \(A\) to peg \(C\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-seq-ex-2" id="seq-ex-2"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">5.2.5</span>
+</h6></a></article><div id="hk-seq-ex-2" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-741">Find a closed-form formula for the following sequence defined by:</p>
+\begin{equation*}
+a_n=7a_{n-1}-10a_{n-2}\mbox{ for } n\geq 2\mbox{ and } a_0=0,a_1=2\text{.}
+\end{equation*}
+</article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-seq-ex-3" id="seq-ex-3"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">5.2.6</span>
+</h6></a></article><div id="hk-seq-ex-3" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-742">Find an explicit formula for the following sequence defined by:</p>
+\begin{equation*}
+a_n=4a_{n-1}-3a_{n-2}\mbox{ for } n\geq 2\mbox{ and } a_0=1,a_1=13\text{.}
+\end{equation*}
+</article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-seq-ex-4" id="seq-ex-4"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">5.2.7</span>
+</h6></a></article><div id="hk-seq-ex-4" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-743">Find a closed-form formula for the following sequence defined by:</p>
+\begin{equation*}
+a_n=-2a_{n-1}+a_{n-2}+2a_{n-3}\mbox{ for } n\geq 3\mbox{ and } a_0=0,a_1=1,a_2=2\text{.}
+\end{equation*}
+</article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-seq-ex-5" id="seq-ex-5"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">5.2.8</span>
+</h6></a></article><div id="hk-seq-ex-5" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-744">Find an explicit formula for the following sequence defined by:</p>
+\begin{equation*}
+a_n=6a_{n-1}-11a_{n-2}+6a_{n-3}\mbox{ for } n\geq 3\mbox{ and } a_0=0,a_1=0,a_2=1\text{.}
+\end{equation*}
+</article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-seq-ex-6" id="seq-ex-6"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">5.2.9</span>
+</h6></a></article><div id="hk-seq-ex-6" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-745">Find a closed-form formula for the following sequence defined by:</p>
+\begin{equation*}
+a_n=4a_{n-1}-4a_{n-2}\mbox{ for } n\geq 2\mbox{ and } a_0=-1,a_1=0\text{.}
+\end{equation*}
+</article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-seq-ex-7" id="seq-ex-7"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">5.2.10</span>
+</h6></a></article><div id="hk-seq-ex-7" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-746">Find an explicit formula for the following sequence defined by:</p>
+\begin{equation*}
+a_n=5a_{n-1}-3a_{n-2}-9a_{n-3}\mbox{ for } n\geq 3\mbox{ and } a_0=3,a_1=4,a_2=29\text{.}
+\end{equation*}
+</article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-seq-ex-8" id="seq-ex-8"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">5.2.11</span>
+</h6></a></article><div id="hk-seq-ex-8" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-747">Prove that the sequence defined by</p>
+\begin{equation*}
+u_n=\left(\frac{5-3\sqrt{5}}{2}\right)^n+\left(\frac{5+3\sqrt{5}}{2}\right)^n, n\geq 0
+\end{equation*}
+<p>contains only integers and \(u_n\) is divisible by 5 if \(n\geq 1\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-seq-ex-9" id="seq-ex-9"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">5.2.12</span>
+</h6></a></article><div id="hk-seq-ex-9" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-748">Prove that the sequence defined by</p>
+\begin{equation*}
+(4-\sqrt{2})^n+(4+\sqrt{2})^n, n\geq 0
+\end{equation*}
+<p>contains only integers divisible by 2.</p></article></div></section></div></main>
+</div>
+</body>
+</html>

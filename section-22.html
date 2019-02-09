@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:58+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Introduction</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="cha_solutions.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="cha_solutions.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-23.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="cha_solutions.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="cha_solutions.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-23.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link active"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22" class="active">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-22"><h2 class="heading hide-type" alt="Section 6.1 Introduction">
+<span class="type">Section</span><span class="codenumber">6.1</span><span class="title">Introduction</span>
+</h2>
+<ol id="ol-14" style="list-style-type: decimal;">
+<li id="li-70">
+<p id="p-749"><a knowl="./knowl/intro-ex-1.html" knowl-id="xref-intro-ex-1" alt="Exercise 1.1.11 " title="Exercise 1.1.11 ">Exercise 1.1.11</a> There are three given sets \(A=\halmaz{3,4,6,7,8},B=\halmaz{2,4,5,6,8}\) and \(C=\halmaz{1,2,4,5,8}\text{.}\) We have that</p>
+\begin{align*}
+A\setminus B\amp =\halmaz{3,7}\\
+C\cap B\amp =\halmaz{2,4,5,8}\text{.}
+\end{align*}
+<p>Thus</p>
+\begin{equation*}
+(A\setminus B)\cup(C\cap B)=\halmaz{2,3,4,5,7,8}\text{.}
+\end{equation*}
+</li>
+<li id="li-71">
+<p id="p-750"><a knowl="./knowl/intro-ex-2.html" knowl-id="xref-intro-ex-2" alt="Exercise 1.1.12 " title="Exercise 1.1.12 ">Exercise 1.1.12</a> We have three sets \(A=\halmaz{1,3,4,6,7},B=\halmaz{2,4,5,6,8}\) and \(C=\halmaz{1,3,4,5,8}\text{.}\)</p>
+\begin{align*}
+(A\cap B)\amp =\halmaz{4,6}\\
+(C\cap B)\amp =\halmaz{4,5,8}\text{.}
+\end{align*}
+<p>Therefore</p>
+\begin{equation*}
+(A\cap B)\setminus(C\cap B)=\halmaz{6}\text{.}
+\end{equation*}
+</li>
+<li id="li-72">
+<p id="p-751"><a knowl="./knowl/intro-ex-3.html" knowl-id="xref-intro-ex-3" alt="Exercise 1.1.13 " title="Exercise 1.1.13 ">Exercise 1.1.13</a> Now the three given sets are \(A=\halmaz{1,3,4,6,7},B=\halmaz{2,4,6,8}\) and \(C=\halmaz{1,3,4,8}\text{.}\)</p>
+\begin{align*}
+(A\setminus B)\amp =\halmaz{1,3,7}\\
+(C\setminus B)\amp =\halmaz{1,3}\text{.}
+\end{align*}
+<p>So we obtain</p>
+\begin{equation*}
+(A\setminus B)\cup(C\setminus B)=\halmaz{1,3,7}\text{.}
+\end{equation*}
+</li>
+<li id="li-73"><p id="p-752"><a knowl="./knowl/intro-ex-4.html" knowl-id="xref-intro-ex-4" alt="Exercise 1.1.14 " title="Exercise 1.1.14 ">Exercise 1.1.14</a> (a) The elements of the set are 7, 10 and 13. (b) The elements of the set are 0, 1 and 4. (c) The possible differences are \(3-1, 3-2, 4-1, 4-2, 5-1\) and \(5-2\text{,}\) thus the elements of the set are 1, 2, 3 and 4.</p></li>
+<li id="li-74"><p id="p-753"><a knowl="./knowl/intro-ex-5.html" knowl-id="xref-intro-ex-5" alt="Exercise 1.1.15 " title="Exercise 1.1.15 ">Exercise 1.1.15</a> (a) \(\halmazvonal{2k}{ k\in\halmaz{1,2,3,4,5}}\text{,}\) (b) \(\halmazvonal{k^2}{k\in\halmaz{1,2,3,4,5}}\text{,}\) (c) \(\halmazvonal{2^{-k}}{ k\in\mathbb{N}\cup\halmaz{0}}\text{,}\) (d) \(\halmazvonal{a/b }{a,b\in\mathbb{N}, b\leq a\leq 2b}\text{.}\)</p></li>
+<li id="li-75"><p id="p-754"><a knowl="./knowl/intro-ex-6.html" knowl-id="xref-intro-ex-6" alt="Exercise 1.1.16 " title="Exercise 1.1.16 ">Exercise 1.1.16</a> 
+(a) 
+<!-- \begin{venndiagram3sets} \fillACapB\fillC \end{venndiagram3sets} -->
+<img src="images/venn_a.png" width="50%" style="display: block; margin: 0 auto;" alt="">
+(b) 
+<!-- \begin{venndiagram3sets} \fillANotB\fillANotC \end{venndiagram3sets} -->
+<img src="images/venn_b.png" width="50%" style="display: block; margin: 0 auto;" alt="">
+(c) 
+<!-- \begin{venndiagram3sets} \fillACapC\fillBCapC \end{venndiagram3sets} -->
+<img src="images/venn_c.png" width="50%" style="display: block; margin: 0 auto;" alt="">
+(d) 
+<!-- \begin{venndiagram3sets} \fillACapC\fillBCapC\fillACapB \end{venndiagram3sets} -->
+<img src="images/venn_d.png" width="50%" style="display: block; margin: 0 auto;" alt="">
+(e) 
+<!-- \begin{venndiagram3sets} \fillACapBNotC\fillBCapCNotA\fillACapCNotB \end{venndiagram3sets} -->
+<img src="images/venn_e.png" width="50%" style="display: block; margin: 0 auto;" alt="">
+(f) 
+<!-- \begin{venndiagram3sets} \fillANotB\fillBNotC\fillCNotA \end{venndiagram3sets} -->
+<img src="images/venn_f.png" width="50%" style="display: block; margin: 0 auto;" alt="">
+</p></li>
+<li id="li-76">
+<p id="p-755"><a knowl="./knowl/intro-ex-7.html" knowl-id="xref-intro-ex-7" alt="Exercise 1.1.17 " title="Exercise 1.1.17 ">Exercise 1.1.17</a> The set \(A\cap B\cap C\) is a subset of all other sets for which we have certain cardinality conditions, so we may set</p>
+\begin{equation*}
+A\cap B\cap C=\halmaz{1,2}\text{.}
+\end{equation*}
+<p>The conditions for \(|A\cap B|, |A\cap C|\) and \(|B\cap C|\) are satisfied. We have that \(|A|=4\text{,}\) that means that two elements are missing from \(A\setminus(B\cup C)\text{.}\) We let \(A\setminus(B\cup C)=\halmaz{3,4}\text{.}\) Similarly for \(B\setminus(A\cup C)\) and \(C\setminus(A\cup B)\text{.}\) We obtain that 
+<img src="images/venn_17.png" width="50%" style="display: block; margin: 0 auto;" alt="">
+<!-- \begin{venndiagram3sets}[labelABC={{1,2}},labelOnlyA={{3,4}},labelOnlyB={{5,6}},labelOnlyC={{7,8}}] \end{venndiagram3sets} -->
+</p>
+</li>
+<li id="li-77"><p id="p-756"><a knowl="./knowl/intro-ex-8.html" knowl-id="xref-intro-ex-8" alt="Exercise 1.1.18 " title="Exercise 1.1.18 ">Exercise 1.1.18</a> Following the solution of <a knowl="./knowl/intro-ex-7.html" knowl-id="xref-intro-ex-7" alt="Exercise 1.1.17 " title="Exercise 1.1.17 ">Exercise 1.1.17</a> we get: 
+<img src="images/venn_18.png" width="50%" style="display: block; margin: 0 auto;" alt="">
+<!-- \begin{venndiagram3sets}[labelABC={{1,2}},labelOnlyBC={{3}},labelOnlyA={{4,5}},labelOnlyB={{6,7}},labelOnlyC={{8,9,10}}] \end{venndiagram3sets} -->
+</p></li>
+<li id="li-78"><p id="p-757"><a knowl="./knowl/intro-ex-9.html" knowl-id="xref-intro-ex-9" alt="Exercise 1.2.1 " title="Exercise 1.2.1 ">Exercise 1.2.1</a> (a) \(\sum_{i=4}^7 i=4+5+6+7\text{,}\) (b) \(\sum_{i=1}^5 (i^2-i)=0+2+6+12+20\text{,}\) (c) \(\sum_{i=1}^4 10^i=10+100+1000+10000\text{,}\) (d) \(\sum_{2\leq i\leq 5} \frac{1}{2^i}=\frac{1}{4}+\frac{1}{8}+\frac{1}{16}+\frac{1}{32}\text{,}\) (e) \(\sum_{i\in S} (-1)^i\text{,}\) where \(S=\halmaz{2,3,5,8}\) is \(1+(-1)+(-1)+1\text{.}\)</p></li>
+<li id="li-79"><p id="p-758"><a knowl="./knowl/intro-ex-10.html" knowl-id="xref-intro-ex-10" alt="Exercise 1.2.2 " title="Exercise 1.2.2 ">Exercise 1.2.2</a> (a) \(2+4+6+8+10=\sum_{i=1}^5 2i\text{,}\) (b) \(1+4+7+10=\sum_{i=0}^3 (3i+1)\text{,}\) (c) \(\frac{1}{4}+\frac{1}{2}+1+2+4=\sum_{i=-2}^2 2^i\text{,}\) (d) \(\frac{1}{4}-\frac{1}{2}+1-2+4=\sum_{i=-2}^2 (-2)^i\text{.}\)</p></li>
+<li id="li-80"><p id="p-759"><a knowl="./knowl/intro-ex-11.html" knowl-id="xref-intro-ex-11" alt="Exercise 1.2.3 " title="Exercise 1.2.3 ">Exercise 1.2.3</a> (a) \(\prod_{i=-4}^{-1} i=(-4)\cdot(-3)\cdot(-2)\cdot(-1)\text{,}\) (b) \(\prod_{i=1}^4 (i^2)=1\cdot 4\cdot 9\cdot 16\text{,}\) (c) \(\prod_{i=1}^3 2^i=2\cdot 4\cdot 8\text{,}\) (d) \(\prod_{-2\leq i\leq 3} \frac{1}{2^i}=4\cdot 2\cdot 1\cdot \frac{1}{2}\cdot \frac{1}{4}\cdot \frac{1}{8}\text{,}\) (e) \(\prod_{i\in S} (-1)^i\text{,}\) where \(S=\halmaz{2,4,6,7}\) is \((-1)^2\cdot(-1)^4\cdot(-1)^6\cdot(-1)^7\text{.}\)</p></li>
+<li id="li-81"><p id="p-760"><a knowl="./knowl/intro-ex-12.html" knowl-id="xref-intro-ex-12" alt="Exercise 1.2.4 " title="Exercise 1.2.4 ">Exercise 1.2.4</a> (a) \(1\cdot 3\cdot 5\cdot 7=\prod_{i=0}^3 (2i+1)\text{,}\) (b) \((-1)\cdot 2\cdot 5\cdot 8=\prod_{i=0}^3 (3i-1)\text{,}\) (c) \(\frac{1}{9}\cdot\frac{1}{3}\cdot 1\cdot 3\cdot 9=\prod_{i=-2}^2 3^{i}\text{.}\)</p></li>
+<li id="li-82">
+<p id="p-761"><a knowl="./knowl/ex_factorial1.html" knowl-id="xref-ex_factorial1" alt="Exercise 1.2.5 " title="Exercise 1.2.5 ">Exercise 1.2.5</a> The values are</p>
+\begin{align*}
+0! \amp = 1,\\
+1! \amp = 1,\\
+2! \amp = 2,\\
+3! \amp = 6,\\
+4! \amp = 24,\\
+5! \amp = 120,\\
+6! \amp = 720,\\
+7! \amp = 5~040,\\
+8! \amp = 40~320\text{.}
+\end{align*}
+</li>
+<li id="li-83">
+<p id="p-762"><a knowl="./knowl/ex_factorial2.html" knowl-id="xref-ex_factorial2" alt="Exercise 1.2.6 " title="Exercise 1.2.6 ">Exercise 1.2.6</a> The values are</p>
+\begin{align*}
+5+3! \amp = 5+6 = 11,\\
+(5+3)! = 8! \amp = 40~320,\\
+4-2\cdot 3! \amp = 4-2\cdot 6 = 4-12=-8,\\
+(4-2)\cdot 3! \amp = (4-2) \cdot 6 = 2 \cdot 6 = 12,\\
+4 - (2 \cdot 3)! \amp = 4 - 6! = 4 - 720 = -716,\\
+3 \cdot 2! \amp = 3 \cdot 2 = 6,\\
+(3 \cdot 2)! \amp = 6! = 720,\\
+4 \cdot 3! \amp = 4 \cdot 6 = 24,\\
+4! \cdot 5 \amp = 24 \cdot 5 = 120\text{.}
+\end{align*}
+</li>
+<li id="li-84">
+<p id="p-763"><a knowl="./knowl/ex_factorial3.html" knowl-id="xref-ex_factorial3" alt="Exercise 1.2.7 " title="Exercise 1.2.7 ">Exercise 1.2.7</a> Let</p>
+\begin{equation*}
+S_n = \halmazvonal{k}{k \text{ is a positive integer } , k\leq n} = \halmaz{1, 2, \dots , n}\text{.}
+\end{equation*}
+<p>Then it is easy to see that \(S_n = S_{n-1} \cup \halmaz{n}\text{,}\) that is, \(S_n\) is the disjoint union of \(S_{n-1}\) and \(\halmaz{n}\text{.}\) Then by the definition of the factorial, we have</p>
+\begin{equation*}
+n! = \prod_{k \in S_n} k = \left( \prod_{k \in \halmaz{n}} k \right) \cdot \left( \prod_{k \in S_{n-1}} k \right) = n \cdot (n-1)!\text{.}
+\end{equation*}
+<p>If \(n \geq 2\text{,}\) then another proof could be</p>
+\begin{equation*}
+n! = n \cdot \underbrace{(n-1) \cdot (n-2) \cdot \dots \cdot 2 \cdot 1 }_{(n-1)!}= n \cdot (n-1)!\text{.}
+\end{equation*}
+<p>Nevertheless, the claim is true for \(n=1\text{,}\) as well:</p>
+\begin{equation*}
+1! = 1 = 1 \cdot 1 = 1 \cdot 0!\text{.}
+\end{equation*}
+</li>
+<li id="li-85">
+<p id="p-764"><a knowl="./knowl/intro-ex-13.html" knowl-id="xref-intro-ex-13" alt="Exercise 1.3.5 " title="Exercise 1.3.5 ">Exercise 1.3.5</a> (a) We obtain that</p>
+\begin{align*}
+678 \amp = 1\cdot 567+111\\
+567 \amp = 5\cdot 111+12\\
+111 \amp = 9\cdot 12+3\\
+12 \amp = 4\cdot 3+0\text{.}
+\end{align*}
+<p>Thus \(\gcd(678,567)=3\text{.}\) We work backwards to compute \(x\) and \(y:\)</p>
+\begin{align*}
+3\amp =111-9\cdot 12\\
+\amp =111-9\cdot (567-5\cdot 111)=-9\cdot 567+46\cdot 111\\
+\amp =-9\cdot 567+46 \cdot (678-567)=46\cdot 678-55\cdot 567\text{.}
+\end{align*}
+<p>Hence we have</p>
+\begin{equation*}
+46\cdot 678-55\cdot 567=\gcd(678,567)=3\text{.}
+\end{equation*}
+<p>(b) We get that</p>
+\begin{align*}
+803 \amp = 2\cdot 319+165\\
+319 \amp = 1\cdot 165+154\\
+165 \amp = 1\cdot 154+11\\
+154 \amp = 14\cdot 11+0\text{.}
+\end{align*}
+<p>It follows that \(\gcd(803,319)=11\text{.}\) Now we find \(x\) and \(y:\)</p>
+\begin{align*}
+11\amp = 165-154\\
+\amp = 165-(319-165)=-319+2\cdot 165\\
+\amp = -319+2 \cdot (803-2\cdot 319)=2\cdot 803-5\cdot 319\text{.}
+\end{align*}
+<p>So we get the equation</p>
+\begin{equation*}
+2\cdot 803-5\cdot 319=\gcd(803,319)=11\text{.}
+\end{equation*}
+<p>(c) In this case the computations go as follows</p>
+\begin{align*}
+2701 \amp = 1\cdot 2257+444\\
+2257 \amp = 5\cdot 444+37\\
+444 \amp = 12\cdot 37+0\text{.}
+\end{align*}
+<p>Therefore \(\gcd(2701,2257)=37\text{.}\) We determine \(x\) and \(y:\)</p>
+\begin{align*}
+37\amp = 2257-5\cdot 444\\
+\amp = 2257-5(2701-2257)=-5\cdot 2701+6\cdot 2257\text{.}
+\end{align*}
+<p>We have that</p>
+\begin{equation*}
+-5\cdot 2701+6\cdot 2257=\gcd(2701,2257)=37\text{.}
+\end{equation*}
+<p>(d) The summary of the computations:</p>
+\begin{align*}
+3397 \amp = 1\cdot 1849+1548\\
+1849 \amp = 1\cdot 1548+301\\
+1548 \amp = 5\cdot 301+43\\
+301 \amp = 7\cdot 43+0\text{.}
+\end{align*}
+<p>That is, \(\gcd(3397,1849)=43\text{.}\) It remains to compute \(x\) and \(y:\)</p>
+\begin{align*}
+43\amp =1548-5\cdot 301\\
+\amp =1548-5(1849-1548)=-5\cdot 1849+6\cdot 1548\\
+\amp = -5\cdot 1849+6(3397-1849)=6\cdot 3397-11\cdot 1849\text{.}
+\end{align*}
+<p>Thus we obtain the equation</p>
+\begin{equation*}
+6\cdot 3397-11\cdot 1849=\gcd(3397,1849)=43\text{.}
+\end{equation*}
+</li>
+<li id="li-86">
+<p id="p-765"><a knowl="./knowl/ex_numsyst1.html" knowl-id="xref-ex_numsyst1" alt="Exercise 1.4.1 " title="Exercise 1.4.1 ">Exercise 1.4.1</a> Write 21 in base 2 first. Now, 16 is the highest 2-power not greater than 21, \(21 = 1 \cdot 16 +5\text{,}\) and we continue with the remainder 5. Now, 4 is the highest 2-power not greater than 5, \(5 = 1\cdot 4 + 1\text{,}\) and we continue with the remainder 1. Finally, 1 is the highest 2-power not greater than 1, \(1 = 1 \cdot 1 + 0\text{.}\) Thus</p>
+\begin{equation*}
+21_{10} = 1 \cdot 16 + 1 \cdot 4 + 1\cdot 1 = 1 \cdot 2^4 + 1 \cdot 2^2 + 1 \cdot 2^0 = 10101_2\text{.}
+\end{equation*}
+<p>Now, write 50 in base 3. Here, 27 is the highest 3-power not greater than 50, \(50 = 1 \cdot 27 + 23\text{,}\) and we continue with the remainder 23. Now, 9 is the highest 3-power not greater than 23, \(23 = 2\cdot 9 + 5\text{,}\) and we continue with the remainder 5. Now, 3 is the highest 3-power not greater than 5, \(5 = 1\cdot 3 + 2\text{,}\) and we continue with the remainder 2. Finally, 1 is the highest 3-power not greater than 2, \(2 = 2 \cdot 1 + 0\text{.}\) Thus</p>
+\begin{equation*}
+50_{10} = 1 \cdot 27 + 2 \cdot 9 + 1 \cdot 3 + 2\cdot 1 = 1 \cdot 3^3 + 2 \cdot 3^2 + 1 \cdot 3^1 + 2 \cdot 3^0  = 1212_3\text{.}
+\end{equation*}
+<p>Finally, write 2814 in base 16. Now, 256 is the highest 16-power not greater than 2814 (the next 16-power is 4096), \(2814 = 10 \cdot 256 + 254\text{,}\) and we continue with the remainder 254. Now, 16 is the highest 16-power not greater than 254, \(254 = 15\cdot 16 + 14\text{,}\) and we continue with the remainder 14. Finally, 1 is the highest 16-power not greater than 14, \(14 = 14 \cdot 1 + 0\text{.}\) Thus</p>
+\begin{equation*}
+2814_{10} = 10 \cdot 256 + 15 \cdot 16 + 14 \cdot 1 = 10 \cdot 16^2 + 15 \cdot 16^1 + 14 \cdot 16^0   = AFE_{16}\text{.}
+\end{equation*}
+</li>
+<li id="li-87">
+<p id="p-766"><a knowl="./knowl/ex_numsyst2.html" knowl-id="xref-ex_numsyst2" alt="Exercise 1.4.2 " title="Exercise 1.4.2 ">Exercise 1.4.2</a> Rewrite \(21_{10}\) into base 2 first.</p>
+\begin{align*}
+21 \amp = 10 \cdot 2 + 1,\\
+10 \amp = 5 \cdot 2 + 0,\\
+5 \amp = 2 \cdot 2 + 1,\\
+2 \amp = 1 \cdot 2 + 0,\\
+1 \amp = 0 \cdot 2 + 1\text{.}
+\end{align*}
+<p>The remainders backwards are 1, 0, 1, 0, 1, thus</p>
+\begin{equation*}
+21_{10} = 10101_{2}\text{.}
+\end{equation*}
+<p>Now, rewrite \(50_{10}\) into base 3.</p>
+\begin{align*}
+50 \amp = 16 \cdot 3 + 2,\\
+16 \amp = 5 \cdot 3 + 1,\\
+5 \amp = 1 \cdot 3 + 2,\\
+1 \amp = 0 \cdot 3 + 1\text{.}
+\end{align*}
+<p>The remainders backwards are 1, 2, 1, 2, thus</p>
+\begin{equation*}
+50_{10} = 1212_{3}\text{.}
+\end{equation*}
+<p>Finally, rewrite \(250_{10}\) into base 8.</p>
+\begin{align*}
+250 \amp = 31 \cdot 8 + 2,\\
+31 \amp = 3 \cdot 8 + 7,\\
+3 \amp = 0 \cdot 8 + 3\text{.}
+\end{align*}
+<p>The remainders backwards are 3, 7, 2, thus</p>
+\begin{equation*}
+250_{10} = 372_{8}\text{.}
+\end{equation*}
+</li>
+<li id="li-88">
+<p id="p-767"><a knowl="./knowl/ex_numsyst3.html" knowl-id="xref-ex_numsyst3" alt="Exercise 1.4.3 " title="Exercise 1.4.3 ">Exercise 1.4.3</a> </p>
+<ol id="ol-15" style="list-style-type: lower-alpha;">
+<li id="li-89">
+<p id="p-768"></p>
+\begin{align*}
+111001101_2 \amp = 461_{10},\\
+1010101_2 \amp = 85_{10},\\
+11111_2 \amp = 31_{10},\\
+10110_2 \amp = 22_{10},\\
+101010101_2 \amp = 341_{10},\\
+10001000_2 \amp = 136_{10},\\
+1010111_2 \amp = 87_{10},\\
+111101_2 \amp = 61_{10},\\
+21102_3 \amp = 200_{10},\\
+1234_5 \amp = 194_{10},\\
+1234_7 \amp = 466_{10},\\
+1234_8 \amp = 668_{10},\\
+777_8 \amp = 511_{10},\\
+345_8 \amp = 229_{10},\\
+2012_8 \amp = 1034_{10},\\
+4565_8 \amp = 2421_{10},\\
+1123_8 \amp = 595_{10},\\
+666_8 \amp = 438_{10},\\
+741_8 \amp = 481_{10},\\
+CAB_{16} \amp = 3243_{10},\\
+BEE_{16} \amp = 3054_{10},\\
+EEE_{16} \amp = 3822_{10},\\
+4D4_{16} \amp = 1236_{10},\\
+ABC_{16} \amp = 2748_{10},\\
+9B5_{16} \amp = 2485_{10},\\
+DDD_{16} \amp =3549_{10},\\
+3F2_{16} \amp = 1010_{10}\text{.}
+\end{align*}
+</li>
+<li id="li-90">
+<p id="p-769"></p>
+\begin{align*}
+64_{10} \amp = 100 0000_2 = 2101_3 = 224_5 = 121_7 = 100_8 = 71_9 = 40_{16},\\
+50_{10} \amp = 11 0010_2 = 1212_3 = 200_5 = 101_7 = 62_8 = 55_9 = 32_{16},\\
+16_{10} \amp = 1 0000_2 = 121_3 = 31_5 = 22_7 = 20_8 = 17_9 = 10_{16},\\
+100_{10} \amp = 110 0100_2 = 1 0201_3 = 400_5 = 202_7 = 144_8 = 121_9\\
+\amp = 64_{16},\\
+2012_{10} \amp = 111 1101 1100_2 = 220 2112_3 = 3 1022_5 = 5603_7 = 3734_8\\
+\amp = 2675_9 = 7DC_{16},\\
+200_{10} \amp = 1100 1000_2 = 2 1102_3 = 1300_5 = 404_7 = 310_8 = 242_9\\
+\amp = C8_{16},\\
+151_{10} \amp = 1001 0111_2 = 1 2121_3 = 1101_5 = 304_7 = 227_8 = 177_9\\
+\amp = 97_{16},\\
+48_{10} \amp = 11 0000_2 = 1210_3 = 143_5 = 66_7 = 60_8 = 53_9 = 30_{16},\\
+99_{10} \amp = 110 0011_2 = 1 0200_3 = 344_5 = 201_7 = 143_8 = 120_9\\
+\amp = 63_{16},\\
+999_{10} \amp = 11 1110 0111_2 = 110 1000_3 = 1 2444_5 = 2625_7 = 1747_8\\
+\amp = 1330_9 = 3E7_{16}\text{.}
+\end{align*}
+</li>
+<li id="li-91">
+<p id="p-770"></p>
+\begin{align*}
+1121_3 \amp = 43_{10} = 101011_2,\\
+4312_5 \amp = 582_{10} = 1461_7,\\
+654_8 \amp = 428_{10} = 525_9,\\
+AD2_{16} \amp = 2770_{10} = 11035_7,\\
+543_8 \amp = 355_{10} = 111011_3,\\
+543_9 \amp = 444_{10} = 121110_3\text{.}
+\end{align*}
+</li>
+<li id="li-92">
+<p id="p-771"></p>
+\begin{align*}
+777_8 \amp = 111111111_2 = 1FF_{16},\\
+345_8 \amp = 11100101_2 = E5_{16},\\
+2012_8 \amp = 10000001010_2 = 40A_{16},\\
+456_8 \amp = 100101110_2 = 12E_{16},\\
+235_8 \amp = 10011101_2 = 9D_{16},\\
+147_8 \amp = 1100111_2 = 67_{16},\\
+741_8 \amp = 111100001_2 = 1E1_{16},\\
+CAB_{16} \amp = 110010101011_2 = 6253_8,\\
+BEE_{16} \amp = 101111101110_2 = 5756_8,\\
+EEE_{16} \amp = 111011101110_2 = 7356_8,\\
+4D3_{16} \amp = 10011010011_2 = 2323_8,\\
+ABC_{16} \amp = 101010111100_2 = 5274_8,\\
+FEE_{16} \amp = 111111101110_2 = 7756_8,\\
+9B5_{16} \amp = 100110110101_2 = 4665_8,\\
+3F2_{16} \amp = 1111110010_2 = 1762_8\text{.}
+\end{align*}
+</li>
+</ol>
+</li>
+</ol></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:57+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Proofs by induction</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="cha_proof.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="cha_proof.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-14.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="cha_proof.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="cha_proof.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-14.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link active"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13" class="active">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-13"><h2 class="heading hide-type" alt="Section 3.1 Proofs by induction">
+<span class="type">Section</span><span class="codenumber">3.1</span><span class="title">Proofs by induction</span>
+</h2>
+<p id="p-378">In mathematics one often uses induction to prove general statements. Let us see how this argument works. Suppose we have a statement \(S(n)\) which depends on \(n\text{.}\) When we apply induction we prove that \(S(n_0)\) is true for the smallest possible value \(n_0\text{.}\) Then we show that if the statement is true for all possible values less than \(n\text{,}\) then the statement is also true for \(n\text{.}\) Finally, we conclude that the statement is true for all \(n\geq n_0\text{.}\) There is a very similar notion called recursion. For example we can define \(n!\) as follows</p>
+\begin{equation*}
+n!=
+\begin{cases}
+1 \amp  \mbox{ if } n=1,\\
+n\cdot(n-1)! \amp  \mbox{ if } n&gt;1.
+\end{cases}
+\end{equation*}
+<p id="p-379">The basic idea is that we can compute e.g. \(100!\) if we have computed \(99!\text{,}\) \(98!\text{,}\) \(\ldots\text{,}\) \(1!\text{.}\) Induction works in the same way, if we can prove a statement for certain smaller instances, then we can prove it for large values as well. More about recursion will follow in <a href="Recurrence_sequences.html" class="xref" alt="Chapter 5 Recurrence sequences" title="Chapter 5 Recurrence sequences">Chapter 5</a>.</p>
+<p id="p-380">Now we study induction in more detail.</p>
+<article class="theorem-like" id="theorem-10"><h6 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.1.1</span><span class="title">Mathematical Induction I</span>
+</h6>
+<p id="p-381">Let \(S(n)\) be a statement depending on \(n\in\mathbb{N}\text{.}\) Suppose that </p>
+<ol id="ol-10" style="list-style-type: decimal;">
+<li id="li-55"><p id="p-382">\(S(1)\) is true,</p></li>
+<li id="li-56"><p id="p-383">if \(S(k)\) is true for some \(k\in\mathbb{N}\text{,}\) then \(S(k+1)\) is true.</p></li>
+</ol>
+<p id="p-384">Then \(S(n)\) is true for all \(n\in\mathbb{N}\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-18" id="proof-18"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-18" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-385">Suppose that the statement \(S(n)\) is false for some \(n\geq 1\text{.}\) Denote by \(m\) the smallest such value. We have that \(m&gt;1\text{,}\) since by part \((a)\) we know that \(S(1)\) is true. Since \(m\) is as small as possible, \(S(k)\) is true for \(1\leq k \lt m\text{.}\) As a special case we have that \(S(m-1)\) is true. From part \((a)\) and \((b)\) one obtains that the statement is true for \(S(m-1+1)=S(m)\text{.}\) Thus the assumption that \(S(n)\) is false for same \(n\geq 1\) is false.</p></article></div>
+<p id="p-386">Let us consider a simple example. Let \(S(n)\) be the statement that 7 divides \(8^n-1\text{.}\) First we do some numerical experiments</p>
+<table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(8^n-1\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">\(7=1\cdot 7\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">\(63=9\cdot 7\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">\(511=73\cdot 7\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<p id="p-387">that is, the statement is true for \(n\in\halmaz{1,2,3}\text{.}\) Hence part \((a)\) of the theorem is fulfilled. Assume that \(S(k)\) is true for some \(k\in\mathbb{N}\text{.}\) It remains to be proved that \(S(k+1)\) is true. We have that \(S(k)\) is true, that is, 7 divides \(8^k-1\text{.}\) Hence there exists an integer \(A\) such that \(8^k-1=7\cdot A\text{.}\) We would like to prove that \(8^{k+1}-1\) is a multiple of 7 as well. We try to express \(8^{k+1}-1\) using \(8^k-1\text{.}\) A natural idea is to multiply the equation \(8^k-1=7\cdot A\) by 8:</p>
+\begin{equation*}
+8(8^k-1)=7\cdot A\cdot 8\text{,}
+\end{equation*}
+<p>that is,</p>
+\begin{equation*}
+8^{k+1}-8=7\cdot A\cdot 8\text{.}
+\end{equation*}
+<p id="p-388">Now we add 7 to obtain the right form on the left-hand side:</p>
+\begin{equation*}
+8^{k+1}-1=7\cdot A\cdot 8+7=7(8A+1)\text{.}
+\end{equation*}
+<p id="p-389">It means that \(S(k+1)\) is true since we got that \(8^{k+1}-1\) is divisible by 7.</p>
+<p id="p-390">Another area where induction can often be applied is proving mathematical identities. Now we prove that the sum of the first \(n\) positive integers is \(\frac{n(n+1)}{2}\text{.}\) Let us compute the sum of the first \(n\) integers for \(n\in\halmaz{1,2,3,4,5}\)</p>
+<table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sum_{i=1}^n i\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">\(1=\frac{1\cdot 2}{2}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">\(1+2=\frac{2\cdot 3}{2}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">\(1+2+3=\frac{3\cdot 4}{2}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">\(1+2+3+4=\frac{4\cdot 5}{2}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">\(1+2+3+4+5=\frac{5\cdot 6}{2}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<p id="p-391">So it seems that the formula is correct. However, we have not proved the statement, we only checked that the statement is correct for \(n\in\halmaz{1,2,3,4,5}\text{.}\) Here \(S(n)\) is the statement that the sum of the first \(n\) positive integers is \(\frac{n(n+1)}{2}\text{.}\) We have that \(S(1)\) is true. Assume that \(S(k)\) is true for some \(k\geq 1\text{,}\) that is,</p>
+\begin{equation*}
+\sum_{i=1}^k i=\frac{k(k+1)}{2}\text{.}
+\end{equation*}
+<p id="p-392">We have to prove that \(S(k+1)\) is true. That is, we have to consider the sum of the first \(k+1\) integers, which is</p>
+\begin{equation*}
+\sum_{i=1}^{k+1} i =1+2+\ldots+k+(k+1)=(1+2+\ldots+k)+(k+1)\text{.}
+\end{equation*}
+<p id="p-393">By the induction hypothesis</p>
+\begin{equation*}
+1+2+\ldots+k=\frac{k(k+1)}{2}\text{.}
+\end{equation*}
+<p id="p-394">Therefore we get</p>
+\begin{equation*}
+\sum_{i=1}^{k+1} i =\frac{k(k+1)}{2}+(k+1)=\frac{k^2+k+2k+2}{2}=\frac{(k+1)(k+2)}{2}\text{.}
+\end{equation*}
+<p id="p-395">Thus \(S(k+1)\) is true and we proved that the sum of the first \(n\) integers is</p>
+\begin{equation*}
+\frac{n(n+1)}{2}
+\end{equation*}
+<p>for all \(n\in\mathbb{N}\text{.}\) (Note, that we have proved this identity with other methods in <a knowl="./knowl/prop_sumk.html" knowl-id="xref-prop_sumk" alt="Proposition 2.0.1 " title="Proposition 2.0.1 ">Proposition 2.0.1</a>.)</p>
+<p id="p-396">There are statements which are false for certain small values, but for large values they hold. You can find such problems in the following section related to linear Diophantine equations. So it is useful to state the above theorem in a different form as well. We omit the proof since it is very similar to the proof of the previous theorem.</p>
+<article class="theorem-like" id="theorem-11"><h6 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.1.2</span><span class="title">Mathematical Induction II</span>
+</h6>
+<p id="p-397">Let \(S(n)\) be a statement depending on \(n\in\mathbb{N}\text{.}\) Suppose that </p>
+<ol id="ol-11" style="list-style-type: decimal;">
+<li id="li-57"><p id="p-398">\(S(n_0)\) is true,</p></li>
+<li id="li-58"><p id="p-399">if \(S(k)\) is true for some \(n_0\leq k\in\mathbb{N}\text{,}\) then \(S(k+1)\) is true.</p></li>
+</ol>
+<p id="p-400">Then \(S(n)\) is true for all \(n_0\leq n\in\mathbb{N}\text{.}\)</p></article><p id="p-401">As an application we prove that \(3^n&gt;n^3+3\) for all \(n\geq 4\text{.}\) It is easy to see that the statement is false for \(n=1\text{.}\) We have \(3^1\) and \(1^3+3=4\text{,}\) that is, the inequality does not hold. In this problem \(n_0=4\text{,}\) so the first step is to prove that</p>
+\begin{equation*}
+3^4&gt;4^3+3\text{.}
+\end{equation*}
+<p id="p-402">Here we have 81 on the left-hand side and 67 on the right-hand side, hence \(S(n_0)=S(4)\) is true. Assume that \(S(k)\) is true for some \(4\leq k\in\mathbb{N}\text{.}\) So the induction hypothesis is that</p>
+\begin{equation*}
+3^k&gt;k^3+3\text{.}
+\end{equation*}
+<p id="p-403">We need to show that \(S(k+1)\) is true, that is,</p>
+\begin{equation*}
+3^{k+1}&gt;(k+1)^3+3\text{.}
+\end{equation*}
+<p id="p-404">From the induction hypothesis we get</p>
+\begin{equation*}
+3^{k+1}&gt;3k^3+9\text{.}
+\end{equation*}
+<p id="p-405">If we can prove that \(3k^3+9&gt;(k+1)^3+3\) for \(k\geq 4\text{,}\) then \(S(k+1)\) follows. We rewrite the inequality \(3k^3+9&gt;(k+1)^3+3\) as follows:</p>
+\begin{equation*}
+2k^3-3k^2-3k+5&gt;0\text{.}
+\end{equation*}
+<p id="p-406">It is sufficient to show that \(k(2k^2-3k-3)\geq 0\) for \(k\geq 4\text{.}\) It is enough to prove that \(k(2k-3)\geq 3\) for \(k\geq 4\text{.}\) We have that \(k\geq 4\) so \(2k-3\geq 5\text{,}\) hence the product \(k(2k-3)\) is at least 20. We obtained that \(3k^3+9&gt;(k+1)^3+3\text{,}\) so we conclude that \(S(k+1)\) is true, therefore \(3^n&gt;n^3+3\) for all \(n\geq 4\text{.}\)</p>
+<p id="p-407">We provide a third version of the original theorem about induction.</p>
+<article class="theorem-like" id="theorem-12"><h6 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.1.3</span><span class="title">Mathematical Induction III</span>
+</h6>
+<p id="p-408">Let \(S(n)\) be a statement depending on \(n\in\mathbb{N}\text{.}\) Let \(m_0 , n_0\geq 1\text{.}\) Suppose that </p>
+<ol id="ol-12" style="list-style-type: decimal;">
+<li id="li-59"><p id="p-409">\(S(m_0),S(m_0+1)\ldots,S(m_0+n_0-1)\) are true,</p></li>
+<li id="li-60"><p id="p-410">if \(S(k-n_0+1),\ldots,S(k)\) are true for some \(m_0+n_0-1\leq k\in\mathbb{N}\text{,}\) then \(S(k+1)\) is true.</p></li>
+</ol>
+<p id="p-411">Then \(S(n)\) is true for all \(m_0\leq n\in\mathbb{N}\text{.}\)</p></article><p id="p-412">Now we apply induction to prove certain inequalities. Let \(\halmaz{T_n}\) be a sequence defined by \(T_1=T_2=T_3=1\) and \(T_n=T_{n-1}+T_{n-2}+T_{n-3}\) for \(n\geq 4\text{.}\) We prove by induction that for all positive integer \(n\)</p>
+\begin{equation*}
+T_n\lt 2^n\text{.}
+\end{equation*}
+<p id="p-413">Let \(S(n)\) be the statement that \(T_n\lt 2^n\text{.}\) Obviously we have that \(S(1),S(2),S(3)\) are true. Assume that for some \(3\leq k\in\mathbb{N}\) the statements \(S(k-2),S(k-1)\) and \(S(k)\) are true, that is,</p>
+\begin{align*}
+T_{k-2}\amp \lt 2^{k-2},\\
+T_{k-1}\amp \lt 2^{k-1},\\
+T_{k}\amp \lt 2^{k}\text{.}
+\end{align*}
+<p id="p-414">Consider \(S(k+1)\text{.}\) We should prove the inequality \(T_{k+1}\lt 2^{k+1}\text{.}\) By definition</p>
+\begin{equation*}
+T_{k+1}=T_{k}+T_{k-1}+T_{k-2}\text{,}
+\end{equation*}
+<p>therefore</p>
+\begin{equation*}
+T_{k+1}\lt 2^k+2^{k-1}+2^{k-2}=2^{k-2}(4+2+1)\lt 8\cdot 2^{k-2}=2^{k+1}\text{.}
+\end{equation*}
+<p id="p-415">Thus \(S(k+1)\) is true and we proved that \(T_n\lt 2^n\) for all positive integers \(n\text{.}\)</p>
+<p id="p-416">To further demonstrate how to apply the latter version of induction we consider a problem about an integer sequence. Let \(\halmaz{a_n}\) be a sequence of integers such that</p>
+\begin{align*}
+a_1\amp =1,\\
+a_2\amp =5,\\
+a_n\amp =5a_{n-1}-6a_{n-2} n\geq 3\text{.}
+\end{align*}
+<p id="p-417">Prove that \(a_n=3^n-2^n\) for all \(n\geq 1\text{.}\) We apply Mathematical Induction III. with \(n_0=2\text{.}\) To complete part \((a)\) we have to show that \(S(1)\) and \(S(2)\) are true. We have that \(a_1=1\) by definition and the formula yields \(3^1-2^1=1\text{,}\) so \(S(1)\) is true. Similarly for \(S(2)\text{,}\) by definition \(a_2=5\) and the formula gives \(3^2-2^2=9-4=5\text{.}\) Hence we can go further and consider part \((b)\text{.}\) Assume that \(S(k-1)\) and \(S(k)\) are true for some \(2\leq k\in\mathbb{N}\text{.}\) That is,</p>
+\begin{align*}
+a_{k-1}\amp =3^{k-1}-2^{k-1},\\
+a_k\amp =3^k-2^k\text{.}
+\end{align*}
+<p id="p-418">From the induction hypothesis we should conclude that \(S(k+1)\) is true, that is,</p>
+\begin{equation*}
+a_{k+1}=3^{k+1}-2^{k+1}\text{.}
+\end{equation*}
+<p id="p-419">Since \(k+1\geq 3\text{,}\) by definition \(a_{k+1}=5a_{k}-6a_{k-1}\text{.}\) Therefore by the induction hypothesis</p>
+\begin{equation*}
+a_{k+1}=5(3^k-2^k)-6(3^{k-1}-2^{k-1})=3^{k+1}-2^{k+1}\text{.}
+\end{equation*}
+<p id="p-420">Thus \(S(k+1)\) is true and we have that \(a_n=3^n-2^n\) for all \(n\geq 1\text{.}\)</p>
+<p id="p-421">In the previous examples the first steps were easier, that is, to prove the statement for \(k=1\) or for some \(k=n_0\text{.}\) It is not always the case as the following problems show.</p>
+<p id="p-422">Prove that for any \(n &gt; 5\text{,}\) it is possible to divide a square into \(n\) smaller squares not necessarily all the same size. It is not obvious that one can apply induction here. It is easy to figure out that if \(n=m^2\text{,}\) then a solution is not difficult to find. One considers an \(m\) by \(m\) grid. To apply induction we have to solve the problem for small values e.g. \(n=6\text{.}\) A solution is given by</p>
+<img src="images/image-4.svg" width="50%" style="display: block; margin: 0 auto;" alt=""><p id="p-423">Having a solution for \(n=6\) one can provide solutions for \(n=9,12,\ldots\)</p>
+<table><tr>
+<td class="l m b0 r0 l0 t0 lines">\(n=6\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(n=9\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(n=12\)</td> 
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"><img src="images/image-5.svg" width="100%" style="display: block; margin: 0 auto;" alt=""></td>
+<td class="l m b0 r0 l0 t0 lines"><img src="images/image-6.svg" width="100%" style="display: block; margin: 0 auto;" alt=""></td>
+<td class="l m b0 r0 l0 t0 lines"><img src="images/image-7.svg" width="100%" style="display: block; margin: 0 auto;" alt=""></td>
+</tr></table>
+<p id="p-424">This process works in general, if we have a solution for some \(n\text{,}\) then by subdividing a square into 4 squares we obtain a solution for \(n+3\text{.}\) We have an argument for part \((b)\) in Mathematical Induction III., namely with \(n_0=3\text{.}\) If \(S(k-2),S(k-1),S(k)\) is true, then \(S(k+1)\) is true (since it follows from \(S(k-2)\) in this case). It remains to deal with part \((a)\text{,}\) that is, we have to show that \(S(6),S(7)\) and \(S(8)\) are true. We have considered the case \(n=6\text{.}\) Let us find a solution for \(n=7\text{.}\) We note that the case \(n=4\) is easy since 4 is a square. The process we described allows us to construct a solution for \(n=4+3=7\text{.}\)</p>
+<table><tr>
+<td class="l m b0 r0 l0 t0 lines">\(n=4\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(n=7\)</td>
+</tr>
+<tr> 
+<td class="l m b0 r0 l0 t0 lines"><img src="images/image-8.svg" width="100%" style="display: block; margin: 0 auto;" alt=""></td>
+<td class="l m b0 r0 l0 t0 lines"><img src="images/image-9.svg" width="100%" style="display: block; margin: 0 auto;" alt=""></td>
+</tr></table>
+<p id="p-425">Finally we handle the remaining case, that is, \(n=8\text{.}\) Here we have the solution:</p>
+<img src="images/image-10.svg" width="50%" style="display: block; margin: 0 auto;" alt=""><article class="exercise-like"><a knowl="" class="id-ref" refid="hk-induction-1" id="induction-1"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.1.4</span>
+</h6></a></article><div id="hk-induction-1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-426">Prove that \(9^n-1\) is divisible by 8 for all \(n\in\mathbb{N}\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-induction-2" id="induction-2"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.1.5</span>
+</h6></a></article><div id="hk-induction-2" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-427">Prove that \(5^{2n-1}+1\) is divisible by 6 for all \(n\in\mathbb{N}\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-induction-3" id="induction-3"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.1.6</span>
+</h6></a></article><div id="hk-induction-3" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-428">Prove the following identity by induction</p>
+\begin{equation*}
+\sum_{i=1}^n (2i-1)=n^2\text{.}
+\end{equation*}
+</article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-induction-4" id="induction-4"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.1.7</span>
+</h6></a></article><div id="hk-induction-4" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-429">Prove the following identity by induction</p>
+\begin{equation*}
+\sum_{i=1}^n i^2=\frac{n(n+1)(2n+1)}{6}\text{.}
+\end{equation*}
+</article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-induction-4a" id="induction-4a"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.1.8</span>
+</h6></a></article><div id="hk-induction-4a" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-430">Prove the following identity by induction</p>
+\begin{equation*}
+\sum_{i=1}^n i^3=\left(\frac{n(n+1)}{2}\right)^2\text{.}
+\end{equation*}
+</article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_sumk_k_1_" id="ex_sumk_k_1_"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.1.9</span>
+</h6></a></article><div id="hk-ex_sumk_k_1_" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-431">Prove the following identity by induction</p>
+\begin{equation*}
+\sum_{i=1}^{n-1} {i(i+1)}=\frac{\left(n-1\right)n\left(n+1\right)}{3}\text{.}
+\end{equation*}
+</article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-induction-4b" id="induction-4b"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.1.10</span>
+</h6></a></article><div id="hk-induction-4b" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-432">Prove the following identity by induction</p>
+\begin{equation*}
+\sum_{i=1}^n\frac{1}{i(i+1)}=\frac{n}{n+1}\text{.}
+\end{equation*}
+</article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-induction-5" id="induction-5"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.1.11</span>
+</h6></a></article><div id="hk-induction-5" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-433">Let \(\halmaz{a_n}\) be a sequence defined by</p>
+\begin{align*}
+a_1\amp =1,\\
+a_2\amp =8,\\
+a_n\amp =a_{n-1}+2a_{n-2}, n\geq 3\text{.}
+\end{align*}
+<p id="p-434">Prove that</p>
+\begin{equation*}
+a_n=\frac{3}{2}\cdot 2^n+2 \cdot (-1)^n\text{.}
+\end{equation*}
+</article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-induction-6" id="induction-6"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.1.12</span>
+</h6></a></article><div id="hk-induction-6" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-435">Prove by induction that the number</p>
+\begin{equation*}
+\left(\frac{3-\sqrt{33}}{2}\right)^n+\left(\frac{3+\sqrt{33}}{2}\right)^n
+\end{equation*}
+<p>is an integer which is divisible by 3 for all \(n\in\mathbb{N}\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-induction-7" id="induction-7"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.1.13</span>
+</h6></a></article><div id="hk-induction-7" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-436">Let \(\halmaz{a_n}\) be a sequence defined by</p>
+\begin{align*}
+a_1\amp =\sqrt{2},\\
+a_n\amp =\sqrt{2+a_{n-1}} n\geq 2\text{.}
+\end{align*}
+<p id="p-437">Prove by induction that \(a_n\leq 2\) for all \(n\geq 1\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-induction-8" id="induction-8"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.1.14</span>
+</h6></a></article><div id="hk-induction-8" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-438">Prove that for all \(n\in\mathbb{N}\) there exists an \(n\)-digit integer</p>
+\begin{equation*}
+a_1a_2\ldots a_n
+\end{equation*}
+<p>whose digits are either 1 or 2 and it is divisible by \(2^n\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-induction-9" id="induction-9"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.1.15</span>
+</h6></a></article><div id="hk-induction-9" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-439">Let \(F_n\) be a sequence defined by \(F_1=F_2=1\) and \(F_n=F_{n-1}+F_{n-2}, n\geq 3\) (this sequence is the so-called Fibonacci sequence). Prove by induction the following identities.</p>
+<p id="p-440">(a) \(F_1+F_2+\ldots+F_n=F_{n+2}-1\text{,}\)</p>
+<p id="p-441">(b) \(F_1^2+F_2^2+\ldots+F_n^2=F_nF_{n+1}\text{,}\)</p>
+<p id="p-442">(c) \(F_1+F_3+\ldots+F_{2n-1}=F_{2n}\text{,}\)</p>
+<p id="p-443">(d) \(F_2+F_4+\ldots+F_{2n}=F_{2n+1}-1\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-induction-10" id="induction-10"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.1.16</span>
+</h6></a></article><div id="hk-induction-10" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-444">Prove the following properties of Fibonacci numbers.</p>
+<p id="p-445">(a) Prove that \(F_{3n}\) is even for all \(n\in\mathbb{N}\text{.}\)</p>
+<p id="p-446">(b) Prove that \(F_{5n}\) is divisible by 5 for all \(n\in\mathbb{N}\text{.}\)</p></article></div></section></div></main>
+</div>
+</body>
+</html>

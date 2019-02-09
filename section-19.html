@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:57+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Identities</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-18.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="cha_Pascal.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Recurrence_sequences.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-18.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="cha_Pascal.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="Recurrence_sequences.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link active"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19" class="active">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-19"><h2 class="heading hide-type" alt="Section 4.2 Identities">
+<span class="type">Section</span><span class="codenumber">4.2</span><span class="title">Identities</span>
+</h2>
+<p id="p-602">In this Section we investigate several properties of Pascal's triangle. Throughout this Section, we will first conjecture what identities hold by looking at the first 12 rows of Pascal's triangle. Therefore solving <a knowl="./knowl/ex_pascal12.html" knowl-id="xref-ex_pascal12" alt="Exercise 4.0.5 " title="Exercise 4.0.5 ">Exercise 4.0.5</a> is essential before continuing.</p>
+<p id="p-603">Let us start by the sum of the numbers in a row:</p>
+\begin{align*}
+1 \amp  = 1,\\
+1 + 1 \amp = 2,\\
+1 + 2 + 1 \amp = 4,\\
+1 + 3 + 3 + 1 \amp = 8,\\
+1 + 4 + 6 + 4 + 1 \amp = 16,\\
+1 + 5 + 10 + 10 + 5 + 1 \amp = 32,\\
+1 + 6 + 15 + 20 + 15 + 6 + 1 \amp = 64\text{.}
+\end{align*}
+<p id="p-604">It seems from these equations that the sum of the numbers in the \(n\)th row is \(2^n\text{.}\) This stetement is equivalent to the equality</p>
+\begin{equation}
+\binom{n}{0} + \binom{n}{1} + \binom{n}{2} + \dots + \binom{n}{n-2} + \binom{n}{n-1} + \binom{n}{n} = 2^n\text{.}\tag{4.2.1}
+\end{equation}
+<p id="p-605">Note, that we have already proved this, first in <a knowl="./knowl/prop_sumofbinomial.html" knowl-id="xref-prop_sumofbinomial" alt="Proposition 2.6.9 " title="Proposition 2.6.9 ">Proposition 2.6.9</a>, then later in <a knowl="./knowl/ex_binomial1_1.html" knowl-id="xref-ex_binomial1_1" alt="Exercise 4.1.4 " title="Exercise 4.1.4 ">Exercise 4.1.4</a>. Now, we prove it a third way, using the generating rule of Pascal's triangle.</p>
+<p id="p-606">Let us consider first the 7th row, and try to compute the sum using the generating rule of Pascal's triangle, rather than adding the numbers:</p>
+\begin{align*}
+\amp  1 + 7 + 21 + 35 + 35 + 21 + 7 + 1\\
+\amp = 1 + (1 + 6) + (6 + 15) + (15 + 20) + (20 + 15) + (15 + 6) + (6 + 1) + 1\\
+\amp = 2 \cdot (1 + 6 + 15 + 20 + 15 + 6 + 1 ) = 2 \cdot 2^6 = 2^7 = 128\text{.}
+\end{align*}
+<p id="p-607">This idea can be used in the general case, as well.</p>
+<p id="p-608">Now, we prove that the sum of the numbers in the \(n\)th row of Pascal's triangle is \(2^n\) by induction on \(n\text{.}\) The statement holds for \(n=0\) and \(n=1\) (in fact, we just calculated that it holds for \(n\leq 7\)). Assume now that the statement holds for \(n\text{,}\) as well. That is, the sum of the numbers in the \(n\)th row is \(2^{n}\text{.}\) Consider the sum of the \((n+1)\)st row, and let us use the generating rule of Pascal's triangle:</p>
+\begin{align*}
+\amp  \binom{n+1}{0} + \binom{n+1}{1} + \binom{n+1}{2} + \dots + \binom{n+1}{n-1} + \binom{n+1}{n} + \binom{n+1}{n+1}\\
+\amp = \binom{n}{0} + \left( \binom{n}{0} + \binom{n}{1} \right) + \left( \binom{n}{1} + \binom{n}{2} \right)  + \left( \binom{n}{2} + \binom{n}{3} \right) 
++ \dots\\
+\amp + 
+\left( \binom{n}{n-2} + \binom{n}{n-1} \right)  + \left( \binom{n}{n-1} + \binom{n}{n} \right) + \binom{n}{n}\\
+\amp = 2 \cdot \left[ \binom{n}{0} + \binom{n}{1} + \binom{n}{2} + \dots + \binom{n}{n-2} + \binom{n}{n-1} + \binom{n}{n} \right]\\
+\amp = 2 \cdot 2^{n} = 2^{n+1}\text{.}
+\end{align*}
+<p id="p-609">First, we replaced \(\binom{n+1}{0}=1\) by \(\binom{n}{0}=1\text{,}\) and \(\binom{n+1}{n+1} = 1\) by \(\binom{n}{n} = 1\text{,}\) then we used the generating rule of Pascal's triangle. Then we observed that every \(\binom{n}{k}\) occurs twice in the sum (for \(0\leq k\leq n\)). Finally, we used the induction hypothesis on the sum of the numbers for the \(n\)th row.</p>
+<p id="p-610">Let us use a similar reasoning to calculate the sum of the numbers in a row, <em class="emphasis">with alternating signs</em>. That is, compute the sum</p>
+\begin{equation*}
+\sum_{k=0}^n \left( -1 \right)^k \cdot \binom{n}{k} = \binom{n}{0} - \binom{n}{1} + \binom{n}{2} - \dots + \left( -1 \right)^{n-1} \cdot \binom{n}{n-1} + \left( -1 \right)^{n} \cdot \binom{n}{n}\text{.}
+\end{equation*}
+<p id="p-611">It is easy to compute this sum for the first couple rows:</p>
+\begin{align*}
+1 \amp  = 1,\\
+1 - 1 \amp = 0,\\
+1 - 2 + 1 \amp = 0,\\
+1 - 3 + 3 - 1 \amp = 0,\\
+1 - 4 + 6 - 4 + 1 \amp = 0,\\
+1 - 5 + 10 - 10 + 5 - 1 \amp = 0,\\
+1 - 6 + 15 - 20 + 15 - 6 + 1 \amp = 0,\\
+1 - 7 + 21 - 35 + 35 - 21 + 7 - 1 \amp = 0\text{.}
+\end{align*}
+<p id="p-612">It seems likely that for \(n\geq 1\) the alternating sum of the numbers in the \(n\)th row of Pascal's triangle is 0.</p>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_alternatingsum" id="ex_alternatingsum"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">4.2.1</span>
+</h6></a></article><div id="hk-ex_alternatingsum" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-613">The alternating sum of the \(n\)th row is clearly 0 if \(n\) is odd. Why?</p></article></div>
+<p id="p-614">Let us try to use the former argument to compute the alternating sum of the numbers in the 8th row:</p>
+\begin{align*}
+\amp  1 - 8 + 28 - 56 + 70 - 56 + 28 - 8 + 1 = 1 - (1 + 7) + (7 + 21) - (21 + 35)\\
+\amp + (35 + 35) - (35 + 21) + (21+7) - (7 + 1) + 1 = (1-1) + (-7+7)\\
+\amp + (21-21) + (-35 + 35) + (35-35) + (-21 + 21) + (7-7) + (-1+1) = 0\text{.}
+\end{align*}
+<p id="p-615">Using the very same proof technique, we can prove that the alternating sum is 0 in the \(n\)th row, as well.</p>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_alternatingsum2" id="ex_alternatingsum2"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">4.2.2</span>
+</h6></a></article><div id="hk-ex_alternatingsum2" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-616">Prove that the alternating sum of the \(n\)th row is 0, that is,</p>
+\begin{equation*}
+\sum_{k=0}^n \left( -1 \right)^k \cdot \binom{n}{k} = \binom{n}{0} - \binom{n}{1} + \dots + \left( -1 \right)^{n-1} \cdot \binom{n}{n-1} + \left( -1 \right)^{n} \cdot \binom{n}{n} = 0\text{.}
+\end{equation*}
+</article></div>
+<p id="p-617">In fact, the technique can be used to prove an even more general statement, namely we can determine the alternating sum if we stop at the \(k\)th term (for some \(k\leq n-1\)):</p>
+<article class="theorem-like" id="prop_alternatingsum"><h6 class="heading">
+<span class="type">Proposition</span><span class="codenumber">4.2.3</span>
+</h6>
+\begin{equation*}
+\binom{n}{0} - \binom{n}{1} + \dots + \left( -1 \right)^{k-1} \cdot \binom{n}{k-1} + \left( -1 \right)^{k} \cdot \binom{n}{k} = \left( - 1 \right)^k \cdot \binom{n-1}{k}\text{.}
+\end{equation*}
+</article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-28" id="proof-28"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-28" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-618">Consider the alternating sum of the \(n\)th row (for \(n\geq 1\)), and use the generating rule of Pascal's triangle:</p>
+\begin{align*}
+\amp  \binom{n}{0} - \binom{n}{1} + \binom{n}{2} - \dots + \left( -1 \right)^{k-1} \cdot \binom{n}{k-1} + \left( -1 \right)^{k} \cdot \binom{n}{k}\\
+\amp = \binom{n-1}{0} - \left( \binom{n-1}{0} + \binom{n-1}{1} \right) + \left( \binom{n-1}{1} + \binom{n-1}{2} \right)  - \dots\\
+\amp + 
+(-1)^{k-1} \cdot \left( \binom{n-1}{k-2} + \binom{n-1}{k-1} \right) + (-1)^{k} \cdot \left( \binom{n-1}{k-1} + \binom{n-1}{k} \right)\\
+\amp = \left( \binom{n-1}{0} - \binom{n-1}{0} \right) + \left( - \binom{n-1}{1} + \binom{n-1}{1} \right) + \left( \binom{n-1}{2} - \binom{n-1}{2} \right) + \dots\\
+\amp + \left( \left( -1 \right)^{k-2} \cdot \binom{n-1}{k-2} + \left( -1 \right)^{k-1} \cdot \binom{n-1}{k-2} \right)\\
+\amp + \left( \left( -1 \right)^{k-1} \cdot \binom{n-1}{k-1} + \left( -1 \right)^{k} \cdot \binom{n-1}{k-1} \right) + \left( -1 \right)^k \cdot \binom{n-1}{k}\\
+\amp = 0 + 0 + 0 + \dots + 0 + 0 + \left( -1 \right)^k \cdot \binom{n-1}{k} = \left( -1 \right)^k \cdot \binom{n-1}{k}\text{.}
+\end{align*}
+<p id="p-619">First, we replaced \(\binom{n}{0}=1\) by \(\binom{n-1}{0}=1\text{,}\) and \(\binom{n}{n} = 1\) by \(\binom{n-1}{n-1} = 1\text{,}\) then we used the generating rule of Pascal's triangle. Then we observed that every \(\binom{n-1}{j}\) occurs twice in the sum: first with a positive sign, then right after it with a negative sign (for \(0\leq j\leq k-1\)). The only term remaining is \(\left( -1 \right)^k \cdot \binom{n-1}{k}\text{.}\)</p></article></div>
+<p id="p-620">If we define \(\binom{n-1}{n}\) to be 0 (considering there are no \(n\)-element subsets of an \((n-1)\)-element set), then our statement on the alternating sums follows from <a knowl="./knowl/prop_alternatingsum.html" knowl-id="xref-prop_alternatingsum" alt="Proposition 4.2.3 " title="Proposition 4.2.3 ">Proposition 4.2.3</a>.</p>
+<p id="p-621">Now, consider the sum of the squares of the numbers in a row. We can find a pattern here, as well:</p>
+\begin{align*}
+1^2 \amp  = 1,\\
+1^2 + 1^2 \amp = 2,\\
+1^2 + 2^2 + 1^2 \amp = 6,\\
+1^2 + 3^2 + 3^2 + 1^2 \amp = 20,\\
+1^2 + 4^2 + 6^2 + 4^2 + 1^2 \amp = 70,\\
+1^2 + 5^2 + 10^2 + 10^2 + 5^2 + 1^2 \amp = 252,\\
+1^2 + 6^2 + 15^2 + 20^2 + 15^2 + 6^2 + 1^2 \amp = 924\text{.}
+\end{align*}
+<p id="p-622">After computing the first twelve rows of Pascal's triangle in <a knowl="./knowl/ex_pascal12.html" knowl-id="xref-ex_pascal12" alt="Exercise 4.0.5 " title="Exercise 4.0.5 ">Exercise 4.0.5</a>, we can observe that the results are the numbers occurring in the middle column. That is, we can conjecture that the sum of the square of the numbers in row \(n\) is \(\binom{2n}{n}\text{,}\) that is,</p>
+<article class="theorem-like" id="prop_sumsquaresofrow"><h6 class="heading">
+<span class="type">Proposition</span><span class="codenumber">4.2.4</span>
+</h6>
+\begin{equation}
+\sum_{k=0}^{n} \binom{n}{k}^2 = \binom{n}{0}^2 + \binom{n}{1}^2 + \dots + \binom{n}{n-1}^2 + \binom{n}{n}^2 = \binom{2n}{n}\text{.}\label{eq_sumsquaresofrow}\tag{4.2.2}
+\end{equation}
+</article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-29" id="proof-29"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-29" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-623">As earlier, we try to understand why this equation holds by giving a combinatorial meaning to both sides. The right hand side gives away a clue: \(\binom{2n}{n}\) is the number of ways to choose \(n\) elements out of a \(2n\)-element set (say \(S = \halmaz{1, 2, \dots , 2n}\)). Our plan is to prove that the left hand side of <a knowl="./knowl/eq_sumsquaresofrow.html" knowl-id="xref-eq_sumsquaresofrow" alt="Equation 4.2.2 " title="Equation 4.2.2 ">(4.2.2)</a> is the number of \(n\)-element subsets of \(S\text{,}\) as well. Let \(S_1 = \halmaz{1, 2, \dots , n}\) and \(S_2 = \halmaz{n+1, n+2, \dots , 2n}\text{.}\) Now, try to count the number of ways to choose \(n\)-element of \(S\) by counting how many elements we choose from \(S_1\) and from \(S_2\text{.}\) If we choose 0 element from \(S_1\text{,}\) then we must choose \(n\) elements from \(S_2\text{.}\) We can do this in \(\binom{n}{0} \cdot \binom{n}{n}\)-many ways. If we choose 1 element from \(S_1\text{,}\) then we must choose \(n-1\) elements from \(S_2\text{.}\) We can do this in \(\binom{n}{1} \cdot \binom{n}{n-1}\)-many ways. If we choose 2 elements from \(S_1\text{,}\) then we must choose \(n-2\) elements from \(S_2\text{.}\) We can do this in \(\binom{n}{2} \cdot \binom{n}{n-2}\)-many ways. In general, if we choose k elements from \(S_1\text{,}\) then we must choose \(n-k\) elements from \(S_2\text{.}\) We can do this in \(\binom{n}{k} \cdot \binom{n}{n-k}\)-many ways. In the end, if we choose \(n\) elements from \(S_1\text{,}\) then we must choose \(0\) element from \(S_2\text{.}\) We can do this in \(\binom{n}{n} \cdot \binom{n}{0}\)-many ways. Thus, choosing \(n\) elements out of \(2n\) can be done in the following number of ways:</p>
+\begin{equation*}
+\binom{n}{0} \cdot \binom{n}{n} + \binom{n}{1} \cdot \binom{n}{n-1} + \dots 
++ \binom{n}{n}\cdot \binom{n}{0} = \sum_{k=0}^n \binom{n}{k} \cdot \binom{n}{n-k}\text{.}
+\end{equation*}
+<p id="p-624">Finally, let us rewrite the left hand side by using the symmetry of Pascal's triangle, that is, \(\binom{n}{n-k} = \binom{n}{k}\) to obtain the left hand side of <a knowl="./knowl/eq_sumsquaresofrow.html" knowl-id="xref-eq_sumsquaresofrow" alt="Equation 4.2.2 " title="Equation 4.2.2 ">(4.2.2)</a>:</p>
+\begin{align*}
+\amp  \binom{n}{0} \cdot \binom{n}{n} + \binom{n}{1} \cdot \binom{n}{n-1} + \dots 
++ \binom{n}{n}\cdot \binom{n}{0} = \sum_{k=0}^n \binom{n}{k} \cdot \binom{n}{n-k}\\
+\amp = \sum_{k=0}^{n} \binom{n}{k}^2 = \binom{n}{0}^2 + \binom{n}{1}^2 + \dots + \binom{n}{n-1}^2 + \binom{n}{n}^2\text{.}
+\end{align*}
+<p id="p-625">That is, both sides of <a knowl="./knowl/eq_sumsquaresofrow.html" knowl-id="xref-eq_sumsquaresofrow" alt="Equation 4.2.2 " title="Equation 4.2.2 ">(4.2.2)</a> counts the number of ways of choosing \(n\) elements out of a \(2n\)-element set (or alternatively, the number of \(n\)-element subsets of a \(2n\)-element set), and therefore must be equal.</p></article></div>
+<p id="p-626">This idea can be used in a more general setting.</p>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_n_mchoosek" id="ex_n_mchoosek"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">4.2.5</span>
+</h6></a></article><div id="hk-ex_n_mchoosek" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-627">Prove that</p>
+\begin{align*}
+\amp  \sum_{k=0}^l \binom{n}{k} \cdot \binom{m}{l-k} = \binom{n+m}{l}, \text{ that is, }\\
+\amp  \binom{n}{0} \cdot \binom{m}{l} + \binom{n}{1} \cdot \binom{m}{l-1} + \dots + \binom{n}{l} \cdot \binom{m}{0}= \binom{n+m}{l}\text{.}
+\end{align*}
+<p id="p-628">How do we need to choose \(m\) and \(l\) so that <span>&lt;&lt;Unresolved xref, reference "eq_n_mchoosek"; check spelling or use "provisional" attribute&gt;&gt;</span><a href="" class="xref" alt="" title=""> </a> gives us the equality <a knowl="./knowl/eq_sumsquaresofrow.html" knowl-id="xref-eq_sumsquaresofrow" alt="Equation 4.2.2 " title="Equation 4.2.2 ">(4.2.2)</a>?</p></article></div>
+<p id="p-629">We could have used the Binomial theorem to prove <a knowl="./knowl/eq_sumsquaresofrow.html" knowl-id="xref-eq_sumsquaresofrow" alt="Equation 4.2.2 " title="Equation 4.2.2 ">(4.2.2)</a>:</p>
+<article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-30" id="proof-30"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-30" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-630">Consider \((x+y)^{2n}\text{,}\) and expand it using the Binomial theorem:</p>
+\begin{equation*}
+(x+y)^{2n} = \sum_{k=0}^{2n} \binom{2n}{k} x^{2n-k} \cdot y^{k}\text{.}
+\end{equation*}
+<p id="p-631">Then the right hand side of <a knowl="./knowl/eq_sumsquaresofrow.html" knowl-id="xref-eq_sumsquaresofrow" alt="Equation 4.2.2 " title="Equation 4.2.2 ">(4.2.2)</a> is the coefficient of the term \(x^ny^n\text{.}\) We prove that the left hand side is the coefficient of \(x^ny^n\text{,}\) as well. For this, we compute \((x+y)^{2n}\) by multiplying \((x+y)^n \cdot (x+y)^n\) after expanding both factors using the Binomial theorem:</p>
+\begin{equation*}
+(x+y)^{2n} = (x+y)^n \cdot (x+y)^n = \left( \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k \right) \cdot \left( \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k \right)\text{.}
+\end{equation*}
+<p id="p-632">Now, let us compute the coefficient of \(x^n y^n\text{.}\) When do we obtain \(x^n y^n\) when we multiply \(\left( \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k \right)\) by itself? Take for example \(x^n\) from the first factor, this must be multiplied by \(y^n\) from the second factor to obtain \(x^n y^n\text{.}\) The coefficient of \(x^n\) in the first factor is \(\binom{n}{0}\text{,}\) the coefficient of \(y^n\) in the second factor is \(\binom{n}{n}\text{,}\) thus this multiplication contributes by \(\binom{n}{0} \cdot \binom{n}{n}\) to the coefficient of \(x^n y^n\) in \((x+y)^{2n}\text{.}\) Similarly, take the term \(x^{n-1}y\) from the first factor, this must be multiplied by \(xy^{n-1}\) from the second factor to obtain \(x^n y^n\text{.}\) The coefficient of \(x^{n-1}y\) in the first factor is \(\binom{n}{1}\text{,}\) the coefficient of \(xy^{n-1}\) in the second factor is \(\binom{n}{n-1}\text{,}\) thus this multiplication contributes by \(\binom{n}{1} \cdot \binom{n}{n-1}\) to the coefficient of \(x^n y^n\) in \((x+y)^{2n}\text{.}\) In general, for some \(k\) the term \(x^{n-k}y^k\) in the first factor must be multiplied by \(x^k y^{n-k}\) from the second factor. The coefficient of \(x^{n-k}y^k\) in the first factor is \(\binom{n}{k}\text{,}\) the coefficient of \(x^ky^{n-k}\) in the second factor is \(\binom{n}{n-k}\text{,}\) thus this multiplication contributes by \(\binom{n}{k} \cdot \binom{n}{n-k}\) to the coefficient of \(x^n y^n\) in \((x+y)^{2n}\text{.}\) That is, the coefficient of \(x^n y^n\) in \((x+y)^{2n}\) is</p>
+\begin{equation*}
+\sum_{k=0}^n \binom{n}{k} \cdot \binom{n}{n-k}\text{.}
+\end{equation*}
+<p id="p-633">Moreover, the coefficient of \(x^ny^n\) in \((x+y)^{2n}\) is \(\binom{2n}{n}\text{,}\) thus the two numbers must be equal. Applying the symmetry of Pascal's triangle (that is, \(\binom{n}{k} = \binom{n}{n-k}\)), we obtain <a knowl="./knowl/eq_sumsquaresofrow.html" knowl-id="xref-eq_sumsquaresofrow" alt="Equation 4.2.2 " title="Equation 4.2.2 ">(4.2.2)</a>:</p>
+\begin{equation*}
+\sum_{k=0}^n \binom{n}{k}^2 = \sum_{k=0}^n \binom{n}{k} \cdot \binom{n}{n-k} = \binom{2n}{n}\text{.}
+\end{equation*}
+</article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_n_mchoosek2" id="ex_n_mchoosek2"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">4.2.6</span>
+</h6></a></article><div id="hk-ex_n_mchoosek2" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-634">Solve <a knowl="./knowl/ex_n_mchoosek.html" knowl-id="xref-ex_n_mchoosek" alt="Exercise 4.2.5 " title="Exercise 4.2.5 ">Exercise 4.2.5</a> using the Binomial theorem.</p></article></div>
+<p id="p-635">After dealing with sums of rows, consider sums where we move diagonally upwards. That is, when we sum up the \(m\)th elements of every row. For \(m=0\) it is pretty easy:</p>
+\begin{equation*}
+\binom{n}{0} + \binom{n-1}{0} + \dots + \binom{1}{0} + \binom{0}{0} = n+1\text{.}
+\end{equation*}
+<p id="p-636">For \(m=1\) we have</p>
+\begin{equation*}
+\binom{n}{1} + \binom{n-1}{1} + \dots + \binom{2}{1} + \binom{1}{1} = n + (n-1) + \dots + 2 + 1 = \frac{n\cdot (n+1)}{2}\text{,}
+\end{equation*}
+<p>by <a knowl="./knowl/prop_sumk.html" knowl-id="xref-prop_sumk" alt="Proposition 2.0.1 " title="Proposition 2.0.1 ">Proposition 2.0.1</a>.</p>
+<p id="p-637">For \(m=2\) it is a bit harder to do the calculations, but still manageable:</p>
+\begin{align*}
+\amp \binom{n}{2} + \binom{n-1}{2} + \dots + \binom{3}{2} + \binom{2}{2}\\
+\amp = \frac{n \cdot (n-1)}{2} + \frac{(n-1) \cdot (n-2)}{2} + \dots + \frac{3 \cdot 2}{2} + \frac{2 \cdot 1}{2}\\
+\amp = \frac12 \cdot \left( n \cdot (n-1) + (n-1) \cdot (n-2) + \dots + 3 \cdot 2 + 2 \cdot 1 \right)\\
+\amp = \frac12 \cdot \frac{(n+1) \cdot n \cdot (n-1)}{3} = \frac{(n+1) \cdot n \cdot (n-1)}{3 \cdot 2 \cdot 1}\text{.}
+\end{align*}
+<p id="p-638">Here, we used <a knowl="./knowl/ex_sumk_k_1_.html" knowl-id="xref-ex_sumk_k_1_" alt="Exercise 3.1.9 " title="Exercise 3.1.9 ">Exercise 3.1.9</a> to calculate the sum \(\sum_{i=1}^{n-1} i \cdot (i+1)\text{.}\)</p>
+<p id="p-639">It is quite clear that by increasing \(m\text{,}\) we would have harder and harder time to calculate the obtained sums. Nevertheless, only by computing the first couple sums we can make a guess at the general answer:</p>
+\begin{align*}
+\amp  \text{ for \(m=0\) }  \amp  \sum_{k=0}^n \binom{k}{0} \amp = n+1,\\
+\amp  \text{ for \(m=1\) }  \amp  \sum_{k=1}^n \binom{k}{1} \amp = \frac{(n+1) \cdot n}{2},\\
+\amp  \text{ for \(m=2\) }  \amp  \sum_{k=2}^n \binom{k}{2} \amp = \frac{(n+1) \cdot n \cdot (n-1)}{3 \cdot 2}\text{.}
+\end{align*}
+<p id="p-640">Now, hold on for a second! The right hand sides here are \(\binom{n+1}{1}\text{,}\) \(\binom{n+1}{2}\text{,}\) \(\binom{n+1}{3}\text{,}\) respectively. From this, we may conjecture that in general the sum \(\sum_{k=m}^n \binom{k}{m}\) will be \(\binom{n+1}{m+1}\text{.}\) This is indeed the case.</p>
+<article class="theorem-like" id="prop_sumkchoosem"><h6 class="heading">
+<span class="type">Proposition</span><span class="codenumber">4.2.7</span>
+</h6>
+<p id="p-641">The sum of \(m\)th elements of Pascal's triangle is \(\binom{n+1}{m+1}\text{,}\) that is,</p>
+\begin{equation}
+\sum_{k=m}^n \binom{k}{m} = \binom{m}{m} + \binom{m+1}{m} + \dots + \binom{n}{m} = \binom{n+1}{m+1}\text{.}\label{eq_sumkchoosem}\tag{4.2.3}
+\end{equation}
+</article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-31" id="proof-31"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-31" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-642">We prove the proposition by induction on \(n\text{.}\) Fix \(m\) first, then the induction starts by checking if the statement holds for the smallest possible \(n\text{,}\) that is, for \(n = m\text{.}\) For \(n=m\) the left hand side is simply \(\binom{m}{m} = 1\text{,}\) the right hand side is \(\binom{m+1}{m+1} = 1\text{,}\) and the statement holds. Let us assume now that the statement holds for \(n-1\text{,}\) that is,</p>
+\begin{equation*}
+\sum_{k=m}^{n-1} \binom{k}{m} = \binom{m}{m} + \binom{m+1}{m} + \dots + \binom{n-1}{m} = \binom{n}{m+1}\text{.}
+\end{equation*}
+<p id="p-643">This is the induction hypothesis. Now we prove that the statement holds for \(n\text{,}\) as well. Consider the sum \(\sum_{k=m}^{n} \binom{k}{m}\text{:}\)</p>
+\begin{align*}
+\amp  \sum_{k=m}^{n} \binom{k}{m} = \underbrace{\binom{m}{m} + \binom{m+1}{m} + \dots + \binom{n-1}{m}}_{= \binom{n}{m+1}, \text{ by the induction hypothesis } } + \binom{n}{m}\\
+\amp = \binom{n}{m+1} + \binom{n}{m} = \binom{n+1}{m+1}\text{.}
+\end{align*}
+<p id="p-644">Here, we first used the induction hypothesis, then the generating rule of Pascal's triangle (<a knowl="./knowl/prop_binomsum.html" knowl-id="xref-prop_binomsum" alt="Proposition 4.0.3 " title="Proposition 4.0.3 ">Proposition 4.0.3</a>).</p></article></div>
+<p id="p-645">Again, the induction proof clearly settles that our conjecture was true, but it does not clarify the reason why this identity holds. By finding combinatorial meaning to both sides of <a knowl="./knowl/eq_sumkchoosem.html" knowl-id="xref-eq_sumkchoosem" alt="Equation 4.2.3 " title="Equation 4.2.3 ">(4.2.3)</a>, we can understand what is “behind the curtain”.</p>
+<article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-32" id="proof-32"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-32" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-646">Again, the right hand side gives a clue on what we need to find. Since \(\binom{n+1}{m+1}\) is the number of ways choosing \(m+1\) elements out of an \(n\)-element set, this is what we will try to find on the left hand side, as well. Let \(S= \halmaz{1, 2, \dots , n, n+1}\text{.}\) Try to choose \(m+1\) elements in the following way: first choose the <em class="emphasis">largest</em> one, then choose the remaining \(m\) elements. Clearly the largest is at least \(m+1\text{.}\) If we choose \(m+1\) as the largest chosen number, then we need to choose \(m\) elements out of the \(m\)-element set \(\halmaz{1, 2, \dots , m}\text{,}\) this can be done in \(\binom{m}{m}\)-many ways. If we choose \(m+2\) as the largest chosen number, then we need to choose \(m\) elements out of the \((m+1)\)-element set \(\halmaz{1, 2, \dots , m+1}\text{,}\) this can be done in \(\binom{m+1}{m}\)-many ways. If we choose \(m+3\) as the largest chosen number, then we need to choose \(m\) elements out of the \((m+2)\)-element set \(\halmaz{1, 2, \dots , m+2}\text{,}\) this can be done in \(\binom{m+2}{m}\)-many ways. In general, if we choose \(k+1\) as the largest chosen number (for some \(m \leq k\leq n\)), then we need to choose \(m\) elements out of the \(k\)-element set \(\halmaz{1, 2, \dots , k}\text{,}\) this can be done in \(\binom{k}{m}\)-many ways. If we choose \(n\) as the largest chosen number, then we need to choose \(m\) elements out of the \((n-1)\)-element set \(\halmaz{1, 2, \dots , n-1}\text{,}\) this can be done in \(\binom{n-1}{m}\)-many ways. Finally, if we choose \(n+1\) as the largest chosen number, then we need to choose \(m\) elements out of the \(n\)-element set \(\halmaz{1, 2, \dots , n}\text{,}\) this can be done in \(\binom{n}{m}\)-many ways. That is, the number of ways we can choose \((m+1)\) elements out of an \((n+1)\)-element set is</p>
+\begin{equation*}
+\sum_{k=m}^n \binom{k}{m} = \binom{m}{m} + \binom{m+1}{m} + \dots + \binom{n}{m}
+\end{equation*}
+<p>on the one hand, and \(\binom{n+1}{m+1}\) on the other hand. Thus the two numbers must be equal, as they count the same thing. Hence,</p>
+\begin{equation*}
+\sum_{k=m}^n \binom{k}{m} = \binom{m}{m} + \binom{m+1}{m} + \dots + \binom{n}{m} = \binom{n+1}{m+1}\text{.}
+\end{equation*}
+</article></div>
+<p id="p-647">Note, that from this identity we immediately obtain a formula for the sum of integer numbers and for the sum of squares. Indeed,</p>
+\begin{equation*}
+1 + 2 + \dots + n = \sum_{k=1}^n {k} = \sum_{k=1}^n \binom{k}{1} = \binom{n+1}{2} = \frac{(n+1) \cdot n}{2}\text{,}
+\end{equation*}
+<p>because \(k\) in \(\sum_{k=1}^n k\) can be expressed as \(\binom{k}{1}\text{.}\) Similarly, \(k^2 = \binom{k+1}{2} + \binom{k}{2}\) by <a knowl="./knowl/ex_n_2binom.html" knowl-id="xref-ex_n_2binom" alt="Exercise 2.6.11 " title="Exercise 2.6.11 ">Exercise 2.6.11</a> (for \(k\geq 2\)). Thus</p>
+\begin{align*}
+1^2 + 2^2 + \dots + n^2 \amp = \sum_{k=1}^n k^2 = 1 + \sum_{k=2}^n \left(\binom{k+1}{2} + \binom{k}{2}\right)\\
+\amp = 1 + \sum_{k=2}^n \binom{k+1}{2} + \sum_{k=2}^n \binom{k}{2}\\
+\amp = \binom{2}{2} + \sum_{k=2}^n \binom{k+1}{2} + \sum_{k=2}^n \binom{k}{2}\\
+\amp = \sum_{k=1}^{n} \binom{k+1}{2} + \sum_{k=2}^n \binom{k}{2} = \sum_{k=2}^{n+1} \binom{k}{2} + \sum_{k=2}^n \binom{k}{2}\\
+\amp = \binom{n+2}{3} + \binom{n+1}{3}\\
+\amp = \frac{(n+2) \cdot (n+1) \cdot n}{3 \cdot 2} + \frac{(n+1) \cdot n \cdot (n-1)}{3 \cdot 2}\\
+\amp = \frac{n \cdot (n+1)}{3 \cdot 2} \cdot \left( (n+2)+ (n-1) \right)\\
+\amp = \frac{n \cdot (n+1) \cdot (2n+1)}{6}\text{.}
+\end{align*}
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_diagonal" id="ex_diagonal"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">4.2.8</span>
+</h6></a></article><div id="hk-ex_diagonal" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-648">Prove a similar identity for summing up numbers diagonally in the other direction:</p>
+\begin{equation}
+\sum_{k=0}^m \binom{n+k}{k} = \binom{n}{0} + \binom{n+1}{1} + \dots + \binom{n+m}{m} = \binom{n+m+1}{m}\text{.}\tag{4.2.4}
+\end{equation}
+</article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_rowp" id="ex_rowp"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">4.2.9</span>
+</h6></a></article><div id="hk-ex_rowp" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-649">Let \(p\) be a prime. Prove that every number in row \(p\) (except for the first and last) is divisible by \(p\text{.}\) By observing the first 12 rows of Pascal's triangle, confirm that this property does not necessarily hold if \(p\) is not a prime.</p></article></div></section></div></main>
+</div>
+</body>
+</html>

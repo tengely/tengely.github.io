@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:57+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>A card trick</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-16.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="cha_proof.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="cha_Pascal.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-16.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="cha_proof.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="cha_Pascal.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link active"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17" class="active">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-17"><h2 class="heading hide-type" alt="Section 3.5 A card trick">
+<span class="type">Section</span><span class="codenumber">3.5</span><span class="title">A card trick</span>
+</h2>
+<p id="p-545">In this section we introduce a card trick, which is based on several mathematical ideas. In fact the trick combines several tools from this chapter. To understand how it works one should be familiar with the pigeonhole principle, proof by contradiction and some tiny amount of combinatorics. Here is the trick.</p>
+<p id="p-546">An assistant asks the audience to choose five cards from a normal deck of 52 playing cards. They can choose any five as they like. They pass those five cards to the assistant, who reveals four of them to the magician, one remains only known by the audience and the assistant. The magician looks at the four cards handed to him and announces the 5th card, the secret one.</p>
+<p id="p-547">This mathematical card trick was invented by William Fitch Cheney Jr. and it was first published by Wallace Lee in Maths Miracles in 1950.<span class="footnote"><a knowl="" class="id-ref" refid="hk-fn-3" id="fn-3"><sup> 1 </sup></a></span><span id="hk-fn-3" class="hidden-content tex2jax_ignore"><span class="footnote">William Wallace Lee, <em class="emphasis">Maths Miracles</em>, Durham, N. C. (1950)</span></span></p>
+<p id="p-548">How does this trick work? First we apply the pigeonhole principle to obtain a very important imformation. There are only 4 suits (clubs \(\clubsuit\text{,}\) diamonds \(\diamondsuit\text{,}\) hearts \(\heartsuit\) and spades \(\spadesuit\)) while there are 5 cards choosen. An application of pigeonhole principle yields that at least 2 cards must be of the same suit. The assistant and the magician have an agreement about the ordering of cards, e.g. \(A-2-3-\ldots-J-Q-K\text{.}\) There are two cards having the same suit, say \(C_1\) and \(C_2\text{.}\)</p>
+<figure class="figure-like" id="figure-3"><img width="40%" src="images/KartyaKorbe.png" alt=""></figure><p id="p-549">It is possible to define a distance between them. One considers the 13 same-suit cards arranged in a circle from \(A\) to \(K\) going clockwise. Given \(C_1\) and \(C_2\) one defines the distance \(d(C_1,C_2)\) as the clockwise distance from \(C_1\) to \(C_2\text{.}\) The second observation is that either \(d(C_1,C_2)\leq 6\) or \(d(C_2,C_1)\leq 6\text{.}\) This statement can be proved indirectly. Assume that \(d(C_1,C_2)&gt;6\) and \(d(C_2,C_1)&gt;6\text{.}\) Then there must be at least 14 cards having the same suit, a contradiction. Let us consider an example. If the two cards are \(C_1=3\) and \(C_2=J\text{,}\) then we have that \(d(3,J)=8\) and \(d(J,3)=5\text{.}\) This fact is used to decide which card is going to be at the top of the pile. Assume that \(d(C_i,C_j)\leq 6\text{.}\) The assistant will place card \(C_i\) at the top of the pile and \(C_j\) will be the hidden card. The assistant still has to decide how to order the remaining 3 cards. Here comes a tiny combinatorics involved, three cards can be ordered in \(3!=6\) different ways. That is, somehow the assistant will be able to encode the distance \(d(C_i,C_j)\leq 6\text{.}\) The 52 cards are ordered following the rules:</p>
+<p id="p-550">rule I.: \(\clubsuit\lt \diamondsuit\lt \heartsuit\lt \spadesuit\text{,}\)</p>
+<p id="p-551">rule II.: \(A\lt 2\lt 3\lt \ldots\lt J\lt Q\lt K\text{,}\)</p>
+<p id="p-552">So we have \(A\clubsuit\lt 2\clubsuit\lt \ldots\lt Q\spadesuit\lt K\spadesuit\text{.}\) Back to the last three cards. Let us denote by 1 the card having the lowest rank, by 3 the card having the highest rank and by 2 the remaining one. It is easy to make an agreement about the encoding of the distance, an example is given in the following table</p>
+<table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(d(C_i,C_j)\)</td>
+<td class="l m b0 r0 l0 t0 lines">order of the 3 cards</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1,2,3</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">1,3,2</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">2,1,3</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">2,3,1</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">3,1,2</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">3,2,1</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<p id="p-553">It is time to start the card trick! Assume that the assistant gets the following cards from the audience: \(3\clubsuit, K\clubsuit, 8\diamondsuit, 5\heartsuit\) and \(Q\spadesuit\text{.}\) Here \(3\clubsuit, K\clubsuit\) are two cards having the same suit. What about their distance? One has</p>
+\begin{align*}
+d(3\clubsuit, K\clubsuit)\amp = 10,\\
+d(K\clubsuit, 3\clubsuit)\amp = 3\text{.}
+\end{align*}
+<p id="p-554">The assistant has to encode 3. The ordering of the remaining three cards is \((1=8\diamondsuit)\lt (2=5\heartsuit)\lt (3=Q\spadesuit)\text{.}\) That is,</p>
+\begin{equation*}
+d(K\clubsuit, 3\clubsuit)=3\Rightarrow 5\heartsuit, 8\diamondsuit, Q\spadesuit\text{.}
+\end{equation*}
+<p id="p-555">Therefore the pile of cards the assistant gives to the magician is</p>
+\begin{equation*}
+K\clubsuit, 5\heartsuit, 8\diamondsuit, Q\spadesuit\text{.}
+\end{equation*}
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-card-1" id="card-1"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.5.2</span>
+</h6></a></article><div id="hk-card-1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-556">What card is being encoded by the following sequences of four cards?</p>
+<p id="p-557">(a) \(7\clubsuit,3\diamondsuit,J\diamondsuit,A\spadesuit\text{,}\)</p>
+<p id="p-558">(b) \(J\diamondsuit,9\clubsuit,Q\heartsuit,8\heartsuit\text{,}\)</p>
+<p id="p-559">(c) \(9\heartsuit,10\heartsuit,J\diamondsuit,6\diamondsuit\text{,}\)</p>
+<p id="p-560">(d) \(10\diamondsuit,4\spadesuit,2\spadesuit,5\diamondsuit\text{,}\)</p>
+<p id="p-561">(e) \(8\spadesuit,7\diamondsuit,7\heartsuit,3\heartsuit\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-card-2" id="card-2"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.5.3</span>
+</h6></a></article><div id="hk-card-2" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-562">Which card should be the hidden card? How to order the remaining four cards to encode the hidden one?</p>
+<p id="p-563">(a) \(3\clubsuit,7\clubsuit,5\diamondsuit,2\diamondsuit,A\spadesuit\text{,}\)</p>
+<p id="p-564">(b) \(10\clubsuit,A\diamondsuit,J\diamondsuit,8\heartsuit,4\spadesuit\text{,}\)</p>
+<p id="p-565">(c) \(A\clubsuit,6\diamondsuit,K\heartsuit,7\spadesuit,8\spadesuit\text{,}\)</p>
+<p id="p-566">(d) \(7\clubsuit,8\diamondsuit,3\spadesuit,7\spadesuit,9\spadesuit\text{,}\)</p>
+<p id="p-567">(e) \(J\diamondsuit,Q\diamondsuit,7\heartsuit,10\heartsuit,3\spadesuit\text{.}\)</p></article></div></section></div></main>
+</div>
+</body>
+</html>

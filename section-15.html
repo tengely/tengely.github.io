@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:57+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Constructive proofs</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-14.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="cha_proof.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-16.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-14.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="cha_proof.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-16.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link active"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15" class="active">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-15"><h2 class="heading hide-type" alt="Section 3.3 Constructive proofs">
+<span class="type">Section</span><span class="codenumber">3.3</span><span class="title">Constructive proofs</span>
+</h2>
+<p id="p-476">In this section we deal with several problems for which a method can be provided to create a solution. We consider the coin problem (known also as the Frobenius problem). Let us be given a currency system with \(k\geq 2\) distinct integer denominations \(a_1\lt a_2\lt \ldots\lt a_k\text{.}\) Which amounts can be changed? This question yields the following linear Diophantine equation</p>
+\begin{equation*}
+a_1x_1+a_2x_2+\ldots+a_kx_k=n\text{,}
+\end{equation*}
+<p>where \(x_1,\ldots,x_k\) are non-negative integers. Now we study the case \(k=2\text{,}\) that is, our equation is</p>
+\begin{equation*}
+a_1x_1+a_2x_2=n\text{.}
+\end{equation*}
+<p id="p-477">There are some natural questions to pose: </p>
+<ul id="ul-2" style="list-style-type: disc;">
+<li id="li-64"><p id="p-478">Does the equation possess integer solutions?</p></li>
+<li id="li-65"><p id="p-479">How many solutions does it have?</p></li>
+<li id="li-66"><p id="p-480">How to determine all solutions?</p></li>
+</ul>
+<p id="p-481">In what follows we consider the above problem but we allow integer solutions instead of non-negative integer solutions. We will use these results to answer the original question.</p>
+<p id="p-482">Assume that \(\gcd(a_1,a_2)=d\text{.}\) Since \(d\) divides \(a_1x_1+a_2x_2\) we easily get that \(d\) divides \(n\text{,}\) if there is a solution in integers. For example, if we consider the equation</p>
+\begin{equation*}
+6x_1+8x_2=5\text{,}
+\end{equation*}
+<p>then 2 divides \(6x_1+8x_2\text{,}\) but 2 does not divide 5. Therefore there is no solution in integers.</p>
+<p id="p-483">Now suppose that \((u_1,u_2)\) is a solution, that is, \(a_1u_1+a_2u_2=n\text{.}\) Assume that there exists a different solution, say \((v_1,v_2)\text{.}\) We have that</p>
+\begin{align*}
+a_1u_1+a_2u_2\amp =n,\\
+a_1v_1+a_2v_2\amp =n\text{.}
+\end{align*}
+<p id="p-484">It implies that</p>
+\begin{equation*}
+a_1(u_1-v_1)=a_2(v_2-u_2)\text{.}
+\end{equation*}
+<p id="p-485">Let \(b_1=a_1/d\) and \(b_2=a_2/d\text{.}\) Since \(d\) is the largest common divisor of \(a_1\) and \(a_2\text{,}\) we obtain that \(\gcd(b_1,b_2)=1\text{.}\) We simplify the above equation by \(d\) to get</p>
+\begin{equation*}
+b_1(u_1-v_1)=b_2(v_2-u_2)\text{.}
+\end{equation*}
+<p id="p-486">It is clear that \(b_1\) divides \(v_2-u_2\text{,}\) since \(\gcd(b_1,b_2)=1\text{.}\) So we have \(v_2-u_2=b_1t\) for some \(t\in\mathbb{Z}\text{.}\) Thus</p>
+\begin{equation*}
+v_2=u_2+b_1t\text{,}
+\end{equation*}
+<p>and</p>
+\begin{equation*}
+v_1=u_1-b_2t\text{.}
+\end{equation*}
+<p id="p-487">It follows that there are infinitely many integer solutions. We have proved that there is no solution if \(\gcd(a_1,a_2)\) does not divide \(n\text{,}\) and if there is a solution, then there are infinitely many integer solutions. In <a href="Euc.html" class="xref" alt="Section 1.3 The Euclidean algorithm" title="Section 1.3 The Euclidean algorithm">Section 1.3</a> we showed that one can use the Euclidean algorithm to determine integers \(x,y\) for which \(a_1x+a_2y=\gcd(a_1,a_2)=d\text{.}\) Now assume that \(d\) divides \(n\text{,}\) that is, \(n=n_1d\) for some \(n_1\text{.}\) We obtain the following equation</p>
+\begin{equation*}
+a_1xn_1+a_2yn_1=dn_1=n\text{.}
+\end{equation*}
+<p id="p-488">Therefore \((xn_1,yn_1)\) is a solution of the equation \(a_1x_1+a_2x_2=n\text{.}\) Let us summarize what we obtained.</p>
+<article class="theorem-like" id="LinDioph"><h6 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.3.1</span>
+</h6>
+<p id="p-489">Let \(a_1,a_2\) and \(n\) be integers with \(a_1\) and \(a_2\) not both zero. The linear Diophantine equation \(a_1x_1+a_2x_2=n\) has a solution if and only if \(\gcd(a_1,a_2)\) divides \(n\text{.}\)</p>
+<p id="p-490">If \(\gcd(a_1,a_2)\) divides \(n\) and \((x,y)\) is a solution of the equation \(a_1x+a_2y=\gcd(a_1,a_2)\) provided by the Euclidean algorithm, then</p>
+\begin{equation*}
+\left(\frac{xn}{\gcd(a_1,a_2)},\frac{yn}{\gcd(a_1,a_2)}\right)
+\end{equation*}
+<p>is a solution of the equation \(a_1x_1+a_2x_2=n\text{.}\)</p>
+<p id="p-491">If \((u_1,u_2)\) is a solution of the equation \(a_1x_1+a_2x_2=n\text{,}\) then</p>
+\begin{equation*}
+\left(u_1-\frac{a_2}{\gcd(a_1,a_2)}t, u_2+\frac{a_1}{\gcd(a_1,a_2)}t\right),
+t\in\mathbb{Z}
+\end{equation*}
+<p>are solutions of the equation \(a_1x_1+a_2x_2=n\text{.}\)</p></article><p id="p-492">We apply the previous method to determine all integer solutions of the equation</p>
+\begin{equation*}
+132x_1+187x_2=55\text{.}
+\end{equation*}
+<p id="p-493">First we find the greatest common divisor of 132 and 187. We use the Euclidean algorithm:</p>
+\begin{align*}
+187 \amp = 1\cdot 132+55\\
+132 \amp = 2\cdot 55+22\\
+55 \amp = 2\cdot 22 + 11\\
+22 \amp = 2\cdot 11 + 0\text{.}
+\end{align*}
+<p id="p-494">That is, \(\gcd(132,187)=11\text{.}\) Since 11 divides 55 we know that there are infinitely many integer solutions. The next step is to construct a solution to the equation \(132x+187y=11:\)</p>
+\begin{align*}
+11\amp = 55-2\cdot 22\\
+\amp = 55-2\cdot (132-2\cdot 55)=-2\cdot 132+5\cdot 55\\
+\amp = -2\cdot 132+5\cdot (187-132)=5\cdot 187-7\cdot 132\text{.}
+\end{align*}
+<p id="p-495">We obtained that \(x=-7, y=5\) is a solution to the equation \(132x+187y=11\text{.}\) Hence we have</p>
+\begin{equation*}
+132\cdot (-7\cdot 5)+187\cdot (5\cdot 5)=55\text{.}
+\end{equation*}
+<p id="p-496">It implies that \(x_1=-35,x_2=25\) is a solution to the equation \(132x_1+187x_2=55\text{.}\) Our theorem yields that</p>
+\begin{equation*}
+\left(-35-17t, 25+12t\right) t\in\mathbb{Z}
+\end{equation*}
+<p>are solutions of the equation \(132x_1+187x_2=55\text{.}\)</p>
+<p id="p-497">We can handle equations of the form \(a_1x_1+a_2x_2=n\) in \(x_1,x_2\in\mathbb{Z}\text{.}\) If we have \(\gcd(a_1,a_2)=1\text{,}\) then we can solve the equation for any \(n\) in integers. What can we say about this equation if we allow only non-negative integers? Let us deal with the equation</p>
+\begin{equation*}
+7x_1+11x_2=n\text{.}
+\end{equation*}
+<p id="p-498">From the Euclidean algorithm we get that</p>
+\begin{equation*}
+7\cdot(-3)+11\cdot 2=1\text{.}
+\end{equation*}
+<p id="p-499">Thus we have that</p>
+\begin{equation*}
+(-3n,2n)
+\end{equation*}
+<p>is a solution to the equation \(7x_1+11x_2=n\text{.}\) From this particular solution we get infinitely many solutions:</p>
+\begin{equation*}
+(-3n-11t,2n+7t) t\in\mathbb{Z}\text{.}
+\end{equation*}
+<p id="p-500">We would like to have non-negative solutions, hence</p>
+\begin{align*}
+-3n-11t\amp \geq 0\Rightarrow t\leq \frac{-3n}{11}\\
+2n+7t\amp \geq 0\Rightarrow t\geq \frac{-2n}{7}\text{.}
+\end{align*}
+<p id="p-501">So we have the following inequalities</p>
+\begin{equation*}
+\frac{-2n}{7}\leq t\leq \frac{-3n}{11}\text{.}
+\end{equation*}
+<p id="p-502">If there is an integer contained in the interval \([\frac{-2n}{7},\frac{-3n}{11}]\text{,}\) then \(n\) can be represented in the form \(7x_1+11x_2\text{.}\) Denote by \(I_n\) the set \(\halmazvonal{t}{ \frac{-2n}{7}\leq t\leq \frac{-3n}{11}, t\in\mathbb{Z}}\text{.}\)</p>
+<table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(I_n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(I_n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(I_n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(I_n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(I_n\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">16</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">31</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">46</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-13}\)</td>
+<td class="l m b0 r0 l0 t0 lines">61</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-17}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">17</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">32</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-9}\)</td>
+<td class="l m b0 r0 l0 t0 lines">47</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-13}\)</td>
+<td class="l m b0 r0 l0 t0 lines">62</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-17}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">18</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-5}\)</td>
+<td class="l m b0 r0 l0 t0 lines">33</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-9}\)</td>
+<td class="l m b0 r0 l0 t0 lines">48</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">63</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-18}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">19</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">34</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">49</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-14}\)</td>
+<td class="l m b0 r0 l0 t0 lines">64</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-18}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">35</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-10}\)</td>
+<td class="l m b0 r0 l0 t0 lines">50</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-14}\)</td>
+<td class="l m b0 r0 l0 t0 lines">65</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-18}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">21</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-6}\)</td>
+<td class="l m b0 r0 l0 t0 lines">36</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-10}\)</td>
+<td class="l m b0 r0 l0 t0 lines">51</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-14}\)</td>
+<td class="l m b0 r0 l0 t0 lines">66</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-18}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-2}\)</td>
+<td class="l m b0 r0 l0 t0 lines">22</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-6}\)</td>
+<td class="l m b0 r0 l0 t0 lines">37</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">52</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">67</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-19}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">23</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">38</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">53</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-15}\)</td>
+<td class="l m b0 r0 l0 t0 lines">68</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-19}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">24</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">39</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-11}\)</td>
+<td class="l m b0 r0 l0 t0 lines">54</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-15}\)</td>
+<td class="l m b0 r0 l0 t0 lines">69</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-19}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">25</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-7}\)</td>
+<td class="l m b0 r0 l0 t0 lines">40</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-11}\)</td>
+<td class="l m b0 r0 l0 t0 lines">55</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-15}\)</td>
+<td class="l m b0 r0 l0 t0 lines">70</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-20}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-3}\)</td>
+<td class="l m b0 r0 l0 t0 lines">26</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">41</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">56</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-16}\)</td>
+<td class="l m b0 r0 l0 t0 lines">71</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-20}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">27</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">42</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-12}\)</td>
+<td class="l m b0 r0 l0 t0 lines">57</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-16}\)</td>
+<td class="l m b0 r0 l0 t0 lines">72</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-20}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">13</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">28</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-8}\)</td>
+<td class="l m b0 r0 l0 t0 lines">43</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-12}\)</td>
+<td class="l m b0 r0 l0 t0 lines">58</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-16}\)</td>
+<td class="l m b0 r0 l0 t0 lines">73</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-20}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">14</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-4}\)</td>
+<td class="l m b0 r0 l0 t0 lines">29</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-8}\)</td>
+<td class="l m b0 r0 l0 t0 lines">44</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-12}\)</td>
+<td class="l m b0 r0 l0 t0 lines">59</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">74</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-21}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">15</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">30</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">45</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">60</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-17}\)</td>
+<td class="l m b0 r0 l0 t0 lines">75</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{-21}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<p id="p-503">We can find 7 consecutive integers indicated in the table for which the set \(I_n\) is not empty, that is, those integers can be represented in the form \(7x_1+11x_2:\)</p>
+\begin{align*}
+n\amp =60 \amp  x_1=(-3)\cdot 60-11\cdot(-17)=7, x_2=2\cdot 60+7\cdot(-17)=1,\\
+n\amp =61 \amp  x_1=(-3)\cdot 61-11\cdot(-17)=4, x_2=2\cdot 61+7\cdot(-17)=3,\\
+n\amp =62 \amp  x_1=(-3)\cdot 62-11\cdot(-17)=1, x_2=2\cdot 62+7\cdot(-17)=5,\\
+n\amp =63 \amp  x_1=(-3)\cdot 63-11\cdot(-18)=9, x_2=2\cdot 63+7\cdot(-18)=0,\\
+n\amp =64 \amp  x_1=(-3)\cdot 64-11\cdot(-18)=6, x_2=2\cdot 64+7\cdot(-18)=2,\\
+n\amp =65 \amp  x_1=(-3)\cdot 65-11\cdot(-18)=3, x_2=2\cdot 65+7\cdot(-18)=4,\\
+n\amp =66 \amp  x_1=(-3)\cdot 66-11\cdot(-18)=0, x_2=2\cdot 66+7\cdot(-18)=6\text{.}
+\end{align*}
+<p id="p-504">Given a solution for \(n=60\) we can easily find a solution for \(n=67\) and \(n=74\) etc. We use this idea to provide solutions for all \(n&gt;59\text{.}\) The Division algorithm says that if we divide an integer by 7, then the remainder is between 0 and 6.</p>
+<p id="p-505">If the remainder is 0, then from the equation \(63=7\cdot 9+11\cdot 0\) we get</p>
+\begin{equation*}
+7(k+9)=7(k+9)+11\cdot 0, k\geq 0\text{.}
+\end{equation*}
+<p id="p-506">That is, if we have an integer \(n\geq 63\) divisible by 7, then it can be written in the form \(7x_1+11x_2\) with \(x_1,x_2\geq 0\text{.}\)</p>
+<p id="p-507">If the remainder is 1, then we use the equation \(64=7\cdot 6+11\cdot 2\) to obtain</p>
+\begin{equation*}
+7(k+9)+1=7(k+6)+11\cdot 2, k\geq 0\text{.}
+\end{equation*}
+<p id="p-508">In a similar way one computes the general solutions for the remaining cases.</p>
+<p id="p-509">How to deal with equations with more than two variables? We show how to reduce equations in three unknowns to equations in two unknowns. So the techniques applied previously can be used here. Consider the equation</p>
+\begin{equation*}
+4x_1+5x_2+7x_3=n, x_1,x_2,x_3\in\mathbb{Z}\text{.}
+\end{equation*}
+<p id="p-510">Introduce a new variable \(y_1=4x_1+5x_2\text{,}\) then the equation can be written as</p>
+\begin{equation*}
+y_1+7x_3=n\text{.}
+\end{equation*}
+<p id="p-511">A particular solution is \((n,0)\text{,}\) hence all the integer solutions can be parametrized as follows</p>
+\begin{align*}
+y_1\amp =n+7t,\\
+x_3\amp =-t\text{,}
+\end{align*}
+<p>for some \(t\in\mathbb{Z}\text{.}\) It remains to determine the integer solutions of the equation \(y_1=4x_1+5x_2=n+7t\text{.}\) The first thing to do is to find a particular solution. It is easy to check that</p>
+\begin{align*}
+x_1\amp =-n+3t,\\
+x_2\amp =n-t
+\end{align*}
+<p>is a solution. Applying the techniques used in case of two variables we get the following parametrization of integral solution</p>
+\begin{align*}
+x_1\amp =-n+3t-5s,\\
+x_2\amp =n-t+4s,\\
+x_3\amp =-t
+\end{align*}
+<p>for some \(s,t\in\mathbb{Z}\text{.}\) As a concrete example consider the equation \(4x_1+5x_2+7x_3=23\text{.}\) Then we obtain integer solutions by substituting concrete integral values into the above formulas. Some solutions are indicated in the following table</p>
+<table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\((s,t)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((x_1,x_2,x_3)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\((0,0)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((-23, 23, 0)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\((-1,0)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((-18, 19, 0)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\((0,-1)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((-26, 24, 1)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\((1,0)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((-28, 27, 0)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\((0,1)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((-20, 22, -1)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\((-1,-1)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((-21, 20, 1)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\((1,1)\)</td>
+<td class="l m b0 r0 l0 t0 lines">\((-25, 26, -1)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<p id="p-512">What about non-negative integer solutions? That is, if one asks for solutions such that \(x_1,x_2,x_3\in\mathbb{N}\cup\halmaz{0}\text{.}\) In case of the equation \(4x_1+5x_2+7x_3=n\) we determined the parametrization of the integral solutions, so we get the following inequalities</p>
+\begin{align*}
+0\amp \leq -n+3t-5s,\\
+0\amp \leq n-t+4s,\\
+0\amp \leq -t\text{.}
+\end{align*}
+<p id="p-513">That is, we immediately see that \(t\leq 0\text{.}\) We try to eliminate \(s\) from the first and the second equations. So we multiply by 4 the first equation and by 5 the second one and we get</p>
+\begin{equation*}
+5t-5n\leq 20s\leq -4n+12t\text{.}
+\end{equation*}
+<p id="p-514">That is, we obtain that</p>
+\begin{equation*}
+-\frac{n}{7}\leq t\leq 0\text{.}
+\end{equation*}
+<p id="p-515">It remains to determine a lower bound and an upper bound for \(s\text{.}\) We have</p>
+\begin{equation*}
+20s\geq 5t-5n\geq -5\frac{n}{7}-5n\text{,}
+\end{equation*}
+<p>hence \(s\geq -\frac{2n}{7}\text{.}\) Similarly, we have</p>
+\begin{equation*}
+20s\leq -4n+12t\leq -4n\text{,}
+\end{equation*}
+<p>therefore \(s\leq -\frac{n}{5}\text{.}\) Let us denote the two intervals as \(I_s=[-\frac{2n}{7},-\frac{n}{5}]\) and \(I_t=[-\frac{n}{7},0]\text{.}\) To have a non-negative integer solution we need an integer contained in the interval \(I_s\) and another one contained in \(I_t\text{.}\) If the length of the interval \(I_s\) is at least 1 and similarly for \(I_t\text{,}\) then for sure there will be such integers. The length of \(I_s\) is \(-\frac{n}{5}+\frac{2n}{7}=\frac{3n}{35}\) and the length of \(I_t\) is \(\frac{n}{7}\text{.}\) We have that the length of \(I_s\) is at least 1 if \(n\geq 12\) and the length of \(I_t\) is at least 1 if \(n\geq 7\text{.}\) If \(n\geq 12\text{,}\) then an integer solution is guaranteed. It means that if \(n\geq 12\text{,}\) then the equation \(4x_1+5x_2+7x_3=n\) has non-negative integer solution. Now we deal with the remaining cases \(1\leq n\leq 11\text{.}\)</p>
+<table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">integer(s) in \(I_s\)</td>
+<td class="l m b0 r0 l0 t0 lines">integer(s) in \(I_t\)</td>
+<td class="l m b0 r0 l0 t0 lines">solution(s): \((x_1,x_2,x_3)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">-1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">\((1,0,0)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">-1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">\((0,1,0)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">-2</td>
+<td class="l m b0 r0 l0 t0 lines">-1,0</td>
+<td class="l m b0 r0 l0 t0 lines">\((0,0,1)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">-2</td>
+<td class="l m b0 r0 l0 t0 lines">-1,0</td>
+<td class="l m b0 r0 l0 t0 lines">\((2,0,0)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">-2</td>
+<td class="l m b0 r0 l0 t0 lines">-1,0</td>
+<td class="l m b0 r0 l0 t0 lines">\((1,1,0)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">-2</td>
+<td class="l m b0 r0 l0 t0 lines">-1,0</td>
+<td class="l m b0 r0 l0 t0 lines">\((0,2,0)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">-3</td>
+<td class="l m b0 r0 l0 t0 lines">-1,0</td>
+<td class="l m b0 r0 l0 t0 lines">\((1,0,1)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<p id="p-516">We proved that if \(n&gt;6\text{,}\) then the equation \(4x_1+5x_2+7x_3=n\) has non-negative integer solution.</p>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-proof-cons-1" id="proof-cons-1"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.3.2</span>
+</h6></a></article><div id="hk-proof-cons-1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-517">Prove that all integers \(n\geq 24\) can be written as \(5x_1+7x_2\) for some non-negative integers \(x_1,x_2\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-proof-cons-2" id="proof-cons-2"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.3.3</span>
+</h6></a></article><div id="hk-proof-cons-2" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-518">Prove that all integers \(n\geq 12\) can be written as \(4x_1+5x_2\) for some non-negative integers \(x_1,x_2\text{.}\) Determine a formula for the solution in case of integers of the form \(n=4K+1\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-proof-cons-3" id="proof-cons-3"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.3.4</span>
+</h6></a></article><div id="hk-proof-cons-3" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-519">Parametrize all integer solutions of the equation</p>
+\begin{equation*}
+4x_1+6x_2+9x_3=n\text{.}
+\end{equation*}
+</article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-proof-cons-4" id="proof-cons-4"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.3.5</span>
+</h6></a></article><div id="hk-proof-cons-4" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-520">Determine the largest positive integer \(n\) for which the equation</p>
+\begin{equation*}
+4x_1+6x_2+9x_3=n
+\end{equation*}
+<p>has no non-negative integer solution.</p></article></div></section></div></main>
+</div>
+</body>
+</html>

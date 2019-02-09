@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:56+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Counting</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_numeralsystem.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="index.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_sequences.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_numeralsystem.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="index.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_sequences.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link active"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="chapter" id="cha_counting"><h1 class="heading" alt="Chapter 2 Counting">
+<span class="type">Chapter</span><span class="codenumber">2</span><span class="title">Counting</span>
+</h1>
+<a href="cha_counting.html" class="permalink">¶</a><section class="introduction" id="introduction-2"><p id="p-143">In this Chapter we will consider counting problems. These will be problems, where we need to count the number of possibilities of something happening. Let us warm up to this first by solving some easy exercises.</p>
+<p id="p-144">At the “Freshmen's party” several people meet. Five friends (Arnold, Bill, Carl, David, Edmund) greet each other at this party by shaking hands. How many handshakes does this mean? It is not too hard to count all possibilities: Arnold shakes hand with Bill, Carl, David, Edmund, Bill shakes hand with Carl, David, Edmund (we have already counted the Arnold-Bill handshake), Carl shakes hand with David and Edmund (we have already counted the Arnold-Carl and Bill-Carl handshake), David shakes hand with Edmund (we have already counted all other handshakes with David), and all handshakes with Edmund is already accounted for. That is, there are \(4 + 3 + 2 + 1 = 10\) handshakes altogether.</p>
+<p id="p-145">Now, this was easy, but this party is very big, and a lot of people attend it. Say, there are 200 College freshmen greeting each other by shaking hands. How many handshakes are there? We can try to generalize our former argument. Let us count the number of handshakes by ordering the people in some way (say, by date of birth). That is, first we count the handshakes by the oldest person, then the handshakes by the second oldest person, etc. The oldest person shakes hand with 199 other people, this is 199 handshakes. The second oldest person shakes hand with 199 people, as well, but we have already counted 1 handshake with the oldest person. That is, we count 198 more handshakes. For the third oldest person, out of 199 handshakes we have already counted 2: one with the oldest person and one with the second oldest person. That is, we count 197 more handshakes, etc. Continuing this argument, we count one less handshakes with each person. For the second youngest people we count only one new handshake: the handshake with the youngest person. And finally, for the youngest person we have already counted all handshakes. That is, the number of handshakes is</p>
+\begin{equation*}
+199 + 198 + 197 + \dots + 1\text{.}
+\end{equation*}
+<p id="p-146">How much is this number? Is there an easier way to calculate it, rather than adding all these numbers together? Those who are familiar with arithmetic progressions can calculate easily that the answer is \(\frac{199 \cdot 200}{2} = 19~900\text{.}\) But even without that knowledge, we can calculate this sum by observing that the sum of the first and last number is 200. Then the sum of the second and one but last number is 200, again. We can continue this argument, and reach \(99+101=200\text{,}\) and the number 100 is left alone. That is,</p>
+\begin{align*}
+\amp  1 + 2 + \dots + 198 + 199 = (1 + 199) + (2 + 198) + \dots + (99 + 101) + 100\\
+\amp  = 99\cdot 200 + 100 = (99 \cdot 2 + 1 ) \cdot 100 = 19~900\text{.}
+\end{align*}
+<p id="p-147">This summation argument works in general, as well:</p>
+<article class="theorem-like" id="prop_sumk"><h6 class="heading">
+<span class="type">Proposition</span><span class="codenumber">2.0.1</span>
+</h6>
+<p id="p-148">For a positive integer \(n\) we have</p>
+\begin{equation*}
+1 + 2 + \dots + (n-1) + n = \frac{n \cdot (n+1)}{2}\text{.}
+\end{equation*}
+</article><article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_sumk" id="ex_sumk"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.0.2</span>
+</h6></a></article><div id="hk-ex_sumk" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-149">Prove <a knowl="./knowl/prop_sumk.html" knowl-id="xref-prop_sumk" alt="Proposition 2.0.1 " title="Proposition 2.0.1 ">Proposition 2.0.1</a> by using the argument described above. Make two cases depending on whether \(n\) is even or odd.</p></article></div>
+<article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-1" id="proof-1"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-1" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-150">We show another proof here, which is usually attributed to Carl Friedrich Gauss.<span class="footnote"><a knowl="" class="id-ref" refid="hk-fn-1" id="fn-1"><sup> 1 </sup></a></span><span id="hk-fn-1" class="hidden-content tex2jax_ignore"><span class="footnote">German mathematician and physicist, 1777–1855.</span></span> Let \(S\) be the sum of the integers from 1 to \(n\text{,}\) and write the same sum in reverse order below:</p>
+\begin{align*}
+S \amp = 1 + 2 + \dots + (n-1) + n,\\
+S \amp = n + (n-1) + \dots + 2 + 1.\\
+\end{align*}
+<p class="intertext">Adding the two equations together, we obtain</p>
+\begin{align*}
+2S \amp = (1+n) + (2 + n-1) + \dots + (n-1 + 2) + (n+1),\\
+2S \amp = (n+1) + (n+1) + \dots + (n+1) + (n+1),\\
+2S \amp = n \cdot (n+1),\\
+S \amp = \frac{n\cdot (n+1)}{2}\text{.}
+\end{align*}
+</article></div>
+<p id="p-151">Now, we are able to tell the number of handshakes between \(n\) people. Using the same line of thought, the first person shakes hand with \((n-1)\) other people, the next one with \((n-2)\) other people (we already counted the handshake with the first person), etc. That is, the number of handshakes between \(n\) people is</p>
+\begin{equation*}
+(n-1) + (n-2) + \dots + 1\text{,}
+\end{equation*}
+<p>which is \(\frac{(n-1)\cdot n}{2}\) by <a knowl="./knowl/prop_sumk.html" knowl-id="xref-prop_sumk" alt="Proposition 2.0.1 " title="Proposition 2.0.1 ">Proposition 2.0.1</a> (writing \((n-1)\) instead of \(n\)). Thus, we have proved</p>
+<article class="theorem-like" id="cor_handshakes"><h6 class="heading">
+<span class="type">Corollary</span><span class="codenumber">2.0.3</span>
+</h6>
+<p id="p-152">The number of handshakes between \(n\) people is</p>
+\begin{equation*}
+1 + 2 + \dots + (n-1) = \frac{(n-1)\cdot n}{2}\text{.}
+\end{equation*}
+</article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-2" id="proof-2"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-2" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-153">Even though we have already proved the statement above, we give here an alternative proof. The reason for this is that this proof method will be useful later on.</p>
+<p id="p-154">Every person shakes hand with \((n-1)\) other people. Altogether there are \(n\) people, this would mean \((n-1) \cdot n\) handshakes. But this way every handshake is calculated twice: a handshake between \(A\) and \(B\) is calculated once for \(A\) and once for \(B\text{.}\) Thus, in reality, \((n-1) \cdot n\) is twice the number of handshakes. That is, the number of handshakes is \(\frac{(n-1) \cdot n}{2}\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_5people3hanshake" id="ex_5people3hanshake"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.0.4</span>
+</h6></a></article><div id="hk-ex_5people3hanshake" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-155">Five friends meet at this party. Some of them shake hands. Is it possible that everyone shook hands exactly three times? What is the answer if a person can shake hands with another more than once? What are the answers if seven people meet?</p></article></div>
+<p id="p-156">Four girls (Alice, Beth, Carrie, Diane) and four boys (Ed, Frank, George, Hugo) meet at this party. As a greeting any two boys shake hands with each other, but with the girls the two parties kiss each other on the cheek.</p>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_kisses" id="ex_kisses"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.0.5</span>
+</h6></a></article><div id="hk-ex_kisses" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-157">How many handshakes and kisses are there?</p></article></div>
+<p id="p-158">After greeting each other, they want to dance. In fact, every boy wants to dance with every girl, and they are interested in how many rounds they need to achieve this.</p>
+<p id="p-159">First, let us count the number of ways they can form dancing couples (one boy and one girl). There are four boys, and four girls, every boy wants to dance with every girl, that is, there are altogether \(4 \cdot 4 = 16\) possible couples. We can even list these 16 possibilities:</p>
+<table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Alice — Ed</td>
+<td class="l m b0 r0 l0 t0 lines">Beth — Ed</td>
+<td class="l m b0 r0 l0 t0 lines">Carrie — Ed</td>
+<td class="l m b0 r0 l0 t0 lines">Diane — Ed</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Alice — Frank</td>
+<td class="l m b0 r0 l0 t0 lines">Beth — Frank</td>
+<td class="l m b0 r0 l0 t0 lines">Carrie — Frank</td>
+<td class="l m b0 r0 l0 t0 lines">Diane — Frank</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Alice — George</td>
+<td class="l m b0 r0 l0 t0 lines">Beth — George</td>
+<td class="l m b0 r0 l0 t0 lines">Carrie — George</td>
+<td class="l m b0 r0 l0 t0 lines">Diane — George</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Alice — Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">Beth — Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">Carrie — Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">Diane — Hugo</td>
+</tr>
+</table>
+<p id="p-160">In one round four couples can dance. How many ways can they form four dancing couples for one round? Assume that each girl chooses a partner in a certain order. First Alice chooses a partner, then Beth, then Carrie, and finally Diane dances with whoever is left. Alice has four choices, because she can choose any of the boys. Beth will only have three choices, because Alice will have already chosen someone. Carrie will have only two choices, because Alice and Beth will have already chosen someone. Finally, Diane has only one choice. Altogether, they have \(4 \cdot 3 \cdot 2 \cdot 1 = 24\) possibilities to form four dancing couples at the same time.</p>
+<p id="p-161">Now, in one round at most four couples can dance. Therefore they will need at least \(\frac{16}{4} = 4\) rounds for everyone dancing with everyone else. But be careful! We only proved that they need 4 rounds, we have not proved that they can actually do it in 4 rounds. The easiest is to just give a “schedule” for the 16 couples in each rounds, e.g. see <a knowl="./knowl/tab_dancing.html" knowl-id="xref-tab_dancing" alt="Table 2.0.6 " title="Table 2.0.6 ">Table 2.0.6</a></p>
+<figure class="figure-like" id="tab_dancing"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1st round</td>
+<td class="l m b0 r0 l0 t0 lines">2nd round</td>
+<td class="l m b0 r0 l0 t0 lines">3rd round</td>
+<td class="l m b0 r0 l0 t0 lines">4th round</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Alice — Ed</td>
+<td class="l m b0 r0 l0 t0 lines">Beth — Ed</td>
+<td class="l m b0 r0 l0 t0 lines">Carrie — Ed</td>
+<td class="l m b0 r0 l0 t0 lines">Diane — Ed</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Beth — Frank</td>
+<td class="l m b0 r0 l0 t0 lines">Alice — Frank</td>
+<td class="l m b0 r0 l0 t0 lines">Diane — Frank</td>
+<td class="l m b0 r0 l0 t0 lines">Carrie — Frank</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Carrie — George</td>
+<td class="l m b0 r0 l0 t0 lines">Diane — George</td>
+<td class="l m b0 r0 l0 t0 lines">Alice — George</td>
+<td class="l m b0 r0 l0 t0 lines">Beth — George</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Diane — Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">Carrie — Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">Beth — Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">Alice — Hugo</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="codenumber">2.0.6</span>Four couples dancing in four rounds</figcaption></figure><article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_isitpossible1" id="ex_isitpossible1"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.0.7</span>
+</h6></a></article><div id="hk-ex_isitpossible1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-162">Is it possible </p>
+<ol id="ol-2" style="list-style-type: decimal;">
+<li id="li-8"><p id="p-163">to distribute 100 rabbits into five packs such that each pack contains an odd number of rabbits?</p></li>
+<li id="li-9"><p id="p-164">that both the sum and the product of some integer numbers are 9?</p></li>
+<li id="li-10"><p id="p-165">that both the sum and the product of 9 integer numbers are 9?</p></li>
+<li id="li-11"><p id="p-166">that the sum of 9 integer numbers is 0 and the product of these numbers is 9?</p></li>
+</ol></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_sum24" id="ex_sum24"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.0.8</span>
+</h6></a></article><div id="hk-ex_sum24" class="hidden-content tex2jax_ignore"><article class="exercise-like"><ol id="ol-3" style="list-style-type: decimal;">
+<li id="li-12"><p id="p-167">What is the sum of the first 24 positive integers, i.e. \(1 + 2 + 3 + \dots + 23 + 24 =\text{?}\)</p></li>
+<li id="li-13"><p id="p-168">Compute \(\frac{1 + 2 + 3 + 4 + \dots + 23 + 24}{1 - 2 + 3 - 4 + \dots + 23 - 24}\text{.}\)</p></li>
+</ol></article></div></section><nav class="summary-links"><ul>
+<li><a href="sec_sequences.html"><span class="codenumber">2.1</span><span class="title">Sequences</span></a></li>
+<li><a href="sec_subsets.html"><span class="codenumber">2.2</span><span class="title">Number of subsets</span></a></li>
+<li><a href="sec_permutations.html"><span class="codenumber">2.3</span><span class="title">Permutations</span></a></li>
+<li><a href="sec_anagrams.html"><span class="codenumber">2.4</span><span class="title">Anagrams</span></a></li>
+<li><a href="sec_orderedsubsets.html"><span class="codenumber">2.5</span><span class="title">The number of ordered subsets of a given size</span></a></li>
+<li><a href="sec_nchoosek.html"><span class="codenumber">2.6</span><span class="title">The number of subsets of a given size</span></a></li>
+<li><a href="sec_money.html"><span class="codenumber">2.7</span><span class="title">Distributing money</span></a></li>
+<li><a href="sec_ballsurns.html"><span class="codenumber">2.8</span><span class="title">Balls from urns</span></a></li>
+</ul></nav></section></div></main>
+</div>
+</body>
+</html>

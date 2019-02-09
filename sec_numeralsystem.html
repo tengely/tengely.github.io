@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:56+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Numeral systems</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="Euc.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="cha_intro.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="cha_counting.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="Euc.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="cha_intro.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="cha_counting.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link active"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem" class="active">Numeral systems</a></li>
+</ul>
+<h2 class="link"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_numeralsystem"><h2 class="heading hide-type" alt="Section 1.4 Numeral systems">
+<span class="type">Section</span><span class="codenumber">1.4</span><span class="title">Numeral systems</span>
+</h2>
+<a href="sec_numeralsystem.html" class="permalink">¶</a><p id="p-114">In this Section we learn about the different numeral systems. In everyday life we use base 10. That is, when we talk about numbers, we use the base 10 notation.</p>
+<p id="p-115">Let us consider counting. Imagine Robinson Crusoe spending his days on an uninhabited island, and he counts all the days by carving a vertical line every day into a rock. He was raised using the base 10 numbers, thus after reaching 9 lines, he crosses them on the tenth day (thus marking them as ten). That way he groups together every ten days. Then, when he reaches ten of such groups, then he carves a big box around them. That is how he indicates hundreds. Then he circles around every ten boxes, indicating thousands, etc. Then, reaching ten circles on one rock he would look for a new rock to carve days into.</p>
+<p id="p-116">Assume Robinson had arrived at the island 1st May 1817, and was rescued on 30th April 1850. How would his stones look like, after so much time? He spent 33 years on the island, that is, \(33 \cdot 365 = 12045\) days, not counting leap years. The leap years are 1820, 1824, 1828, 1832, 1836, 1840, 1844, 1848, that is, he spent \(12053\) days altogether on the island. That means one of the ten thousands, two of the thousands, zero of hundreds, five of tens and three of ones. That is, he would have one rock completely full with ten circles, ten boxes in each circle, and ten of the ten lines crossed in each box. Then on his second rock he would have two full circles, and next to them he would have five of the ten crossed lines and three separate lines.</p>
+<p id="p-117">Robinson is basically writing the numbers in base 10 by grouping every ten together. This is what we do, as well, except maybe in a bit more abstract and automatic way. When we think about the number 12053, we automatically give the meaning to the positions with the appropriate powers of 10:</p>
+\begin{align*}
+12053 \amp = 1 \cdot 10~000 + 2 \cdot 1~000 + 0 \cdot 100 + 5 \cdot 10 + 3 \cdot 1 =\\
+\amp = 1 \cdot 10^4 + 2 \cdot 10^3 + 0 \cdot 10^2 + 5 \cdot 10^1 + 3 \cdot 10^0\text{.}
+\end{align*}
+<p id="p-118">By writing the digits next to each other we indicate their value by their positioning. The value of the rightmost digit is \(1 = 10^0\text{,}\) then going from right to left the value increases by a factor of 10. That is, the value of the second rightmost digit is \(10^1\text{,}\) the digit left from it is \(10^2\text{,}\) etc. We have ten digits altogether (0, 1, 2, 3, 4, 5, 6, 7, 8, 9), because every tens will be grouped together by this positioning.</p>
+<p id="p-119">All other numeral systems are based on the same idea. Considering for example base 2 (the <em class="emphasis">binary system</em>), we will only need two digits: 0 and 1, because every twos will be grouped together. The values of the digits from right to left will be the two powers in increasing order, that is, 1, 2, 4, 8, 16, 32, 64, etc. We indicate by the number 2 in the lower right corner of the number that the base is 2. For example</p>
+\begin{equation*}
+101011_{2} = 1 \cdot 2^5 + 0 \cdot 2^4 + 1 \cdot 2^3 + 0 \cdot 2^2 + 1 \cdot 2^1 + 1 \cdot 2^0 = 32 + 8 + 2 + 1 = 43_{10}\text{.}
+\end{equation*}
+<p id="p-120">Numbers are almost exclusively represented in their binary form in Computer Science.</p>
+<p id="p-121">Another typical example from Computer Science could be the <em class="emphasis">octal system,</em> i.e. base 8 (1 byte equals to 8 bits). Then there are eight digits (0, 1, 2, 3, 4, 5, 6, 7), and the values of the digits from right to left are the increasing powers of 8. Similarly, in Computer Science, base 16 <em class="emphasis">(hexadecimal number system)</em> is used. Here, the values of the digits from right to left are the increasing powers of 16, and we need 16 digits. That is, we need separate digits for the digits corresponding to 10, 11, 12, 13, 14 and 15. By convention, we denote these digits by the first six letters of the alphabet:</p>
+\begin{align*}
+A_{16} \amp = 10_{10}, \amp  B_{16} \amp = 11_{10} \amp  C_{16} = 12_{10},\\
+D_{16} \amp = 13_{10}, \amp  E_{14} \amp = 14_{10} \amp  F_{16} = 15_{10}\text{.}
+\end{align*}
+<p id="p-122">At first, it might look strange to use digits for the number ten, eleven or twelve. This is actually not so surprising if we think about some historical number systems. Counting months, or looking at the clock we use base 12 numeral system. Until 1971 British people used base 12 for money exchange (12 pennies were worth 1 shilling). Moreover, in the English language eleven and twelve have different names, they are not generated as all the others between 10 and 20, indicating that they may have been distinguished as extra digits.</p>
+<p id="p-123">Generally, in base \(n\) we need \(n\) digits, running from 0 to \((n-1)\text{.}\) We will write numbers in positional system, as above. The values of the digits are the powers of \(n\) going from right to left. That is, the rightmost digit has value \(n^0 = 1\text{,}\) the second rightmost digit has value \(n^1 = n\text{,}\) the digit left to it has value \(n^2\text{,}\) etc. Thus, the number \(a_ta_{t-1} \dots a_2a_1a_0\) in base \(n\) (where \(0\leq a_k \leq n-1\) for every \(0\leq k\leq t\)) represents the number</p>
+\begin{equation*}
+(a_ta_{t-1} \dots a_2a_1a_0)_{n} = \sum_{k=0}^t a_k \cdot n^k = a_t \cdot n^t + a_{t-1} \cdot n^{t-1} + \dots + a_2 \cdot n^2 + a_1 \cdot n^1 + a_0 \cdot n^0\text{.}
+\end{equation*}
+<p id="p-124">Now, the question is how to write numbers into different numeral systems. First of all, to write numbers from a numeral system into base 10 we basically calculate the values of the digits using the positional systems, and sum the results:</p>
+\begin{align*}
+10101_2 \amp = 1 \cdot 2^4 + 0 \cdot 2^3 +1 \cdot 2^2 + 0 \cdot 2^1 + 1 \cdot 2^0 = 16 + 4 + 1 = 21_{10}\\
+1212_3 \amp = 1 \cdot 3^3 + 2 \cdot 3^2 + 1 \cdot 3^1 + 2 \cdot 3^0 = 27 + 18 + 3 + 2 = 50_{10}\\
+372_8 \amp = 3 \cdot 8^2 + 7 \cdot 8^1 + 2 \cdot 8^0 = 192 + 56 + 2 = 250_{10}\\
+AFE_{16} \amp = 10 \cdot 16^2 + 15 \cdot 16^1 + 14 \cdot 16^0 = 2560 + 240 + 14 = 2814_{10}\text{.}
+\end{align*}
+<p id="p-125">Another method is to repeatedly multiply by the base and add the next digit. For example:</p>
+\begin{align*}
+10101_2 \amp = (((1 \cdot 2 + 0 ) \cdot 2 + 1)\cdot 2 + 0) \cdot 2 + 1\\
+\amp  ((2 \cdot 2 + 1)\cdot 2 + 0) \cdot 2 + 1 = (5 \cdot 2 + 0) \cdot 2 + 1=  21_{10}\\
+1212_3 \amp = ((1 \cdot 3 + 2) \cdot 3 + 1) \cdot 3 + 2\\
+\amp = (5 \cdot 3 + 1)\cdot 3 + 2 = 16 \cdot 3 + 2 = 50_{10}\\
+372_8 \amp = (3 \cdot 8 + 7) \cdot 8 + 2 = 31 \cdot 8 + 2 = 250_{10}\\
+AFE_{16} \amp = (10 \cdot 16 + 15) \cdot 16 + 14 = 175 \cdot 16 + 14 = 2814_{10}\text{.}
+\end{align*}
+<p id="p-126">The other direction is to find a base \(n\) representation of a decimal number. Again, it can be done in two different ways. The first is that we check the highest \(n\)-power which is not greater than our number, execute division algorithm with this \(n\)-power, and repeat the process for the remainder, until the remainder is 0. For example, write \(250_{10}\) in base 8. The 8-powers are (in increasing order) 1, 8, 64, 512, the last one is already greater than 250. Thus we execute the division algorithm with 64: \(250 = 3 \cdot 64 + 58\text{.}\) Now, 8 is not greater than 58, thus we execute the division algorithm by 8: \(58 = 7 \cdot 8 + 2\text{.}\) Finally, 1 is the highest 8-power not greater than 2, and after the division algorithm we obtain \(2 = 2 \cdot 1 +0\text{.}\) Thus</p>
+\begin{equation*}
+250_{10} = 3 \cdot 64 + 7 \cdot 8 + 2 \cdot 1 = 3 \cdot 8^2 + 7 \cdot 8^1 + 2 \cdot 8^0 = 372_8\text{.}
+\end{equation*}
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_numsyst1" id="ex_numsyst1"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.4.1</span>
+</h6></a></article><div id="hk-ex_numsyst1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-127">Write \(21_{10}\) in base 2, \(50_{10}\) in base 3, \(2814_{10}\) in base 16 using the method explained above.</p></article></div>
+<p id="p-128">The other method is to execute the division algorithm repeatedly on the quotients until the quotient is not 0, and then the number will consist of the remainders <em class="emphasis">backwards</em>. For example, if we want to rewrite \(2814_{10}\) into base 16, then</p>
+\begin{align*}
+2814 \amp = 175 \cdot 16 + 14,\\
+175 \amp = 10 \cdot 16 + 15,\\
+10 \amp = 0 \cdot 16 + 10\text{.}
+\end{align*}
+<p id="p-129">The remainders backwards are \(10=A\text{,}\) \(15=F\text{,}\) \(14=E\text{,}\) thus</p>
+\begin{equation*}
+2814_{10} = AFE_{16}\text{.}
+\end{equation*}
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_numsyst2" id="ex_numsyst2"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.4.2</span>
+</h6></a></article><div id="hk-ex_numsyst2" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-130">Write \(21_{10}\) in base 2, \(50_{10}\) in base 3, \(250_{10}\) in base 8 using the division algorithm.</p></article></div>
+<p id="p-131">How would we write a number of an arbitrary base into another (arbitrary) base? One method could be that we simply rewrite it first into base 10, then write it into the other system. For example, if we need to write \(372_8\) into base 3, we can do the following. Rewrite \(372_8\) first into base 10:</p>
+\begin{equation*}
+372_8 = 3 \cdot 8^2 + 7 \cdot 8^1 + 2 \cdot 8^0 = 192 + 56 + 2 = 250_{10}\text{.}
+\end{equation*}
+<p id="p-132">Now, rewrite \(250_{10}\) into base 3:</p>
+\begin{align*}
+250 \amp = 83 \cdot 3 + 1,\\
+83 \amp = 27 \cdot 3 + 2,\\
+27 \amp = 9 \cdot 3 + 0,\\
+9 \amp = 3 \cdot 3 + 0,\\
+3 \amp = 1 \cdot 3 + 0,\\
+1 \amp = 0 \cdot 3 + 1\text{.}
+\end{align*}
+<p id="p-133">The remainders backwards are 1, 0, 0, 0, 2, 1, thus</p>
+\begin{equation*}
+372_8 = 250_{10} = 100021_{3}\text{.}
+\end{equation*}
+<p id="p-134">Finally, we mention that some rewriting can be done much quicker if one base is a full power of another. For example, \(8=2^3\text{,}\) and then every base 8 digit can be rewritten easily to three base 2 digits:</p>
+\begin{align*}
+0_8 \amp = 000_2, \amp  1_8 \amp = 001_2,\\
+2_8 \amp = 010_2, \amp  3_8 \amp = 011_2,\\
+4_8 \amp = 100_2, \amp  5_8 \amp = 101_2,\\
+6_8 \amp = 110_2, \amp  7_8 \amp = 111_2\text{.}
+\end{align*}
+<p id="p-135">Going from right to left, every three base 2 digits can be easily rewritten into base 8, as well. Thus, it is easy to rewrite \(372_8\) into base 2 or \(10101_2\) into base 8:</p>
+\begin{align*}
+372_8 \amp = 011~111~010_2 = 11111010_2,\\
+10101_2 \amp = 010~101_2 = 25_8\text{.}
+\end{align*}
+<p id="p-136">Similarly, as \(16 = 2^4\text{,}\) every base 16 digit can be rewritten easily to four base 2 digits:</p>
+\begin{align*}
+0_{16} \amp = 0000_2, \amp  1_{16} \amp = 0001_2,\\
+2_{16} \amp = 0010_2, \amp  3_{16} \amp = 0011_2,\\
+4_{16} \amp = 0100_2, \amp  5_{16} \amp = 0101_2,\\
+6_{16} \amp = 0110_2, \amp  7_{16} \amp = 0111_2,\\
+8_{16} \amp = 1000_2, \amp  9_{16} \amp = 1001_2,\\
+A_{16} \amp = 1010_2, \amp  B_{16} \amp = 1011_2,\\
+C_{16} \amp = 1100_2, \amp  D_{16} \amp = 1101_2,\\
+E_{16} \amp = 1110_2, \amp  F_{16} \amp = 1111_2\text{.}
+\end{align*}
+<p id="p-137">Going from right to left, every four base 2 digits can be easily rewritten into base 16, as well. Thus, it is easy to rewrite \(AFE_{16}\) into base 2 or \(10101_2\) into base 16:</p>
+\begin{align*}
+AFE_{16} \amp = 1010~1111~1110_2 = 101011111110_2,\\
+10101_2 \amp = 0001~0101_2 = 15_{16}\text{.}
+\end{align*}
+<p id="p-138">We have to stress, though, that this method only works <em class="emphasis">if one base is a full power of the other</em>. Finally, base 8 numbers can be easily changed to base 16 (and vice versa) by first changing them to base 2, and then into the other base:</p>
+\begin{align*}
+372_8 \amp = 011~111~010_2 = 11111010_2 = 1111~1010_2 = FA_{16},\\
+AFE_{16} \amp = 1010~1111~1110_2 = 101011111110_2 = 101~011~111~110_2 = 5376_8\text{.}
+\end{align*}
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_numsyst3" id="ex_numsyst3"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.4.3</span>
+</h6></a></article><div id="hk-ex_numsyst3" class="hidden-content tex2jax_ignore"><article class="exercise-like"><ol id="ol-1" style="list-style-type: decimal;">
+<li id="li-4"><p id="p-139">Write the following numbers into base 10: \(111001101_2\text{,}\) \(1010101_2\text{,}\) \(11111_2\text{,}\) \(10110_2\text{,}\) \(101010101_2\text{,}\) \(10001000_2\text{,}\) \(1010111_2\text{,}\) \(111101_2\text{,}\) \(21102_3\text{,}\) \(1234_5\text{,}\) \(1234_7\text{,}\) \(1234_8\text{,}\) \(777_8\text{,}\) \(345_8\text{,}\) \(2012_8\text{,}\) \(4565_8\text{,}\) \(1123_8\text{,}\) \(666_8\text{,}\) \(741_8\text{,}\) \(CAB_{16}\text{,}\) \(BEE_{16}\text{,}\) \(EEE_{16}\text{,}\) \(4D4_{16}\text{,}\) \(ABC_{16}\text{,}\) \(9B5_{16}\text{,}\) \(DDD_{16}\text{,}\) \(3F2_{16}\text{.}\)</p></li>
+<li id="li-5"><p id="p-140">Write the following decimal numbers into base 2, 3, 5, 7, 8, 9, 16: \(64_{10}\text{,}\) \(50_{10}\text{,}\) \(16_{10}\text{,}\) \(100_{10}\text{,}\) \(2012_{10}\text{,}\) \(200_{10}\text{,}\) \(151_{10}\text{,}\) \(48_{10}\text{,}\) \(99_{10}\text{,}\) \(999_{10}\text{.}\)</p></li>
+<li id="li-6">
+<p id="p-141">Rewrite the given numbers into the particular numeral system:</p>
+\begin{align*}
+1121_3 \amp = \dots \dots \, _2,\\
+4312_5 \amp = \dots \dots \, _7,\\
+654_8 \amp = \dots \dots \, _9,\\
+AD2_{16} \amp = \dots \dots \, _7,\\
+543_8 \amp = \dots \dots \, _3,\\
+543_9 \amp = \dots \dots \, _3\text{.}
+\end{align*}
+</li>
+<li id="li-7"><p id="p-142">Write the following numbers into base 2 and base 16: \(777_8\text{,}\) \(345_8\text{,}\) \(2012_8\text{,}\) \(456_8\text{,}\) \(235_8\text{,}\) \(147_8\text{,}\) \(741_8\text{,}\) \(CAB_{16}\text{,}\) \(BEE_{16}\text{,}\) \(EEE_{16}\text{,}\) \(4D3_{16}\text{,}\) \(ABC_{16}\text{,}\) \(FEE_{16}\text{,}\) \(9B5_{16}\text{,}\) \(3F2_{16}\text{.}\)</p></li>
+</ol></article></div></section></div></main>
+</div>
+</body>
+</html>

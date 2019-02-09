@@ -1,0 +1,2186 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:59+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Proof Techniques</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-23.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="cha_solutions.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-25.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-23.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="cha_solutions.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-25.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link active"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24" class="active">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-24"><h2 class="heading hide-type" alt="Section 6.3 Proof Techniques">
+<span class="type">Section</span><span class="codenumber">6.3</span><span class="title">Proof Techniques</span>
+</h2>
+<ol id="ol-25" style="list-style-type: decimal;">
+<li id="li-185">
+<p id="p-864"><a knowl="./knowl/induction-1.html" knowl-id="xref-induction-1" alt="Exercise 3.1.4 " title="Exercise 3.1.4 ">Exercise 3.1.4</a> The statement \(S(n)\) is that 8 divides \(9^n-1\text{.}\) Clearly we have</p>
+\begin{align*}
+9^1-1=8\amp =1\cdot 8,\\
+9^2-1=80\amp =10\cdot 8\text{.}
+\end{align*}
+<p>Hence \(S(1)\) is true and \(S(2)\) is true as well. Assume that \(S(k)\) is true for some \(k\in\mathbb{N}\text{.}\) It remains to prove that \(S(k+1)\) is true. We have that \(S(k)\) is true, that is, 8 divides \(9^k-1\text{.}\) Hence there exists an integer \(A\) such that \(9^k-1=8\cdot A\text{.}\) It remains to prove that \(9^{k+1}-1\) is a multiple of 8. We have that</p>
+\begin{equation*}
+9(9^k-1)=8\cdot A\cdot 9\text{.}
+\end{equation*}
+<p>Hence we get</p>
+\begin{equation*}
+9^{k+1}-1=8\cdot A\cdot 9+8=8(9A+1)\text{.}
+\end{equation*}
+<p>That is, 8 divides \(9^{k+1}-1\text{.}\) Thus \(S(k+1)\) is true, so the statement is true for all positive integers.</p>
+</li>
+<li id="li-186">
+<p id="p-865"><a knowl="./knowl/induction-2.html" knowl-id="xref-induction-2" alt="Exercise 3.1.5 " title="Exercise 3.1.5 ">Exercise 3.1.5</a> The statement \(S(n)\) is that 6 divides \(5^{2n-1}+1\text{.}\) We compute \(5^{2n-1}+1\) for some small values:</p>
+\begin{align*}
+5^{2\cdot 1-1}+1=6\amp =1\cdot 6,\\
+5^{2\cdot 2-1}+1=126\amp =21\cdot 6\text{.}
+\end{align*}
+<p>It is now obvious that \(S(1)\) is true and \(S(2)\) is true, too. Assume that \(S(k)\) is true for some \(k\in\mathbb{N}\text{.}\) That is, there exists \(A\) such that</p>
+\begin{equation*}
+5^{2k-1}+1=6\cdot A\text{.}
+\end{equation*}
+<p>We multiply this latter equation by \(5^2:\)</p>
+\begin{equation*}
+5^2\cdot 5^{2k-1}+5^2=6\cdot A \cdot 5^2\text{.}
+\end{equation*}
+<p>We would like to have the expression of \(S(k+1)\) on the left-hand side, that is, \(5^{2(k+1)-1}+1=5^{2k+1}+1\text{.}\) So we subtract 24 to obtain</p>
+\begin{equation*}
+5^{2k+1}+1=6\cdot A \cdot 5^2-24=6(25A-4)\text{.}
+\end{equation*}
+<p>It follows that 6 divides \(5^{2k+1}+1\text{,}\) hence \(S(k+1)\) is true. We have proved that \(S(n)\) is true for all positive integers.</p>
+</li>
+<li id="li-187">
+<p id="p-866"><a knowl="./knowl/induction-3.html" knowl-id="xref-induction-3" alt="Exercise 3.1.6 " title="Exercise 3.1.6 ">Exercise 3.1.6</a> Here we deal with the sum of the first \(n\) odd integers. For \(n\in\halmaz{1,2,3,4,5}\) we have <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sum_{i=1}^n (2i-1)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">\(1=1^2\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">\(1+3=2^2\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">\(1+3+5=3^2\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">\(1+3+5+7=4^2\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">\(1+3+5+7+9=5^2\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table> Hence the given formula provides correct answers. Let \(S(n)\) be the statement that the sum of the first \(n\) odd integers is \(n^2\text{.}\) We have already proved that \(S(1)\) is true. Assume that \(S(k)\) is true for some \(k\geq 1\text{,}\) that is,</p>
+\begin{equation*}
+\sum_{i=1}^k(2i-1)=k^2\text{.}
+\end{equation*}
+<p>It remains to show that \(S(k+1)\) is true, that is,</p>
+\begin{equation*}
+\sum_{i=1}^{k+1}(2i-1)=(k+1)^2\text{.}
+\end{equation*}
+<p>The left-hand side can be written as</p>
+\begin{equation*}
+\sum_{i=1}^{k+1}(2i-1)=\left(1+3+\ldots+(2k-1)\right)+(2k+1)\text{.}
+\end{equation*}
+<p>By the induction hypotheses we have</p>
+\begin{equation*}
+\left(1+3+\ldots+(2k-1)\right)=k^2\text{,}
+\end{equation*}
+<p>so we obtain</p>
+\begin{equation*}
+\left(1+3+\ldots+(2k-1)\right)+(2k+1)=k^2+2k+1=(k+1)^2\text{.}
+\end{equation*}
+<p>Thus the statement \(S(k+1)\) is true and the result follows.</p>
+</li>
+<li id="li-188">
+<p id="p-867"><a knowl="./knowl/induction-4.html" knowl-id="xref-induction-4" alt="Exercise 3.1.7 " title="Exercise 3.1.7 ">Exercise 3.1.7</a> We consider here the sum of the first \(n\) squares, which is</p>
+\begin{equation*}
+1^2+2^2+\ldots+n^2\text{.}
+\end{equation*}
+<p>The statement \(S(n)\) is that</p>
+\begin{equation*}
+\sum_{i=1}^n i^2=\frac{n(n+1)(2n+1)}{6}\text{.}
+\end{equation*}
+<p>The statement is clearly true for \(n=1\text{,}\) since \(1^2=\frac{1\cdot 2\cdot 3}{6}\text{.}\) Assume that the statement is true for certain \(k\geq 1\text{,}\) that is,</p>
+\begin{equation*}
+\sum_{i=1}^k i^2=\frac{k(k+1)(2k+1)}{6}\text{.}
+\end{equation*}
+<p>Let us study \(S(k+1)\text{.}\) The sum of the first \(k+1\) squares can be written as the sum of the first \(k\) squares increased by \((k+1)^2\text{,}\) that is, we have</p>
+\begin{equation*}
+\sum_{i=1}^{k+1} i^2=\left(\sum_{i=1}^k i^2\right)+(k+1)^2\text{.}
+\end{equation*}
+<p>The induction hypotheses says that</p>
+\begin{equation*}
+\sum_{i=1}^k i^2=\frac{k(k+1)(2k+1)}{6}\text{,}
+\end{equation*}
+<p>hence we obtain</p>
+\begin{equation*}
+\sum_{i=1}^{k+1} i^2=\frac{k(k+1)(2k+1)}{6}+(k+1)^2\text{.}
+\end{equation*}
+<p>The right-hand side equals to</p>
+\begin{align*}
+\amp \frac{k(k+1)(2k+1)}{6}+\frac{6(k+1)^2}{6}=\frac{(k+1)\left(k(2k+1)+6(k+1)\right)}{6}=\\
+\amp =\frac{(k+1)(2k^2+7k+6)}{6}=\frac{(k+1)(k+2)(2k+3)}{6}\text{.}
+\end{align*}
+<p>Therefore \(S(k+1)\) is true and the problem has been solved.</p>
+</li>
+<li id="li-189">
+<p id="p-868"><a knowl="./knowl/induction-4a.html" knowl-id="xref-induction-4a" alt="Exercise 3.1.8 " title="Exercise 3.1.8 ">Exercise 3.1.8</a> We list the sum of the first \(n\) cubes in the following table for \(n\in\halmaz{1,2,3,4}\text{.}\) <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sum_{i=1}^n i^3\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">\(1^3=1=\left(\frac{1\cdot 2}{2}\right)^2\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">\(1^3+2^3=9=\left(\frac{2\cdot 3}{2}\right)^2\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">\(1^3+2^3+3^3=36=\left(\frac{3\cdot 4}{2}\right)^2\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">\(1^3+2^3+3^3+4^3=100=\left(\frac{4\cdot 5}{2}\right)^2\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table> The statement \(S(n)\) to prove is that</p>
+\begin{equation*}
+\sum_{i=1}^n i^3=\left(\frac{n(n+1)}{2}\right)^2\text{.}
+\end{equation*}
+<p>We showed that \(S(1),S(2),S(3)\) and \(S(4)\) are true. Assume that for some \(1\leq k\in\mathbb{N}\) the statement \(S(k)\) is true. We try to conclude that \(S(k+1)\) is true. We have</p>
+\begin{equation*}
+\sum_{i=1}^{k+1} i^3= \left(\sum_{i=1}^{k} i^3\right)+(k+1)^3\text{.}
+\end{equation*}
+<p>By the induction hypothesis we can write the right-hand side as</p>
+\begin{align*}
+\amp  \left(\frac{k(k+1)}{2}\right)^2+(k+1)^3=\frac{k^2(k+1)^2+4(k+1)^3}{4}=\\
+\amp  \frac{(k+1)^2}{4}(k^2+4k+4)=\left(\frac{(k+1)(k+2)}{2}\right)^2\text{.}
+\end{align*}
+<p>It follows that \(S(k+1)\) is true and therefore the identity is true for all positive integers \(n\text{.}\)</p>
+</li>
+<li id="li-190">
+<p id="p-869"><a knowl="./knowl/ex_sumk_k_1_.html" knowl-id="xref-ex_sumk_k_1_" alt="Exercise 3.1.9 " title="Exercise 3.1.9 ">Exercise 3.1.9</a> Let \(S(n)\) be the statement that</p>
+\begin{equation*}
+\sum_{i=1}^{n-1}{i(i+1)}=\frac{\left(n-1\right)n\left(n+1\right)}{3}\text{.}
+\end{equation*}
+<p>If \(n=2\text{,}\) then the left-hand side is</p>
+\begin{equation*}
+\sum_{i=1}^1{i(i+1)}={2}\text{,}
+\end{equation*}
+<p>and the right-hand side is \(\frac{1\cdot 2 \cdot 3}{3}\text{,}\) hence \(S(1)\) is true. Assume that \(S(k)\) is true for some \(1\leq k\in\mathbb{N}\text{.}\) The statement \(S(k+1)\) says that</p>
+\begin{equation*}
+\sum_{i=1}^{k}{i(i+1)}=\frac{k\left(k+1\right)\left(k+2\right)}{3}\text{.}
+\end{equation*}
+<p>On the other hand, by the induction hypothesis</p>
+\begin{align*}
+\amp  \sum_{i=1}^{k}{i(i+1)}=\left(\sum_{i=1}^{k-1}{i(i+1)}\right)+{k(k+1)}=\\
+\amp  =\frac{\left(k-1\right)k\left(k+1\right)}{3}+{k(k+1)}=\frac{\left(k-1\right)k\left(k+1\right)+3k(k+1)}{3}=\\
+\amp  =\frac{k\left(k+1\right)\left(k+2\right)}{3}\text{.}
+\end{align*}
+<p>Therefore \(S(k+1)\) is true and the identity</p>
+\begin{equation*}
+\sum_{i=1}^{n-1} {i(i+1)}=\frac{\left(n-1\right)n\left(n+1\right)}{3}
+\end{equation*}
+<p>is valid for all positive integers \(n\text{.}\)</p>
+</li>
+<li id="li-191">
+<p id="p-870"><a knowl="./knowl/induction-4b.html" knowl-id="xref-induction-4b" alt="Exercise 3.1.10 " title="Exercise 3.1.10 ">Exercise 3.1.10</a> Let \(S(n)\) be the statement that</p>
+\begin{equation*}
+\sum_{i=1}^n\frac{1}{i(i+1)}=\frac{n}{n+1}\text{.}
+\end{equation*}
+<p>If \(n=1\text{,}\) then the left-hand side is</p>
+\begin{equation*}
+\sum_{i=1}^1\frac{1}{i(i+1)}=\frac{1}{2}\text{,}
+\end{equation*}
+<p>and the right-hand side is \(\frac{1}{2}\text{,}\) hence \(S(1)\) is true. Assume that \(S(k)\) is true for some \(1\leq k\in\mathbb{N}\text{.}\) The statement \(S(k+1)\) says that</p>
+\begin{equation*}
+\sum_{i=1}^{k+1}\frac{1}{i(i+1)}=\frac{k+1}{k+2}\text{.}
+\end{equation*}
+<p>On the other hand, by the induction hypothesis</p>
+\begin{align*}
+\amp  \sum_{i=1}^{k+1}\frac{1}{i(i+1)}=\left(\sum_{i=1}^{k}\frac{1}{i(i+1)}\right)+\frac{1}{(k+1)(k+2)}=\\
+\amp  =\frac{k}{k+1}+\frac{1}{(k+1)(k+2)}=\frac{k(k+2)+1}{(k+1)(k+2)}=\\
+\amp  =\frac{(k+1)^2}{(k+1)(k+2)}=\frac{k+1}{k+2}\text{.}
+\end{align*}
+<p>Therefore \(S(k+1)\) is true and the identity</p>
+\begin{equation*}
+\sum_{i=1}^n\frac{1}{i(i+1)}=\frac{n}{n+1}
+\end{equation*}
+<p>is valid for all positive integers \(n\text{.}\)</p>
+</li>
+<li id="li-192">
+<p id="p-871"><a knowl="./knowl/induction-5.html" knowl-id="xref-induction-5" alt="Exercise 3.1.11 " title="Exercise 3.1.11 ">Exercise 3.1.11</a> Let us compute the first few elements of the sequence <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(a_n\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">\(a_2+2a_1=10\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">\(a_3+2a_2=26\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">\(a_4+2a_3=46\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table> Now we compute the values of the formula \(\frac{3}{2}\cdot 2^n+2\cdot (-1)^n\) for \(n\in\halmaz{1,2,3,4,5}\) <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\frac{3}{2}2^n+2(-1)^n\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">26</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">46</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table> We checked that \(a_n=\frac{3}{2}\cdot 2^n+2\cdot (-1)^n\) for \(n\in\halmaz{1,2,3,4,5}\text{.}\) Assume that the statement is true for \(S(k-1)\) and \(S(k)\) for some \(2\leq k\in\mathbb{N}\text{,}\) that is,</p>
+\begin{align*}
+a_{k-1}\amp =\frac{3}{2}\cdot 2^{k-1}+2\cdot (-1)^{k-1},\\
+a_k\amp =\frac{3}{2}\cdot 2^k+2\cdot (-1)^k\text{.}
+\end{align*}
+<p>The statement for \(k+1\) is that \(a_{k+1}=\frac{3}{2}\cdot 2^{k+1}+2\cdot (-1)^{k+1}\text{.}\) By definition we have that</p>
+\begin{equation*}
+a_{k+1}=a_{k}+2a_{k-1}\text{.}
+\end{equation*}
+<p>Hence by the induction hypotheses we obtain</p>
+\begin{equation*}
+a_{k+1}=\frac{3}{2}\cdot 2^k+2\cdot (-1)^k+2\left(\frac{3}{2}\cdot 2^{k-1}+2\cdot (-1)^{k-1}\right)\text{.}
+\end{equation*}
+<p>A direct computation yields that</p>
+\begin{equation*}
+a_{k+1}=\frac{3}{2}\cdot 2^{k+1}+2\cdot (-1)^{k+1}\text{,}
+\end{equation*}
+<p>which is the statement we wanted to prove. We showed that the given formula is correct.</p>
+</li>
+<li id="li-193">
+<p id="p-872"><a knowl="./knowl/induction-6.html" knowl-id="xref-induction-6" alt="Exercise 3.1.12 " title="Exercise 3.1.12 ">Exercise 3.1.12</a> We note that there is a solution in <a href="Recurrence_sequences.html" class="xref" alt="Chapter 5 Recurrence sequences" title="Chapter 5 Recurrence sequences">Chapter 5</a> which does not use induction. Here we will prove it by induction. Our statement \(S(n)\) is that the number</p>
+\begin{equation*}
+f(n)=\left(\frac{3-\sqrt{33}}{2}\right)^n+\left(\frac{3+\sqrt{33}}{2}\right)^n
+\end{equation*}
+<p>is an integer and it is a multiple of 3. Let us consider the statement for \(n=1\) and 2. If \(n=1\text{,}\) then we get that \(f(1)=3\text{.}\) So it is an integer and it is a multiple of 3. If \(n=2\text{,}\) then we have</p>
+\begin{equation*}
+f(2)=\frac{9-6\sqrt{33}+33}{4}+\frac{9+6\sqrt{33}+33}{4}=21\text{.}
+\end{equation*}
+<p>Again we obtained an integer that is divisible by 3. Assume that \(S(k-1)\) and \(S(k)\) are true for some \(2\leq k\in\mathbb{N}\text{.}\) We will use the fact that the numbers \(\frac{3-\sqrt{33}}{2}\) and \(\frac{3+\sqrt{33}}{2}\) are roots of the quadratic equation</p>
+\begin{equation*}
+x^2-3x-6\text{,}
+\end{equation*}
+<p>that is, we have</p>
+\begin{align*}
+\left(\frac{3-\sqrt{33}}{2}\right)^2\amp = 3 \cdot \left(\frac{3-\sqrt{33}}{2}\right)+6,\\
+\left(\frac{3+\sqrt{33}}{2}\right)^2\amp = 3 \cdot \left(\frac{3+\sqrt{33}}{2}\right)+6\text{.}
+\end{align*}
+<p>The induction hypothesis says that \(f(k-1)\) and \(f(k)\) are integers which are multiples of 3. What about the number \(f(k+1)\text{?}\) We have</p>
+\begin{align*}
+\amp  f(k+1)=\left(\frac{3-\sqrt{33}}{2}\right)^{k+1}+\left(\frac{3+\sqrt{33}}{2}\right)^{k+1}=\\
+\amp  \left(\frac{3-\sqrt{33}}{2}\right)^{k-1}\left(3\cdot \left(\frac{3-\sqrt{33}}{2}\right)+6\right)
++\left(\frac{3+\sqrt{33}}{2}\right)^{k-1}\left(3\cdot \left(\frac{3+\sqrt{33}}{2}\right)+6\right)=\\
+\amp  3\cdot \left(\left(\frac{3-\sqrt{33}}{2}\right)^{k}+\left(\frac{3+\sqrt{33}}{2}\right)^{k}\right)+6\cdot \left(\left(\frac{3-\sqrt{33}}{2}\right)^{k-1}+\left(\frac{3+\sqrt{33}}{2}\right)^{k-1}\right)=\\
+\amp  3f(k)+6f(k-1)\text{.}
+\end{align*}
+<p>Since \(f(k-1)\) and \(f(k)\) are integers we see that \(f(k+1)\) is an integer and it is a multiple of 3.</p>
+</li>
+<li id="li-194">
+<p id="p-873"><a knowl="./knowl/induction-7.html" knowl-id="xref-induction-7" alt="Exercise 3.1.13 " title="Exercise 3.1.13 ">Exercise 3.1.13</a> We compute \(a_n\) for some \(n:\) <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(a_n\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">\(\approx 1.4142\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">\(\approx 1.8477\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">\(\approx 1.9615\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">\(\approx 1.9903\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">\(\approx 1.9975\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table> Let \(S(n)\) be the statement that \(a_n\leq 2\text{.}\) Our computations show that \(S(1)\) is true. Assume that \(S(k)\) is true for some \(k\geq 1\text{,}\) that is, \(a_k\leq 2\text{.}\) We consider the statement \(S(k+1)\text{.}\) By definition of the sequence we have</p>
+\begin{equation*}
+a_{k+1}=\sqrt{2+a_k}\text{.}
+\end{equation*}
+<p>By the induction hypothesis \(a_k\leq 2\text{,}\) hence</p>
+\begin{equation*}
+a_{k+1}\leq \sqrt{2+2}=2\text{.}
+\end{equation*}
+<p>The statement \(S(k+1)\) has been proved and thus we have that \(a_n\leq 2\) for all \(n\in\mathbb{N}\text{.}\)</p>
+</li>
+<li id="li-195">
+<p id="p-874"><a knowl="./knowl/induction-8.html" knowl-id="xref-induction-8" alt="Exercise 3.1.14 " title="Exercise 3.1.14 ">Exercise 3.1.14</a> We prove the statement by induction. If \(n=1\text{,}\) then the 1-digit integer \(a_1=2\) is divisible by 2. Therefore the statement is true for \(n=1\text{.}\) It is not difficult to deal with the case \(n=2\text{.}\) There are only four possible integers</p>
+\begin{equation*}
+a_1a_2\in\halmaz{11,12,21,22}\text{.}
+\end{equation*}
+<p>It is easy to see that \(2^2\) divides 12. Assume that the statement is true for some \(1\leq k\in\mathbb{N}\text{,}\) that is, there exists a \(k\)-digit integer \(a_1a_2\ldots a_k\) which is a multiple of \(2^k\text{.}\) Let us consider the statement for \(k+1\text{.}\) By induction hypothesis we have</p>
+\begin{equation*}
+a_1a_2\ldots a_k=2^k\cdot A\text{.}
+\end{equation*}
+<p>We claim that either</p>
+\begin{equation*}
+10^{k}+a_1a_2\ldots a_k=1a_1a_2\ldots a_k
+\end{equation*}
+<p>or</p>
+\begin{equation*}
+2\cdot 10^{k}+a_1a_2\ldots a_k=2a_1a_2\ldots a_k
+\end{equation*}
+<p>is a multiple of \(2^{k+1}\text{.}\) We can rewrite the above integers as follows</p>
+\begin{align*}
+\amp  10^{k}+a_1a_2\ldots a_k=10^k+2^k\cdot A=2^k(5^k+A),\\
+\amp  2\cdot 10^{k}+a_1a_2\ldots a_k=2\cdot 10^{k}+2^k\cdot A=2^k(2\cdot 5^k+A)\text{.}
+\end{align*}
+<p>If \(A\) is odd, then \(5^k+A\) is even. In this case</p>
+\begin{equation*}
+1a_1a_2\ldots a_k
+\end{equation*}
+<p>is an integer having \(k+1\) digits and it is divisible by \(2^{k+1}\text{.}\) If \(A\) is even, then \(2\cdot 5^k+A\) is even. That is,</p>
+\begin{equation*}
+2a_1a_2\ldots a_k
+\end{equation*}
+<p>is a \((k+1)\)-digit number which is a multiple of \(2^{k+1}\text{.}\)</p>
+</li>
+<li id="li-196">
+<p id="p-875"><a knowl="./knowl/induction-9.html" knowl-id="xref-induction-9" alt="Exercise 3.1.15 " title="Exercise 3.1.15 ">Exercise 3.1.15</a> (a) The first few elements of the Fibonacci sequence are</p>
+\begin{equation*}
+1,1,2,3,5,8,13,21,34,55,\ldots
+\end{equation*}
+<p>Let us consider the sum of the first \(n\) elements for \(n\in\halmaz{1,2,3,4,5}\)</p>
+\begin{align*}
+n\amp =1: 1,\\
+n\amp =2: 1+1=2,\\
+n\amp =3: 1+1+2=4,\\
+n\amp =4: 1+1+2+3=7,\\
+n\amp =5: 1+1+2+3+5=12\text{.}
+\end{align*}
+<p>It is easy to see that the identity holds for \(n\in\halmaz{1,2,3,4,5}\text{.}\) Assume that the statement is true for some \(1\leq k\in\mathbb{N}\text{,}\) that is,</p>
+\begin{equation*}
+F_1+F_2+\ldots+F_k=F_{k+2}-1\text{.}
+\end{equation*}
+<p>Consider the sum of the first \(k+1\) Fibonacci numbers</p>
+\begin{equation*}
+F_1+F_2+\ldots+F_k+F_{k+1}\text{.}
+\end{equation*}
+<p>By induction hypothesis we get</p>
+\begin{equation*}
+F_1+F_2+\ldots+F_k+F_{k+1}=F_{k+2}-1+F_{k+1}\text{.}
+\end{equation*}
+<p>By definition \(F_{k+1}+F_{k+2}=F_{k+3}\text{,}\) hence</p>
+\begin{equation*}
+F_1+F_2+\ldots+F_k+F_{k+1}=F_{k+3}-1\text{.}
+\end{equation*}
+<p>Therefore the identity holds for all positive integers. (b) Compute \(F_1^2+F_2^2+\ldots+F_n^2\) for \(n\in\halmaz{1,2,3,4,5}\)</p>
+\begin{align*}
+n\amp =1: 1^2=1=F_1F_2,\\
+n\amp =2: 1^2+1^2=2=F_2F_3,\\
+n\amp =3: 1^2+1^2+2^2=6=F_3F_4,\\
+n\amp =4: 1^2+1^2+2^2+3^2=15=F_4F_5,\\
+n\amp =5: 1^2+1^2+2^2+3^2+5^2=40=F_5F_6\text{.}
+\end{align*}
+<p>That is, the identity is valid for \(n\in\halmaz{1,2,3,4,5}\text{.}\) Assume that the statement is true for some \(1\leq k\in\mathbb{N}\text{,}\) that is,</p>
+\begin{equation*}
+F_1^2+F_2^2+\ldots+F_k^2=F_kF_{k+1}\text{.}
+\end{equation*}
+<p>Let us deal with the sum</p>
+\begin{equation*}
+F_1^2+F_2^2+\ldots+F_k^2+F_{k+1}^2\text{.}
+\end{equation*}
+<p>Applying the induction hypothesis we obtain</p>
+\begin{equation*}
+(F_1^2+F_2^2+\ldots+F_k^2)+F_{k+1}^2=F_kF_{k+1}+F_{k+1}^2=F_{k+1}(F_k+F_{k+1})\text{,}
+\end{equation*}
+<p>and by definition \(F_k+F_{k+1}=F_{k+2}\text{,}\) so we have</p>
+\begin{equation*}
+(F_1^2+F_2^2+\ldots+F_k^2)+F_{k+1}^2=F_{k+1}F_{k+2}\text{.}
+\end{equation*}
+<p>Thus the identity holds for all positive integers. (c) Here we consider the identity</p>
+\begin{equation*}
+F_1+F_3+\ldots+F_{2n-1}=F_{2n}\text{.}
+\end{equation*}
+<p>If \(n=1\text{,}\) then the left-hand side is \(F_1=1\) and the right-hand side is \(F_2=1\text{.}\) Hence the identity holds. Assume that for some \(1\leq k\in\mathbb{N}\) the identity is valid, that is,</p>
+\begin{equation*}
+F_1+F_3+\ldots+F_{2k-1}=F_{2k}\text{.}
+\end{equation*}
+<p>In case of \(k+1\) terms we have</p>
+\begin{equation*}
+F_1+F_3+\ldots+F_{2k-1}+F_{2k+1}\text{.}
+\end{equation*}
+<p>By induction we get</p>
+\begin{equation*}
+(F_1+F_3+\ldots+F_{2k-1})+F_{2k+1}=F_{2k}+F_{2k+1}=F_{2k+2}=F_{2(k+1)}\text{.}
+\end{equation*}
+<p>Thus the identity is valid for all positive integers. (d) The identity to prove is as follows:</p>
+\begin{equation*}
+F_2+F_4+\ldots+F_{2n}=F_{2n+1}-1\text{.}
+\end{equation*}
+<p>If \(n=1\text{,}\) then the left-hand side is \(F_2=1\) and the right-hand side is \(F_3-1=2-1=1\text{.}\) So the identity is valid. Assume that for some \(1\leq k\in\mathbb{N}\) the identity holds, that is,</p>
+\begin{equation*}
+F_2+F_4+\ldots+F_{2k}=F_{2k+1}-1\text{.}
+\end{equation*}
+<p>Let us handle the sum for \(k+1\) terms, that is, the sum</p>
+\begin{equation*}
+F_2+F_4+\ldots+F_{2k}+F_{2k+2}\text{.}
+\end{equation*}
+<p>It can be written as</p>
+\begin{equation*}
+(F_2+F_4+\ldots+F_{2k})+F_{2k+2}=F_{2k+1}-1+F_{2k+2}=F_{2k+3}-1\text{.}
+\end{equation*}
+<p>Thus the identity has been proved for all positive integers.</p>
+</li>
+<li id="li-197">
+<p id="p-876"><a knowl="./knowl/induction-10.html" knowl-id="xref-induction-10" alt="Exercise 3.1.16 " title="Exercise 3.1.16 ">Exercise 3.1.16</a> (a) First compute \(F_{3n}\) for some \(n\text{,}\) let say for \(n=1,2,3\text{.}\) We have</p>
+\begin{align*}
+\amp  F_3=2,\\
+\amp  F_6=8,\\
+\amp  F_9=34\text{.}
+\end{align*}
+<p>We checked that \(F_{3n}\) is even for \(n=1,2,3\text{.}\) Assume that \(F_{3k}\) is even for some \(1\leq k\in\mathbb{N}\text{.}\) For \(k+1\) we have \(F_{3(k+1)}=F_{3k+3}\text{.}\) By definition</p>
+\begin{equation*}
+F_{3k+3}=F_{3k+2}+F_{3k+1}=F_{3k+1}+F_{3k}+F_{3k+1}=2\cdot F_{3k+1}+F_{3k}\text{.}
+\end{equation*}
+<p>By induction \(F_{3k}\) is even, so \(2\cdot F_{3k+1}+F_{3k}\) is even. The statement is true. (b) If \(n=1\text{,}\) then \(F_{5\cdot 1}=5\text{.}\) That is, the property holds for \(n=1\text{.}\) Assume that \(F_{5k}\) is a multiple of 5 for some \(1\leq k\in\mathbb{N}\text{.}\) For \(k+1\) we have</p>
+\begin{align*}
+\amp  F_{5(k+1)}=F_{5k+5}=F_{5k+4}+F_{5k+3}=F_{5k+3}+F_{5k+2}+F_{5k+2}+F_{5k+1}=\\
+\amp  3F_{5k+2}+2F_{5k+1}=3(F_{5k+1}+F_{5k})+2F_{5k+1}=5F_{5k+1}+3F_{5k}\text{.}
+\end{align*}
+<p>It is clear that 5 divides \(5F_{5k+1}\) and induction hypothesis implies that \(3F_{5k}\) is a multiple of 5. Therefore 5 divides \(5F_{5k+1}+3F_{5k}\text{.}\) We proved the property for \(k+1\text{.}\) It follows that \(F_{5n}\) is a multiple of 5 for all \(n \in \mathbb{N}\text{.}\)</p>
+</li>
+<li id="li-198">
+<p id="p-877"><a knowl="./knowl/contra-0.html" knowl-id="xref-contra-0" alt="Exercise 3.2.2 " title="Exercise 3.2.2 ">Exercise 3.2.2</a> We provide an indirect proof. Assume that \(x\leq 5\) and \(y\leq 5\text{.}\) We obtain that</p>
+\begin{equation*}
+x+y\leq 10\text{,}
+\end{equation*}
+<p>a contradiction, since \(x+y&gt;10\text{,}\) by assumption.</p>
+</li>
+<li id="li-199">
+<p id="p-878"><a knowl="./knowl/contra-0a.html" knowl-id="xref-contra-0a" alt="Exercise 3.2.3 " title="Exercise 3.2.3 ">Exercise 3.2.3</a> Suppose the opposite of the statement, that is, there exists an integer \(n\) for which \(n^2-2\) is divisible by 4. Then for some \(k\in\mathbb{Z}\) we have \(n^2-2=4k\text{.}\) Hence \(n^2=2(2k+1)\text{.}\) It follows that \(n\) is even, so \(n=2n_1\) for some integer \(n_1\text{.}\) We obtain that</p>
+\begin{equation*}
+4n_1^2=2(2k+1)\text{.}
+\end{equation*}
+<p>After dividing the equation by 2 we get</p>
+\begin{equation*}
+2(n_1^2-k)=1\text{,}
+\end{equation*}
+<p>a contradiction since 2 does not divide 1.</p>
+</li>
+<li id="li-200">
+<p id="p-879"><a knowl="./knowl/contra-1.html" knowl-id="xref-contra-1" alt="Exercise 3.2.4 " title="Exercise 3.2.4 ">Exercise 3.2.4</a> Assume the opposite, that is, the number \(\sqrt{2}+\sqrt{3}\) is rational. Then there exist \(a\) and \(b\) such that \(\sqrt{2}+\sqrt{3}=\frac{a}{b}\) for some \(a\in\mathbb{Z}\) and \(b\in\mathbb{N}\) and the greatest common divisor of \(a\) and \(b\) is 1. Squaring both sides of the equation \(\sqrt{2}+\sqrt{3}=\frac{a}{b}\) we get</p>
+\begin{equation*}
+2+2\sqrt{6}+3=\frac{a^2}{b^2}\text{.}
+\end{equation*}
+<p>That is,</p>
+\begin{equation*}
+\sqrt{6}=\frac{a^2-5b^2}{2b^2}\text{.}
+\end{equation*}
+<p>On the right-hand side there is a rational number, so to get a contradiction we have to prove that \(\sqrt{6}\) is irrational. We prove it indirectly. Assume that \(\sqrt{6}\) is rational. Then there exist \(c\) and \(d\) such that \(\sqrt{6}=\frac{c}{d}\) for some \(c\in\mathbb{Z}\) and \(d\in\mathbb{N}\) and the greatest common divisor of \(c\) and \(d\) is 1. We obtain that</p>
+\begin{equation*}
+6d^2=c^2\text{,}
+\end{equation*}
+<p>that is, \(c\) is even. Therefore \(c=2c_1\) for some \(c_1\text{.}\) It follows that</p>
+\begin{equation*}
+6d^2=4c_1^2\Rightarrow 3d^2=2c_1^2\text{.}
+\end{equation*}
+<p>We have that 2 divides \(3d^2\text{.}\) Since 2 does not divide 3 it must divide \(d^2\text{.}\) It means that \(d^2\) is even, so \(d\) is even, a contradiction. We have proved that \(\sqrt{6}\) is irrational and thus we have that \(\sqrt{2}+\sqrt{3}\) is irrational.</p>
+</li>
+<li id="li-201">
+<p id="p-880"><a knowl="./knowl/contra-2.html" knowl-id="xref-contra-2" alt="Exercise 3.2.5 " title="Exercise 3.2.5 ">Exercise 3.2.5</a> Suppose the opposite of the statement, that is, there exists \(x=\frac{p}{q}\) with \(p\in\mathbb{Z},q\in\mathbb{N}\) and \(\gcd(p,q)=1\) such that</p>
+\begin{equation*}
+a\left(\frac{p}{q}\right)^2+b\frac{p}{q}+c=0\text{.}
+\end{equation*}
+<p>Multiply the equation by \(q^2\) to obtain (we note that \(q\neq 0\))</p>
+\begin{equation*}
+ap^2+bpq+cq^2=0\text{.}
+\end{equation*}
+<p>Assume that \(p\) is even and \(q\) is odd. In this case \(ap^2\) is even, \(bpq\) is even and \(cq^2\) is odd. Hence \(ap^2+bpq+cq^2\) is odd, a contradiction. Now assume that \(p\) is odd and \(q\) is even. Here we obtain that \(ap^2\) is odd, \(bpq\) is even and \(cq^2\) is even. Again we get a contradiction. Finally, assume that \(p\) is odd and \(q\) is odd. We get that \(ap^2\) is odd, \(bpq\) is odd and \(cq^2\) is odd, so \(ap^2+bpq+cq^2\) is odd, a contradiction. We remark that the case \(p\) is even, \(q\) is even is not possible since \(\gcd(p,q)=1\text{.}\) The statement follows.</p>
+</li>
+<li id="li-202">
+<p id="p-881"><a knowl="./knowl/contra-3.html" knowl-id="xref-contra-3" alt="Exercise 3.2.6 " title="Exercise 3.2.6 ">Exercise 3.2.6</a> Assume that the statement is false, that is,</p>
+\begin{align*}
+a_1\amp \lt \frac{a_1+a_2+\ldots+a_n}{n},\\
+a_2\amp \lt \frac{a_1+a_2+\ldots+a_n}{n},\\
+\amp \vdots\\
+a_n\amp \lt \frac{a_1+a_2+\ldots+a_n}{n}\text{.}
+\end{align*}
+<p>Take the sum of the above inequalities to get</p>
+\begin{equation*}
+a_1+a_2+\ldots+a_n\lt n\cdot\left(\frac{a_1+a_2+\ldots+a_n}{n}\right)=a_1+a_2+\ldots+a_n\text{.}
+\end{equation*}
+<p>That is, we obtained a contradiction and the statement is proved.</p>
+</li>
+<li id="li-203">
+<p id="p-882"><a knowl="./knowl/contra-4.html" knowl-id="xref-contra-4" alt="Exercise 3.2.7 " title="Exercise 3.2.7 ">Exercise 3.2.7</a> We provide an indirect proof. Assume that there exists a positive integer \(n\) for which</p>
+\begin{equation*}
+\gcd(F_n,F_{n+1})=d&gt;1\text{.}
+\end{equation*}
+<p>That is, \(d\) divides \(F_n\) and \(d\) divides \(F_{n+1}\text{.}\) Then \(d\) divides the difference of these two Fibonacci numbers. The difference is equal to</p>
+\begin{equation*}
+F_{n+1}-F_n=F_{n-1}\text{.}
+\end{equation*}
+<p>Since \(d\) divides the left-hand side we obtain that \(d\) divides the right-hand side, that is, \(d\mid F_{n-1}\text{.}\) We apply the previous argument again</p>
+\begin{equation*}
+d\mid F_n\mbox{ and } d\mid F_{n-1}\mbox{ hence } d\mid (F_n-F_{n-1})\text{.}
+\end{equation*}
+<p>In this way we get that \(d\mid F_{n-2}\text{.}\) Now we have that \(d\mid F_{n-1}\) and \(d\mid F_{n-2}\text{,}\) so \(d\mid (F_{n-1}-F_{n-2})\text{.}\) Since \(F_{n-1}-F_{n-2}=F_{n-3}\) we obtain that \(d\) divides \(F_{n-3}\text{.}\) We continue this process to reach a contradiction, namely that \(d\mid F_2=1\) and \(d\mid F_1=1\text{.}\) Hence for consecutive Fibonacci numbers \(F_n\) and \(F_{n+1}\) we have</p>
+\begin{equation*}
+\gcd(F_n,F_{n+1})=1\text{.}
+\end{equation*}
+</li>
+<li id="li-204">
+<p id="p-883"><a knowl="./knowl/proof-cons-1.html" knowl-id="xref-proof-cons-1" alt="Exercise 3.3.2 " title="Exercise 3.3.2 ">Exercise 3.3.2</a> First we solve the equation \(5x_1+7x_2=1\) in integers \(x_1,x_2\) by applying the Euclidean algorithm. We get that</p>
+\begin{equation*}
+5\cdot 3+7\cdot(-2)=1\text{,}
+\end{equation*}
+<p>therefore</p>
+\begin{equation*}
+(3n,-2n)
+\end{equation*}
+<p>is a solution to the equation \(5x_1+7x_2=n\text{.}\) By <a knowl="./knowl/LinDioph.html" knowl-id="xref-LinDioph" alt="Theorem 3.3.1 " title="Theorem 3.3.1 ">Theorem 3.3.1</a> we obtain a parametric formula</p>
+\begin{equation*}
+(3n-7t,-2n+5t) t\in\mathbb{Z}
+\end{equation*}
+<p>for the integer solutions \((x_1,x_2)\) of the equation \(5x_1+7x_2=n\text{.}\) To have non-negative solutions we need</p>
+\begin{align*}
+3n-7t\amp \geq 0\Rightarrow t\leq \frac{3n}{7}\\
+-2n+5t\amp \geq 0\Rightarrow t\geq \frac{2n}{5}\text{.}
+\end{align*}
+<p>So we have the following inequalities</p>
+\begin{equation*}
+\frac{2n}{5}\leq t\leq \frac{3n}{7}\text{.}
+\end{equation*}
+<p>If there is a \(t\in\mathbb{Z}\) in the interval \([\frac{2n}{5},\frac{3n}{7}]\text{,}\) then \(n\) can be represented in the form \(5x_1+7x_2\text{.}\) Denote by \(I_n\) the set \(\halmazvonal{t}{\frac{2n}{5}\leq t\leq \frac{3n}{7}, t\in\mathbb{Z}}\text{.}\) <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(I_n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(I_n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(I_n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(I_n\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">15</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 6 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">22</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 9 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">16</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">23</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 4 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">17</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 7 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">24</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 10 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">18</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">25</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 10 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 2 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 5 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">19</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 8 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">26</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 11 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">13</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">20</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 8 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">27</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 11 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 3 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">14</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 6 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">21</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 9 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">28</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ 12 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table> Hence \(n=23\) cannot be represented. However for all \(n\in\halmaz{24,25,26,27,28}\) we have solutions. From these solutions we can easily obtain solutions for all \(n\geq 24\text{.}\)</p>
+</li>
+<li id="li-205">
+<p id="p-884"><a knowl="./knowl/proof-cons-2.html" knowl-id="xref-proof-cons-2" alt="Exercise 3.3.3 " title="Exercise 3.3.3 ">Exercise 3.3.3</a> An integer solution to the equation \(4x_1+5x_2=1\) is</p>
+\begin{equation*}
+(x_1,x_2)=(-1,1)\text{.}
+\end{equation*}
+<p>Hence we have a particular solution</p>
+\begin{equation*}
+(x_1,x_2)=(-n,n)
+\end{equation*}
+<p>in case of the equation \(4x_1+5x_2=n\text{.}\) It is now clear that all solutions can be obtained from the parametrization</p>
+\begin{equation*}
+(-n-5t,n+4t) t\in\mathbb{Z}\text{.}
+\end{equation*}
+<p>To have non-negative solutions one needs</p>
+\begin{align*}
+-n-5t\amp \geq 0\Rightarrow t\leq \frac{-n}{5}\\
+n+4t\amp \geq 0\Rightarrow t\geq \frac{-n}{4}\text{.}
+\end{align*}
+<p>Thus we have</p>
+\begin{equation*}
+-\frac{n}{4}\leq t\leq -\frac{n}{5}\text{.}
+\end{equation*}
+<p>Denote by \(I_n\) the set \(\halmazvonal{t}{-\frac{n}{4}\leq t\leq -\frac{n}{5}, t\in\mathbb{Z}}\text{.}\) We determine \(I_n\) for \(1\leq n\leq 15\text{.}\) <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(I_n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(I_n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(I_n\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ -3 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">\(\emptyset\)</td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ -2 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">13</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ -3 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ -1 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ -2 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">14</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ -3 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ -1 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ -2 }\)</td>
+<td class="l m b0 r0 l0 t0 lines">15</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{ -3 }\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table> So we get that \(n=11\) cannot be represented in the appropriate form. The solutions for \(n\in\halmaz{12,13,14,15}\) can be used to determine solutions for \(n\geq 12\text{.}\) In case of 13 we have</p>
+\begin{equation*}
+13=4\cdot 2+5\cdot 1\text{.}
+\end{equation*}
+<p>It implies that</p>
+\begin{equation*}
+4(k+3)+1=4(k+2)+5\cdot 1 k\in\mathbb{N}\cup\halmaz{0}\text{.}
+\end{equation*}
+<p>Thus, if \(n=4K+1\text{,}\) then \((x_1,x_2)=(K-1,1),K\geq 1\text{.}\)</p>
+</li>
+<li id="li-206">
+<p id="p-885"><a knowl="./knowl/proof-cons-3.html" knowl-id="xref-proof-cons-3" alt="Exercise 3.3.4 " title="Exercise 3.3.4 ">Exercise 3.3.4</a> We can rewrite the equation as</p>
+\begin{equation*}
+2(2x_1+3x_2)+9x_3=n
+\end{equation*}
+<p>and another possibility is as follows</p>
+\begin{equation*}
+4x_1+3(2x_2+3x_3)=n\text{.}
+\end{equation*}
+<p>We will use the second form because the largest coefficient is 4 while in case of the first form the largest coefficient is 9. So we have</p>
+\begin{equation*}
+4x_1+3y_1=n\text{.}
+\end{equation*}
+<p>A particular solution is \((n,-n)\text{,}\) therefore we get</p>
+\begin{align*}
+x_1\amp =n+3t,\\
+y_1\amp =-n-4t
+\end{align*}
+<p>for some \(t\in\mathbb{Z}\text{.}\) We have that \(y_1=2x_2+3x_3=-n-4t\text{.}\) This equation has a particular solution \((n-2t,-n)\text{,}\) therefore we obtain that</p>
+\begin{align*}
+x_2\amp =n-2t+3s,\\
+x_3\amp =-n-2s
+\end{align*}
+<p>for some \(s,t\in\mathbb{Z}\text{.}\) That is, the parametrization of the integral solution of the equation is given by</p>
+\begin{align*}
+x_1\amp =n+3t,\\
+x_2\amp =n-2t+3s,\\
+x_3\amp =-n-2s
+\end{align*}
+<p>for some \(s,t\in\mathbb{Z}\text{.}\)</p>
+</li>
+<li id="li-207">
+<p id="p-886"><a knowl="./knowl/proof-cons-4.html" knowl-id="xref-proof-cons-4" alt="Exercise 3.3.5 " title="Exercise 3.3.5 ">Exercise 3.3.5</a> In the previous exercise we determined the parametrization of the integer solutions of the equation. It is as follows</p>
+\begin{align*}
+x_1\amp =n+3t,\\
+x_2\amp =n-2t+3s,\\
+x_3\amp =-n-2s
+\end{align*}
+<p>for some \(s,t\in\mathbb{Z}\text{.}\) We would like to have only non-negative integer solutions hence we get the system of inequalities</p>
+\begin{align*}
+0\amp \leq n+3t,\\
+0\amp \leq n-2t+3s,\\
+0\amp \leq -n-2s\text{.}
+\end{align*}
+<p>We easily obtain upper bound for \(s\) and lower bound for \(t\) as follows</p>
+\begin{align*}
+-\frac{n}{3}\amp \leq t,\\
+-\frac{n}{2}\amp \geq s\text{.}
+\end{align*}
+<p>Our system of inequalities implies that</p>
+\begin{align*}
+-2n\leq \amp 6t\leq 3n+9s,\\
+-2n+4t\leq \amp 6s\leq -3n\text{.}
+\end{align*}
+<p>That is,</p>
+\begin{align*}
+-5n \amp \leq 9s,\\
+4t \amp \leq -n\text{.}
+\end{align*}
+<p>Now we have lower bound for \(s\) and upper bound for \(t\text{.}\) Define the intervals \(I_s,I_t\) as follows \(I_s=[-\frac{5n}{9},-\frac{n}{2}]\) and \(I_t=[-\frac{n}{3},-\frac{n}{4}]\text{.}\) The length of \(I_s\) is at least 1 if \(n\geq 18\) and the length of \(I_t\) is at least 1 if \(n\geq 12\text{.}\) Therefore the equation has a non-negative integer solution if \(n\geq 18\text{.}\) It remains to handle the cases \(1\leq n\leq 17\text{.}\) <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">integer(s) in \(I_s\)</td>
+<td class="l m b0 r0 l0 t0 lines">integer(s) in \(I_t\)</td>
+<td class="l m b0 r0 l0 t0 lines">solution(s): \((x_1,x_2,x_3)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">-1</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+<td class="l m b0 r0 l0 t0 lines">-1</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">-2</td>
+<td class="l m b0 r0 l0 t0 lines">-1</td>
+<td class="l m b0 r0 l0 t0 lines">\((1,0,0)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">-3</td>
+<td class="l m b0 r0 l0 t0 lines">-2</td>
+<td class="l m b0 r0 l0 t0 lines">\((0,1,0)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+<td class="l m b0 r0 l0 t0 lines">-2</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">-4</td>
+<td class="l m b0 r0 l0 t0 lines">-2</td>
+<td class="l m b0 r0 l0 t0 lines">\((2,0,0)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">-5</td>
+<td class="l m b0 r0 l0 t0 lines">-3</td>
+<td class="l m b0 r0 l0 t0 lines">\((0,0,1)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">-5</td>
+<td class="l m b0 r0 l0 t0 lines">-3</td>
+<td class="l m b0 r0 l0 t0 lines">\((1,1,0)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">-6</td>
+<td class="l m b0 r0 l0 t0 lines">-3</td>
+<td class="l m b0 r0 l0 t0 lines">-</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">-6</td>
+<td class="l m b0 r0 l0 t0 lines">-4,-3</td>
+<td class="l m b0 r0 l0 t0 lines">\((0,2,0),(3,0,0)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">13</td>
+<td class="l m b0 r0 l0 t0 lines">-7</td>
+<td class="l m b0 r0 l0 t0 lines">-4</td>
+<td class="l m b0 r0 l0 t0 lines">\((1,0,1)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">14</td>
+<td class="l m b0 r0 l0 t0 lines">-7</td>
+<td class="l m b0 r0 l0 t0 lines">-4</td>
+<td class="l m b0 r0 l0 t0 lines">\((2,1,0)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">15</td>
+<td class="l m b0 r0 l0 t0 lines">-8</td>
+<td class="l m b0 r0 l0 t0 lines">-5,-4</td>
+<td class="l m b0 r0 l0 t0 lines">\((0,1,1)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">16</td>
+<td class="l m b0 r0 l0 t0 lines">-8</td>
+<td class="l m b0 r0 l0 t0 lines">-5,-4</td>
+<td class="l m b0 r0 l0 t0 lines">\((1,2,0),(4,0,0)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">17</td>
+<td class="l m b0 r0 l0 t0 lines">-9</td>
+<td class="l m b0 r0 l0 t0 lines">-5</td>
+<td class="l m b0 r0 l0 t0 lines">\((2,0,1)\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table> Thus the largest positive integer \(n\) for which the equation</p>
+\begin{equation*}
+4x_1+6x_2+9x_3=n
+\end{equation*}
+<p>has no non-negative integer solution is 11.</p>
+</li>
+<li id="li-208"><p id="p-887"><a knowl="./knowl/pigeon-0a.html" knowl-id="xref-pigeon-0a" alt="Exercise 3.4.6 " title="Exercise 3.4.6 ">Exercise 3.4.6</a> The pigeonholes are the possible birthdays, there are 366 pigeonholes. There are 367 people (playing the role of pigeons). Therefore there is at least one pigeonhole containing at least two people.</p></li>
+<li id="li-209"><p id="p-888"><a knowl="./knowl/pigeon-0b.html" knowl-id="xref-pigeon-0b" alt="Exercise 3.4.7 " title="Exercise 3.4.7 ">Exercise 3.4.7</a> The pigeonholes are the possible birthdays, so there are 366 pigeonholes. There are 1500 people and \(\frac{1500}{366}\approx 4.098\text{,}\) hence there is at least one pigeonhole containing at least 4 people. That means that at least 4 people were born on the same day of the year.</p></li>
+<li id="li-210">
+<p id="p-889"><a knowl="./knowl/pigeon-1.html" knowl-id="xref-pigeon-1" alt="Exercise 3.4.8 " title="Exercise 3.4.8 ">Exercise 3.4.8</a> We define the pigeonholes as disjoint subsets of the set</p>
+\begin{equation*}
+\halmaz{1,2,3,4,5,6,7,8,9,10,11,12}\text{,}
+\end{equation*}
+<p>that is,</p>
+\begin{equation*}
+\halmaz{1,12},\halmaz{2,11},\halmaz{3,10},\halmaz{4,9},\halmaz{5,8},\halmaz{6,7}\text{.}
+\end{equation*}
+<p>The pigeons are the selected integers. We have six pigeonholes and seven pigeons, therefore there exists a subset containing two selected integers. The subsets are constructed in such a way that the sum of the elements are 13, so the sum of the two integers belonging to the same subset is 13.</p>
+</li>
+<li id="li-211">
+<p id="p-890"><a knowl="./knowl/pigeon-2.html" knowl-id="xref-pigeon-2" alt="Exercise 3.4.9 " title="Exercise 3.4.9 ">Exercise 3.4.9</a> The pigeons are the 11 chosen integers. We define the pigeonholes as follows:</p>
+\begin{align*}
+\amp  \halmaz{1,2},\halmaz{3,4},\halmaz{5,6},\halmaz{7,8},\halmaz{9,10},\\
+\amp  \halmaz{11,12},\halmaz{13,14},\halmaz{15,16},\halmaz{17,18},\halmaz{19,20}\text{.}
+\end{align*}
+<p>There are 10 pigeonholes and 11 pigeons, so there exists a pigeonhole containing 2 pigeons. Thus the statement is true.</p>
+</li>
+<li id="li-212"><p id="p-891"><a knowl="./knowl/pigeon-3.html" knowl-id="xref-pigeon-3" alt="Exercise 3.4.10 " title="Exercise 3.4.10 ">Exercise 3.4.10</a> We divide the unit square into four smaller squares: 
+
+<img width="50%" src="images/square.png" style="display: block; margin: 0 auto;" alt=""> 
+
+The subsquares are the pigeonholes and the points are the pigeons. Hence by the pigeonhole principle there are at least two points in the same subsquare. The largest distance in a subsquare is the length of the diagonal which is \(\sqrt{2}/2\text{.}\) The statement is proved.</p></li>
+<li id="li-213"><p id="p-892"><a knowl="./knowl/pigeon-4.html" knowl-id="xref-pigeon-4" alt="Exercise 3.4.11 " title="Exercise 3.4.11 ">Exercise 3.4.11</a> We can write the elements of \(A\) in the form \(2^a\cdot b\text{,}\) where \(a\geq 0\) and \(b\) is an odd integer between 1 and 99. There are 50 odd integers in the interval \([1,2,\ldots,100]\) therefore the pigeonhole principle implies that among the 51 integers there are at least two with the same \(b\text{.}\) That is, we have two integers \(2^{a_1}\cdot b\) and \(2^{a_2}\cdot b\text{.}\) If \(a_1\lt a_2\text{,}\) then \(2^{a_1}\cdot b\) divides \(2^{a_2}\cdot b\text{.}\) The statement is proved.</p></li>
+<li id="li-214"><p id="p-893"><a knowl="./knowl/pigeon-5.html" knowl-id="xref-pigeon-5" alt="Exercise 3.4.12 " title="Exercise 3.4.12 ">Exercise 3.4.12</a> We apply <a knowl="./knowl/pigeon-III.html" knowl-id="xref-pigeon-III" alt="Theorem 3.4.3 " title="Theorem 3.4.3 ">Theorem 3.4.3</a>. Here the pigeonholes are the grades, so \(n=5\text{.}\) There are \(m_1\) students who get grade 1, \(m_2\) students who get grade 2 etc. According to the theorem one needs \(m_1+m_2+m_3+m_4+m_5-5+1\) students to ensure that for some \(i\) \(m_i\) students get the same grade. Hence we take \(m_1=m_2=m_3=m_4=m_5=4\text{.}\) Therefore there must be at least 16 students in the class.</p></li>
+<li id="li-215"><p id="p-894"><a knowl="./knowl/pigeon-6.html" knowl-id="xref-pigeon-6" alt="Exercise 3.4.13 " title="Exercise 3.4.13 ">Exercise 3.4.13</a> We note that it is possible to place 14 bishops such that they cannot hit each other, a solution is given by 
+
+<img width="50%" src="images/bishop.png" style="display: block; margin: 0 auto;" alt=""> 
+
+<!-- <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\circledast\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\circledast\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\circledast\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\circledast\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\circledast\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\circledast\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\circledast\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\circledast\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\circledast\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\circledast\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\circledast\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\circledast\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\circledast\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\circledast\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table> -->
+It remains to show that it is not possible to place more than 14 bishops in such a way that they can not hit each other. A natural idea is to divide the 64 chess squares into 14 groups such that if two bishops are in the same group then they can hit each other. We can produce 14 such groups <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">13</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">13</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">13</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">14</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">13</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">14</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table></p></li>
+<li id="li-216">
+<p id="p-895"><a knowl="./knowl/card-1.html" knowl-id="xref-card-1" alt="Exercise 3.5.2 " title="Exercise 3.5.2 ">Exercise 3.5.2</a> (a) The first card is \(7\clubsuit\text{,}\) hence the suit of the hidden card is \(\clubsuit\text{.}\) The distance can be obtained from the following table <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">distance</td>
+<td class="l m b0 r0 l0 t0 lines">order of the 3 cards</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">\(3\diamondsuit,J\diamondsuit,A\spadesuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">\(3\diamondsuit,A\spadesuit,J\diamondsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">\(J\diamondsuit,3\diamondsuit,A\spadesuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">\(J\diamondsuit,A\spadesuit,3\diamondsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">\(A\spadesuit,3\diamondsuit,J\diamondsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">\(A\spadesuit,J\diamondsuit,3\diamondsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table> That is, we have</p>
+\begin{equation*}
+d(7\clubsuit,\mbox{hidden card} )=1\text{.}
+\end{equation*}
+<p>Thus the hidden card is \(8\clubsuit\text{.}\) (b) The suit of the secret card is \(\diamondsuit\) since the first card in the sequence is \(J\diamondsuit\text{.}\) It remains to decode the distance of the secret card and \(J\diamondsuit:\) <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">distance</td>
+<td class="l m b0 r0 l0 t0 lines">order of the 3 cards</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">\(9\clubsuit,8\heartsuit,Q\heartsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">\(9\clubsuit,Q\heartsuit,8\heartsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">\(8\heartsuit,9\clubsuit,Q\heartsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">\(8\heartsuit,Q\heartsuit,9\clubsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">\(Q\heartsuit,9\clubsuit,8\heartsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">\(Q\heartsuit,8\heartsuit,9\clubsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table> We get that the distance is 2, so the secret card is \(K\diamondsuit\text{.}\) (c) It is clear that the suit of the hidden card is \(\heartsuit\text{.}\) We can determine the distance using the following table <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">distance</td>
+<td class="l m b0 r0 l0 t0 lines">order of the 3 cards</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">\(6\diamondsuit,J\diamondsuit,10\heartsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">\(6\diamondsuit,10\heartsuit,J\diamondsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">\(J\diamondsuit,6\diamondsuit,10\heartsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">\(J\diamondsuit,10\heartsuit,6\diamondsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">\(10\heartsuit,6\diamondsuit,J\diamondsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">\(10\heartsuit,J\diamondsuit,6\diamondsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table> In this case the distance is 6, therefore the hidden card is \(2\heartsuit\text{.}\) (d) The first card is \(10\diamondsuit\text{,}\) so the suit of the hidden card is \(\diamondsuit\text{.}\) It remains to figure out the distance. <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">distance</td>
+<td class="l m b0 r0 l0 t0 lines">order of the 3 cards</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">\(5\diamondsuit,2\spadesuit,4\spadesuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">\(5\diamondsuit,4\spadesuit,2\spadesuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">\(2\spadesuit,5\diamondsuit,4\spadesuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">\(2\spadesuit,4\spadesuit,5\diamondsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">\(4\spadesuit,5\diamondsuit,2\spadesuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">\(4\spadesuit,2\spadesuit,5\diamondsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table> The order of the remaining three cards is \(4\spadesuit,2\spadesuit,5\diamondsuit\text{,}\) hence the distance is 6. Thus the announced hidden card is \(3\diamondsuit\text{.}\) (e) It is easy to see that the suit of the hidden card is \(\spadesuit\text{.}\) We can determine the distance using the following table <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">distance</td>
+<td class="l m b0 r0 l0 t0 lines">order of the 3 cards</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">\(7\diamondsuit,3\heartsuit,7\heartsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">\(7\diamondsuit,7\heartsuit,3\heartsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">\(3\heartsuit,7\diamondsuit,7\heartsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">\(3\heartsuit,7\heartsuit,7\diamondsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">\(7\heartsuit,7\diamondsuit,3\heartsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+<td class="l m b0 r0 l0 t0 lines">\(7\heartsuit,3\heartsuit,7\diamondsuit\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table> That is, the distance of the two cards is 2. Therefore the hidden card is \(10\spadesuit\text{.}\)</p>
+</li>
+<li id="li-217">
+<p id="p-896"><a knowl="./knowl/card-2.html" knowl-id="xref-card-2" alt="Exercise 3.5.3 " title="Exercise 3.5.3 ">Exercise 3.5.3</a> (a) We need two cards having the same suit. In this example there are two possibilities</p>
+\begin{align*}
+\amp  3\clubsuit,7\clubsuit\Rightarrow\mbox{ the hidden card is } 7\clubsuit,\mbox{ the distance is 4,}\\
+\amp  2\diamondsuit,5\diamondsuit\Rightarrow\mbox{ the hidden card is } 5\diamondsuit, \mbox{ the distance is 3.}
+\end{align*}
+<p>If the hidden card is \(7\clubsuit\text{,}\) then we have to encode 4 using the cards</p>
+\begin{equation*}
+2\diamondsuit\lt 5\diamondsuit\lt A\spadesuit\text{.}
+\end{equation*}
+<p>We have that 4 corresponds to the ordering 2,3,1, therefore the order of the remaining four cards is</p>
+\begin{equation*}
+3\clubsuit,5\diamondsuit,A\spadesuit,2\diamondsuit\text{.}
+\end{equation*}
+<p>If the secret card is \(5\diamondsuit\text{,}\) then the distance to encode is 3, which is 2,1,3. The correct order of the four cards is</p>
+\begin{equation*}
+2\diamondsuit,7\clubsuit,3\clubsuit,A\spadesuit\text{.}
+\end{equation*}
+<p>(b) The assistant chooses \(A\diamondsuit\) as the card to announce. We have that \(d(J\diamondsuit,A\diamondsuit)=3\text{.}\) One encodes distance 3 as 2,1,3. Thus the order of the four cards is</p>
+\begin{equation*}
+J\diamondsuit,8\heartsuit,10\clubsuit,4\spadesuit\text{.}
+\end{equation*}
+<p>(c) The hidden card is \(8\spadesuit\text{,}\) the distance is 1, therefore the assistant hands the four cards in the following order to the magician</p>
+\begin{equation*}
+7\spadesuit,A\clubsuit,6\diamondsuit,K\heartsuit\text{.}
+\end{equation*}
+<p>(d) Here the assistant may use the following pairs of cards</p>
+\begin{align*}
+(I). \amp \ 3\spadesuit,7\spadesuit\Rightarrow\mbox{ hidden card: } 7\spadesuit,\mbox{ distance: } 4,\\
+(II). \amp \  3\spadesuit,9\spadesuit\Rightarrow\mbox{ hidden card: } 9\spadesuit,\mbox{ distance: } 6,\\
+(III). \amp \  7\spadesuit,9\spadesuit\Rightarrow\mbox{ hidden card: } 9\spadesuit,\mbox{ distance: } 2\text{.}
+\end{align*}
+<p>The corresponding sequences are</p>
+\begin{align*}
+(I). \amp \ 3\spadesuit,8\diamondsuit,9\spadesuit,7\clubsuit,\\
+(II). \amp \ 3\spadesuit,7\spadesuit,8\diamondsuit,7\clubsuit,\\
+(III). \amp \ 7\spadesuit,7\clubsuit,3\spadesuit,8\diamondsuit\text{.}
+\end{align*}
+<p>(e) In this case the assistant has two choices</p>
+\begin{align*}
+(I). \amp \ J\diamondsuit,Q\diamondsuit\Rightarrow\mbox{ hidden card: } Q\diamondsuit,\mbox{ distance: } 1,\\
+(II). \amp \ 7\heartsuit,10\heartsuit\Rightarrow\mbox{ hidden card: } 10\heartsuit,\mbox{ distance: } 3\text{.}
+\end{align*}
+<p>The corresponding sequences of cards are</p>
+\begin{align*}
+(I). \amp \ J\diamondsuit,7\heartsuit,10\heartsuit,3\spadesuit,\\
+(II). \amp \ 7\heartsuit,Q\diamondsuit,J\diamondsuit,3\spadesuit\text{.}
+\end{align*}
+</li>
+</ol></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:57+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Pigeonhole principle</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-15.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="cha_proof.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-17.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-15.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="cha_proof.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-17.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link active"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16" class="active">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-16"><h2 class="heading hide-type" alt="Section 3.4 Pigeonhole principle">
+<span class="type">Section</span><span class="codenumber">3.4</span><span class="title">Pigeonhole principle</span>
+</h2>
+<p id="p-521">In this section we study the so-called pigeonhole principle which is a simple tool to prove several interesting results. First we prove the simplest form of the pigeonhole principle.</p>
+<article class="theorem-like" id="theorem-14"><h6 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.4.1</span>
+</h6>
+<p id="p-522">If \(n+1\) pigeons are placed into \(n\) pigeonholes, then there exists a pigeonhole containing at least 2 pigeons.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-20" id="proof-20"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-20" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-523">Assume that the statement is false. That is, each pigeonhole contains at most one pigeon. In this case the total number of pigeons is at most \(n\text{,}\) a contradiction.</p></article></div>
+<p id="p-524">One can easily generalize the above theorem. We have the following.</p>
+<article class="theorem-like" id="theorem-15"><h6 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.4.2</span>
+</h6>
+<p id="p-525">If \(mn+1\) pigeons are placed into \(n\) pigeonholes, then there exists a pigeonhole containing at least \(m+1\) pigeons.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-21" id="proof-21"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-21" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-526">Again we prove the statement by contradiction. Assume that the statement is false, that is, each pigeonhole contains at most \(m\) pigeons. We obtain that the total number of pigeons is at most \(mn\text{,}\) a contradiction since there are \(mn+1\) pigeons.</p></article></div>
+<p id="p-527">Finally we prove a version where the pigeonholes may contain different number of pigeons.</p>
+<article class="theorem-like" id="pigeon-III"><h6 class="heading">
+<span class="type">Theorem</span><span class="codenumber">3.4.3</span>
+</h6>
+<p id="p-528">Let \(m_1,m_2,\ldots,m_n\) are positive integers. If \(m_1+m_2+\ldots+m_n-n+1\) pigeons are placed into \(n\) pigeonholes, then for some \(1\leq i\leq n\) one has that the \(i\)th pigeonhole contains at least \(m_i\) pigeons.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-22" id="proof-22"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-22" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-529">Suppose that the first pigeonhole contains at most \(m_1-1\) pigeons, the second contains at most \(m_2-1\) pigeons etc., the \(n\)th pigeonhole contains at most \(m_n-1\) pigeons. The total number of pigeons contained in the \(n\) pigeonholes can be at most</p>
+\begin{equation*}
+(m_1-1)+(m_2-1)+\ldots+(m_n-1)=m_1+m_2+\ldots+m_n-n\text{,}
+\end{equation*}
+<p>a contradiction since there are \(m_1+m_2+\ldots+m_n-n+1\) pigeons.</p></article></div>
+<p id="p-530">To apply the pigeonhole principle one has to decide what the pigeons are. Then one has to identify the pigeonholes in such a way that if two pigeons are in the same pigeonhole, then they have some special property in common. It is important that we need more pigeons than pigeonholes. In what follows we solve several concrete problems by using the pigeonhole principle.</p>
+<article class="theorem-like" id="proposition-9"><h6 class="heading">
+<span class="type">Proposition</span><span class="codenumber">3.4.4</span>
+</h6>
+<p id="p-531">There is a nonzero multiple of 6 whose digits are all zeroes and ones.</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-23" id="proof-23"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-23" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-532">We apply the pigeonhole principle and the Division algorithm. Consider the integers \(a_n=\sum_{k=0}^n 10^k\) for \(n=0,1,2,3,4,5\text{.}\) We can write these numbers as \(q_n\cdot 6+r_n\text{,}\) where \(q_n\) is the quotient and \(r_n\) is the remainder, so \(0\leq r_n\lt 6\text{.}\) There are six possibilities for \(r_n\) and there are six integers \(a_0,a_1,\ldots,a_5\text{.}\) The numbers \(a_0,a_1,\ldots,a_5\) are odd integers while 6 is even, hence \(r_n\neq 0\) for all \(n\text{.}\) We have that \(r_n\in\halmaz{1,2,3,4,5}\) for all \(n\text{.}\) There are only 5 pigeonholes (possible remainders) and 6 pigeons (integers \(a_n\)). We obtain that there are at least two integers having the same remainder, say, \(a_{m_1}\) and \(a_{m_2}\text{,}\) where \(m_1\lt m_2\text{.}\) In this case \(a_{m_2}-a_{m_1}\) is divisible by 6 and all the digits are zeroes and ones.</p>
+<table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(a_n\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(q_n\cdot 6+r_n\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">\(0\cdot 6+1\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">\(1\cdot 6+5\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">111</td>
+<td class="l m b0 r0 l0 t0 lines">\(18\cdot 6+3\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">1111</td>
+<td class="l m b0 r0 l0 t0 lines">\(185\cdot 6+1\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">11111</td>
+<td class="l m b0 r0 l0 t0 lines">\(1851\cdot 6+5\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">111111</td>
+<td class="l m b0 r0 l0 t0 lines">\(18518\cdot 6+3\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<p id="p-533">It is clear that \(r_0=r_3=1\text{,}\) therefore \(a_3-a_0=1111-1=1110\) is a multiple of 6 (\(1110=185\cdot 6\)) and this integer is in a right form.</p></article></div>
+<article class="theorem-like" id="proposition-10"><h6 class="heading">
+<span class="type">Proposition</span><span class="codenumber">3.4.5</span>
+</h6>
+<p id="p-534">Let \(A\) be a set containing \(n\geq 2\) integers. There is a subset of \(A\) such that the sum of its elements is a multiple of \(n\text{.}\)</p></article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-24" id="proof-24"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-24" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-535">We have a set containing \(n\) elements, let us say these are \(a_1,a_2,\ldots,a_n\text{.}\) We define \(n\) subsets as follows</p>
+\begin{equation*}
+S_k=\halmaz{a_1,\ldots,a_k}, k=1,2,\ldots,n\text{,}
+\end{equation*}
+<p>that is, \(S_1=\halmaz{a_1}, S_2=\halmaz{a_1,a_2},\ldots,S_n=A\text{.}\) Denote by \(s_k\) the sum of the elements of \(S_k\text{.}\) We apply the Division algorithm to write \(s_k=q_k\cdot n+r_k\text{,}\) where \(0\leq r_k\lt n\text{.}\) If for some \(k\) we have \(r_k=0\text{,}\) then</p>
+\begin{equation*}
+s_k=a_1+\ldots+a_k=q_k\cdot n\text{,}
+\end{equation*}
+<p>that is, the sum of the elements of \(S_k\) is a multiple of \(n\text{.}\) In this case the theorem is true. If no such \(k\) exists, then we have only \(n-1\) possible values for \(r_k\) and we have \(n\) subsets. The pigeonhole principle says that there are at least two subsets (say \(S_k\) and \(S_l, k\lt l\)) for which \(r_k=r_l\text{.}\) In this case we obtain that</p>
+\begin{equation*}
+s_l-s_k=(q_l-q_k)n=a_{k+1}+a_{k+2}+\ldots+a_l\text{.}
+\end{equation*}
+<p id="p-536">Thus the sum of the elements of the subset \(\halmaz{a_{k+1},a_{k+2},\ldots,a_l}\) is a multiple of \(n\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-pigeon-0a" id="pigeon-0a"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.4.6</span>
+</h6></a></article><div id="hk-pigeon-0a" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-537">Prove that among 367 people, at least two were born on the same day of the year.</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-pigeon-0b" id="pigeon-0b"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.4.7</span>
+</h6></a></article><div id="hk-pigeon-0b" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-538">Prove that among 1500 people, at least four were born on the same day of the year.</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-pigeon-1" id="pigeon-1"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.4.8</span>
+</h6></a></article><div id="hk-pigeon-1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-539">Prove that if seven distinct integers are selected from the set</p>
+\begin{equation*}
+\halmaz{1,2,3,4,5,6,7,8,9,10,11,12}\text{,}
+\end{equation*}
+<p>then two of these integers sum to 13.</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-pigeon-2" id="pigeon-2"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.4.9</span>
+</h6></a></article><div id="hk-pigeon-2" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-540">We choose 11 integers from the set \(\halmaz{1,2,\ldots,20}\text{.}\) Prove that 2 of the chosen integers are consecutive.</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-pigeon-3" id="pigeon-3"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.4.10</span>
+</h6></a></article><div id="hk-pigeon-3" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-541">Prove that if five points are selected from the interior of a unit square, then there are two points whose distance is less than \(\sqrt{2}/2\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-pigeon-4" id="pigeon-4"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.4.11</span>
+</h6></a></article><div id="hk-pigeon-4" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-542">Let \(A=\halmaz{1,2,\ldots,100}\text{.}\) Prove that if we choose 51 distinct integers from \(A\text{,}\) then there are at least two integers such that one of them is divisible by the other.</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-pigeon-5" id="pigeon-5"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.4.12</span>
+</h6></a></article><div id="hk-pigeon-5" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-543">How many students in a class must there be to ensure that 4 students get the same grade (one of 1, 2, 3, 4, or 5)?</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-pigeon-6" id="pigeon-6"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">3.4.13</span>
+</h6></a></article><div id="hk-pigeon-6" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-544">How many bishops can one place on an \(8\times 8\) chessboard such that no two bishops can hit each other?</p></article></div></section></div></main>
+</div>
+</body>
+</html>

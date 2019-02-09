@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:58+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Counting</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="section-22.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="cha_solutions.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="section-24.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="section-22.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="cha_solutions.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="section-24.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link active"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23" class="active">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="section-23"><h2 class="heading hide-type" alt="Section 6.2 Counting">
+<span class="type">Section</span><span class="codenumber">6.2</span><span class="title">Counting</span>
+</h2>
+<ol id="ol-16" style="list-style-type: decimal;">
+<li id="li-93">
+<p id="p-772"><a knowl="./knowl/ex_sumk.html" knowl-id="xref-ex_sumk" alt="Exercise 2.0.2 " title="Exercise 2.0.2 ">Exercise 2.0.2</a> Let \(n\) be odd first, like it was with \(n=199\text{.}\) Then if we rearrange the summands (first with last, second with one but last, etc.). then the middle term will remain, which is \(\frac{n+1}{2}\text{:}\)</p>
+\begin{align*}
+\amp  1 + 2 + \dots + \left(n-1\right) + n = \left(1 + n\right) + \left(2 + n-1\right) + \dots\\
+\amp + \left(\frac{n-1}{2} + \frac{n+3}{2} \right) + \frac{n+1}{2} = (n+1) + (n+1) + \dots\\
+\amp + (n+1) +  \frac{n+1}{2} = \left( n+1 \right) \cdot \frac{n-1}{2} + \frac{n+1}{2}\\
+\amp = \left( n+1 \right) \cdot \left( \frac{n-1}{2} + \frac{1}{2} \right) = \frac{(n+1) \cdot n}{2}\text{.}
+\end{align*}
+<p>If \(n\) is even, then after rearranging the summands, no term will remain:</p>
+\begin{align*}
+\amp  1 + 2 + \dots + \left(n-1\right) + n = \left(1 + n\right) + \left(2 + n-1\right) + \dots\\
+\amp + \left(\frac{n}{2} + \frac{n+2}{2} \right) = (n+1) + (n+1) + \dots\\
+\amp + (n+1) = \left( n+1 \right) \cdot \frac{n}{2} = \frac{(n+1) \cdot n}{2}\text{.}
+\end{align*}
+</li>
+<li id="li-94"><p id="p-773"><a knowl="./knowl/ex_5people3hanshake.html" knowl-id="xref-ex_5people3hanshake" alt="Exercise 2.0.4 " title="Exercise 2.0.4 ">Exercise 2.0.4</a> If everyone shakes hands with three other, then they do not shake hand with exactly one person. It is easier to consider who does not shake hand with whom. The first person does not shake hand with someone. Then of the remaining three people the first does not shake hand with someone from these three. That leaves one person, who does not shake hand with someone else, but everybody else has already been accounted for about not shaking hands with somebody. Thus, it is not possible that each of the five people shake hands with three others. This argument does not work if someone is allowed to shake hands with someone else more than once. Nevertheless, the answer is still <em class="emphasis">no</em>. Use the same argument we used for proving <a knowl="./knowl/cor_handshakes.html" knowl-id="xref-cor_handshakes" alt="Corollary 2.0.3 " title="Corollary 2.0.3 ">Corollary 2.0.3</a>. If we sum up all the handshakes for everyone, we obtain \(5 \cdot 3 = 15\text{,}\) as each of the 5 people shakes hand with 3 others. This way, we counted every handshake twice, thus to obtain the number of handshakes we need to divide it by 2. But \(15/2\) is not an integer, while the number of handshakes should be an integer. This contradiction proves that it is not possible that each of 5 people shakes hand with 3 others. For 7 people we can use this argument, again. If we sum up all the handshakes for everyone, we obtain \(7 \cdot 3 = 21\text{,}\) as each of the 7 people shakes hand with 3 others. This way, we counted every handshake twice, thus to obtain the number of handshakes we need to divide it by 2. But \(21/2\) is not an integer, while the number of handshakes should be an integer. This contradiction proves that it is not possible that each of 7 people shakes hand with 3 others.</p></li>
+<li id="li-95"><p id="p-774"><a knowl="./knowl/ex_kisses.html" knowl-id="xref-ex_kisses" alt="Exercise 2.0.5 " title="Exercise 2.0.5 ">Exercise 2.0.5</a> The four boys shake hands with each other, that is, \(\frac{4 \cdot 3}{2} = 6\) handshakes. The four girls kisses each other, those are \(\frac{4 \cdot 3}{2} = 6\) kisses by the same formula we use for handshakes. Finally, a boy and a girl kisses, as well. All four boys kiss all four girls on the cheek, which is \(4 \cdot 4 = 16\) more kisses. Ultimately, there are 6 handshakes and 22 kisses.</p></li>
+<li id="li-96">
+<p id="p-775"><a knowl="./knowl/ex_isitpossible1.html" knowl-id="xref-ex_isitpossible1" alt="Exercise 2.0.7 " title="Exercise 2.0.7 ">Exercise 2.0.7</a> </p>
+<ol id="ol-17" style="list-style-type: lower-alpha;">
+<li id="li-97"><p id="p-776">Not possible. If there are five packs, each of them containing odd many rabbits, then altogether in the five packs there are odd many rabbits (odd\(+\)odd\(+\)odd\(+\)odd\(+\)odd is odd). As 100 is not an odd number, it is not possible to do the required distribution.</p></li>
+<li id="li-98"><p id="p-777">It is possible, e.g. \(3 \cdot 3 \cdot 1 \cdot 1\cdot 1\text{.}\) Another possibility could be \(9 \cdot 1 \cdot (-1) \cdot 1 \cdot (-1)\text{,}\) or simply \(9\) (as only one integer).</p></li>
+<li id="li-99"><p id="p-778">It is possible, e.g.  \(3 \cdot 3 \cdot 1 \cdot 1\cdot 1\cdot 1 \cdot (-1) \cdot 1 \cdot (-1)\text{,}\) or another possibility is \(9 \cdot 1 \cdot (-1) \cdot 1 \cdot (-1) \cdot 1 \cdot (-1) \cdot 1 \cdot (-1)\text{.}\)</p></li>
+<li id="li-100"><p id="p-779">Not possible. If the product of integer numbers is 9, then all of them are odd. But then the sum of 9 odd integer numbers is odd again, and hence cannot be 0.</p></li>
+</ol>
+</li>
+<li id="li-101">
+<p id="p-780"><a knowl="./knowl/ex_sum24.html" knowl-id="xref-ex_sum24" alt="Exercise 2.0.8 " title="Exercise 2.0.8 ">Exercise 2.0.8</a> </p>
+<ol id="ol-18" style="list-style-type: lower-alpha;">
+<li id="li-102">
+<p id="p-781">We can apply <a knowl="./knowl/prop_sumk.html" knowl-id="xref-prop_sumk" alt="Proposition 2.0.1 " title="Proposition 2.0.1 ">Proposition 2.0.1</a> and obtain</p>
+\begin{equation*}
+1 + 2 + 3 + \dots + 23 + 24 = \frac{24\cdot 25}{2} = 300\text{.}
+\end{equation*}
+</li>
+<li id="li-103">
+<p id="p-782">This is a bit more tricky, but not much. One needs to calculate the denominator, as we just calculated the numerator. Now,</p>
+\begin{align*}
+1-2+3-4+ \dots + 23-24 \amp = (1-2) + (3-4) + \dots + (23-24)\\
+(-1) + (-1) + \dots + (-1) \amp = -12\text{.}
+\end{align*}
+<p>Thus the fraction we needed to compute is \(\frac{300}{-12} = -25\text{.}\) Another way to calculate the denominator could have been the following:</p>
+\begin{align*}
+\amp 1-2+3-4+ \dots + 23-24 = 1+2 + 3+4 + \dots + 23+24\\
+\amp - 2 \cdot (2 + 4 + \dots + 24) = 300 - 2 \cdot 2 \cdot (1 + 2 + \dots + 12)\\
+\amp = 300 - 4 \cdot \frac{12\cdot 13}{2} = 300- 312 = -12\text{.}
+\end{align*}
+</li>
+</ol>
+</li>
+<li id="li-104">
+<p id="p-783"><a knowl="./knowl/ex_noofbase2numbers.html" knowl-id="xref-ex_noofbase2numbers" alt="Exercise 2.1.1 " title="Exercise 2.1.1 ">Exercise 2.1.1</a> There is only one possibility for the first digit (it cannot be 0, only 1), and there are two possibilities for every other digit. Thus, the number of \(n\)-digit positive integers in base 2 is</p>
+\begin{equation*}
+1 \cdot \underbrace{2 \cdot \dots \cdot 2}_{n-1} = 2^{n-1}\text{.}
+\end{equation*}
+</li>
+<li id="li-105">
+<p id="p-784"><a knowl="./knowl/ex_palindrome.html" knowl-id="xref-ex_palindrome" alt="Exercise 2.1.5 " title="Exercise 2.1.5 ">Exercise 2.1.5</a> If \(abc_{10}\) is a base 10 three-digit palindrome number, then \(a = c\text{,}\) and \(a \neq 0\text{.}\) Thus we can choose \(a\) in 9-many ways and \(b\) in 10-many ways, and hence the number of three-digit palindrome numbers is \(9 \cdot 10 = 90\text{.}\) For determining the at most three-digit palindrome numbers, we need to find the one-digit long and two-digit long palindrome numbers. Every one-digit number is a palindrome number. There are exactly 9 two-digit palindrome numbers: the \(aa_{10}\) numbers for \(a\neq 0\text{.}\) That is, there are \(9+9+90=108\) at most three-digit palindrome numbers. Now, consider the number of \(n\)-digit palindrome numbers in base \(k\text{.}\) One thing to note is that the first half of the number determines the back half completely. Thus we need to count how many ways can we choose the first half. Let \(n\) be even first. Then the first digit is the same as the last digit and differs from 0: there are \((k-1)\)-many possibilities to choose for the first digit. The second digit is the same as the one but last: there are \(k\)-possibilities to choose this digit, etc. Finally, the digit at the \(n/2\) position is the same as the digit at the \(n/2+1\) position: there are \(k\) possibilities to choose this digit. Thus, altogether the number of \(n\)-digit base \(k\) palindrome numbers (for even \(n\)) is</p>
+\begin{equation*}
+(k-1) \cdot \underbrace{k \cdot \dots \cdot k}_{n/2-1} = (k-1) \cdot k^{n/2-1}\text{.}
+\end{equation*}
+<p>If \(n\) is odd, then the same argument works, except that the middle digit will not have a pair. Thus, altogether the number of \(n\)-digit base \(k\) palindrome numbers (for odd \(n\)) is</p>
+\begin{equation*}
+(k-1) \cdot \underbrace{k \cdot \dots \cdot k}_{(n-1)/2} = (k-1) \cdot k^{(n-1)/2}\text{.}
+\end{equation*}
+</li>
+<li id="li-106"><p id="p-785"><a knowl="./knowl/ex_Hungarianwords.html" knowl-id="xref-ex_Hungarianwords" alt="Exercise 2.1.6 " title="Exercise 2.1.6 ">Exercise 2.1.6</a> There are 44 letters in the Hungarian alphabet, therefore there are \(44^{n}\)-many \(n\) letter long words in Hungarian by <a knowl="./knowl/thm_sequence.html" knowl-id="xref-thm_sequence" alt="Theorem 2.1.4 " title="Theorem 2.1.4 ">Theorem 2.1.4</a>. That is, \(44^5 , 44^7, 44^{10}\)-many \(5, 7, 10\) letter long words can be created, respectively.</p></li>
+<li id="li-107">
+<p id="p-786"><a knowl="./knowl/ex_toto.html" knowl-id="xref-ex_toto" alt="Exercise 2.1.7 " title="Exercise 2.1.7 ">Exercise 2.1.7</a> There are three possibilities for every game, there are 14 games, thus the number of required tickets is</p>
+\begin{equation*}
+\underbrace{3 \cdot 3 \cdot \dots \cdot 3}_{14} = 3^{14} = 4~782~969\text{.}
+\end{equation*}
+</li>
+<li id="li-108">
+<p id="p-787"><a knowl="./knowl/ex_company.html" knowl-id="xref-ex_company" alt="Exercise 2.1.8 " title="Exercise 2.1.8 ">Exercise 2.1.8</a> We apply <a knowl="./knowl/thm_sequence.html" knowl-id="xref-thm_sequence" alt="Theorem 2.1.4 " title="Theorem 2.1.4 ">Theorem 2.1.4</a>. Now, we allow spaces, thus the alphabet contains 27 letters. There are \(27^{20}\) possibilities for a 20 letter long string (name), 2 possibilities for the gender, \(27^{10}\) possibilities for a 10 letter long string (job title), and \(10^8\) possibilities for an at most 8 digit long base 10 number (payment). Thus, the number of possibilities is</p>
+\begin{equation*}
+27^{20} \cdot 2 \cdot 27^{10} \cdot 10^{8}\text{.}
+\end{equation*}
+</li>
+<li id="li-109"><p id="p-788"><a knowl="./knowl/ex_subsetsof3elemetset.html" knowl-id="xref-ex_subsetsof3elemetset" alt="Exercise 2.2.1 " title="Exercise 2.2.1 ">Exercise 2.2.1</a> The subsets of \(\halmaz{1, 2, 3}\) are \(\halmaz{} = \emptyset\text{,}\) \(\halmaz{1}\text{,}\) \(\halmaz{2}\text{,}\) \(\halmaz{3}\text{,}\) \(\halmaz{1, 2}\text{,}\) \(\halmaz{1, 3}\text{,}\) \(\halmaz{2, 3}\text{,}\) \(\halmaz{1, 2, 3}\text{.}\) The subsets of \(\halmaz{a, b, c}\) are \(\halmaz{} = \emptyset\text{,}\) \(\halmaz{a}\text{,}\) \(\halmaz{b}\text{,}\) \(\halmaz{c}\text{,}\) \(\halmaz{a, b}\text{,}\) \(\halmaz{a, c}\text{,}\) \(\halmaz{b, c}\text{,}\) \(\halmaz{a, b, c}\text{.}\) The subsets of \(\halmaz{\text{ Alice, Beth, Carrie } }\) are \(\halmaz{} = \emptyset\text{,}\) \(\halmaz{\text{ Alice } }\text{,}\) \(\halmaz{\text{ Beth } }\text{,}\) \(\halmaz{\text{ Carrie } }\text{,}\) \(\halmaz{\text{ Alice, Beth } }\text{,}\) \(\halmaz{\text{ Alice, Carrie } }\text{,}\) \(\halmaz{\text{ Beth, Carrie } }\text{,}\) and finally \(\halmaz{\text{ Alice, Beth, Carrie } }\text{.}\) The subsets of \(\halmaz{apple, banana,
+cherry}\) are \(\halmaz{} = \emptyset\text{,}\) \(\halmaz{\text{ apple } }\text{,}\) \(\halmaz{\text{ banana } }\text{,}\) \(\halmaz{\text{ cherry } }\text{,}\) \(\halmaz{\text{ apple, banana } }\text{,}\) \(\halmaz{\text{ apple, cherry } }\text{,}\) \(\halmaz{\text{ banana, cherry } }\text{,}\) and \(\halmaz{\text{ apple, banana, cherry } }\text{.}\) All sets have 8 subsets.</p></li>
+<li id="li-110"><p id="p-789"><a knowl="./knowl/ex_abcde.html" knowl-id="xref-ex_abcde" alt="Exercise 2.2.4 " title="Exercise 2.2.4 ">Exercise 2.2.4</a> The set \(\halmaz{a, b, c, d}\) has 16 subsets: \(\halmaz{} = \emptyset\text{,}\) \(\halmaz{a}\text{,}\) \(\halmaz{b}\text{,}\) \(\halmaz{c}\text{,}\) \(\halmaz{d}\text{,}\) \(\halmaz{a, b}\text{,}\) \(\halmaz{a, c}\text{,}\) \(\halmaz{a, d}\text{,}\) \(\halmaz{b, c}\text{,}\) \(\halmaz{b, d}\text{,}\) \(\halmaz{c, d}\text{,}\) \(\halmaz{a, b, c}\text{,}\) \(\halmaz{a, b, d}\text{,}\) \(\halmaz{a, c, d}\text{,}\) \(\halmaz{b, c, d}\text{,}\) \(\halmaz{a, b, c, d}\text{.}\) The set \(\halmaz{a, b, c, d, e}\) has 32 subsets: \(\halmaz{} = \emptyset\text{,}\) \(\halmaz{a}\text{,}\) \(\halmaz{b}\text{,}\) \(\halmaz{c}\text{,}\) \(\halmaz{d}\text{,}\) \(\halmaz{e}\text{,}\) \(\halmaz{a, b}\text{,}\) \(\halmaz{a, c}\text{,}\) \(\halmaz{a, d}\text{,}\) \(\halmaz{a, e}\text{,}\) \(\halmaz{b, c}\text{,}\) \(\halmaz{b, d}\text{,}\) \(\halmaz{b, e}\text{,}\) \(\halmaz{c, d}\text{,}\) \(\halmaz{c, e}\text{,}\) \(\halmaz{d, e}\text{,}\) \(\halmaz{a, b, c}\text{,}\) \(\halmaz{a, b, d}\text{,}\) \(\halmaz{a, b, e}\text{,}\) \(\halmaz{a, c, d}\text{,}\) \(\halmaz{a, c, e}\text{,}\) \(\halmaz{a, d, e}\text{,}\) \(\halmaz{b, c, d}\text{,}\) \(\halmaz{b, c, e}\text{,}\) \(\halmaz{b, d, e}\text{,}\) \(\halmaz{c, d, e}\text{,}\) \(\halmaz{a, b, c, d}\text{,}\) \(\halmaz{a, b, c, e}\text{,}\) \(\halmaz{a, b, d, e}\text{,}\) \(\halmaz{a, c, d, e}\text{,}\) \(\halmaz{b, c, d, e}\text{,}\) \(\halmaz{a, b, c, d, e}\text{.}\)</p></li>
+<li id="li-111"><p id="p-790"><a knowl="./knowl/ex_subsettrytheproof.html" knowl-id="xref-ex_subsettrytheproof" alt="Exercise 2.2.6 " title="Exercise 2.2.6 ">Exercise 2.2.6</a> The decision algorithm is collected in the following table (\(T\) is the subset of \(S = \halmaz{a, b, c}\)): <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(a \in T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(a \notin T\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(b \in T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(b \notin T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(b \in T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(b \notin T\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(c \in T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(c \notin T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(c \in T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(c \notin T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(c \in T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(c \notin T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(c \in T\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(c \notin T\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a, b, c}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a, b}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a, c}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{b, c}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{b}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{c}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{} = \emptyset\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table> First we decide whether or not \(a \in T\text{,}\) then (independently on our first choice) we decide whether or not \(b \in T\text{,}\) then (independently on our earlier choices) we decide whether or not \(c \in T\text{.}\) That way, we obtain \(2 \cdot 2 \cdot 2 = 8\) subsets.</p></li>
+<li id="li-112"><p id="p-791"><a knowl="./knowl/ex_subsetabcd.html" knowl-id="xref-ex_subsetabcd" alt="Exercise 2.2.7 " title="Exercise 2.2.7 ">Exercise 2.2.7</a> There are 8 subsets of \(\halmaz{a, b, c, d}\) not containing \(d\text{:}\) \(\halmaz{} = \emptyset\text{,}\) \(\halmaz{a}\text{,}\) \(\halmaz{b}\text{,}\) \(\halmaz{c}\text{,}\) \(\halmaz{a, b}\text{,}\) \(\halmaz{a, c}\text{,}\) \(\halmaz{b, c}\text{,}\) \(\halmaz{a, b, c}\text{.}\) These are the subsets of \(\halmaz{a, b, c}\text{.}\) There are 8 subsets of \(\halmaz{a, b, c, d}\) containing \(d\text{:}\) \(\halmaz{d}\text{,}\) \(\halmaz{a, d}\text{,}\) \(\halmaz{b, d}\text{,}\) \(\halmaz{c, d}\text{,}\) \(\halmaz{a, b, d}\text{,}\) \(\halmaz{a, c, d}\text{,}\) \(\halmaz{b, c, d}\text{,}\) \(\halmaz{a, b, c, d}\text{.}\) These are the subsets of \(\halmaz{a, b, c}\) with the element \(d\) added to them.</p></li>
+<li id="li-113"><p id="p-792"><a knowl="./knowl/ex_subsetabcd01.html" knowl-id="xref-ex_subsetabcd01" alt="Exercise 2.2.8 " title="Exercise 2.2.8 ">Exercise 2.2.8</a> The binary representation of the subsets of \(\halmaz{a, b, c, d}\) can be seen in <a knowl="./knowl/tab_abcdbinary.html" knowl-id="xref-tab_abcdbinary" alt="Table 6.2.1 " title="Table 6.2.1 ">Table 6.2.1</a> on <a knowl="./knowl/tab_abcdbinary.html" knowl-id="xref-tab_abcdbinary" alt="Table 6.2.1 " title="Table 6.2.1 ">page 6.2.1</a>. <figure class="figure-like" id="tab_abcdbinary"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">subset of \(\halmaz{a, b, c, d}\)</td>
+<td class="l m b0 r0 l0 t0 lines">binary number</td>
+<td class="l m b0 r0 l0 t0 lines">decimal number</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0000_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0001_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{b}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0010_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a, b}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0011_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{c}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0100_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a, c}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0101_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{b, c}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0110_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a, b,c }\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(0111_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{d}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1000_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">8</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a, d}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1001_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">9</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{b, d}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1010_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">10</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a, b, d}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1011_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{c, d}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1100_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a, c, d}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1101_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">13</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{b, c, d}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1110_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">14</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a, b, c, d}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(1111_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">15</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="codenumber">6.2.1</span>Subsets of \(\halmaz{a, b, c, d}\) represented as binary numbers</figcaption></figure></p></li>
+<li id="li-114"><p id="p-793"><a knowl="./knowl/ex_encode1.html" knowl-id="xref-ex_encode1" alt="Exercise 2.2.9 " title="Exercise 2.2.9 ">Exercise 2.2.9</a> After computing the binary representation, we just add the elements corresponding to the places where the digits are 1. <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">decimal number</td>
+<td class="l m b0 r0 l0 t0 lines">binary number</td>
+<td class="l m b0 r0 l0 t0 lines">subset of \(S\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">\(1011_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a_0, a_1, a_3}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">\(0111_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a_0, a_1, a_2}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">15</td>
+<td class="l m b0 r0 l0 t0 lines">\(1111_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a_0, a_1, a_2, a_3}\)</td>
+</tr>
+</table></p></li>
+<li id="li-115"><p id="p-794"><a knowl="./knowl/ex_encode2.html" knowl-id="xref-ex_encode2" alt="Exercise 2.2.10 " title="Exercise 2.2.10 ">Exercise 2.2.10</a> After computing the binary representation, we just add the elements corresponding to the places where the digits are 1. <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">decimal number</td>
+<td class="l m b0 r0 l0 t0 lines">binary number</td>
+<td class="l m b0 r0 l0 t0 lines">subset of \(S\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">11</td>
+<td class="l m b0 r0 l0 t0 lines">\(01011_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a_0, a_1, a_3}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">7</td>
+<td class="l m b0 r0 l0 t0 lines">\(00111_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a_0, a_1, a_2}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">15</td>
+<td class="l m b0 r0 l0 t0 lines">\(01111_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a_0, a_1, a_2, a_3}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">16</td>
+<td class="l m b0 r0 l0 t0 lines">\(10000_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a_4}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">31</td>
+<td class="l m b0 r0 l0 t0 lines">\(11111_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a_0, a_1, a_2, a_3, a_4}\)</td>
+</tr>
+</table> Note, that the encoding was defined in such a way, that the subset of \(\halmaz{a_0, a_1, a_2, a_3}\) corresponding to \(k\) is the same as the subset of \(\halmaz{a_0, a_1, a_2, a_3, a_4}\) corresponding to \(k\) (for arbitrary \(0\leq k\leq 15\)).</p></li>
+<li id="li-116"><p id="p-795"><a knowl="./knowl/ex_encode3.html" knowl-id="xref-ex_encode3" alt="Exercise 2.2.11 " title="Exercise 2.2.11 ">Exercise 2.2.11</a> After computing the binary representation, we just add the elements corresponding to the places where the digits are 1. <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">decimal number</td>
+<td class="l m b0 r0 l0 t0 lines">binary number</td>
+<td class="l m b0 r0 l0 t0 lines">subset of \(S\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">49</td>
+<td class="l m b0 r0 l0 t0 lines">\(110001_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a_0, a_4, a_5}\)</td>
+</tr>
+</table></p></li>
+<li id="li-117"><p id="p-796"><a knowl="./knowl/ex_encode4.html" knowl-id="xref-ex_encode4" alt="Exercise 2.2.12 " title="Exercise 2.2.12 ">Exercise 2.2.12</a> After computing the binary representation, we just add the elements corresponding to the places where the digits are 1. <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">decimal number</td>
+<td class="l m b0 r0 l0 t0 lines">binary number</td>
+<td class="l m b0 r0 l0 t0 lines">subset of \(S\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">101</td>
+<td class="l m b0 r0 l0 t0 lines">\(1100101_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a_0, a_2, a_5, a_6}\)</td>
+</tr>
+</table></p></li>
+<li id="li-118"><p id="p-797"><a knowl="./knowl/ex_encode5.html" knowl-id="xref-ex_encode5" alt="Exercise 2.2.13 " title="Exercise 2.2.13 ">Exercise 2.2.13</a> After computing the binary representation, we just add the elements corresponding to the places where the digits are 1. <table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">decimal number</td>
+<td class="l m b0 r0 l0 t0 lines">binary number</td>
+<td class="l m b0 r0 l0 t0 lines">subset of \(S\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">199</td>
+<td class="l m b0 r0 l0 t0 lines">\(11000111_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{a_0, a_1, a_2, a_6, a_7}\)</td>
+</tr>
+</table></p></li>
+<li id="li-119"><p id="p-798"><a knowl="./knowl/ex_ExamEFGH.html" knowl-id="xref-ex_ExamEFGH" alt="Exercise 2.3.2 " title="Exercise 2.3.2 ">Exercise 2.3.2</a> All possibilities are listed in <a knowl="./knowl/tab_ExamEFGH.html" knowl-id="xref-tab_ExamEFGH" alt="Table 6.2.2 " title="Table 6.2.2 ">Table 6.2.2</a> on <a knowl="./knowl/tab_ExamEFGH.html" knowl-id="xref-tab_ExamEFGH" alt="Table 6.2.2 " title="Table 6.2.2 ">page 6.2.2</a>. <figure class="figure-like" id="tab_ExamEFGH"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">first</td>
+<td class="l m b0 r0 l0 t0 lines">second</td>
+<td class="l m b0 r0 l0 t0 lines">third</td>
+<td class="l m b0 r0 l0 t0 lines">fourth</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Hugo</td>
+<td class="l m b0 r0 l0 t0 lines">George</td>
+<td class="l m b0 r0 l0 t0 lines">Frank</td>
+<td class="l m b0 r0 l0 t0 lines">Ed</td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="codenumber">6.2.2</span>The orders in which Ed, Frank, George and Hugo can take the exam</figcaption></figure></p></li>
+<li id="li-120"><p id="p-799"><a knowl="./knowl/ex_perm1.html" knowl-id="xref-ex_perm1" alt="Exercise 2.3.4 " title="Exercise 2.3.4 ">Exercise 2.3.4</a> The number of permutations of \(\halmaz{1, 2, 3, 4}\) is \(4! =24\text{.}\)</p></li>
+<li id="li-121"><p id="p-800"><a knowl="./knowl/ex_perm2.html" knowl-id="xref-ex_perm2" alt="Exercise 2.3.5 " title="Exercise 2.3.5 ">Exercise 2.3.5</a> The number of permutations of \(\halmaz{a, b, c, d}\) is \(4! =24\text{.}\)</p></li>
+<li id="li-122"><p id="p-801"><a knowl="./knowl/ex_perm3.html" knowl-id="xref-ex_perm3" alt="Exercise 2.3.6 " title="Exercise 2.3.6 ">Exercise 2.3.6</a> The number of permutations of 8 people is \(8! = 40~320\text{.}\) If the boys sit on seats from 1 to 5, and girls sit on seats from 6 to 8, then we need to count the number of permutations of the boys and girls separately. The boys can sit on their seats in \(5! = 120\)-many ways. The girls (independently on how the boys sit) can sit on their seats in \(3! = 6\)-many ways. Altogether, they can sit in \(6 \cdot 120 = 720\)-many ways.</p></li>
+<li id="li-123"><p id="p-802"><a knowl="./knowl/ex_retinas.html" knowl-id="xref-ex_retinas" alt="Exercise 2.4.1 " title="Exercise 2.4.1 ">Exercise 2.4.1</a> The number of anagrams of ‘retinas’ is the same as the number of permutations of the letters ‘r’, ‘e’, ‘t’, ‘i’, ‘n’, ‘a’ and ‘s’. There are 7 different letters, hence the number of permutations is \(7! = 5~040\text{.}\)</p></li>
+<li id="li-124"><p id="p-803"><a knowl="./knowl/ex_puppy.html" knowl-id="xref-ex_puppy" alt="Exercise 2.4.3 " title="Exercise 2.4.3 ">Exercise 2.4.3</a> Again, let us color the ‘p’s in the anagrams by three colors: red, green, blue. This way, there will be \(5!=120\)-many coloured anagrams of puppy, the same as the number of permutations of five different elements. Now, group together those anagrams, which only differ by their colouring. For example the group ‘puppy’ would contain ‘puppy’, ‘puppy’, ‘puppy’, ‘puppy’, ‘puppy’, ‘puppy’. How do we know that there are six coloured ‘puppy’s? The coloured ‘puppy’s only differ in the colourings of the ‘p’s. The first ‘p’ can be coloured by 3 different colours, the next ‘p’ (right after the ‘u’) can be coloured by two different colours (it cannot be coloured by the same colour as the first ‘p’), then the last ‘p’ should be coloured by the remaining colour. Thus, there are \(3 \cdot 2 \cdot 1 = 6\)-many coloured ‘puppy’s. Similarly, there are 6 coloured versions of every anagram. Therefore there are \(\frac{120}{6} = 20\) (uncoloured) anagrams of ‘puppy’. These are ‘pppuy’, ‘pppyu’, ‘ppupy’, ‘ppypu’, ‘ppuyp’, ‘ppyup’, ‘puppy’, ‘pyppu’, ‘pupyp’, ‘pypup’, ‘puypp’, ‘pyupp’, ‘upppy’, ‘ypppu’, ‘uppyp’, ‘yppup’, ‘upypp’, ‘ypupp’, ‘uyppp’, ‘yuppp’.</p></li>
+<li id="li-125">
+<p id="p-804"><a knowl="./knowl/ex_anagrams1.html" knowl-id="xref-ex_anagrams1" alt="Exercise 2.4.5 " title="Exercise 2.4.5 ">Exercise 2.4.5</a> </p>
+<ol id="ol-19" style="list-style-type: lower-alpha;">
+<li id="li-126">
+<p id="p-805">The word ‘college’ contains 7 letters, two of them are ‘e’s and two of them are ‘l’s, thus the number of anagrams is</p>
+\begin{equation*}
+\frac{7!}{2! \cdot 2!} = \frac{5~040}{2 \cdot 2} = 1~260\text{.}
+\end{equation*}
+</li>
+<li id="li-127">
+<p id="p-806">The word ‘discrete’ contains 8 letters, two of them are ‘e’s, thus the number of anagrams is</p>
+\begin{equation*}
+\frac{8!}{2!} = \frac{40~320}{2} = 20~160\text{.}
+\end{equation*}
+</li>
+<li id="li-128">
+<p id="p-807">The word ‘mathematics’ contains 11 letters, two of them are ‘a’s, two of them are ‘m’s  and two of them are ‘t’s, thus the number of anagrams is</p>
+\begin{equation*}
+\frac{11!}{2! \cdot 2! \cdot 2!} = \frac{39~916~800}{2 \cdot 2 \cdot 2} = 4~989~600\text{.}
+\end{equation*}
+</li>
+<li id="li-129">
+<p id="p-808">The expression ‘discrete mathematics’ contains 19 letters, two of them are ‘i’s, two of them are ‘s’s, two of them are ‘c’s, three of them are ‘e’s, three of them are ‘t’s, two of them are ‘m’s  and two of them are ‘a’s, thus the number of anagrams is</p>
+\begin{align*}
+\frac{19!}{2! \cdot 2! \cdot 2! \cdot 3! \cdot 3! \cdot 2! \cdot 2!} \amp = \frac{121~645~100~408~832~000}{2 \cdot 2 \cdot 2 \cdot 6 \cdot 6 \cdot 2 \cdot 2}\\
+\amp = 105~594~705~216~000\text{.}
+\end{align*}
+</li>
+<li id="li-130">
+<p id="p-809">The expression ‘college discrete mathematics’ contains 26 letters, three of them are ‘c’s, two of them are ‘l’s, five of them are ‘e’s, two of them are ‘i’s, two of them are ‘s’s, three of them are ‘t’s, two of them are ‘m’s  and two of them are ‘a’s, thus the number of anagrams is</p>
+\begin{align*}
+\frac{26!}{3! \cdot 2! \cdot 5! \cdot 2! \cdot 2! \cdot 3! \cdot 2! \cdot 2!} \amp = \frac{403~291~461~126~605~635~584~000~000}{6 \cdot 2 \cdot 120 \cdot 2 \cdot 2 \cdot 6 \cdot 2 \cdot 2}\\
+\amp = 2~917~328~277~825~561~600~000\text{.}
+\end{align*}
+</li>
+</ol>
+</li>
+<li id="li-131">
+<p id="p-810"><a knowl="./knowl/ex_anagrams2.html" knowl-id="xref-ex_anagrams2" alt="Exercise 2.4.6 " title="Exercise 2.4.6 ">Exercise 2.4.6</a> <em class="emphasis">First solution.</em> Let us create the (not meaningful) word ‘aaaaabbbbccc’, and consider its anagrams. Put the bouquets into one particular order, and consider an anagram. This anagram represents a distribution of the bouquets among the triplets: if a letter is ‘a’ in the anagram, the corresponding bouquet will be taken by Alice, if a letter is ‘b’ in the anagram, the corresponding bouquet will be taken by Beth, if a letter is ‘c’ in the anagram, the corresponding bouquet will be taken by Carrie. For example, the distribution for the anagram ‘abcbbaaaccba’ is that Alice takes the first, sixth, seventh, eighth and twelfth bouquets, Beth takes the second, fourth, fifth and eleventh bouquets, and Carrie takes the third, ninth and tenth bouquets. This gives a one-to-one correspondence between the possible distributions of the bouquets and the anagrams of ‘aaaaabbbbccc’. Therefore by <a knowl="./knowl/thm_permrepetition.html" knowl-id="xref-thm_permrepetition" alt="Theorem 2.4.4 " title="Theorem 2.4.4 ">Theorem 2.4.4</a> the number of distributions is</p>
+\begin{equation*}
+\frac{12!}{5! \cdot 4! \cdot 3!} = \frac{479~001~600}{120 \cdot 24 \cdot 6} = 27~720\text{.}
+\end{equation*}
+<p><em class="emphasis">Second solution.</em> Imagine that the triplets put the 12 bouquets in some order, and then Alice takes the first 5, Beth takes the next four, and Carrie takes the last three. Thus, the original order of the bouquets determine who gets which bouquet. Of course, some of these orders give the same result: if we only permute the first five elements or the next four elements, or the final three elements, then clearly everyone obtains exactly the same bouquets. Thus, the number of possible distributions is the number of permutations of the 12 bouquets, divided by the number of permutations of the first five elements, the number of permutations of the next four elements, the number of permutations of the last three elements. That is, the number of possible distributions is</p>
+\begin{equation*}
+\frac{12!}{5! \cdot 4! \cdot 3!} = \frac{479~001~600}{120 \cdot 24 \cdot 6} = 27~720\text{.}
+\end{equation*}
+</li>
+<li id="li-132">
+<p id="p-811"><a knowl="./knowl/ex_22-6.html" knowl-id="xref-ex_22-6" alt="Exercise 2.5.1 " title="Exercise 2.5.1 ">Exercise 2.5.1</a> The two numbers are equal, as the following calculation shows</p>
+\begin{equation*}
+\frac{22!}{16!} = \frac{22 \cdot 21 \cdot 20 \cdot 19 \cdot 18 \cdot 17 \cdot 16!}{16!} 
+= 22 \cdot 21 \cdot 20 \cdot 19 \cdot 18 \cdot 17\text{.}
+\end{equation*}
+</li>
+<li id="li-133">
+<p id="p-812"><a knowl="./knowl/ex_orderedsubsets.html" knowl-id="xref-ex_orderedsubsets" alt="Exercise 2.5.3 " title="Exercise 2.5.3 ">Exercise 2.5.3</a> Altogether there are \(n!\) possible orders for the \(n\) elements (this is the number of permutations of \(n\) elements). But not all of these are considered to be different, because we are only interested in the first \(k\) elements. Those cases will be considered the same where the first \(k\) elements are the same (and in the same order). That is, we group together those permutations of the \(n\) elements, where the order of the first \(k\) elements is the same. We can name every group with the order of the first \(k\) elements. Thus, we are interested in the number of groups we have. In one group there are those permutations, where the order of the first \(k\) elements is the same, thus they only differ in the last \((n-k)\) elements. There are \((n-k)!\) possible permutations of the last \((n-k)\) elements, therefore every group contains \((n-k)!\) orderings of the \(n\) elements. Hence, the number of ordered \(k\)-element subsets is</p>
+\begin{align*}
+\frac{n!}{(n-k)!} \amp = \frac{n \cdot (n-1) \cdot \dots \cdot (n-k+1) \cdot (n-k)!}{(n-k)!}\\
+\amp = n \cdot (n-1) \cdot \dots \cdot (n-k+1)\text{.}
+\end{align*}
+</li>
+<li id="li-134">
+<p id="p-813"><a knowl="./knowl/ex_forma1.html" knowl-id="xref-ex_forma1" alt="Exercise 2.5.4 " title="Exercise 2.5.4 ">Exercise 2.5.4</a> By <a knowl="./knowl/thm_orderedsubsets.html" knowl-id="xref-thm_orderedsubsets" alt="Theorem 2.5.2 " title="Theorem 2.5.2 ">Theorem 2.5.2</a> the number of possibilities </p>
+<ol id="ol-20" style="list-style-type: lower-alpha;">
+<li id="li-135">
+<p id="p-814">for the first eight cars is</p>
+\begin{equation*}
+22 \cdot 21 \cdot 20 \cdot 19 \cdot 18 \cdot 17 \cdot 16 \cdot 15 = 12~893~126~400\text{,}
+\end{equation*}
+</li>
+<li id="li-136">
+<p id="p-815">for the first ten cars is</p>
+\begin{equation*}
+22 \cdot 21 \cdot 20 \cdot 19 \cdot 18 \cdot 17 \cdot 16 \cdot 15 \cdot 14 \cdot 13 = 2~346~549~004~800\text{.}
+\end{equation*}
+</li>
+</ol>
+</li>
+<li id="li-137">
+<p id="p-816"><a knowl="./knowl/ex_competition.html" knowl-id="xref-ex_competition" alt="Exercise 2.5.5 " title="Exercise 2.5.5 ">Exercise 2.5.5</a> By <a knowl="./knowl/thm_orderedsubsets.html" knowl-id="xref-thm_orderedsubsets" alt="Theorem 2.5.2 " title="Theorem 2.5.2 ">Theorem 2.5.2</a> the number of ordered subsets is </p>
+<ol id="ol-21" style="list-style-type: lower-alpha;">
+<li id="li-138">
+<p id="p-817"></p>
+\begin{equation*}
+10 \cdot 9 \cdot 8 = 720\text{,}
+\end{equation*}
+</li>
+<li id="li-139">
+<p id="p-818"></p>
+\begin{equation*}
+12 \cdot 11 \cdot 10 = 1~320\text{,}
+\end{equation*}
+</li>
+<li id="li-140">
+<p id="p-819"></p>
+\begin{equation*}
+10 \cdot 9 \cdot 8 \cdot 7 = 5~040\text{,}
+\end{equation*}
+</li>
+<li id="li-141">
+<p id="p-820"></p>
+\begin{equation*}
+12 \cdot 11 \cdot 10 \cdot 9 = 11~880\text{,}
+\end{equation*}
+</li>
+<li id="li-142">
+<p id="p-821"></p>
+\begin{equation*}
+8 \cdot 7 \cdot 6 \cdot 5 \cdot 4 = 6~720\text{,}
+\end{equation*}
+</li>
+<li id="li-143">
+<p id="p-822"></p>
+\begin{equation*}
+10 \cdot 9 \cdot 8 \cdot 7 \cdot 6= 30~240\text{.}
+\end{equation*}
+</li>
+</ol>
+</li>
+<li id="li-144">
+<p id="p-823"><a knowl="./knowl/ex_90choose5.html" knowl-id="xref-ex_90choose5" alt="Exercise 2.6.1 " title="Exercise 2.6.1 ">Exercise 2.6.1</a> The two numbers are equal, as the following calculation shows</p>
+\begin{equation*}
+\frac{90!}{5! \cdot 85!} = \frac{90 \cdot 89 \cdot 88 \cdot 87 \cdot 86 \cdot 85!}{5! \cdot 85!} = \frac{90 \cdot 89 \cdot 88 \cdot 87 \cdot 86}{5!}\text{.}
+\end{equation*}
+</li>
+<li id="li-145"><p id="p-824"><a knowl="./knowl/ex_smallnchoosek.html" knowl-id="xref-ex_smallnchoosek" alt="Exercise 2.6.3 " title="Exercise 2.6.3 ">Exercise 2.6.3</a> The required binomial coefficients are computed and arranged into a triangle in <a knowl="./knowl/tab_pascal6.html" knowl-id="xref-tab_pascal6" alt="Table 6.2.3 " title="Table 6.2.3 ">Table 6.2.3</a> on <a knowl="./knowl/tab_pascal6.html" knowl-id="xref-tab_pascal6" alt="Table 6.2.3 " title="Table 6.2.3 ">page 6.2.3</a>. <figure class="figure-like" id="tab_pascal6"><table>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{0}{0} = 1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{1}{0} = 1\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{1}{1} = 1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{2}{0} = 1\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{2}{1} = 2\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{2}{2} = 1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{3}{0} = 1\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{3}{1} = 3\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{3}{2} = 3\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{3}{3} = 1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{4}{0} = 1\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{4}{1} = 4\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{4}{2} = 6\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{4}{3} = 4\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{4}{4} = 1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{5}{0} = 1\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{5}{1} = 5\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{5}{2} = 10\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{5}{3} = 10\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{5}{4} = 5\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{5}{5} = 1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines"> \(\binom{6}{0} = 1\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{6}{1} = 6\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{6}{2} = 15\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{6}{3} = 20\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{6}{4} = 15\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{6}{5} = 6\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(\binom{6}{6} = 1\)</td>
+</tr>
+<tr><td class="l m b0 r0 l0 t0 lines"></td></tr>
+</table>
+<figcaption><span class="type">Table</span><span class="codenumber">6.2.3</span>Small binomial coefficients.</figcaption></figure></p></li>
+<li id="li-146">
+<p id="p-825"><a knowl="./knowl/ex_nicenchoosek.html" knowl-id="xref-ex_nicenchoosek" alt="Exercise 2.6.6 " title="Exercise 2.6.6 ">Exercise 2.6.6</a> By the definition</p>
+\begin{align*}
+\binom{n}{0} \amp = \frac{n!}{0! \cdot (n-0)!} = \frac{n!}{0! \cdot n!} = \frac{1}{0!} = \frac{1}{1} = 1,\\
+\binom{n}{1} \amp = \frac{n!}{1! \cdot (n-1)!} = \frac{n \cdot (n-1)!}{1! \cdot (n-1)!} = \frac{n}{1!} = \frac{n}{1} = n,\\
+\binom{n}{2} \amp = \frac{n!}{2! \cdot (n-2)!} = \frac{n \cdot (n-1) \cdot (n-2)!}{2! \cdot (n-2)!} = \frac{n \cdot (n-1)}{2!} = \frac{n \cdot (n-1)}{2},\\
+\binom{n}{n-2} \amp = \frac{n!}{(n-2)! \cdot (n-(n-2))!} = \frac{n \cdot (n-1) \cdot (n-2)!}{(n-2)! \cdot 2!} = \frac{n \cdot (n-1)}{2!}\\
+\amp = \frac{n \cdot (n-1)}{2},\\
+\binom{n}{n-1} \amp = \frac{n!}{(n-1)! \cdot (n-(n-1))!} = \frac{n \cdot (n-1)!}{(n-1)! \cdot 1!} = \frac{n}{1!} = \frac{n}{1} = n,\\
+\binom{n}{n} \amp = \frac{n!}{n! \cdot (n-n)!} = \frac{n!}{n! \cdot 0!} = \frac{1}{0!} = \frac{1}{1} = 1\text{.}
+\end{align*}
+</li>
+<li id="li-147">
+<p id="p-826"><a knowl="./knowl/ex_sumsmallnchoosek.html" knowl-id="xref-ex_sumsmallnchoosek" alt="Exercise 2.6.8 " title="Exercise 2.6.8 ">Exercise 2.6.8</a> Using <a knowl="./knowl/tab_pascal6.html" knowl-id="xref-tab_pascal6" alt="Table 6.2.3 " title="Table 6.2.3 ">Table 6.2.3</a> from <a knowl="./knowl/ex_smallnchoosek.html" knowl-id="xref-ex_smallnchoosek" alt="Exercise 2.6.3 " title="Exercise 2.6.3 ">Exercise 2.6.3</a>, it is not hard to determine the required sums:</p>
+\begin{align*}
+\sum_{k=0}^0 \binom{0}{k} \amp = \binom{0}{0} = 1,\\
+\sum_{k=0}^1 \binom{1}{k} \amp = \binom{1}{0} + \binom{1}{1} = 1 + 1 = 2,\\
+\sum_{k=0}^2 \binom{2}{k} \amp = \binom{2}{0} + \binom{2}{1} + \binom{2}{2} = 1 + 2 + 1 = 4,\\
+\sum_{k=0}^3 \binom{3}{k} \amp = \binom{3}{0} + \binom{3}{1} + \binom{3}{2} + \binom{3}{3} = 1 + 3 + 3 + 1 = 8,\\
+\sum_{k=0}^4 \binom{4}{k} \amp = \binom{4}{0} + \binom{4}{1} + \binom{4}{2} + \binom{4}{3} + \binom{4}{4}\\
+\amp = 1 + 4 + 6 + 4 + 1 = 16,\\
+\sum_{k=0}^5 \binom{5}{k} \amp = \binom{5}{0} + \binom{5}{1} + \binom{5}{2} + \binom{5}{3} + \binom{5}{4} + \binom{5}{5}\\
+\amp = 1 + 5 + 10 + 10 + 5 + 1 = 32,\\
+\sum_{k=0}^6 \binom{6}{k} \amp = \binom{6}{0} + \binom{6}{1} + \binom{6}{2} + \binom{6}{3} + \binom{6}{4} + \binom{6}{5} + \binom{6}{6}\\
+\amp = 1 + 6 + 15 + 20 + 15 + 6 + 1 = 64\text{.}
+\end{align*}
+</li>
+<li id="li-148">
+<p id="p-827"><a knowl="./knowl/ex_nmidnchoose2.html" knowl-id="xref-ex_nmidnchoose2" alt="Exercise 2.6.10 " title="Exercise 2.6.10 ">Exercise 2.6.10</a> Now, \(n\) divides \(\binom{n}{2}\) if and only if the quotient \(\binom{n}{2} / n\) is an integer. Here</p>
+\begin{equation*}
+\frac{\binom{n}{2}}{n} = \frac{\frac{n\cdot (n-1)}{2}}{n} = \frac{n-1}{2}\text{,}
+\end{equation*}
+<p>and this is an integer number if and only if \(2 \nmid n\text{,}\) that is, if and only if \(n\) is odd.</p>
+</li>
+<li id="li-149">
+<p id="p-828"><a knowl="./knowl/ex_n_2binom.html" knowl-id="xref-ex_n_2binom" alt="Exercise 2.6.11 " title="Exercise 2.6.11 ">Exercise 2.6.11</a> Using the formula for \(\binom{n+1}{2}\) and \(\binom{n}{2}\) we have</p>
+\begin{align*}
+\binom{n+1}{2} + \binom{n}{2} \amp = \frac{(n+1) \cdot n}{2} + \frac{n \cdot (n-1)}{2} = \frac{n^2+n}{2} + \frac{n^2-n}{2}\\
+\amp = \frac{n^2 + n + n^2 -n }{2} = \frac{2n^2}{2} = n^2\text{.}
+\end{align*}
+</li>
+<li id="li-150"><p id="p-829"><a knowl="./knowl/ex_piratesgeq1.html" knowl-id="xref-ex_piratesgeq1" alt="Exercise 2.7.3 " title="Exercise 2.7.3 ">Exercise 2.7.3</a> Let the pirates be \(P_1, \dots , P_n\text{.}\) They put the gold pieces in a line. Then they want to divide it into \(n\) parts by putting sticks between gold pieces. The leftmost part will go to \(P_1\text{,}\) the next part from left goes to \(P_2\text{,}\) etc. The rightmost part will go to \(P_n\text{.}\) To this end, they use \(n-1\) sticks to divide the \(k\) gold pieces into \(n\) parts. What is left from the first stick is for \(P_1\text{,}\) what is between the first and second sticks is for \(P_2\text{,}\) etc., and everything right from the last stick is taken by \(P_n\text{.}\) They can put the sticks between gold pieces. They cannot put a stick before the first gold piece, because then \(P_1\) would not get any pieces. Similarly, they cannot put a stick after the last gold piece, because \(P_n\) needs to receive at least one gold piece. Finally, they cannot put two sticks between the same two gold pieces, because then one of the pirates would not get any gold piece. Thus, they need to put \(n-1\) sticks somewhere in the spaces between the gold pieces, but they cannot put two sticks between the same two gold pieces. That is, they need to find which \(n-1\) places they put sticks to. There are \(k-1\) places between \(k\) gold pieces, and they need to find \(n-1\text{,}\) where they put the \(n-1\) sticks. This can be done in \(\binom{k-1}{n-1}\)-many ways.</p></li>
+<li id="li-151"><p id="p-830"><a knowl="./knowl/ex_piratesgeq2.html" knowl-id="xref-ex_piratesgeq2" alt="Exercise 2.7.6 " title="Exercise 2.7.6 ">Exercise 2.7.6</a> Let every pirate take one gold piece right at the very beginning. Then there remains \(k-n\) gold pieces to further distribute. Moreover, now every pirate needs one more gold piece. Thus we reduced the problem to the one solved in <a knowl="./knowl/thm_piratesgeq1.html" knowl-id="xref-thm_piratesgeq1" alt="Theorem 2.7.2 " title="Theorem 2.7.2 ">Theorem 2.7.2</a>: \(n\) pirates want to distribute \(k-n\) gold pieces such that everyone gets at least one gold piece. By <a knowl="./knowl/thm_piratesgeq1.html" knowl-id="xref-thm_piratesgeq1" alt="Theorem 2.7.2 " title="Theorem 2.7.2 ">Theorem 2.7.2</a> this can be done in \(\binom{k-n-1}{n-1}\)-many ways.</p></li>
+<li id="li-152"><p id="p-831"><a knowl="./knowl/ex_piratesgeq012.html" knowl-id="xref-ex_piratesgeq012" alt="Exercise 2.7.9 " title="Exercise 2.7.9 ">Exercise 2.7.9</a> All 15 possibilities are written in <a knowl="./knowl/tab_piratesgeq012.html" knowl-id="xref-tab_piratesgeq012" alt="Table 6.2.4 " title="Table 6.2.4 ">Table 6.2.4</a> on <a knowl="./knowl/tab_piratesgeq012.html" knowl-id="xref-tab_piratesgeq012" alt="Table 6.2.4 " title="Table 6.2.4 ">page 6.2.4</a>. <figure class="figure-like" id="tab_piratesgeq012"><table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">Anne Bonney</td>
+<td class="l m b0 r0 l0 t0 lines">Black Bellamy</td>
+<td class="l m b0 r0 l0 t0 lines">Calico Jack</td>
+</tr>
+<tr>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">6</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">5</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table>
+<figcaption><span class="type">Table</span><span class="codenumber">6.2.4</span>Possibilities to distribute seven gold pieces among three pirates such that Black Bellamy gets at least one gold piece and Calico Jack gets at least two gold pieces.</figcaption></figure></p></li>
+<li id="li-153">
+<p id="p-832"><a knowl="./knowl/ex_pirates1.html" knowl-id="xref-ex_pirates1" alt="Exercise 2.7.11 " title="Exercise 2.7.11 ">Exercise 2.7.11</a> By applying <a knowl="./knowl/thm_pirates.html" knowl-id="xref-thm_pirates" alt="Theorem 2.7.10 " title="Theorem 2.7.10 ">Theorem 2.7.10</a>, we obtain </p>
+<ol id="ol-22" style="list-style-type: lower-alpha;">
+<li id="li-154">
+<p id="p-833"></p>
+\begin{equation*}
+\binom{9 - 1}{3 - 1} = \binom{8}{2} = 28\text{,}
+\end{equation*}
+</li>
+<li id="li-155">
+<p id="p-834"></p>
+\begin{equation*}
+\binom{8+3 - 1}{3 - 1} = \binom{10}{2} = 45\text{,}
+\end{equation*}
+</li>
+<li id="li-156">
+<p id="p-835"></p>
+\begin{equation*}
+\binom{7+3 - 1}{3 - 1} = \binom{9}{2} = 36\text{,}
+\end{equation*}
+</li>
+<li id="li-157">
+<p id="p-836"></p>
+\begin{equation*}
+\binom{11-3 - 1}{3 - 1} = \binom{7}{2} = 21\text{,}
+\end{equation*}
+</li>
+<li id="li-158">
+<p id="p-837"></p>
+\begin{equation*}
+\binom{9 - 1}{4 - 1} = \binom{8}{3} = 56\text{,}
+\end{equation*}
+</li>
+<li id="li-159">
+<p id="p-838"></p>
+\begin{equation*}
+\binom{7+4 - 1}{4 - 1} = \binom{10}{3} = 120\text{,}
+\end{equation*}
+</li>
+<li id="li-160">
+<p id="p-839"></p>
+\begin{equation*}
+\binom{12-4 - 1}{4 - 1} = \binom{7}{3} = 35\text{,}
+\end{equation*}
+</li>
+<li id="li-161">
+<p id="p-840"></p>
+\begin{equation*}
+\binom{10 -1 -2 -3 +4 - 1}{4 - 1} = \binom{7}{3} = 35\text{,}
+\end{equation*}
+</li>
+<li id="li-162">
+<p id="p-841"></p>
+\begin{equation*}
+\binom{15 -1 -2 -3 -4+4 - 1}{4 - 1} = \binom{8}{3} = 56\text{,}
+\end{equation*}
+</li>
+<li id="li-163">
+<p id="p-842"></p>
+\begin{equation*}
+\binom{15 -1 -1 -3 -3+5 - 1}{5 - 1} = \binom{11}{4} = 330\text{.}
+\end{equation*}
+</li>
+</ol>
+</li>
+<li id="li-164">
+<p id="p-843"><a knowl="./knowl/ex_equations1.html" knowl-id="xref-ex_equations1" alt="Exercise 2.7.14 " title="Exercise 2.7.14 ">Exercise 2.7.14</a> By applying <a knowl="./knowl/cor_pirates.html" knowl-id="xref-cor_pirates" alt="Corollary 2.7.13 " title="Corollary 2.7.13 ">Corollary 2.7.13</a>, we obtain that the number of solutions is </p>
+<ol id="ol-23" style="list-style-type: lower-alpha;">
+<li id="li-165">
+<p id="p-844"></p>
+\begin{equation*}
+\binom{9 - 1}{3 - 1} = \binom{8}{2} = 28\text{,}
+\end{equation*}
+</li>
+<li id="li-166">
+<p id="p-845"></p>
+\begin{equation*}
+\binom{8+3 - 1}{3 - 1} = \binom{10}{2} = 45\text{,}
+\end{equation*}
+</li>
+<li id="li-167">
+<p id="p-846"></p>
+\begin{equation*}
+\binom{7+3 - 1}{3 - 1} = \binom{9}{2} = 36\text{,}
+\end{equation*}
+</li>
+<li id="li-168">
+<p id="p-847"></p>
+\begin{equation*}
+\binom{11-3 - 1}{3 - 1} = \binom{7}{2} = 21\text{,}
+\end{equation*}
+</li>
+<li id="li-169">
+<p id="p-848"></p>
+\begin{equation*}
+\binom{9 - 1}{4 - 1} = \binom{8}{3} = 56\text{,}
+\end{equation*}
+</li>
+<li id="li-170">
+<p id="p-849"></p>
+\begin{equation*}
+\binom{7+4 - 1}{4 - 1} = \binom{10}{3} = 120\text{,}
+\end{equation*}
+</li>
+<li id="li-171">
+<p id="p-850"></p>
+\begin{equation*}
+\binom{12-4 - 1}{4 - 1} = \binom{7}{3} = 35\text{,}
+\end{equation*}
+</li>
+<li id="li-172">
+<p id="p-851"></p>
+\begin{equation*}
+\binom{10 -1 -2 -3 +4 - 1}{4 - 1} = \binom{7}{3} = 35\text{,}
+\end{equation*}
+</li>
+<li id="li-173">
+<p id="p-852"></p>
+\begin{equation*}
+\binom{15 -1 -2 -3 -4+4 - 1}{4 - 1} = \binom{8}{3} = 56\text{,}
+\end{equation*}
+</li>
+<li id="li-174">
+<p id="p-853"></p>
+\begin{equation*}
+\binom{15 -1 -1 -3 -3+5 - 1}{5 - 1} = \binom{11}{4} = 330\text{.}
+\end{equation*}
+</li>
+</ol>
+</li>
+<li id="li-175"><p id="p-854"><a knowl="./knowl/ex_TuroRudi.html" knowl-id="xref-ex_TuroRudi" alt="Exercise 2.7.15 " title="Exercise 2.7.15 ">Exercise 2.7.15</a> It is the same problem as the gold distribution: imagine that everybody of the three siblings gets the brand they like. Then the problem is equivalent to distributing 10 desserts among the three children such that everyone gets at least one. There are \(\binom{10-1}{3-1} = \binom{9}{2} = 45\)-many ways to do this by <a knowl="./knowl/thm_pirates.html" knowl-id="xref-thm_pirates" alt="Theorem 2.7.10 " title="Theorem 2.7.10 ">Theorem 2.7.10</a>.</p></li>
+<li id="li-176">
+<p id="p-855"><a knowl="./knowl/ex_ballsinurn1.html" knowl-id="xref-ex_ballsinurn1" alt="Exercise 2.8.3 " title="Exercise 2.8.3 ">Exercise 2.8.3</a> Applying <a knowl="./knowl/tab_nchoosek.html" knowl-id="xref-tab_nchoosek" alt="Table 2.8.2 " title="Table 2.8.2 ">Table 2.8.2</a> we obtain that the number of choices is </p>
+<ol id="ol-24" style="list-style-type: lower-alpha;">
+<li id="li-177">
+<p id="p-856"></p>
+\begin{equation*}
+\binom{9 + 3 -1}{3} = \binom{11}{3} = 165\text{,}
+\end{equation*}
+</li>
+<li id="li-178">
+<p id="p-857"></p>
+\begin{equation*}
+\binom{9 + 3 -1}{9} = \binom{11}{9} = 55\text{,}
+\end{equation*}
+</li>
+<li id="li-179">
+<p id="p-858"></p>
+\begin{equation*}
+\frac{10!}{5!} = 30~240\text{,}
+\end{equation*}
+</li>
+<li id="li-180">
+<p id="p-859"></p>
+\begin{equation*}
+0\text{,}
+\end{equation*}
+</li>
+<li id="li-181">
+<p id="p-860"></p>
+\begin{equation*}
+\binom{45}{6} = 8~145~060\text{,}
+\end{equation*}
+</li>
+<li id="li-182">
+<p id="p-861"></p>
+\begin{equation*}
+0\text{,}
+\end{equation*}
+</li>
+<li id="li-183">
+<p id="p-862"></p>
+\begin{equation*}
+100^{10} = 10^{20}\text{,}
+\end{equation*}
+</li>
+<li id="li-184">
+<p id="p-863"></p>
+\begin{equation*}
+10^{100}\text{.}
+\end{equation*}
+</li>
+</ol>
+</li>
+</ol></section></div></main>
+</div>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:56+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Sums and products</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_sets.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="cha_intro.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="Euc.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_sets.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="cha_intro.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="Euc.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link active"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts" class="active">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_sumsproducts"><h2 class="heading hide-type" alt="Section 1.2 Sums and products">
+<span class="type">Section</span><span class="codenumber">1.2</span><span class="title">Sums and products</span>
+</h2>
+<a href="sec_sumsproducts.html" class="permalink">¶</a><p id="p-54">In this section we introduce summation notation and product notation which we will use later on. The special symbol \(\sum\) is used to denote sums. Let us consider an example</p>
+\begin{equation*}
+\sum_{k=1}^5 k=1+2+3+4+5\text{.}
+\end{equation*}
+<p id="p-55">In a more general form</p>
+\begin{equation*}
+\sum_{k=m}^n k=m+(m+1)+\ldots+(n-1)+n\text{.}
+\end{equation*}
+<p id="p-56">Here \(m\) is the lower bound of summation and \(n\) is the upper bound of summation. There are some other possibilities to express the above sum, e.g.</p>
+\begin{align*}
+\amp \sum_{m\leq k\leq n}k,\\
+\amp \sum_{k\in S}k, \mbox{ where } S=\halmaz{m,m+1,\ldots,n}\text{.}
+\end{align*}
+<p id="p-57">It is important to note that the variable used in the summation is arbitrary. That is, the values of the following summations are equal:</p>
+\begin{equation*}
+\sum_{k=1}^3 k^2=1^2+2^2+3^2=14
+\end{equation*}
+<p>and</p>
+\begin{equation*}
+\sum_{m=1}^3 m^2=1^2+2^2+3^2=14\text{.}
+\end{equation*}
+<p id="p-58">Now we write out explicitly some other summations:</p>
+<p id="p-59">(a)</p>
+\begin{equation*}
+\sum_{i=2}^6 (2-i)=(2-2)+(3-2)+(4-2)+(5-2)+(6-2)=10\text{,}
+\end{equation*}
+<p id="p-60">(b)</p>
+\begin{equation*}
+\sum_{j=3}^5 2^{j-2}=2^{3-2}+2^{4-2}+2^{5-2}=14\text{,}
+\end{equation*}
+<p id="p-61">(c)</p>
+\begin{equation*}
+\sum_{1\leq i,j\leq 2} ij= (1\cdot 1)+(1\cdot 2)+(2\cdot 1)+(2\cdot 2)=9\text{.}
+\end{equation*}
+<p id="p-62">Now we deal with products of mathematical expressions. The symbol used in this case is \(\prod\text{.}\) Product notation is very similar to summation notation so it is straightforward to learn to use. The first example in case of summation notation was</p>
+\begin{equation*}
+\sum_{k=1}^5 k=1+2+3+4+5\text{.}
+\end{equation*}
+<p id="p-63">If we change the \(\sum\) symbol to \(\prod\text{,}\) then we obtain</p>
+\begin{equation*}
+\prod_{k=1}^5 k=1\cdot 2\cdot 3\cdot 4\cdot 5\text{.}
+\end{equation*}
+<p id="p-64">Let us consider the product of integers between \(m\) and \(n\text{,}\) where \(m\lt n\text{.}\) We can write it in product notation in different forms:</p>
+\begin{align*}
+\amp \prod_{k=m}^n k,\\
+\amp \prod_{m\leq k\leq n}k,\\
+\amp \prod_{k\in S}k, \mbox{ where } S=\halmaz{m,m+1,\ldots,n}\text{.}
+\end{align*}
+<p id="p-65">It may happen that the sum or product should be evaluated on the empty set. By definition, in such situations the sum is always 0 and the product is always 1, e.g.</p>
+\begin{align*}
+\sum_{k \in \emptyset} k \amp = 0,\\
+\prod_{k \in \emptyset} k \amp = 1\text{.}
+\end{align*}
+<p id="p-66">If \(S\) and \(T\) be two disjoint sets, then</p>
+\begin{gather*}
+\sum_{k \in S} k + \sum_{k \in T} k = \sum_{k \in S \cup T} k,\\
+\prod_{k \in S} k \cdot \prod_{k \in T} k = \prod_{k \in S \cup T} k\text{.}
+\end{gather*}
+<p id="p-67">Note, that this is true even if \(S\) or \(T\) is the empty set. (This is the main reason we define the empty sum to be 0 and the empty product to be 1.)</p>
+<p id="p-68">There is a special notation for the product of positive integers up to \(n\text{,}\) that is, when we multiply the elements of</p>
+\begin{equation*}
+S_n = \halmazvonal{k}{k \text{ is a positive integer } , k\leq n} = \halmaz{1, 2, \dots , n}\text{.}
+\end{equation*}
+<p id="p-69">The product of the elements of \(S_n\) is called <em class="emphasis">\(n\) factorial</em> and denoted by \(n!\text{,}\) that is,</p>
+\begin{equation*}
+n! = \prod_{k \in S_n} k = \prod_{k=1}^n k = 1 \cdot 2 \cdot \dots \cdot (n-1) \cdot n\text{.}
+\end{equation*}
+<p id="p-70">We even define \(0!\text{,}\) that is, the products of elements of \(S_0\text{:}\)</p>
+\begin{equation*}
+0! = \prod_{k \in S_0} k = \prod_{k \in \emptyset} k = 1\text{.}
+\end{equation*}
+<p id="p-71">Factorials are always computed before any other operation. For example</p>
+\begin{align*}
+2+3! \amp = 2 + 1\cdot 2 \cdot 3 = 2 + 6 = 8,\\
+(2+3)! \amp = 5! = 1\cdot 2 \cdot 3 \cdot 4 \cdot 5 = 120\text{.}
+\end{align*}
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-intro-ex-9" id="intro-ex-9"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.2.1</span>
+</h6></a></article><div id="hk-intro-ex-9" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-72">Expand the following sums.</p>
+<p id="p-73">(a) \(\sum_{i=4}^7 i\text{,}\)</p>
+<p id="p-74">(b) \(\sum_{i=1}^5 (i^2-i)\text{,}\)</p>
+<p id="p-75">(c) \(\sum_{i=1}^4 10^i\text{,}\)</p>
+<p id="p-76">(d) \(\sum_{2\leq i\leq 5} \frac{1}{2^i}\text{,}\)</p>
+<p id="p-77">(e) \(\sum_{i\in S} (-1)^i\text{,}\) where \(S=\halmaz{2,3,5,8}\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-intro-ex-10" id="intro-ex-10"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.2.2</span>
+</h6></a></article><div id="hk-intro-ex-10" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-78">Write the following expressions in summation notation.</p>
+<p id="p-79">(a) \(2+4+6+8+10\text{,}\)</p>
+<p id="p-80">(b) \(1+4+7+10\text{,}\)</p>
+<p id="p-81">(c) \(\frac{1}{4}+\frac{1}{2}+1+2+4\text{,}\)</p>
+<p id="p-82">(d) \(\frac{1}{4}-\frac{1}{2}+1-2+4\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-intro-ex-11" id="intro-ex-11"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.2.3</span>
+</h6></a></article><div id="hk-intro-ex-11" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-83">Expand the following products.</p>
+<p id="p-84">(a) \(\prod_{i=-4}^{-1} i\text{,}\)</p>
+<p id="p-85">(b) \(\prod_{i=1}^4 (i^2)\text{,}\)</p>
+<p id="p-86">(c) \(\prod_{i=1}^3 2^i\text{,}\)</p>
+<p id="p-87">(d) \(\prod_{-2\leq i\leq 3} \frac{1}{2^i}\text{,}\)</p>
+<p id="p-88">(e) \(\prod_{i\in S} (-1)^i\text{,}\) where \(S=\halmaz{2,4,6,7}\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-intro-ex-12" id="intro-ex-12"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.2.4</span>
+</h6></a></article><div id="hk-intro-ex-12" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-89">Write the following expressions in product notation.</p>
+<p id="p-90">(a) \(1\cdot 3\cdot 5\cdot 7\text{,}\)</p>
+<p id="p-91">(b) \((-1)\cdot 2\cdot 5\cdot 8\text{,}\)</p>
+<p id="p-92">(c) \(\frac{1}{9}\cdot\frac{1}{3}\cdot 1\cdot 3\cdot 9\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_factorial1" id="ex_factorial1"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.2.5</span>
+</h6></a></article><div id="hk-ex_factorial1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-93">Compute the values of \(n!\) for every \(n \in \halmaz{0, 1, 2, 3, 4, 5, 6, 7, 8}\text{.}\)</p></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_factorial2" id="ex_factorial2"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.2.6</span>
+</h6></a></article><div id="hk-ex_factorial2" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-94">Compute the values of</p>
+\begin{align*}
+\amp  5+3!\\
+\amp  (5+3)!\\
+\amp  4-2\cdot 3!\\
+\amp  (4-2)\cdot 3!\\
+\amp  4 - (2 \cdot 3)!\\
+\amp  3 \cdot 2!\\
+\amp  (3 \cdot 2)!\\
+\amp  4 \cdot 3!\\
+\amp  4! \cdot 5\text{.}
+\end{align*}
+</article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_factorial3" id="ex_factorial3"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">1.2.7</span>
+</h6></a></article><div id="hk-ex_factorial3" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-95">Prove that \(n! = n \cdot (n-1)!\) for every positive integer \(n\text{.}\) Note, that it is even true for \(n=1\text{,}\) which is one of the reasons we define \(0!\) to be equal to 1.</p></article></div></section></div></main>
+</div>
+</body>
+</html>

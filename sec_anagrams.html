@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:56+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Anagrams</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<script type="text/javascript" src="https://sagecell.sagemath.org/static/jquery.min.js"></script><script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [['\\(','\\)']],
+    },
+    TeX: {
+        extensions: ["extpfeil.js", "autobold.js", "https://aimath.org/mathbook/mathjaxknowl.js", ],
+        // scrolling to fragment identifiers is controlled by other Javascript
+        positionToHash: false,
+        equationNumbers: { autoNumber: "none", useLabelIds: true, },
+        TagSide: "right",
+        TagIndent: ".8em",
+    },
+    // HTML-CSS output Jax to be dropped for MathJax 3.0
+    "HTML-CSS": {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+    CommonHTML: {
+        scale: 88,
+        mtextFontInherit: true,
+    },
+});
+</script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
+<link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
+#1}}{\thechapter~
+#1}}
+\renewcommand{\sectionmark}[1]{}
+\newcommand{\abs}[1]{\left|#1\right|}
+\renewcommand{\theenumi}{5.\arabic{enumi}}
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\BM}[1]{\text{\boldmath$#1$}}
+\newcommand{\halmaz}[1]{\left\{\,#1\,\right\}}
+\newcommand{\halmazvonal}[2]{\left\{\,#1\mid #2\,\right\}}
+\newcommand{\halmazpont}[2]{\left\{\,#1:#2\,\right\}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\len}{\norm}
+\newcommand{\var}[2][]{v_{#1}\left(#2\right)}
+\newcommand{\vari}[2]{v_{#1}\left(#2\right)}
+\newcommand{\size}[2][]{s_{#1}\left(#2\right)}
+\newcommand{\dep}[2][]{d_{#1}\left(#2\right)}
+\newcommand{\sizestar}[2][]{s_{#1}^*\left(#2\right)}
+\newcommand{\depstar}[2][]{d_{#1}^*\left(#2\right)}
+\renewcommand{\headrulewidth}{0pt}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\)</div>
+<header id="masthead" class="smallbuttons"><div class="banner"><div class="container">
+<a id="logo-link" href=""></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Lecture Notes for College Discrete Mathematics</span></a></h1>
+<p class="byline">Gábor Horváth, Szabolcs Tengely</p>
+</div>
+</div></div>
+<nav id="primary-navbar" class="navbar" style=""><div class="container">
+<div class="navbar-top-buttons">
+<button class="sidebar-left-toggle-button button active">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="sec_permutations.html" title="Previous" alt="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="cha_counting.html" title="Up" alt="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="sec_orderedsubsets.html" title="Next" alt="Next">Next</a></span></div>
+<button class="sidebar-right-toggle-button button active">Annotations</button>
+</div>
+<div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="sec_permutations.html" title="Previous" alt="Previous">Prev</a><a class="up-button button toolbar-item" href="cha_counting.html" title="Up" alt="Up">Up</a><a class="next-button button toolbar-item" href="sec_orderedsubsets.html" title="Next" alt="Next">Next</a>
+</div>
+</div></nav></header><div class="page">
+<aside id="sidebar-left" class="sidebar"><div class="sidebar-content">
+<nav id="toc"><h2 class="link"><a href="frontmatter-1.html" data-scroll="frontmatter-1"><span class="title">Front Matter</span></a></h2>
+<h2 class="link"><a href="cha_intro.html" data-scroll="cha_intro"><span class="codenumber">1</span><span class="title">Introduction</span></a></h2>
+<ul>
+<li><a href="sec_sets.html" data-scroll="sec_sets">Sets</a></li>
+<li><a href="sec_sumsproducts.html" data-scroll="sec_sumsproducts">Sums and products</a></li>
+<li><a href="Euc.html" data-scroll="Euc">The Euclidean algorithm</a></li>
+<li><a href="sec_numeralsystem.html" data-scroll="sec_numeralsystem">Numeral systems</a></li>
+</ul>
+<h2 class="link active"><a href="cha_counting.html" data-scroll="cha_counting"><span class="codenumber">2</span><span class="title">Counting</span></a></h2>
+<ul>
+<li><a href="sec_sequences.html" data-scroll="sec_sequences">Sequences</a></li>
+<li><a href="sec_subsets.html" data-scroll="sec_subsets">Number of subsets</a></li>
+<li><a href="sec_permutations.html" data-scroll="sec_permutations">Permutations</a></li>
+<li><a href="sec_anagrams.html" data-scroll="sec_anagrams" class="active">Anagrams</a></li>
+<li><a href="sec_orderedsubsets.html" data-scroll="sec_orderedsubsets">The number of ordered subsets of a given size</a></li>
+<li><a href="sec_nchoosek.html" data-scroll="sec_nchoosek">The number of subsets of a given size</a></li>
+<li><a href="sec_money.html" data-scroll="sec_money">Distributing money</a></li>
+<li><a href="sec_ballsurns.html" data-scroll="sec_ballsurns">Balls from urns</a></li>
+</ul>
+<h2 class="link"><a href="cha_proof.html" data-scroll="cha_proof"><span class="codenumber">3</span><span class="title">Proof techniques</span></a></h2>
+<ul>
+<li><a href="section-13.html" data-scroll="section-13">Proofs by induction</a></li>
+<li><a href="section-14.html" data-scroll="section-14">Proofs by contradiction</a></li>
+<li><a href="section-15.html" data-scroll="section-15">Constructive proofs</a></li>
+<li><a href="section-16.html" data-scroll="section-16">Pigeonhole principle</a></li>
+<li><a href="section-17.html" data-scroll="section-17">A card trick</a></li>
+</ul>
+<h2 class="link"><a href="cha_Pascal.html" data-scroll="cha_Pascal"><span class="codenumber">4</span><span class="title">Pascal's triangle</span></a></h2>
+<ul>
+<li><a href="section-18.html" data-scroll="section-18">Binomial theorem</a></li>
+<li><a href="section-19.html" data-scroll="section-19">Identities</a></li>
+</ul>
+<h2 class="link"><a href="Recurrence_sequences.html" data-scroll="Recurrence_sequences"><span class="codenumber">5</span><span class="title">Recurrence sequences</span></a></h2>
+<ul>
+<li><a href="section-20.html" data-scroll="section-20">Examples of recurrence relations</a></li>
+<li><a href="section-21.html" data-scroll="section-21">Linear recurrence relations of order \(k\)</a></li>
+</ul>
+<h2 class="link"><a href="cha_solutions.html" data-scroll="cha_solutions"><span class="codenumber">6</span><span class="title">Solutions</span></a></h2>
+<ul>
+<li><a href="section-22.html" data-scroll="section-22">Introduction</a></li>
+<li><a href="section-23.html" data-scroll="section-23">Counting</a></li>
+<li><a href="section-24.html" data-scroll="section-24">Proof Techniques</a></li>
+<li><a href="section-25.html" data-scroll="section-25">Pascal's triangle</a></li>
+<li><a href="section-26.html" data-scroll="section-26">Recurrence sequences</a></li>
+</ul>
+<h2 class="link"><a href="backmatter-1.html" data-scroll="backmatter-1"><span class="title">Back Matter</span></a></h2>
+<ul><li><a href="references-1.html" data-scroll="references-1">Bibliography</a></li></ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://mathbook.pugetsound.edu">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" border="0" alt="Powered by MathJax"></a></nav></div>
+</div></aside><main class="main"><div id="content" class="mathbook-content"><section class="section" id="sec_anagrams"><h2 class="heading hide-type" alt="Section 2.4 Anagrams">
+<span class="type">Section</span><span class="codenumber">2.4</span><span class="title">Anagrams</span>
+</h2>
+<a href="sec_anagrams.html" class="permalink">¶</a><p id="p-233">An anagram of a word is another word (or sometimes many words) which is built up from the letters of the original, using each letter exactly once. For example an anagram of ‘retinas’ can be ‘nastier’, ‘retains’, or ‘stainer’. Even ‘sainter’ is a meaningful anagram (means trustworthy). One can even form anagrams using multiple words, like ‘tin ears’ or ‘in tears’.</p>
+<p id="p-234">We are interested in the number of anagrams a word can have. Of course, the number of all meaningful anagrams would be very hard to find, because some expressions can be meaningful to some, and not to others. For example, Oxford English Dictionary only contains the following anagrams of ‘east’: ‘a set’, ‘east’, ‘eats’, ‘sate’ (i.e. satisfy), ‘seat’, ‘teas’. Nevertheless, there is meaning given to all possible anagrams of ‘east’ in Ross Eckler's <em class="emphasis">Making the Alphabet Dance</em>.<span class="footnote"><a knowl="" class="id-ref" refid="hk-fn-2" id="fn-2"><sup> 1 </sup></a></span><span id="hk-fn-2" class="hidden-content tex2jax_ignore"><span class="footnote">Ross Eckler, <em class="emphasis">Making the Alphabet Dance</em>, St Martins Pr (July 1997)</span></span></p>
+<p id="p-235">In any case, how many possible anagrams are there for the word ‘east’? Let us build them up: for the first letter we have 4 choices, then we have only 3 choices for the second letter, we are left only with two choices for the third letter, and the not chosen letter will be the forth. That is, altogether there are \(4 \cdot 3 \cdot 2 \cdot 1 = 4! = 24\)-many anagrams. This is exactly the number of permutations of the four letter ‘a’, ‘e’, ‘s’ and ‘t’.</p>
+<p id="p-236">(Here we did not count the spaces and punctuations. It is possible that by clever punctuations one can make more of these. For example ‘a set’ and ‘as ET’ are both anagrams with the same order of letters, but with different meaning.)</p>
+<p id="p-237">To make matters simple, from now on we are only interested in the not necessarily meaningful anagrams, without punctuations. Thus, ‘east’ has 24 anagrams.</p>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_retinas" id="ex_retinas"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.4.1</span>
+</h6></a></article><div id="hk-ex_retinas" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-238">How many anagrams does ‘retinas’ have?</p></article></div>
+<p id="p-239">Now, let us count the number of anagrams of ‘eye’. There are only three of them: ‘eye’, ‘eey’, ‘yee’. Unfortunately, exactly the same argument as before does not work in this case. The complications arise because of the two e's: that is, those two letters are the same. We could easily solve the problem if the two e's would be different. Thus let us make them look different. Let us colour one of the e's by blue, the other e by red, and consider all <em class="emphasis">coloured anagrams</em>. Now, every letter is different, and the former argument works: there are \(3\cdot 2 \cdot 1 = 6\) coloured anagrams. Nevertheless, we are interested in the number of anagrams, no matter their colour. Therefore we group together those anagrams, which represent the same word, only they are coloured differently (see <a knowl="./knowl/fig_eye.html" knowl-id="xref-fig_eye" alt="Figure 2.4.2 " title="Figure 2.4.2 ">Figure 2.4.2</a>).</p>
+<figure class="figure-like" id="fig_eye"><img src="images/fig22.png" width="50%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">2.4.2</span>Coloured anagrams of ‘eye’</figcaption></figure><p id="p-240">Now, we are interested in the number of groups. For that, we need to know the number of anagrams in one group. Take for example the group corresponding to the anagram ‘eye’ (upper right part). There are two different colourings depending on the e's: we can colour the first ‘e’ by two colours, and the second ‘e’ by one colour, therefore there are \(2 \cdot 1 = 2\) coloured ‘eye’s in that group. Similarly, every group contain exactly two coloured anagrams. Thus the number of groups (and the number of uncoloured anagrams) is \(\frac62 = 3\text{.}\)</p>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_puppy" id="ex_puppy"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.4.3</span>
+</h6></a></article><div id="hk-ex_puppy" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-241">How many anagrams does the word ‘puppy’ have? Try to use the argument presented above.</p></article></div>
+<p id="p-242">This argument can now be generalized when more letters can be the same:</p>
+<article class="theorem-like" id="thm_permrepetition"><h6 class="heading">
+<span class="type">Theorem</span><span class="codenumber">2.4.4</span>
+</h6>
+<p id="p-243">Let us assume that a word consists of \(k\) different letters, such that there are \(n_1\) of the first letter, \(n_2\) of the second letter, etc. Let \(n = n_1 + n_2 + \dots + n_k\) be the number of letters altogether in this word. Then the number of anagrams this word has is exactly</p>
+\begin{equation*}
+\frac{n!}{n_1! \cdot n_2! \cdot \dots \cdot n_k!}\text{.}
+\end{equation*}
+</article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-9" id="proof-9"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-9" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-244">Let us color all the letters with different colours, and let us count first the number of coloured anagrams. This is the number of permutations of \(n\) different letters, that is, \(n!\) by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>.</p>
+<p id="p-245">Now, group together those anagrams which represent the same word, and differ only in their colourings. The number of uncoloured anagrams is the same as the number of groups. To compute this number, we count the number of coloured words in each group.</p>
+<p id="p-246">Take an arbitrary group representing an anagram. The words listed in this group differ only by the colourings. The first letter appears \(n_1\)-many times, and these letters have \(n_1!\)-many different colourings by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>. Similarly, the second letter appears \(n_2\)-many times, and these letters have \(n_2!\)-many different colourings by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>, etc. Finally, the \(k\)th letter appears \(n_k\)-many times, and these letters have \(n_k!\)-many different colourings by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>. Thus, the number of words in a group is \(n_1! \cdot n_2! \cdot \dots \cdot n_k!\text{.}\) Therefore the number of groups, and hence the number of (uncoloured) anagrams is</p>
+\begin{equation*}
+\frac{n!}{n_1! \cdot n_2! \cdot \dots \cdot n_k!}\text{.}
+\end{equation*}
+</article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_anagrams1" id="ex_anagrams1"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.4.5</span>
+</h6></a></article><div id="hk-ex_anagrams1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-247">How many anagrams does the following expressions have? </p>
+<ol id="ol-4" style="list-style-type: decimal;">
+<li id="li-14"><p id="p-248">‘college’,</p></li>
+<li id="li-15"><p id="p-249">‘discrete’,</p></li>
+<li id="li-16"><p id="p-250">‘mathematics’,</p></li>
+<li id="li-17"><p id="p-251">‘discrete mathematics’,</p></li>
+<li id="li-18"><p id="p-252">‘college discrete mathematics’.</p></li>
+</ol></article></div>
+<article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_anagrams2" id="ex_anagrams2"><h6 class="heading">
+<span class="type">Exercise</span><span class="codenumber">2.4.6</span>
+</h6></a></article><div id="hk-ex_anagrams2" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-253">Alice, Beth and Carrie are triplets. For their birthdays, they receive 12 bouquets of flowers, all of them are from different flowers. They decide that Alice should choose 5 bouquets, Beth should choose 4 bouquets, and Carrie takes the remaining 3 bouquets. How many ways can they distribute these 12 bouquets?</p></article></div></section></div></main>
+</div>
+</body>
+</html>
