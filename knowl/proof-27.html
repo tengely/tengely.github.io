@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:01+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
+<p>Note first, that the Binomial theorem holds for \(n=0\) and \(n=1\text{,}\) as well: \((x+y)^0 = 1 = \binom{0}{0} x^0 y^0\text{,}\) \((x+y)^1 = x + y = \binom{1}{0} x^1 y^0 + \binom{1}{1} x^0 y^1\text{.}\) Now, we can prove the theorem by induction on \(n\text{.}\) Assume that the statement holds for \(n-1\text{,}\) that is,</p>
+\begin{equation*}
+(x+y)^{n-1} = \sum_{k=0}^{n-1} \binom{n-1}{k} x^{n-1-k}y^k\text{.}
+\end{equation*}
+<p>This is the induction hypothesis. Now, compute \((x+y)^n\) using the same method as before, and use the induction hypothesis for expanding \((x+y)^{n-1}\text{:}\)</p>
+\begin{align*}
+(x+y)^n \amp = (x+y)^{n-1} \cdot (x+y) = \left( \sum_{k=0}^{n-1} \binom{n-1}{k} x^{n-1-k}y^k \right) \cdot \left( x + y \right)\\
+\amp = \sum_{k=0}^{n-1} \binom{n-1}{k} x^{n-1-k}y^k \cdot x + \sum_{k=0}^{n-1} \binom{n-1}{k} x^{n-1-k}y^k \cdot y\\
+\amp = \sum_{k=0}^{n-1} \binom{n-1}{k} x^{n-k}y^k + \sum_{k=0}^{n-1} \binom{n-1}{k} x^{n-1-k}y^{k+1}\\
+\amp = x^n + \sum_{k=1}^{n-1} \binom{n-1}{k} x^{n-k}y^k + \sum_{k=0}^{n-2} \binom{n-1}{k} x^{n-1-k}y^{k+1} + y^n\\
+\amp = x^n + \sum_{k=1}^{n-1} \binom{n-1}{k} x^{n-k}y^k + \sum_{k=1}^{n-1} \binom{n-1}{k-1} x^{n-k}y^k + y^n\\
+\amp = x^n + \sum_{k=1}^{n-1} \left( \binom{n-1}{k} + \binom{n-1}{k-1}\right) x^{n-k}y^k + y^n\\
+\amp = x^n + \sum_{k=1}^{n-1} \binom{n}{k} x^{n-k}y^k + y^n = \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k\text{.}
+\end{align*}
+<p>Here, we have separated \(x^n\) and \(y^n\) from the sums in <span>&lt;&lt;Unresolved xref, reference "eq_x_nfront"; check spelling or use "provisional" attribute&gt;&gt;</span><a href="" class="xref" alt="" title=""> </a>, then “re-indexed” the second sum in <span>&lt;&lt;Unresolved xref, reference "eq_binomreindex"; check spelling or use "provisional" attribute&gt;&gt;</span><a href="" class="xref" alt="" title=""> </a> to find the coefficient of the common terms \(x^{n-k}y^k\) (for \(k = 1, 2, \dots , n-1\)) of the two sums. Finally, in <span>&lt;&lt;Unresolved xref, reference "eq_binomsum"; check spelling or use "provisional" attribute&gt;&gt;</span><a href="" class="xref" alt="" title=""> </a> we used the generating rule of Pascal's triangle (<a knowl="./knowl/prop_binomsum.html" knowl-id="xref-prop_binomsum" alt="Proposition 4.0.3 " title="Proposition 4.0.3 ">Proposition 4.0.3</a>).</p></article><span class="incontext"><a href="section-18.html#proof-27">in-context</a></span>
+</body>
+</html>

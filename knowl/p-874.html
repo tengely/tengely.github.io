@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:05+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p><a knowl="./knowl/induction-8.html" knowl-id="xref-induction-8" alt="Exercise 3.1.14 " title="Exercise 3.1.14 ">Exercise 3.1.14</a> We prove the statement by induction. If \(n=1\text{,}\) then the 1-digit integer \(a_1=2\) is divisible by 2. Therefore the statement is true for \(n=1\text{.}\) It is not difficult to deal with the case \(n=2\text{.}\) There are only four possible integers</p>
+\begin{equation*}
+a_1a_2\in\halmaz{11,12,21,22}\text{.}
+\end{equation*}
+<p>It is easy to see that \(2^2\) divides 12. Assume that the statement is true for some \(1\leq k\in\mathbb{N}\text{,}\) that is, there exists a \(k\)-digit integer \(a_1a_2\ldots a_k\) which is a multiple of \(2^k\text{.}\) Let us consider the statement for \(k+1\text{.}\) By induction hypothesis we have</p>
+\begin{equation*}
+a_1a_2\ldots a_k=2^k\cdot A\text{.}
+\end{equation*}
+<p>We claim that either</p>
+\begin{equation*}
+10^{k}+a_1a_2\ldots a_k=1a_1a_2\ldots a_k
+\end{equation*}
+<p>or</p>
+\begin{equation*}
+2\cdot 10^{k}+a_1a_2\ldots a_k=2a_1a_2\ldots a_k
+\end{equation*}
+<p>is a multiple of \(2^{k+1}\text{.}\) We can rewrite the above integers as follows</p>
+\begin{align*}
+\amp  10^{k}+a_1a_2\ldots a_k=10^k+2^k\cdot A=2^k(5^k+A),\\
+\amp  2\cdot 10^{k}+a_1a_2\ldots a_k=2\cdot 10^{k}+2^k\cdot A=2^k(2\cdot 5^k+A)\text{.}
+\end{align*}
+<p>If \(A\) is odd, then \(5^k+A\) is even. In this case</p>
+\begin{equation*}
+1a_1a_2\ldots a_k
+\end{equation*}
+<p>is an integer having \(k+1\) digits and it is divisible by \(2^{k+1}\text{.}\) If \(A\) is even, then \(2\cdot 5^k+A\) is even. That is,</p>
+\begin{equation*}
+2a_1a_2\ldots a_k
+\end{equation*}
+<p>is a \((k+1)\)-digit number which is a multiple of \(2^{k+1}\text{.}\)</p>
+<span class="incontext"><a href="section-24.html#p-874">in-context</a></span>
+</body>
+</html>

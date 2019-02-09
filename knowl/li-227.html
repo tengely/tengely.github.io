@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:06+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="listitem"><h6 class="heading">
+<span class="type">Item</span><span class="codenumber">10</span>
+</h6>
+<p><a knowl="./knowl/ex_alternatingsum2.html" knowl-id="xref-ex_alternatingsum2" alt="Exercise 4.2.2 " title="Exercise 4.2.2 ">Exercise 4.2.2</a> Consider the alternating sum of the \(n\)th row (for \(n\geq 1\)), and use the generating rule of Pascal's triangle: {</p>
+\begin{align*}
+\amp  \binom{n}{0} - \binom{n}{1} + \binom{n}{2} - \dots + (-1)^{n-1} \cdot \binom{n}{n-1} + (-1)^{n} \cdot \binom{n}{n}\\
+\amp = \binom{n-1}{0} - \left( \binom{n-1}{0} + \binom{n-1}{1} \right) + \left( \binom{n-1}{1} + \binom{n-1}{2} \right)  - \dots\\
+\amp + 
+(-1)^{n-1} \cdot \left( \binom{n-1}{n-2} + \binom{n-1}{n-1} \right) + (-1)^{n} \cdot \binom{n-1}{n-1}\\
+\amp = \left( \binom{n-1}{0} - \binom{n-1}{0} \right) + \left( - \binom{n-1}{1} + \binom{n-1}{1} \right) +\\
+\amp +\left( \binom{n-1}{2} - \binom{n-1}{2} \right) + \dots 
++ \left( \left( -1 \right)^{n-2} \cdot \binom{n-1}{n-2} + \left( -1 \right)^{n-1} \cdot \binom{n-1}{n-2} \right)\\
+\amp + \left( \left( -1 \right)^{n-1} \cdot \binom{n-1}{n-1} + \left( -1 \right)^{n} \cdot \binom{n-1}{n-1} \right)\\
+\amp = 0 + 0 + 0 + \dots + 0 + 0 = 0\text{.}
+\end{align*}
+<p>} First, we replaced \(\binom{n}{0}=1\) by \(\binom{n-1}{0}=1\text{,}\) and \(\binom{n}{n} = 1\) by \(\binom{n-1}{n-1} = 1\text{,}\) then we used the generating rule of Pascal's triangle. Then we observed that every \(\binom{n-1}{k}\) occurs twice in the sum: first with a positive sign, then right after it with a negative sign (for \(0\leq k\leq n-1\)).</p></article><span class="incontext"><a href="section-25.html#li-227">in-context</a></span>
+</body>
+</html>

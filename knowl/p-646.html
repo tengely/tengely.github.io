@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:02+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Again, the right hand side gives a clue on what we need to find. Since \(\binom{n+1}{m+1}\) is the number of ways choosing \(m+1\) elements out of an \(n\)-element set, this is what we will try to find on the left hand side, as well. Let \(S= \halmaz{1, 2, \dots , n, n+1}\text{.}\) Try to choose \(m+1\) elements in the following way: first choose the <em class="emphasis">largest</em> one, then choose the remaining \(m\) elements. Clearly the largest is at least \(m+1\text{.}\) If we choose \(m+1\) as the largest chosen number, then we need to choose \(m\) elements out of the \(m\)-element set \(\halmaz{1, 2, \dots , m}\text{,}\) this can be done in \(\binom{m}{m}\)-many ways. If we choose \(m+2\) as the largest chosen number, then we need to choose \(m\) elements out of the \((m+1)\)-element set \(\halmaz{1, 2, \dots , m+1}\text{,}\) this can be done in \(\binom{m+1}{m}\)-many ways. If we choose \(m+3\) as the largest chosen number, then we need to choose \(m\) elements out of the \((m+2)\)-element set \(\halmaz{1, 2, \dots , m+2}\text{,}\) this can be done in \(\binom{m+2}{m}\)-many ways. In general, if we choose \(k+1\) as the largest chosen number (for some \(m \leq k\leq n\)), then we need to choose \(m\) elements out of the \(k\)-element set \(\halmaz{1, 2, \dots , k}\text{,}\) this can be done in \(\binom{k}{m}\)-many ways. If we choose \(n\) as the largest chosen number, then we need to choose \(m\) elements out of the \((n-1)\)-element set \(\halmaz{1, 2, \dots , n-1}\text{,}\) this can be done in \(\binom{n-1}{m}\)-many ways. Finally, if we choose \(n+1\) as the largest chosen number, then we need to choose \(m\) elements out of the \(n\)-element set \(\halmaz{1, 2, \dots , n}\text{,}\) this can be done in \(\binom{n}{m}\)-many ways. That is, the number of ways we can choose \((m+1)\) elements out of an \((n+1)\)-element set is</p>
+\begin{equation*}
+\sum_{k=m}^n \binom{k}{m} = \binom{m}{m} + \binom{m+1}{m} + \dots + \binom{n}{m}
+\end{equation*}
+<p>on the one hand, and \(\binom{n+1}{m+1}\) on the other hand. Thus the two numbers must be equal, as they count the same thing. Hence,</p>
+\begin{equation*}
+\sum_{k=m}^n \binom{k}{m} = \binom{m}{m} + \binom{m+1}{m} + \dots + \binom{n}{m} = \binom{n+1}{m+1}\text{.}
+\end{equation*}
+<span class="incontext"><a href="section-19.html#p-646">in-context</a></span>
+</body>
+</html>

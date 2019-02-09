@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:00+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>We give a draft of the proof, which can be made precise after reading about mathematical induction. Again, let us denote the elements of \(S\) by \(a_1, a_2, \dots , a_n\text{,}\) that is,</p>
+\begin{equation*}
+S = \halmaz{a_1, a_2, \dots , a_n}\text{.}
+\end{equation*}
+<p>Here, every subset either contains \(a_n\) or does not contain \(a_n\text{.}\)</p>
+<p>First, consider those subsets, which do not contain \(a_n\text{,}\) and let \(S' = \halmaz{a_1, a_2, \dots, a_{n-1}}\text{.}\) Observe that a subset of \(S\) not containing \(a_n\) is in fact a subset of \(S'\text{.}\) Moreover, every subset of \(S'\) is a subset of \(S\) not containing \(a_n\text{.}\) That is, there is a one-to-one correspondence between the subsets of \(S\) not containing \(a_n\) and the subsets of \(S'\text{.}\)</p>
+<p>Now, consider the subsets of \(S\) containing \(a_n\text{.}\) Observe that a subset of \(S\) containing \(a_n\) is in fact a union of a subset of \(S'\) and \(\halmaz{a_n}\text{.}\) That is, it is \(a_n\) added to a subset of \(S'\text{.}\) Moreover, if we add \(a_n\) to every subset of \(S'\) we obtain a subset of \(S\) containing \(a_n\text{.}\) That is, there is a one-to-one correspondence between the subsets of \(S\) containing \(a_n\) and the subsets of \(S'\text{.}\)</p>
+<p>Thus, the number of subsets of \(S\) is twice as the number of subsets of \(S'\text{.}\) Continuing this argument, we obtain that the number of subsets of \(S\) is 4 times the number of subsets of \(\halmaz{a_1, \dots , a_{n-2}}\text{,}\) etc. That is, the number of subsets of \(S\) is \(2^n\) times the number of subsets of \(\halmaz{} = \emptyset\text{.}\) As the latter has only 1 subset, \(S\) has exactly \(2^n\)-many subsets.</p></article></body>
+</html>

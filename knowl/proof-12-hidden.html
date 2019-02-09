@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:00+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>The number of \(k\)-element <em class="emphasis">ordered</em> subsets is \(\frac{n!}{(n-k)!}\) by <a knowl="./knowl/thm_orderedsubsets.html" knowl-id="xref-thm_orderedsubsets" alt="Theorem 2.5.2 " title="Theorem 2.5.2 ">Theorem 2.5.2</a>. To count the number of unordered \(k\)-element subsets we group together those \(k\)-element subsets, which differ only in their order. That is, every group contains different orderings of the same \(k\) elements. Every group contains \(k!\)-many orderings, since \(k!\) is the number of possible permutations of those \(k\) elements. Therefore the number of groups (and the number of \(k\)-element subsets) is</p>
+\begin{equation*}
+\frac{\frac{n!}{(n-k)!}}{k!} = \frac{n!}{k! \cdot (n-k)!} = \binom{n}{k}\text{.}
+\end{equation*}
+<p>By <a knowl="./knowl/prop_nchoosek.html" knowl-id="xref-prop_nchoosek" alt="Proposition 2.6.4 " title="Proposition 2.6.4 ">Proposition 2.6.4</a> this is the same number as</p>
+\begin{equation*}
+\frac{n \cdot (n-1) \cdot \dots \cdot (n-k+1)}{k!}\text{.}
+\end{equation*}
+</article></body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:06+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p><a knowl="./knowl/seq-ex-4.html" knowl-id="xref-seq-ex-4" alt="Exercise 5.2.7 " title="Exercise 5.2.7 ">Exercise 5.2.7</a> This is an example of an order 3 linear recurrence. We define \(g_n=g_0r^n\) for some \(g_0\) and \(r\text{,}\) which is a geometric progression. We assume that it satisfies the same recurrence relation as \(a_n\text{,}\) that is, we obtain</p>
+\begin{equation*}
+r^3=-2r^2+r+2\text{.}
+\end{equation*}
+<p>It is a cubic polynomial. We look for integer solutions. If there is an integral root, then it divides 2. Hence the possible integral roots are \(\pm 2,\pm 1\text{.}\) <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(r\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(r^3+2r^2-r-2\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">-2</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">-1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">0</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">12</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table> The cubic polynomial \(r^3+2r^2-r-2\) can be written as \(\left(x-1\right) \cdot \left(x+1\right) \cdot \left(x+2\right)\text{,}\) that is, there are three integral roots. In this case we have three geometric progressions satisfying the recurrence, therefore the appropriate linear combination is</p>
+\begin{equation*}
+W_n=s\cdot (-2)^n+t\cdot (-1)^n+u\cdot 1^n\text{.}
+\end{equation*}
+<p>The corresponding system of linear equations is</p>
+\begin{align*}
+s+t+u\amp =0,\\
+-2s-t+u\amp =1,\\
+4s+t+u\amp =2\text{.}
+\end{align*}
+<p>We subtract the first equation from the third one to get \(3s=2\text{.}\) So we have that \(s=2/3\text{.}\) We eliminate \(s\) from the first two equations</p>
+\begin{align*}
+t+u\amp =-\frac{2}{3},\\
+-t+u\amp =\frac{7}{3}\text{.}
+\end{align*}
+<p>It is easy to see that \(u=5/6\) and \(t=-3/2\text{.}\) The explicit formula for \(a_n\) is</p>
+\begin{equation*}
+\frac23 \cdot (-2)^n-\frac32\cdot (-1)^n+\frac56\text{.}
+\end{equation*}
+<span class="incontext"><a href="section-26.html#p-914">in-context</a></span>
+</body>
+</html>

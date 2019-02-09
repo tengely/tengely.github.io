@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:02+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
+<p>Consider \((x+y)^{2n}\text{,}\) and expand it using the Binomial theorem:</p>
+\begin{equation*}
+(x+y)^{2n} = \sum_{k=0}^{2n} \binom{2n}{k} x^{2n-k} \cdot y^{k}\text{.}
+\end{equation*}
+<p>Then the right hand side of <a knowl="./knowl/eq_sumsquaresofrow.html" knowl-id="xref-eq_sumsquaresofrow" alt="Equation 4.2.2 " title="Equation 4.2.2 ">(4.2.2)</a> is the coefficient of the term \(x^ny^n\text{.}\) We prove that the left hand side is the coefficient of \(x^ny^n\text{,}\) as well. For this, we compute \((x+y)^{2n}\) by multiplying \((x+y)^n \cdot (x+y)^n\) after expanding both factors using the Binomial theorem:</p>
+\begin{equation*}
+(x+y)^{2n} = (x+y)^n \cdot (x+y)^n = \left( \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k \right) \cdot \left( \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k \right)\text{.}
+\end{equation*}
+<p>Now, let us compute the coefficient of \(x^n y^n\text{.}\) When do we obtain \(x^n y^n\) when we multiply \(\left( \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k \right)\) by itself? Take for example \(x^n\) from the first factor, this must be multiplied by \(y^n\) from the second factor to obtain \(x^n y^n\text{.}\) The coefficient of \(x^n\) in the first factor is \(\binom{n}{0}\text{,}\) the coefficient of \(y^n\) in the second factor is \(\binom{n}{n}\text{,}\) thus this multiplication contributes by \(\binom{n}{0} \cdot \binom{n}{n}\) to the coefficient of \(x^n y^n\) in \((x+y)^{2n}\text{.}\) Similarly, take the term \(x^{n-1}y\) from the first factor, this must be multiplied by \(xy^{n-1}\) from the second factor to obtain \(x^n y^n\text{.}\) The coefficient of \(x^{n-1}y\) in the first factor is \(\binom{n}{1}\text{,}\) the coefficient of \(xy^{n-1}\) in the second factor is \(\binom{n}{n-1}\text{,}\) thus this multiplication contributes by \(\binom{n}{1} \cdot \binom{n}{n-1}\) to the coefficient of \(x^n y^n\) in \((x+y)^{2n}\text{.}\) In general, for some \(k\) the term \(x^{n-k}y^k\) in the first factor must be multiplied by \(x^k y^{n-k}\) from the second factor. The coefficient of \(x^{n-k}y^k\) in the first factor is \(\binom{n}{k}\text{,}\) the coefficient of \(x^ky^{n-k}\) in the second factor is \(\binom{n}{n-k}\text{,}\) thus this multiplication contributes by \(\binom{n}{k} \cdot \binom{n}{n-k}\) to the coefficient of \(x^n y^n\) in \((x+y)^{2n}\text{.}\) That is, the coefficient of \(x^n y^n\) in \((x+y)^{2n}\) is</p>
+\begin{equation*}
+\sum_{k=0}^n \binom{n}{k} \cdot \binom{n}{n-k}\text{.}
+\end{equation*}
+<p>Moreover, the coefficient of \(x^ny^n\) in \((x+y)^{2n}\) is \(\binom{2n}{n}\text{,}\) thus the two numbers must be equal. Applying the symmetry of Pascal's triangle (that is, \(\binom{n}{k} = \binom{n}{n-k}\)), we obtain <a knowl="./knowl/eq_sumsquaresofrow.html" knowl-id="xref-eq_sumsquaresofrow" alt="Equation 4.2.2 " title="Equation 4.2.2 ">(4.2.2)</a>:</p>
+\begin{equation*}
+\sum_{k=0}^n \binom{n}{k}^2 = \sum_{k=0}^n \binom{n}{k} \cdot \binom{n}{n-k} = \binom{2n}{n}\text{.}
+\end{equation*}
+</article><span class="incontext"><a href="section-19.html#proof-30">in-context</a></span>
+</body>
+</html>

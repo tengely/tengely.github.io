@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:59+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>In mathematics a set is a collection of objects that are called elements. Usually we denote sets by capital letters and elements by small letters. If \(A\) is a set and \(a\) is an element of \(A\text{,}\) then we write \(a\in A\text{.}\) If \(a\) is not an element of \(A\text{,}\) then we write \(a\notin A\text{.}\) Now we deal with the problem how to provide a set. </p>
+<ul style="list-style-type: disc;">
+<li>
+<p><em class="emphasis">Sets given by enumeration.</em> If we have a set containing certain elements, then we enclose these elements in braces. For example, if \(A\) is a set containing 1, 2 and 3 we write \(A=\halmaz{1,2,3}\text{.}\) This notation is difficult to use if the given set has large amount of elements. In this case we list only some (usually consecutive) elements such that it is easy to see which are the remaining elements of the set. As an example let us assume that \(B\) is a set containg the integers between 1 and 1000. Here we write \(B=\halmaz{1,2,3,\ldots,1000}\text{.}\) If \(C\) is the set containing the odd integers between 1 and 99, then we have \(C=\halmaz{1,3,5,\ldots,99}\text{.}\) It is also possible to provide some families of sets, for example</p>
+\begin{equation*}
+D_1=\{1\}, D_k=\halmaz{1,3,\ldots,2k-1}\text{.}
+\end{equation*}
+<p>In this case \(D_k\) denotes the set containing the first \(k\) positive odd integers. <table>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">\(k\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(D_k\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">1</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{1}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">2</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{1,3}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">3</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{1,3,5}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+<tr>
+<td class="l m b0 r0 l0 t0 lines">4</td>
+<td class="l m b0 r0 l0 t0 lines">\(\halmaz{1,3,5,7}\)</td>
+</tr>
+<tr>
+<td class="l m b1 r0 l0 t0 lines"></td>
+<td class="l m b1 r0 l0 t0 lines"></td>
+</tr>
+</table></p>
+</li>
+<li><p><em class="emphasis">Standard sets.</em> There are certain frequently used sets which have their own symbols. These are the set of natural numbers, the set of integers, the set of rational numbers, the set of real numbers and the set of complex numbers. \(\mathbb{N}=\halmaz{1,2,3,\ldots}\text{,}\) the set of natural numbers. \(\mathbb{Z}=\halmaz{\ldots,-2,-1,0,1,2,\ldots}\text{,}\) the set of integers. \(\mathbb{Q}\text{,}\) the set of rational numbers. \(\mathbb{R}\text{,}\) the set of real numbers. \(\mathbb{C}\text{,}\) the set of complex numbers.</p></li>
+<li>
+<p><em class="emphasis">Set-builder notation.</em> It is also possible to define sets using the so-called set-builder notation. As an example consider the set \(D_3=\halmaz{1,3,5}\text{,}\) we can define this set in many different ways, e.g.\</p>
+\begin{align*}
+\halmaz{1,3,5}\amp =\halmazvonal{a}{(a-1)(a-3)(a-5)=0},\\
+\halmaz{1,3,5}\amp =\halmazvonal{a}{a=2k-1, k\in\halmaz{1,2,3}},\\
+\halmaz{1,3,5}\amp =\halmazvonal{a}{1\leq a\leq 5, \mbox{ and \(a\) is odd} }\text{.}
+\end{align*}
+<p>We can use semicolon instead of the vertical line, as well:</p>
+\begin{align*}
+\halmaz{1,3,5}\amp =\halmazpont{a}{(a-1)(a-3)(a-5)=0},\\
+\halmaz{1,3,5}\amp =\halmazpont{a}{a=2k-1, k\in\halmaz{1,2,3}},\\
+\halmaz{1,3,5}\amp =\halmazpont{a}{1\leq a\leq 5, \mbox{ and \(a\) is odd} }\text{.}
+\end{align*}
+<p>Let us define the set of even natural numbers:</p>
+\begin{equation*}
+\halmazvonal{2n}{n\in\mathbb{N}}\text{.}
+\end{equation*}
+<p>The set of rational numbers can be given as follows</p>
+\begin{equation*}
+\halmazvonal{a/b}{a,b\in\mathbb{Z}, b\neq 0}\text{.}
+\end{equation*}
+</li>
+</ul>
+<span class="incontext"><a href="sec_sets.html#p-6">in-context</a></span>
+</body>
+</html>

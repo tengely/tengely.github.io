@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:04+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="listitem"><h6 class="heading">
+<span class="type">Item</span><span class="codenumber">4</span>
+</h6>
+<p><a knowl="./knowl/induction-4.html" knowl-id="xref-induction-4" alt="Exercise 3.1.7 " title="Exercise 3.1.7 ">Exercise 3.1.7</a> We consider here the sum of the first \(n\) squares, which is</p>
+\begin{equation*}
+1^2+2^2+\ldots+n^2\text{.}
+\end{equation*}
+<p>The statement \(S(n)\) is that</p>
+\begin{equation*}
+\sum_{i=1}^n i^2=\frac{n(n+1)(2n+1)}{6}\text{.}
+\end{equation*}
+<p>The statement is clearly true for \(n=1\text{,}\) since \(1^2=\frac{1\cdot 2\cdot 3}{6}\text{.}\) Assume that the statement is true for certain \(k\geq 1\text{,}\) that is,</p>
+\begin{equation*}
+\sum_{i=1}^k i^2=\frac{k(k+1)(2k+1)}{6}\text{.}
+\end{equation*}
+<p>Let us study \(S(k+1)\text{.}\) The sum of the first \(k+1\) squares can be written as the sum of the first \(k\) squares increased by \((k+1)^2\text{,}\) that is, we have</p>
+\begin{equation*}
+\sum_{i=1}^{k+1} i^2=\left(\sum_{i=1}^k i^2\right)+(k+1)^2\text{.}
+\end{equation*}
+<p>The induction hypotheses says that</p>
+\begin{equation*}
+\sum_{i=1}^k i^2=\frac{k(k+1)(2k+1)}{6}\text{,}
+\end{equation*}
+<p>hence we obtain</p>
+\begin{equation*}
+\sum_{i=1}^{k+1} i^2=\frac{k(k+1)(2k+1)}{6}+(k+1)^2\text{.}
+\end{equation*}
+<p>The right-hand side equals to</p>
+\begin{align*}
+\amp \frac{k(k+1)(2k+1)}{6}+\frac{6(k+1)^2}{6}=\frac{(k+1)\left(k(2k+1)+6(k+1)\right)}{6}=\\
+\amp =\frac{(k+1)(2k^2+7k+6)}{6}=\frac{(k+1)(k+2)(2k+3)}{6}\text{.}
+\end{align*}
+<p>Therefore \(S(k+1)\) is true and the problem has been solved.</p></article><span class="incontext"><a href="section-24.html#li-188">in-context</a></span>
+</body>
+</html>

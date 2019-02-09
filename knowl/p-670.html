@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:02+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Let us denote by \(T_n\) the minimum number of moves that will transfer \(n\) disks from peg \(A\) to peg \(C\text{.}\) Since no moves are needed to transfer \(n=0\) disks, we have that \(T_0=0\text{,}\) and the previous two examples show that \(T_1=1\) and \(T_2=3\text{.}\) Let us prove that \(T_n\leq 2T_{n-1}+1\text{,}\) that is, there is a solution with \(2T_{n-1}+1\) moves. In \(T_{n-1}\) moves we can transfer the \(n-1\) smaller disks from peg \(A\) to peg \(B\text{.}\) We move the largest one from peg \(A\) to peg \(C\) and it remains to move the \(n-1\) smallest disks from peg \(B\) to peg \(C\) and it can be done in \(T_{n-1}\) moves. In total this strategy requires \(2T_{n-1}+1\) moves. We only have to show that \(2T_{n-1}+1\) moves are necessary. If we follow another strategy, then we must move the largest disk at some point and the \(n-1\) smallest disks must be on a single peg (requiring \(T_{n-1}\) moves). After moving the largest disk we must transfer the \(n-1\) smallest disks to peg \(C\) (requiring another \(T_{n-1}\) moves). It means that \(T_n\geq 2T_{n-1}+1\text{,}\) therefore</p>
+\begin{equation*}
+T_n=2T_{n-1}+1\text{.}
+\end{equation*}
+<span class="incontext"><a href="section-20.html#p-670">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:01+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
+<p>Let \(A=\halmaz{1, 2, \dots , n}\text{,}\) and we count the number of \(k\)-element subsets of \(A\) in two different ways. On the one hand, we know that the number of \(k\)-element subsets of \(A\) is \(\binom{n}{k}\text{.}\) On the other hand, we count the \(k\)-element subsets such that we first count those which contain the element \(n\text{,}\) then we count those, which do not.</p>
+<p>Count the number of \(k\)-element subsets of \(A\) containing \(n\) first. If a \(k\)-element subset \(S\) of \(A\) contains \(n\text{,}\) then it contains \(k-1\) more elements from \(\halmaz{1, 2, \dots , n-1}\text{.}\) Such a subset can be chosen in \(\binom{n-1}{k-1}\)-many ways. Thus, \(A\) has \(\binom{n-1}{k-1}\)-many \(k\)-element subsets containing the element \(n\text{.}\)</p>
+<p>Now, count the number of \(k\)-element subsets of \(A\) not containing \(n\text{.}\) If a \(k\)-element subset \(S\) of \(A\) does not contain \(n\text{,}\) then it contains \(k\) elements from \(\halmaz{1, 2, \dots , n-1}\text{.}\) Such a subset can be chosen in \(\binom{n-1}{k}\)-many ways. Thus, \(A\) has \(\binom{n-1}{k}\)-many \(k\)-element subsets not containing the element \(n\text{.}\) As a \(k\)-element subset either contains or does not contain the element \(n\text{,}\) the number of \(k\)-element subsets of \(A\) is \(\binom{n-1}{k-1} + \binom{n-1}{k}\text{,}\) which therefore must be the same number as \(\binom{n}{k}\text{.}\)</p></article><span class="incontext"><a href="cha_Pascal.html#proof-26">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:05+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p><a knowl="./knowl/induction-9.html" knowl-id="xref-induction-9" alt="Exercise 3.1.15 " title="Exercise 3.1.15 ">Exercise 3.1.15</a> (a) The first few elements of the Fibonacci sequence are</p>
+\begin{equation*}
+1,1,2,3,5,8,13,21,34,55,\ldots
+\end{equation*}
+<p>Let us consider the sum of the first \(n\) elements for \(n\in\halmaz{1,2,3,4,5}\)</p>
+\begin{align*}
+n\amp =1: 1,\\
+n\amp =2: 1+1=2,\\
+n\amp =3: 1+1+2=4,\\
+n\amp =4: 1+1+2+3=7,\\
+n\amp =5: 1+1+2+3+5=12\text{.}
+\end{align*}
+<p>It is easy to see that the identity holds for \(n\in\halmaz{1,2,3,4,5}\text{.}\) Assume that the statement is true for some \(1\leq k\in\mathbb{N}\text{,}\) that is,</p>
+\begin{equation*}
+F_1+F_2+\ldots+F_k=F_{k+2}-1\text{.}
+\end{equation*}
+<p>Consider the sum of the first \(k+1\) Fibonacci numbers</p>
+\begin{equation*}
+F_1+F_2+\ldots+F_k+F_{k+1}\text{.}
+\end{equation*}
+<p>By induction hypothesis we get</p>
+\begin{equation*}
+F_1+F_2+\ldots+F_k+F_{k+1}=F_{k+2}-1+F_{k+1}\text{.}
+\end{equation*}
+<p>By definition \(F_{k+1}+F_{k+2}=F_{k+3}\text{,}\) hence</p>
+\begin{equation*}
+F_1+F_2+\ldots+F_k+F_{k+1}=F_{k+3}-1\text{.}
+\end{equation*}
+<p>Therefore the identity holds for all positive integers. (b) Compute \(F_1^2+F_2^2+\ldots+F_n^2\) for \(n\in\halmaz{1,2,3,4,5}\)</p>
+\begin{align*}
+n\amp =1: 1^2=1=F_1F_2,\\
+n\amp =2: 1^2+1^2=2=F_2F_3,\\
+n\amp =3: 1^2+1^2+2^2=6=F_3F_4,\\
+n\amp =4: 1^2+1^2+2^2+3^2=15=F_4F_5,\\
+n\amp =5: 1^2+1^2+2^2+3^2+5^2=40=F_5F_6\text{.}
+\end{align*}
+<p>That is, the identity is valid for \(n\in\halmaz{1,2,3,4,5}\text{.}\) Assume that the statement is true for some \(1\leq k\in\mathbb{N}\text{,}\) that is,</p>
+\begin{equation*}
+F_1^2+F_2^2+\ldots+F_k^2=F_kF_{k+1}\text{.}
+\end{equation*}
+<p>Let us deal with the sum</p>
+\begin{equation*}
+F_1^2+F_2^2+\ldots+F_k^2+F_{k+1}^2\text{.}
+\end{equation*}
+<p>Applying the induction hypothesis we obtain</p>
+\begin{equation*}
+(F_1^2+F_2^2+\ldots+F_k^2)+F_{k+1}^2=F_kF_{k+1}+F_{k+1}^2=F_{k+1}(F_k+F_{k+1})\text{,}
+\end{equation*}
+<p>and by definition \(F_k+F_{k+1}=F_{k+2}\text{,}\) so we have</p>
+\begin{equation*}
+(F_1^2+F_2^2+\ldots+F_k^2)+F_{k+1}^2=F_{k+1}F_{k+2}\text{.}
+\end{equation*}
+<p>Thus the identity holds for all positive integers. (c) Here we consider the identity</p>
+\begin{equation*}
+F_1+F_3+\ldots+F_{2n-1}=F_{2n}\text{.}
+\end{equation*}
+<p>If \(n=1\text{,}\) then the left-hand side is \(F_1=1\) and the right-hand side is \(F_2=1\text{.}\) Hence the identity holds. Assume that for some \(1\leq k\in\mathbb{N}\) the identity is valid, that is,</p>
+\begin{equation*}
+F_1+F_3+\ldots+F_{2k-1}=F_{2k}\text{.}
+\end{equation*}
+<p>In case of \(k+1\) terms we have</p>
+\begin{equation*}
+F_1+F_3+\ldots+F_{2k-1}+F_{2k+1}\text{.}
+\end{equation*}
+<p>By induction we get</p>
+\begin{equation*}
+(F_1+F_3+\ldots+F_{2k-1})+F_{2k+1}=F_{2k}+F_{2k+1}=F_{2k+2}=F_{2(k+1)}\text{.}
+\end{equation*}
+<p>Thus the identity is valid for all positive integers. (d) The identity to prove is as follows:</p>
+\begin{equation*}
+F_2+F_4+\ldots+F_{2n}=F_{2n+1}-1\text{.}
+\end{equation*}
+<p>If \(n=1\text{,}\) then the left-hand side is \(F_2=1\) and the right-hand side is \(F_3-1=2-1=1\text{.}\) So the identity is valid. Assume that for some \(1\leq k\in\mathbb{N}\) the identity holds, that is,</p>
+\begin{equation*}
+F_2+F_4+\ldots+F_{2k}=F_{2k+1}-1\text{.}
+\end{equation*}
+<p>Let us handle the sum for \(k+1\) terms, that is, the sum</p>
+\begin{equation*}
+F_2+F_4+\ldots+F_{2k}+F_{2k+2}\text{.}
+\end{equation*}
+<p>It can be written as</p>
+\begin{equation*}
+(F_2+F_4+\ldots+F_{2k})+F_{2k+2}=F_{2k+1}-1+F_{2k+2}=F_{2k+3}-1\text{.}
+\end{equation*}
+<p>Thus the identity has been proved for all positive integers.</p>
+<span class="incontext"><a href="section-24.html#p-875">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:01+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>We have a set containing \(n\) elements, let us say these are \(a_1,a_2,\ldots,a_n\text{.}\) We define \(n\) subsets as follows</p>
+\begin{equation*}
+S_k=\halmaz{a_1,\ldots,a_k}, k=1,2,\ldots,n\text{,}
+\end{equation*}
+<p>that is, \(S_1=\halmaz{a_1}, S_2=\halmaz{a_1,a_2},\ldots,S_n=A\text{.}\) Denote by \(s_k\) the sum of the elements of \(S_k\text{.}\) We apply the Division algorithm to write \(s_k=q_k\cdot n+r_k\text{,}\) where \(0\leq r_k\lt n\text{.}\) If for some \(k\) we have \(r_k=0\text{,}\) then</p>
+\begin{equation*}
+s_k=a_1+\ldots+a_k=q_k\cdot n\text{,}
+\end{equation*}
+<p>that is, the sum of the elements of \(S_k\) is a multiple of \(n\text{.}\) In this case the theorem is true. If no such \(k\) exists, then we have only \(n-1\) possible values for \(r_k\) and we have \(n\) subsets. The pigeonhole principle says that there are at least two subsets (say \(S_k\) and \(S_l, k\lt l\)) for which \(r_k=r_l\text{.}\) In this case we obtain that</p>
+\begin{equation*}
+s_l-s_k=(q_l-q_k)n=a_{k+1}+a_{k+2}+\ldots+a_l\text{.}
+\end{equation*}
+<p>Thus the sum of the elements of the subset \(\halmaz{a_{k+1},a_{k+2},\ldots,a_l}\) is a multiple of \(n\text{.}\)</p></article></body>
+</html>

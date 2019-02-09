@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:06+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="listitem"><h6 class="heading">
+<span class="type">Item</span><span class="codenumber">11</span>
+</h6>
+<p><a knowl="./knowl/ex_n_mchoosek.html" knowl-id="xref-ex_n_mchoosek" alt="Exercise 4.2.5 " title="Exercise 4.2.5 ">Exercise 4.2.5</a> Again, we give a combinatorial meaning to both sides of <span>&lt;&lt;Unresolved xref, reference "eq_n_mchoosek"; check spelling or use "provisional" attribute&gt;&gt;</span><a href="" class="xref" alt="" title=""> </a>. The right hand side gives a clue: \(\binom{n+m}{l}\) is the number of ways to choose \(l\) elements out of an \((n+m)\)-element set, say</p>
+\begin{equation*}
+S = \halmaz{1, 2, \dots , n, n+1, n+2, \dots , n+m}\text{.}
+\end{equation*}
+<p>Our plan is to prove that the left hand side of <span>&lt;&lt;Unresolved xref, reference "eq_n_mchoosek"; check spelling or use "provisional" attribute&gt;&gt;</span><a href="" class="xref" alt="" title=""> </a> is the number of \(l\)-element subsets of \(S\text{,}\) as well. Let \(S_1 = \halmaz{1, 2, \dots , n}\) and \(S_2 = \halmaz{n+1, n+2, \dots , n+m}\text{.}\) Now, try to count the number of ways to choose \(l\) elements of \(S\) by counting how many elements we choose from \(S_1\) and from \(S_2\text{.}\) If we choose 0 element from \(S_1\text{,}\) then we must choose \(l\) elements from \(S_2\text{.}\) We can do this in \(\binom{n}{0} \cdot \binom{m}{l}\)-many ways. If we choose 1 element from \(S_1\text{,}\) then we must choose \(l-1\) elements from \(S_2\text{.}\) We can do this in \(\binom{n}{1} \cdot \binom{m}{l-1}\)-many ways. If we choose 2 elements from \(S_1\text{,}\) then we must choose \(l-2\) elements from \(S_2\text{.}\) We can do this in \(\binom{n}{2} \cdot \binom{m}{l-2}\)-many ways. In general, if we choose k elements from \(S_1\text{,}\) then we must choose \(l-k\) elements from \(S_2\text{.}\) We can do this in \(\binom{n}{k} \cdot \binom{m}{l-k}\)-many ways. In the end, if we choose \(l\) elements from \(S_1\text{,}\) then we must choose \(0\) element from \(S_2\text{.}\) We can do this in \(\binom{n}{l} \cdot \binom{m}{0}\)-many ways. Thus, choosing \(l\) elements out of \(n+m\) can be done in the following number of ways:</p>
+\begin{equation*}
+\binom{n}{0} \cdot \binom{m}{l} + \binom{n}{1} \cdot \binom{m}{l-1} + \dots 
++ \binom{n}{l}\cdot \binom{m}{0} = \sum_{k=0}^l \binom{n}{k} \cdot \binom{m}{l-k}\text{.}
+\end{equation*}
+<p>That is, both sides of <span>&lt;&lt;Unresolved xref, reference "eq_n_mchoosek"; check spelling or use "provisional" attribute&gt;&gt;</span><a href="" class="xref" alt="" title=""> </a> counts the number of ways of choosing \(l\) elements out of an \((n+m)\)-element set, and therefore must be equal. If we choose \(n=m=l\text{,}\) and use the symmetry of Pascal's triangle \(\binom{n}{k} = \binom{n}{n-k}\text{,}\) then we obtain exactly equation <a knowl="./knowl/eq_sumsquaresofrow.html" knowl-id="xref-eq_sumsquaresofrow" alt="Equation 4.2.2 " title="Equation 4.2.2 ">(4.2.2)</a>.</p></article><span class="incontext"><a href="section-25.html#li-228">in-context</a></span>
+</body>
+</html>

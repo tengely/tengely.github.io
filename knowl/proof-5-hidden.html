@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:00+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body><article class="hiddenproof"><p>Let us denote the elements of \(S\) by \(a_1, a_2, \dots , a_n\text{,}\) that is,</p>
+\begin{equation*}
+S = \halmaz{a_1, a_2, \dots , a_n}\text{.}
+\end{equation*}
+<p>Let us try to build a subset \(T\) of \(S\text{,}\) and we count the number of possibilities to create different subsets \(T\text{.}\) First we decide whether or not \(a_1 \in T\text{,}\) that is, whether or not we put \(a_1\) into \(T\text{.}\) This gives us two choices. Now, independent of how we decided on \(a_1\text{,}\) we decide whether or not we want to put \(a_2\) into \(T\text{,}\) that is, whether or not \(a_2 \in T\text{.}\) This, again, gives us two choices. Third (independently on how we decided on the earlier elements) we decide whether or not we put \(a_3\) into \(T\text{,}\) that is, whether or not \(a_3 \in T\text{.}\) This, again, gives us two choices, etc.</p>
+<p>This way we decide after each other for every element whether or not we want to put the element into \(T\text{.}\) On the one hand, if at some point we choose differently, then we obtain different subsets in the end. For example, if for \(a_k\) we decide differently, then in one case \(a_k\) will be an element of the subset, in the other case it will not be an element. Thus the two subsets will differ in \(a_k\text{.}\) On the other hand, all subsets can be obtained this way: for a subset \(A\) we decide to put the elements of \(A\) into \(T\text{,}\) and not put other elements in. This way, \(T=A\) will be built.</p>
+<p>That is, by deciding for every element whether or not it should be in \(T\) we obtain all subsets exactly once. For each element we have two choices: either we put them into the subset or we do not put them into the subset. These choices on the elements are independent from each other, thus for all \(n\) elements we have</p>
+\begin{equation*}
+\underbrace{2 \cdot 2 \cdot \dots \cdot 2}_{n} = 2^n
+\end{equation*}
+<p>choices. This is the same as the number of subsets of \(S\text{.}\) Thus an \(n\) element set has \(2^n\)-many subsets.</p></article></body>
+</html>

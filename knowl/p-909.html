@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:06+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p><a knowl="./knowl/ex_diagonal.html" knowl-id="xref-ex_diagonal" alt="Exercise 4.2.8 " title="Exercise 4.2.8 ">Exercise 4.2.8</a> We can try to prove the identity by induction on \(m\text{.}\) For \(m=0\) the identity holds, as the left hand side is \(\binom{n}{0} = 1\text{,}\) the right hand side is \(\binom{n+1}{0} = 1\text{,}\) as well. Assume that the identity holds for \(m-1\text{,}\) that is,</p>
+\begin{equation*}
+\sum_{k=0}^{m-1} \binom{n+k}{k} = \binom{n}{0} + \binom{n+1}{1} + \dots + \binom{n+m-1}{m-1} = \binom{n+m}{m-1}\text{.}
+\end{equation*}
+<p>This is the induction hypothesis. Now we prove the identity for \(m\text{.}\)</p>
+\begin{align*}
+\amp  \sum_{k=0}^{m} \binom{n+k}{k} = \underbrace{\binom{n}{0} + \binom{n+1}{1} + \dots + \binom{n+m-1}{m-1}}_{= \binom{n+m}{m-1}, \text{ by the induction hypothesis } } + \binom{n+m}{m}\\
+\amp = \binom{n+m}{m-1} + \binom{n+m}{m} = \binom{n+m+1}{m}\text{.}
+\end{align*}
+<p>Here, we first used the induction hypothesis, then the generating rule of Pascal's triangle (<a knowl="./knowl/prop_binomsum.html" knowl-id="xref-prop_binomsum" alt="Proposition 4.0.3 " title="Proposition 4.0.3 ">Proposition 4.0.3</a>). We can spare ourselves an induction proof if we use \(\binom{n+k}{k} = \binom{n+k}{n}\text{.}\) That is,</p>
+\begin{align*}
+\amp \sum_{k=0}^{m} \binom{n+k}{k} = \binom{n}{0} + \binom{n+1}{1} + \dots + \binom{n+m}{m}\\
+\amp = \binom{n}{n} + \binom{n+1}{n} + \dots + \binom{n+m-1}{n} = \sum_{k=n}^{n+m} \binom{k}{n}\\
+\amp = \binom{n+m+1}{n+1} = \binom{n+m+1}{m}
+\end{align*}
+<p>by <a knowl="./knowl/prop_sumkchoosem.html" knowl-id="xref-prop_sumkchoosem" alt="Proposition 4.2.7 " title="Proposition 4.2.7 ">Proposition 4.2.7</a>.</p>
+<span class="incontext"><a href="section-25.html#p-909">in-context</a></span>
+</body>
+</html>

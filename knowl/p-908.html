@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:06+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p><a knowl="./knowl/ex_n_mchoosek2.html" knowl-id="xref-ex_n_mchoosek2" alt="Exercise 4.2.6 " title="Exercise 4.2.6 ">Exercise 4.2.6</a> Consider \((x+y)^{n+m}\text{,}\) and expand it using the Binomial theorem:</p>
+\begin{equation*}
+(x+y)^{n+m} = \sum_{k=0}^{n+m} \binom{n+m}{k} x^{n+m-k} \cdot y^{k}\text{.}
+\end{equation*}
+<p>Then the right hand side of <span>&lt;&lt;Unresolved xref, reference "eq_n_mchoosek"; check spelling or use "provisional" attribute&gt;&gt;</span><a href="" class="xref" alt="" title=""> </a> is the coefficient of the term \(x^{n+m-l}y^l\text{.}\) We prove that the left hand side is the coefficient of \(x^{n+m-l}y^l\text{,}\) as well. For this, we compute \((x+y)^{n+m}\) by multiplying \((x+y)^n \cdot (x+y)^m\) after expanding both factors using the Binomial theorem:</p>
+\begin{equation*}
+(x+y)^{n+m} = (x+y)^n \cdot (x+y)^m = \left( \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k \right) \cdot \left( \sum_{k=0}^m \binom{m}{k} x^{m-k}y^k \right)\text{.}
+\end{equation*}
+<p>Now, let us compute the coefficient of \(x^{n+m-l} y^l\text{.}\) When do we obtain \(x^{n+m-l} y^l\) when we multiply \(\left( \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k \right)\) by \(\left( \sum_{k=0}^m \binom{m}{k} x^{m-k}y^k \right)\text{?}\) For some \(0\leq k\leq l\) the term \(x^{n-k}y^k\) in the first factor must be multiplied by \(x^{m-l+k} y^{l-k}\) from the second factor. The coefficient of \(x^{n-k}y^k\) in the first factor is \(\binom{n}{k}\text{,}\) the coefficient of \(x^{m-l+k}y^{l-k}\) in the second factor is \(\binom{m}{l-k}\text{,}\) thus this multiplication contributes by \(\binom{n}{k} \cdot \binom{m}{l-k}\) to the coefficient of \(x^{n+m-l} y^l\) in \((x+y)^{n+m}\text{.}\) That is, the coefficient of \(x^{n+m-l} y^l\) in \((x+y)^{n+m}\) is</p>
+\begin{equation*}
+\sum_{k=0}^l \binom{n}{k} \cdot \binom{m}{l-k}\text{.}
+\end{equation*}
+<p>Moreover, the coefficient of \(x^{n+m-l}y^l\) in \((x+y)^{n+m}\) is \(\binom{n+m}{l}\text{,}\) thus the two numbers must be equal, which proves <span>&lt;&lt;Unresolved xref, reference "eq_n_mchoosek"; check spelling or use "provisional" attribute&gt;&gt;</span><a href="" class="xref" alt="" title=""> </a>:</p>
+\begin{equation*}
+\sum_{k=0}^n \binom{n}{k} \cdot \binom{m}{l-k} = \binom{n+m}{l}\text{.}
+\end{equation*}
+<span class="incontext"><a href="section-25.html#p-908">in-context</a></span>
+</body>
+</html>

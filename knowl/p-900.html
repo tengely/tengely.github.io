@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:05+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p><a knowl="./knowl/ex_binomialnchoosek.html" knowl-id="xref-ex_binomialnchoosek" alt="Exercise 4.1.3 " title="Exercise 4.1.3 ">Exercise 4.1.3</a> Consider \((x+y)^n\text{:}\)</p>
+\begin{equation*}
+(x+y)^n = a_n x^n + a_{n-1}x^{n-1}y + a_{n-2}x^{n-2}y^2 + \dots + a_2x^2y^{n-2} + a_1xy^{n-1} + a_0y^n\text{,}
+\end{equation*}
+<p>for some numbers \(a_n, a_{n-1}, \dots, a_1, a_0\text{.}\) How do we obtain the coefficient \(a_k\) for \(x^{n-k}y^k\text{?}\) Now, \((x+y)^n\) is the \(n\)-fold product of \((x+y)\) by itself:</p>
+\begin{equation*}
+(x+y)^n = \underbrace{(x+y) (x+y)  \dots (x+y) (x+y)}_{n\text{ times } }\text{.}
+\end{equation*}
+<p>The multiplication of these \(n\) factors is carried out by choosing a term from each factor (\(x\) or \(y\)) in every possible way, multiplying these \(n\) terms, and then adding the resulting products together. Thus the coefficient of \(x^{n-k}y^k\) is the number of possibilities to choose \((n-k)\)-times the \(x\) and \(k\)-times the \(y\) out of the \(n\) factors. Altogether there are \(n\) many \(y\)'s to choose from, and we need to choose \(k\) of them (and the remaining \((n-k)\) factors will be chosen as \(x\)). This can be done in \(\binom{n}{k}\)-many ways. Therefore the coefficient of \(x^{n-k}y^k\) is \(a_k=\binom{n}{k}\text{.}\)</p>
+<span class="incontext"><a href="section-25.html#p-900">in-context</a></span>
+</body>
+</html>

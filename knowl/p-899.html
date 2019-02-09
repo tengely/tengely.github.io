@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:05+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p><a knowl="./knowl/ex_binomialwriteout.html" knowl-id="xref-ex_binomialwriteout" alt="Exercise 4.1.2 " title="Exercise 4.1.2 ">Exercise 4.1.2</a> The Binomial theorem holds for \(n=0\) and \(n=1\text{,}\) as well: \((x+y)^0 = 1 = \binom{0}{0} x^0 y^0\text{,}\) \((x+y)^1 = x + y = \binom{1}{0} x^1 y^0 + \binom{1}{1} x^0 y^1\text{.}\) Now, we can prove the theorem by induction on \(n\text{.}\) Assume that the statement holds for \(n-1\text{,}\) that is,</p>
+\begin{equation*}
+(x+y)^{n-1} = x^{n-1} + \binom{n-1}{1} x^{n-2}y + \dots + \binom{n-1}{1} xy^{n-2} + y^{n-1}\text{.}
+\end{equation*}
+<p>This is the induction hypothesis. Now, compute \((x+y)^n\) using the same method as before, and use the induction hypothesis for expanding \((x+y)^{n-1}\text{:}\)</p>
+\begin{align*}
+(x+y)^n \amp = (x+y)^{n-1} \cdot (x+y)\\
+\amp = \left( x^{n-1} + \binom{n-1}{1} x^{n-2}y + \dots + \binom{n-1}{n-2} xy^{n-2} + y^{n-1} \right) \cdot \left( x + y \right)\\
+\amp = \left( x^{n-1} + \binom{n-1}{1} x^{n-2}y + \dots + \binom{n-1}{n-2} xy^{n-2} + y^{n-1} \right) \cdot x\\
+\amp + \left( x^{n-1} + \binom{n-1}{1} x^{n-2}y + \dots + \binom{n-1}{n-2} xy^{n-2} + y^{n-1} \right) \cdot y\\
+\amp = x^{n} + \binom{n-1}{1} x^{n-1}y + \dots + \binom{n-1}{n-2} x^2y^{n-2} + xy^{n-1}\\
+\amp + x^{n-1}y + \binom{n-1}{1} x^{n-2}y^2 + \dots + \binom{n-1}{n-2} xy^{n-1} + y^{n}\\
+\amp = x^{n} + \binom{n-1}{1} x^{n-1}y + \dots + \binom{n-1}{n-2} x^2y^{n-2} + \binom{n-1}{n-1} xy^{n-1}\\
+\amp + \binom{n-1}{0} x^{n-1}y + \binom{n-1}{1} x^{n-2}y^2 + \dots + \binom{n-1}{n-2} xy^{n-1} + y^{n}\\
+\amp = x^n + \left( \binom{n-1}{1} + \binom{n-1}{0} \right) x^{n-1}y + \dots\\
+\amp \dots + \left( \binom{n-1}{k} + \binom{n-1}{k-1} \right) x^{n-k}y^k + \dots\\
+\amp \dots + \left( \binom{n-1}{n-1} + \binom{n-1}{n-2} \right) xy^{n-1} + y^n\\
+\amp = x^n + \binom{n}{1} x^{n-1}y + \dots 
++ \binom{n}{k} x^{n-k}y^k + \dots 
++ \binom{n}{n-1}xy^{n-1} + y^n\text{.}
+\end{align*}
+<p>Here, we have expanded \((x+y)^{n-1}\) using the induction hypothesis, and multiplied it by \((x+y)\) by expanding the brackets. Then we collected together the same terms \(x^{n-k}y^k\) for every \(k=0, 1, \dots , n-1, n\text{.}\) Finally, in <span>&lt;&lt;Unresolved xref, reference "eq_binomsum2"; check spelling or use "provisional" attribute&gt;&gt;</span><a href="" class="xref" alt="" title=""> </a> we used the generating rule of Pascal's triangle (<a knowl="./knowl/prop_binomsum.html" knowl-id="xref-prop_binomsum" alt="Proposition 4.0.3 " title="Proposition 4.0.3 ">Proposition 4.0.3</a>).</p>
+<span class="incontext"><a href="section-25.html#p-899">in-context</a></span>
+</body>
+</html>

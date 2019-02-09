@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:02+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
+<p>If \(u=1\text{,}\) then the defining equation simplifies as follows</p>
+\begin{equation*}
+a_n=a_{n-1}+v\text{.}
+\end{equation*}
+<p>We prove the statement by induction. The initial value of the sequence is \(a_0\text{.}\) Using the above formula for \(a_n\) we obtain</p>
+\begin{align*}
+a_1\amp =a_0+v,\\
+a_2\amp =a_1+v=a_0+2v,\\
+a_3\amp =a_2+v=a_0+3v\text{.}
+\end{align*}
+<p>Hence the statement is clearly true for \(n=1,2\) and 3. Assume that the statement is true for \(n=k\text{,}\) that is,</p>
+\begin{equation*}
+a_k=a_0+kv\text{.}
+\end{equation*}
+<p>The statement for \(n=k+1\) is that \(a_{k+1}=a_0+(k+1)v\text{.}\) By the recurrence definition we have \(a_{k+1}=a_{k}+v\text{.}\) By induction we obtain that</p>
+\begin{equation*}
+a_{k+1}=a_0+kv+v=a_0+(k+1)v\text{,}
+\end{equation*}
+<p>which is the desired result for \(n=k+1\text{.}\)</p>
+<p>Now assume that \(u\neq 1\text{.}\) We apply induction again. As in the previous case we compute the first few values of the sequence</p>
+\begin{align*}
+a_1\amp =ua_0+v,\\
+a_2\amp =ua_1+v=u^2a_0+uv+v,\\
+a_3\amp =ua_2+v=u^3a_0+u^2v+uv+v\text{.}
+\end{align*}
+<p>It follows that the statement is true if \(n=1,2,3\text{.}\) Assume that the statement is true for \(n=k\text{,}\) that is,</p>
+\begin{equation*}
+a_k=u^ka_0+\frac{u^k-1}{u-1}v\text{.}
+\end{equation*}
+<p>We need to show that the statement is true for \(n=k+1\text{,}\) so \(a_{k+1}=u^{k+1}a_0+\frac{u^{k+1}-1}{u-1}v\text{.}\) The recurrence definition yields that \(a_{k+1}=ua_{k}+v\text{.}\) Using the assumption one has that</p>
+\begin{equation*}
+a_{k+1}=ua_{k}+v=u\cdot \left(u^ka_0+\frac{u^k-1}{u-1}v\right)+v=u^{k+1}a_0+u\frac{u^k-1}{u-1}v+v\text{.}
+\end{equation*}
+<p>From the well-known identity \(u^m-1=(u-1)\cdot (u^{m-1}+u^{m-2}+\ldots+u+1)\) one gets that</p>
+\begin{equation*}
+\frac{u^m-1}{u-1}=u^{m-1}+u^{m-2}+\ldots+u+1
+\end{equation*}
+<p>for \(u\neq 1\text{.}\) So we have \(u\frac{u^k-1}{u-1}\cdot v+v=(u^k+u^{k-1}+\ldots+u)v+v=(u^k+u^{k-1}+\ldots+u+1)\cdot v\text{.}\) Finally we obtain that</p>
+\begin{equation*}
+a_{k+1}=u^{k+1}a_0+(u^k+u^{k-1}+\ldots+u+1)v=u^{k+1}a_0+\frac{u^{k+1}-1}{u-1}v\text{,}
+\end{equation*}
+<p>and the statement follows.</p></article><span class="incontext"><a href="section-21.html#proof-33">in-context</a></span>
+</body>
+</html>

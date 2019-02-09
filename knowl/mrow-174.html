@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:01+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+\begin{align*}
+(x+y)^n \amp = (x+y)^{n-1} \cdot (x+y) = \left( \sum_{k=0}^{n-1} \binom{n-1}{k} x^{n-1-k}y^k \right) \cdot \left( x + y \right)\\
+\amp = \sum_{k=0}^{n-1} \binom{n-1}{k} x^{n-1-k}y^k \cdot x + \sum_{k=0}^{n-1} \binom{n-1}{k} x^{n-1-k}y^k \cdot y\\
+\amp = \sum_{k=0}^{n-1} \binom{n-1}{k} x^{n-k}y^k + \sum_{k=0}^{n-1} \binom{n-1}{k} x^{n-1-k}y^{k+1}\\
+\amp = x^n + \sum_{k=1}^{n-1} \binom{n-1}{k} x^{n-k}y^k + \sum_{k=0}^{n-2} \binom{n-1}{k} x^{n-1-k}y^{k+1} + y^n\\
+\amp = x^n + \sum_{k=1}^{n-1} \binom{n-1}{k} x^{n-k}y^k + \sum_{k=1}^{n-1} \binom{n-1}{k-1} x^{n-k}y^k + y^n\\
+\amp = x^n + \sum_{k=1}^{n-1} \left( \binom{n-1}{k} + \binom{n-1}{k-1}\right) x^{n-k}y^k + y^n\\
+\amp = x^n + \sum_{k=1}^{n-1} \binom{n}{k} x^{n-k}y^k + y^n = \sum_{k=0}^n \binom{n}{k} x^{n-k}y^k
+\end{align*}
+<span class="incontext"><a href="section-18.html#mjx-eqn-mrow-174">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:02+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Consider the alternating sum of the \(n\)th row (for \(n\geq 1\)), and use the generating rule of Pascal's triangle:</p>
+\begin{align*}
+\amp  \binom{n}{0} - \binom{n}{1} + \binom{n}{2} - \dots + \left( -1 \right)^{k-1} \cdot \binom{n}{k-1} + \left( -1 \right)^{k} \cdot \binom{n}{k}\\
+\amp = \binom{n-1}{0} - \left( \binom{n-1}{0} + \binom{n-1}{1} \right) + \left( \binom{n-1}{1} + \binom{n-1}{2} \right)  - \dots\\
+\amp + 
+(-1)^{k-1} \cdot \left( \binom{n-1}{k-2} + \binom{n-1}{k-1} \right) + (-1)^{k} \cdot \left( \binom{n-1}{k-1} + \binom{n-1}{k} \right)\\
+\amp = \left( \binom{n-1}{0} - \binom{n-1}{0} \right) + \left( - \binom{n-1}{1} + \binom{n-1}{1} \right) + \left( \binom{n-1}{2} - \binom{n-1}{2} \right) + \dots\\
+\amp + \left( \left( -1 \right)^{k-2} \cdot \binom{n-1}{k-2} + \left( -1 \right)^{k-1} \cdot \binom{n-1}{k-2} \right)\\
+\amp + \left( \left( -1 \right)^{k-1} \cdot \binom{n-1}{k-1} + \left( -1 \right)^{k} \cdot \binom{n-1}{k-1} \right) + \left( -1 \right)^k \cdot \binom{n-1}{k}\\
+\amp = 0 + 0 + 0 + \dots + 0 + 0 + \left( -1 \right)^k \cdot \binom{n-1}{k} = \left( -1 \right)^k \cdot \binom{n-1}{k}\text{.}
+\end{align*}
+<span class="incontext"><a href="section-19.html#p-618">in-context</a></span>
+</body>
+</html>

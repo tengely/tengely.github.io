@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:02+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="hiddenproof"><h6 class="heading"><span class="type">Proof</span></h6>
+<p>We prove the proposition by induction on \(n\text{.}\) Fix \(m\) first, then the induction starts by checking if the statement holds for the smallest possible \(n\text{,}\) that is, for \(n = m\text{.}\) For \(n=m\) the left hand side is simply \(\binom{m}{m} = 1\text{,}\) the right hand side is \(\binom{m+1}{m+1} = 1\text{,}\) and the statement holds. Let us assume now that the statement holds for \(n-1\text{,}\) that is,</p>
+\begin{equation*}
+\sum_{k=m}^{n-1} \binom{k}{m} = \binom{m}{m} + \binom{m+1}{m} + \dots + \binom{n-1}{m} = \binom{n}{m+1}\text{.}
+\end{equation*}
+<p>This is the induction hypothesis. Now we prove that the statement holds for \(n\text{,}\) as well. Consider the sum \(\sum_{k=m}^{n} \binom{k}{m}\text{:}\)</p>
+\begin{align*}
+\amp  \sum_{k=m}^{n} \binom{k}{m} = \underbrace{\binom{m}{m} + \binom{m+1}{m} + \dots + \binom{n-1}{m}}_{= \binom{n}{m+1}, \text{ by the induction hypothesis } } + \binom{n}{m}\\
+\amp = \binom{n}{m+1} + \binom{n}{m} = \binom{n+1}{m+1}\text{.}
+\end{align*}
+<p>Here, we first used the induction hypothesis, then the generating rule of Pascal's triangle (<a knowl="./knowl/prop_binomsum.html" knowl-id="xref-prop_binomsum" alt="Proposition 4.0.3 " title="Proposition 4.0.3 ">Proposition 4.0.3</a>).</p></article><span class="incontext"><a href="section-19.html#proof-31">in-context</a></span>
+</body>
+</html>

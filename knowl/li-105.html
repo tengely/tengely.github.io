@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:03+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="listitem"><h6 class="heading">
+<span class="type">Item</span><span class="codenumber">7</span>
+</h6>
+<p><a knowl="./knowl/ex_palindrome.html" knowl-id="xref-ex_palindrome" alt="Exercise 2.1.5 " title="Exercise 2.1.5 ">Exercise 2.1.5</a> If \(abc_{10}\) is a base 10 three-digit palindrome number, then \(a = c\text{,}\) and \(a \neq 0\text{.}\) Thus we can choose \(a\) in 9-many ways and \(b\) in 10-many ways, and hence the number of three-digit palindrome numbers is \(9 \cdot 10 = 90\text{.}\) For determining the at most three-digit palindrome numbers, we need to find the one-digit long and two-digit long palindrome numbers. Every one-digit number is a palindrome number. There are exactly 9 two-digit palindrome numbers: the \(aa_{10}\) numbers for \(a\neq 0\text{.}\) That is, there are \(9+9+90=108\) at most three-digit palindrome numbers. Now, consider the number of \(n\)-digit palindrome numbers in base \(k\text{.}\) One thing to note is that the first half of the number determines the back half completely. Thus we need to count how many ways can we choose the first half. Let \(n\) be even first. Then the first digit is the same as the last digit and differs from 0: there are \((k-1)\)-many possibilities to choose for the first digit. The second digit is the same as the one but last: there are \(k\)-possibilities to choose this digit, etc. Finally, the digit at the \(n/2\) position is the same as the digit at the \(n/2+1\) position: there are \(k\) possibilities to choose this digit. Thus, altogether the number of \(n\)-digit base \(k\) palindrome numbers (for even \(n\)) is</p>
+\begin{equation*}
+(k-1) \cdot \underbrace{k \cdot \dots \cdot k}_{n/2-1} = (k-1) \cdot k^{n/2-1}\text{.}
+\end{equation*}
+<p>If \(n\) is odd, then the same argument works, except that the middle digit will not have a pair. Thus, altogether the number of \(n\)-digit base \(k\) palindrome numbers (for odd \(n\)) is</p>
+\begin{equation*}
+(k-1) \cdot \underbrace{k \cdot \dots \cdot k}_{(n-1)/2} = (k-1) \cdot k^{(n-1)/2}\text{.}
+\end{equation*}
+</article><span class="incontext"><a href="section-23.html#li-105">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:04+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="listitem"><h6 class="heading">
+<span class="type">Item</span><span class="codenumber">7</span>
+</h6>
+<p><a knowl="./knowl/induction-4b.html" knowl-id="xref-induction-4b" alt="Exercise 3.1.10 " title="Exercise 3.1.10 ">Exercise 3.1.10</a> Let \(S(n)\) be the statement that</p>
+\begin{equation*}
+\sum_{i=1}^n\frac{1}{i(i+1)}=\frac{n}{n+1}\text{.}
+\end{equation*}
+<p>If \(n=1\text{,}\) then the left-hand side is</p>
+\begin{equation*}
+\sum_{i=1}^1\frac{1}{i(i+1)}=\frac{1}{2}\text{,}
+\end{equation*}
+<p>and the right-hand side is \(\frac{1}{2}\text{,}\) hence \(S(1)\) is true. Assume that \(S(k)\) is true for some \(1\leq k\in\mathbb{N}\text{.}\) The statement \(S(k+1)\) says that</p>
+\begin{equation*}
+\sum_{i=1}^{k+1}\frac{1}{i(i+1)}=\frac{k+1}{k+2}\text{.}
+\end{equation*}
+<p>On the other hand, by the induction hypothesis</p>
+\begin{align*}
+\amp  \sum_{i=1}^{k+1}\frac{1}{i(i+1)}=\left(\sum_{i=1}^{k}\frac{1}{i(i+1)}\right)+\frac{1}{(k+1)(k+2)}=\\
+\amp  =\frac{k}{k+1}+\frac{1}{(k+1)(k+2)}=\frac{k(k+2)+1}{(k+1)(k+2)}=\\
+\amp  =\frac{(k+1)^2}{(k+1)(k+2)}=\frac{k+1}{k+2}\text{.}
+\end{align*}
+<p>Therefore \(S(k+1)\) is true and the identity</p>
+\begin{equation*}
+\sum_{i=1}^n\frac{1}{i(i+1)}=\frac{n}{n+1}
+\end{equation*}
+<p>is valid for all positive integers \(n\text{.}\)</p></article><span class="incontext"><a href="section-24.html#li-191">in-context</a></span>
+</body>
+</html>

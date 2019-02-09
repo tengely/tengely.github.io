@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:05+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="listitem"><h6 class="heading">
+<span class="type">Item</span><span class="codenumber">19</span>
+</h6>
+<p><a knowl="./knowl/contra-4.html" knowl-id="xref-contra-4" alt="Exercise 3.2.7 " title="Exercise 3.2.7 ">Exercise 3.2.7</a> We provide an indirect proof. Assume that there exists a positive integer \(n\) for which</p>
+\begin{equation*}
+\gcd(F_n,F_{n+1})=d&gt;1\text{.}
+\end{equation*}
+<p>That is, \(d\) divides \(F_n\) and \(d\) divides \(F_{n+1}\text{.}\) Then \(d\) divides the difference of these two Fibonacci numbers. The difference is equal to</p>
+\begin{equation*}
+F_{n+1}-F_n=F_{n-1}\text{.}
+\end{equation*}
+<p>Since \(d\) divides the left-hand side we obtain that \(d\) divides the right-hand side, that is, \(d\mid F_{n-1}\text{.}\) We apply the previous argument again</p>
+\begin{equation*}
+d\mid F_n\mbox{ and } d\mid F_{n-1}\mbox{ hence } d\mid (F_n-F_{n-1})\text{.}
+\end{equation*}
+<p>In this way we get that \(d\mid F_{n-2}\text{.}\) Now we have that \(d\mid F_{n-1}\) and \(d\mid F_{n-2}\text{,}\) so \(d\mid (F_{n-1}-F_{n-2})\text{.}\) Since \(F_{n-1}-F_{n-2}=F_{n-3}\) we obtain that \(d\) divides \(F_{n-3}\text{.}\) We continue this process to reach a contradiction, namely that \(d\mid F_2=1\) and \(d\mid F_1=1\text{.}\) Hence for consecutive Fibonacci numbers \(F_n\) and \(F_{n+1}\) we have</p>
+\begin{equation*}
+\gcd(F_n,F_{n+1})=1\text{.}
+\end{equation*}
+</article><span class="incontext"><a href="section-24.html#li-203">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:00+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<h6 class="heading"><span class="type">Paragraph</span></h6>
+<p>Now, to count the number of unordered possibilities we can try the same trick we successfully implemented in <a href="sec_anagrams.html" class="xref" alt="Section 2.4 Anagrams" title="Section 2.4 Anagrams">Section 2.4</a> and <a href="sec_orderedsubsets.html" class="xref" alt="Section 2.5 The number of ordered subsets of a given size" title="Section 2.5 The number of ordered subsets of a given size">Section 2.5</a>. That is, let us group together those chosen five numbers, where the five numbers are the same, they only differ in the order they were chosen. Let us name these groups with the chosen five numbers. For example, there will be a group called ‘1, 2, 3, 4, 5’, which contains all possible choosing of 1, 2, 3, 4, 5, in any order. Similarly, there will be a group called ‘13, 42, 51, 66, 90’ containing all possible choosing of these five numbers. For example, if the numbers chosen were (in order) ‘42, 13, 90, 66, 51’, then they are put into the group ‘13, 42, 51, 66, 90’. Similarly, the numbers ‘51, 66, 90, 13, 42’ are put into the group ‘13, 42, 51, 66, 90’, as well. We are interested in the number of groups. To count the number of groups, we first count the number of ordered five numbers in one group. How many elements does the group ‘13, 42, 51, 66, 90’ have? This group contains all possible orders in which one can choose these five numbers. This is the number of permutations of these five numbers. That is, there are \(5! = 120\)-many orders in the group ‘13, 42, 51, 66, 90’. Similarly, there are \(5! = 120\)-many orders in every other group. Therefore the number of groups (and the number of possible ways to choose five numbers out of 90) is</p>
+\begin{equation*}
+\frac{90 \cdot 89 \cdot 88 \cdot 87 \cdot 86}{5!} = \frac{5~273~912~160}{120} = 43~949~268\text{.}
+\end{equation*}
+<span class="incontext"><a href="sec_nchoosek.html#p-274">in-context</a></span>
+</body>
+</html>

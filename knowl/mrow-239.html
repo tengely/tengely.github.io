@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:18:02+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+\begin{align*}
+1^2 + 2^2 + \dots + n^2 \amp = \sum_{k=1}^n k^2 = 1 + \sum_{k=2}^n \left(\binom{k+1}{2} + \binom{k}{2}\right)\\
+\amp = 1 + \sum_{k=2}^n \binom{k+1}{2} + \sum_{k=2}^n \binom{k}{2}\\
+\amp = \binom{2}{2} + \sum_{k=2}^n \binom{k+1}{2} + \sum_{k=2}^n \binom{k}{2}\\
+\amp = \sum_{k=1}^{n} \binom{k+1}{2} + \sum_{k=2}^n \binom{k}{2} = \sum_{k=2}^{n+1} \binom{k}{2} + \sum_{k=2}^n \binom{k}{2}\\
+\amp = \binom{n+2}{3} + \binom{n+1}{3}\\
+\amp = \frac{(n+2) \cdot (n+1) \cdot n}{3 \cdot 2} + \frac{(n+1) \cdot n \cdot (n-1)}{3 \cdot 2}\\
+\amp = \frac{n \cdot (n+1)}{3 \cdot 2} \cdot \left( (n+2)+ (n-1) \right)\\
+\amp = \frac{n \cdot (n+1) \cdot (2n+1)}{6}
+\end{align*}
+<span class="incontext"><a href="section-19.html#mjx-eqn-mrow-239">in-context</a></span>
+</body>
+</html>
