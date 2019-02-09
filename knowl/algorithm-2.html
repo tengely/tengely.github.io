@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*    on 2018-10-10T22:17:59+02:00    *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="theorem-like"><h6 class="heading">
+<span class="type">Algorithm</span><span class="codenumber">1.3.4</span>
+</h6>
+<p><em class="emphasis">The Euclidean algorithm.</em> Now we study a method to determine \(\gcd(a,b)\) of given positive integers \(a\) and \(b\text{.}\) The method also provides solution of the linear Diophantine equation</p>
+\begin{equation*}
+ax+by=\gcd(a,b)\text{.}
+\end{equation*}
+<p>If we apply the Division algorithm to \(a,b,a&gt;b\text{,}\) then we have</p>
+\begin{equation*}
+a=qb+r, 0\leq r\lt b\text{.}
+\end{equation*}
+<p>If \(d\) is a common divisor of \(a\) and \(b\text{,}\) then \(d\) divides \(r=a-qb\) as well. That is the basic idea of the algorithm. The Euclidean algorithm works as follows. First we apply the Division algorithm for \(a\) and \(b\) to obtain a quotient \(q_1\) and a remainder \(r_1\text{.}\) Then we apply the Division algorithm for \(b\) and \(r_1\) to get a new quotient \(q_2\) and a new remainder \(r_2\text{.}\) We continue, we divide \(r_1\) by \(r_2\) to obtain \(q_3\) and \(r_3\text{.}\) We stop if we obtain a zero remainder. Since the procedure produces a decreasing sequence of non-negative integers so must eventually terminate by descent. The last non-zero remainder is the greatest common divisor of \(a\) and \(b\text{.}\)</p></article><span class="incontext"><a href="Euc.html#algorithm-2">in-context</a></span>
+</body>
+</html>
