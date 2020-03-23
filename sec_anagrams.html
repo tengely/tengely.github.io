@@ -210,7 +210,16 @@ MathJax.Hub.Config({
 \begin{equation*}
 \frac{n!}{n_1! \cdot n_2! \cdot \dots \cdot n_k!}\text{.}
 \end{equation*}
-    
+</article>
+<article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-9" id="proof-9"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-9" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-244">Let us color all the letters with different colours, and let us count first the number of coloured anagrams. This is the number of permutations of \(n\) different letters, that is, \(n!\) by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>.</p>
+<p id="p-245">Now, group together those anagrams which represent the same word, and differ only in their colourings. The number of uncoloured anagrams is the same as the number of groups. To compute this number, we count the number of coloured words in each group.</p>
+<p id="p-246">Take an arbitrary group representing an anagram. The words listed in this group differ only by the colourings. The first letter appears \(n_1\)-many times, and these letters have \(n_1!\)-many different colourings by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>. Similarly, the second letter appears \(n_2\)-many times, and these letters have \(n_2!\)-many different colourings by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>, etc. Finally, the \(k\)th letter appears \(n_k\)-many times, and these letters have \(n_k!\)-many different colourings by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>. Thus, the number of words in a group is \(n_1! \cdot n_2! \cdot \dots \cdot n_k!\text{.}\) Therefore the number of groups, and hence the number of (uncoloured) anagrams is</p>
+\begin{equation*}
+\frac{n!}{n_1! \cdot n_2! \cdot \dots \cdot n_k!}\text{.}
+\end{equation*}
+</article></div>
+
+<p>
 <div class="sagecell-sage" id="sage-1"><script type="text/x-sage">
 p=random_prime(300,false,100)
 F = GF(p)
@@ -236,15 +245,9 @@ pretty_print(html(r'We obtain that ${%s}P=Q-{%s N\cdot P}$'%(latex(I),latex(J)))
 n=I+J*N
 pretty_print(html('Solution of the additive DLP $n=%s$'%latex(n)))
 pretty_print(html('We have that $nP=%s$ and $Q=%s$'%(latex(n*P),latex(Q))))
-</script></div>     
-  
-</article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-9" id="proof-9"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-9" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-244">Let us color all the letters with different colours, and let us count first the number of coloured anagrams. This is the number of permutations of \(n\) different letters, that is, \(n!\) by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>.</p>
-<p id="p-245">Now, group together those anagrams which represent the same word, and differ only in their colourings. The number of uncoloured anagrams is the same as the number of groups. To compute this number, we count the number of coloured words in each group.</p>
-<p id="p-246">Take an arbitrary group representing an anagram. The words listed in this group differ only by the colourings. The first letter appears \(n_1\)-many times, and these letters have \(n_1!\)-many different colourings by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>. Similarly, the second letter appears \(n_2\)-many times, and these letters have \(n_2!\)-many different colourings by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>, etc. Finally, the \(k\)th letter appears \(n_k\)-many times, and these letters have \(n_k!\)-many different colourings by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>. Thus, the number of words in a group is \(n_1! \cdot n_2! \cdot \dots \cdot n_k!\text{.}\) Therefore the number of groups, and hence the number of (uncoloured) anagrams is</p>
-\begin{equation*}
-\frac{n!}{n_1! \cdot n_2! \cdot \dots \cdot n_k!}\text{.}
-\end{equation*}
-</article></div>   
+</script></div>
+</p>
+    
 <article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_anagrams1" id="ex_anagrams1"><h6 class="heading">
 <span class="type">Exercise</span><span class="codenumber">2.4.5</span>
 </h6></a></article><div id="hk-ex_anagrams1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-247">How many anagrams does the following expressions have? </p>
