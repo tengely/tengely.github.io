@@ -172,6 +172,35 @@ MathJax.Hub.Config({
 \frac{n!}{n_1! \cdot n_2! \cdot \dots \cdot n_k!}\text{.}
 \end{equation*}
 </article></div>
+
+<div class="sagecell-sage" id="sage-1">
+<script type="text/x-sage">
+p=random_prime(300,false,100)
+F = GF(p)
+A=F.random_element()
+B=F.random_element()
+E=EllipticCurve([A,B])
+P=E.gens()[0]
+Q=E.random_element()
+N=ceil(sqrt(E.order()))
+pretty_print(html('The prime is: $%s$'%latex(p)))
+pretty_print(html('The elliptic curve is: $%s$'%latex(E)))
+pretty_print(html(r'We solve the DLP: $n %s= %s$'%(latex(P),latex(Q))))
+pretty_print(html('The value of $N$: $%s$'%latex(N)))
+L1=[i*P for i in [0..N-1]]
+L2=[Q+(-j*N)*P for j in [0..N-1]]
+pretty_print(html('The list of baby-steps: $L_1=%s$'%latex(L1)))
+pretty_print(html('The list of giant-steps: $L_2=%s$'%latex(L2)))
+common=Set(L1).intersection(Set(L2))[0]
+pretty_print(html('Common element: $%s$'%latex(common)))
+I=L1.index(common)
+J=L2.index(common)
+pretty_print(html(r'We obtain that ${%s}P=Q-{%s N\cdot P}$'%(latex(I),latex(J))))
+n=I+J*N
+pretty_print(html('Solution of the additive DLP $n=%s$'%latex(n)))
+pretty_print(html('We have that $nP=%s$ and $Q=%s$'%(latex(n*P),latex(Q))))
+</script></div>    
+    
 <article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_anagrams1" id="ex_anagrams1"><h6 class="heading">
 <span class="type">Exercise</span><span class="codenumber">2.4.5</span>
 </h6></a></article><div id="hk-ex_anagrams1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-247">How many anagrams does the following expressions have? </p>
