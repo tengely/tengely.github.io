@@ -35,22 +35,10 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-
 </script><script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML-full"></script><script type="text/javascript" src="https://aimath.org/knowl.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.sticky.js"></script><script src="https://aimath.org/mathbook/js/lib/jquery.espy.min.js"></script><script src="https://aimath.org/mathbook/js/Mathbook.js"></script><link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link href="https://aimath.org/mathbook/stylesheets/mathbook-6.css" rel="stylesheet" type="text/css">
 <link href="https://aimath.org/mathbook/mathbook-add-on.css" rel="stylesheet" type="text/css">
-
-
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
-    // Make *any* div with class 'sagecell-sage' an executable Sage cell
-    // Their results will be linked, only within language type
-    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
-                           linked: true,
-                           languages: ['sage'],
-                           evalButtonText: 'Evaluate (Sage)'});
-});
-
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive" href="#content">Skip to main content</a><div class="hidden-content">\(\renewcommand{\chaptermark}[1]{\markboth{\MakeUppercase{
@@ -145,14 +133,14 @@ MathJax.Hub.Config({
 <span class="type">Section</span><span class="codenumber">2.4</span><span class="title">Anagrams</span>
 </h2>
 <a href="sec_anagrams.html" class="permalink">¶</a><p id="p-233">An anagram of a word is another word (or sometimes many words) which is built up from the letters of the original, using each letter exactly once. For example an anagram of ‘retinas’ can be ‘nastier’, ‘retains’, or ‘stainer’. Even ‘sainter’ is a meaningful anagram (means trustworthy). One can even form anagrams using multiple words, like ‘tin ears’ or ‘in tears’.</p>
-<p id="p-234">We are interested in the number of anagrams a word can have. Of course, the number of all meaningful anagrams would be very hard to find, because some expressions can be meaningful to some, and not to others. For example, Oxford English Dictionary only contains the following anagrams of ‘east’: ‘a set’, ‘east’, ‘eats’, ‘sate’ (i.e. satisfy), ‘seat’, ‘teas’. Nevertheless, there is meaning given to all possible anagrams of ‘east’ in Ross Eckler's <em class="emphasis">Making the Alphabet Dance</em>.<span class="footnote"><a knowl="" class="id-ref" refid="hk-fn-2" id="fn-2"><sup> 1 </sup></a></span><span id="hk-fn-2" class="hidden-content tex2jax_ignore"><span class="footnote">Ross Eckler, <em class="emphasis">Making the Alphabet Dance</em>, St Martins Pr (July 1997)</span></span></p>
+<p id="p-234">We are interested in the number of anagrams a word can have. Of course, the number of all meaningful anagrams would be very hard to find, because some expressions can be meaningful to some, and not to others. For example, Oxford English Dictionary only contains the following anagrams of ‘east’: ‘a set’, ‘east’, ‘eats’, ‘sate’ (i.e. satisfy), ‘seat’, ‘teas’. Nevertheless, there is meaning given to all possible anagrams of ‘east’ in Ross Eckler's <em class="emphasis">Making the Alphabet Dance</em>.<span class="footnote"><a knowl="" class="id-ref" refid="hk-fn-2" id="fn-2"><sup> 1 </sup></a></span><span id="hk-fn-2" class="hidden-content tex2jax_ignore"><span class="footnote">Ross Eckler, <em class="emphasis">Making the Alphabet Dance</em>, St Martins Pr (July 1997)</span></span></p>
 <p id="p-235">In any case, how many possible anagrams are there for the word ‘east’? Let us build them up: for the first letter we have 4 choices, then we have only 3 choices for the second letter, we are left only with two choices for the third letter, and the not chosen letter will be the forth. That is, altogether there are \(4 \cdot 3 \cdot 2 \cdot 1 = 4! = 24\)-many anagrams. This is exactly the number of permutations of the four letter ‘a’, ‘e’, ‘s’ and ‘t’.</p>
 <p id="p-236">(Here we did not count the spaces and punctuations. It is possible that by clever punctuations one can make more of these. For example ‘a set’ and ‘as ET’ are both anagrams with the same order of letters, but with different meaning.)</p>
 <p id="p-237">To make matters simple, from now on we are only interested in the not necessarily meaningful anagrams, without punctuations. Thus, ‘east’ has 24 anagrams.</p>
 <article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_retinas" id="ex_retinas"><h6 class="heading">
 <span class="type">Exercise</span><span class="codenumber">2.4.1</span>
 </h6></a></article><div id="hk-ex_retinas" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-238">How many anagrams does ‘retinas’ have?</p></article></div>
-<p id="p-239">Now, let us count the number of anagrams of ‘eye’. There are only three of them: ‘eye’, ‘eey’, ‘yee’. Unfortunately, exactly the same argument as before does not work in this case. The complications arise because of the two e's: that is, those two letters are the same. We could easily solve the problem if the two e's would be different. Thus let us make them look different. Let us colour one of the e's by blue, the other e by red, and consider all <em class="emphasis">coloured anagrams</em>. Now, every letter is different, and the former argument works: there are \(3\cdot 2 \cdot 1 = 6\) coloured anagrams. Nevertheless, we are interested in the number of anagrams, no matter their colour. Therefore we group together those anagrams, which represent the same word, only they are coloured differently (see <a knowl="./knowl/fig_eye.html" knowl-id="xref-fig_eye" alt="Figure 2.4.2 " title="Figure 2.4.2 ">Figure 2.4.2</a>).</p>
+<p id="p-239">Now, let us count the number of anagrams of ‘eye’. There are only three of them: ‘eye’, ‘eey’, ‘yee’. Unfortunately, exactly the same argument as before does not work in this case. The complications arise because of the two e's: that is, those two letters are the same. We could easily solve the problem if the two e's would be different. Thus let us make them look different. Let us colour one of the e's by blue, the other e by red, and consider all <em class="emphasis">coloured anagrams</em>. Now, every letter is different, and the former argument works: there are \(3\cdot 2 \cdot 1 = 6\) coloured anagrams. Nevertheless, we are interested in the number of anagrams, no matter their colour. Therefore we group together those anagrams, which represent the same word, only they are coloured differently (see <a knowl="./knowl/fig_eye.html" knowl-id="xref-fig_eye" alt="Figure 2.4.2 " title="Figure 2.4.2 ">Figure 2.4.2</a>).</p>
 <figure class="figure-like" id="fig_eye"><img src="images/fig22.png" width="50%" style="display: block; margin: 0 auto;" alt=""><figcaption><span class="type">Figure</span><span class="codenumber">2.4.2</span>Coloured anagrams of ‘eye’</figcaption></figure><p id="p-240">Now, we are interested in the number of groups. For that, we need to know the number of anagrams in one group. Take for example the group corresponding to the anagram ‘eye’ (upper right part). There are two different colourings depending on the e's: we can colour the first ‘e’ by two colours, and the second ‘e’ by one colour, therefore there are \(2 \cdot 1 = 2\) coloured ‘eye’s in that group. Similarly, every group contain exactly two coloured anagrams. Thus the number of groups (and the number of uncoloured anagrams) is \(\frac62 = 3\text{.}\)</p>
 <article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_puppy" id="ex_puppy"><h6 class="heading">
 <span class="type">Exercise</span><span class="codenumber">2.4.3</span>
@@ -165,44 +153,13 @@ MathJax.Hub.Config({
 \begin{equation*}
 \frac{n!}{n_1! \cdot n_2! \cdot \dots \cdot n_k!}\text{.}
 \end{equation*}
-</article>
-<article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-9" id="proof-9"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-9" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-244">Let us color all the letters with different colours, and let us count first the number of coloured anagrams. This is the number of permutations of \(n\) different letters, that is, \(n!\) by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>.</p>
+</article><article class="hiddenproof"><a knowl="" class="id-ref" refid="hk-proof-9" id="proof-9"><h6 class="heading"><span class="type">Proof</span></h6></a></article><div id="hk-proof-9" class="hidden-content tex2jax_ignore"><article class="hiddenproof"><p id="p-244">Let us color all the letters with different colours, and let us count first the number of coloured anagrams. This is the number of permutations of \(n\) different letters, that is, \(n!\) by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>.</p>
 <p id="p-245">Now, group together those anagrams which represent the same word, and differ only in their colourings. The number of uncoloured anagrams is the same as the number of groups. To compute this number, we count the number of coloured words in each group.</p>
-<p id="p-246">Take an arbitrary group representing an anagram. The words listed in this group differ only by the colourings. The first letter appears \(n_1\)-many times, and these letters have \(n_1!\)-many different colourings by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>. Similarly, the second letter appears \(n_2\)-many times, and these letters have \(n_2!\)-many different colourings by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>, etc. Finally, the \(k\)th letter appears \(n_k\)-many times, and these letters have \(n_k!\)-many different colourings by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>. Thus, the number of words in a group is \(n_1! \cdot n_2! \cdot \dots \cdot n_k!\text{.}\) Therefore the number of groups, and hence the number of (uncoloured) anagrams is</p>
+<p id="p-246">Take an arbitrary group representing an anagram. The words listed in this group differ only by the colourings. The first letter appears \(n_1\)-many times, and these letters have \(n_1!\)-many different colourings by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>. Similarly, the second letter appears \(n_2\)-many times, and these letters have \(n_2!\)-many different colourings by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>, etc. Finally, the \(k\)th letter appears \(n_k\)-many times, and these letters have \(n_k!\)-many different colourings by <a knowl="./knowl/thm_perm.html" knowl-id="xref-thm_perm" alt="Theorem 2.3.3 " title="Theorem 2.3.3 ">Theorem 2.3.3</a>. Thus, the number of words in a group is \(n_1! \cdot n_2! \cdot \dots \cdot n_k!\text{.}\) Therefore the number of groups, and hence the number of (uncoloured) anagrams is</p>
 \begin{equation*}
 \frac{n!}{n_1! \cdot n_2! \cdot \dots \cdot n_k!}\text{.}
 \end{equation*}
 </article></div>
-
-<p>
-<div class="sagecell-sage" id="sage-1"><script type="text/x-sage">
-p=random_prime(300,false,100)
-F = GF(p)
-A=F.random_element()
-B=F.random_element()
-E=EllipticCurve([A,B])
-P=E.gens()[0]
-Q=E.random_element()
-N=ceil(sqrt(E.order()))
-pretty_print(html('The prime is: $%s$'%latex(p)))
-pretty_print(html('The elliptic curve is: $%s$'%latex(E)))
-pretty_print(html(r'We solve the DLP: $n %s= %s$'%(latex(P),latex(Q))))
-pretty_print(html('The value of $N$: $%s$'%latex(N)))
-L1=[i*P for i in [0..N-1]]
-L2=[Q+(-j*N)*P for j in [0..N-1]]
-pretty_print(html('The list of baby-steps: $L_1=%s$'%latex(L1)))
-pretty_print(html('The list of giant-steps: $L_2=%s$'%latex(L2)))
-common=Set(L1).intersection(Set(L2))[0]
-pretty_print(html('Common element: $%s$'%latex(common)))
-I=L1.index(common)
-J=L2.index(common)
-pretty_print(html(r'We obtain that ${%s}P=Q-{%s N\cdot P}$'%(latex(I),latex(J))))
-n=I+J*N
-pretty_print(html('Solution of the additive DLP $n=%s$'%latex(n)))
-pretty_print(html('We have that $nP=%s$ and $Q=%s$'%(latex(n*P),latex(Q))))
-</script></div>
-</p>
-    
 <article class="exercise-like"><a knowl="" class="id-ref" refid="hk-ex_anagrams1" id="ex_anagrams1"><h6 class="heading">
 <span class="type">Exercise</span><span class="codenumber">2.4.5</span>
 </h6></a></article><div id="hk-ex_anagrams1" class="hidden-content tex2jax_ignore"><article class="exercise-like"><p id="p-247">How many anagrams does the following expressions have? </p>
